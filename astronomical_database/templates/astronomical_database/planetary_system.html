@@ -1,0 +1,122 @@
+{% extends "astronomical_database/base.html" %}
+
+{% block content %}
+  <div id="main_text">
+    <div id="text_left_column_planetarysystem">
+      <h1>{{ planetary_system.name }}</h1>
+      <p>
+        {{ planetary_system.host_classification }}
+      </p>
+      <!-- Image: Size comparison -->
+      <svg class="size_comparison" width="520" height="145">
+        <!-- Star icon -->
+        {% if planetary_system.img_host_radius %}
+          <circle class="{{ planetary_system.img_host_spectral_class }}" cx="160" cy="50" r="{{ planetary_system.img_host_radius }}" />
+        {% else %}
+          <circle class="spectral_class_default" cx="160" cy="50" r="50" />
+          <circle class="{{ planetary_system.img_host_spectral_class }}" cx="160" cy="50" r="33" />
+        {% endif %}
+        <text class="{{ planetary_system.img_host_spectral_class }}" x="160" y="120">{{ planetary_system.name }}</text>
+        <!-- Sun icon -->
+        <circle id="sun" cx="360" cy="50" r="{{ planetary_system.img_sun_radius }}" />
+        <text id="sun" x="360" y="120">Sun</text>
+      </svg>
+      <h2>Stellar parameters</h2>
+      <p>
+        {% if planetary_system.host_distance_ly > 0 %}
+          Distance from earth: {{ planetary_system.host_distance_ly|floatformat }} ly
+        {% else %}
+          Distance from earth: Not available
+        {% endif %}
+        <br>
+        Radius: {{ planetary_system.string_host_radius|safe }}
+        <br>
+        Spectral class: {{ planetary_system.host_spectral_class }}
+        <br>
+        Luminosity: {{ planetary_system.string_host_luminosity|safe }}
+        <br>
+        B-V: {{ planetary_system.string_host_BminusV|safe }}
+      </p>
+      <h2>Planets</h2>
+      <p>
+      <!-- Pluto density: 1.869 g/cm^3, Neptune radius: 0.35 R_Jup -->
+      {% for planet in list_of_planets.object_list %}
+        {% if planet.density <= 0.0 %}
+          {{ planet.name }} (classification not available)<br>
+        {% elif planet.density < 1.869 or planet.radius > 0.35 %}
+          {{ planet.name }} (gas giant)<br>
+        {% else %}
+          {{ planet.name }} (terrestial)<br>
+        {% endif %}
+      {% empty %}
+        No planets are yet available.
+      {% endfor %}
+      <p></p>
+    </div>
+    <div id="text_right_column_planetarysystem">
+      <h2>Planetary system</h2>
+      {% if list_of_planets.object_list %}
+      <p>
+        Number of known planets: {{ planetary_system.number_of_planets }}
+        <br>
+        Size: {{ planetary_system.string_max_planet_semimajoraxis }}
+      </p>
+      <!-- Image: Planetary system -->
+      <svg class="planetary_system" width="520" height="415">
+        <!-- Draw all orbits -->
+        {% if planetary_system.number_of_planets > 1 %}
+          {% for planet in list_of_planets.object_list %}
+            {% if planet.img_rel_semimajoraxis %}
+              <ellipse cx="260" cy="101" rx="{{ planet.img_rel_semimajoraxis }}" ry="{{ planet.img_rel_semiminoraxis }}" />
+            {% endif %}
+          {% endfor %}
+        {% else %}
+          <ellipse cx="260" cy="101" rx="250" ry="100" />
+        {% endif %}
+        <!-- Then draw all pointers -->
+        <line x1="0" y1="225" x2="260" y2="225" />
+        <line x1="260" y1="226" x2="260" y2="101" />
+        <text x="0" y="219">{{ planetary_system.name }}</text>
+        {% if planetary_system.number_of_planets > 1 %}
+          {% for planet in list_of_planets.object_list %}
+            {% if planet.img_rel_semimajoraxis %}
+              <line x1="0" y1="{{ planet.img_line1_y1 }}" x2="{{ planet.img_legend_x2 }}" y2="{{ planet.img_line1_y1 }}" />
+              <line x1="{{ planet.img_legend_x2 }}" y1="{{ planet.img_line2_y1 }}" x2="{{ planet.img_legend_x2 }}" y2="101" />
+              <text x="0" y="{{ planet.img_text_y }}">{{ planet.name }}</text>
+            {% endif %}
+          {% endfor %}
+        {% else %}
+          <line x1="0" y1="252" x2="510" y2="252" />
+          <line x1="510" y1="252" x2="510" y2="101" />
+          <text x="0" y="246">{{ list_of_planets.object_list.0.name }}</text>
+        {% endif %}
+        <!-- Then draw the central star -->
+        <circle class="{{ planetary_system.img_host_spectral_class }}" cx="260" cy="101" r="{{ planetary_system.img_host_rel_radius }}" />
+        <!-- Then draw all planets -->
+        {% if planetary_system.number_of_planets > 1 %}
+          {% for planet in list_of_planets.object_list %}
+            {% if planet.img_rel_semimajoraxis %}
+              <circle class="{{ planet.classification }}" cx="{{ planet.img_cx }}" cy="101" r="{{ planet.img_rel_radius }}" />
+            {% endif %}
+          {% endfor %}
+        {% else %}
+          <circle class="{{ list_of_planets.object_list.0.classification }}" cx="510" cy="101" r="10" />
+        {% endif %}
+      </svg>
+      {% else %}
+      <p>No planets are yet available.</p>
+      {% endif %}
+    </div>
+  </div>
+{% endblock %}
+
+{% block navigation %}
+  <!-- Button "Home" -->
+  <svg class="vspace"><rect width="100%" height="100%"></rect></svg>
+  <a href="/astronomical_database"><svg width="100%" height="100"><rect class="navigation" width="100%" height="100%"/><text class="text" x="10" y="90">Home</text></svg></a>
+
+  <!-- Button "Back" -->
+  <svg class="vspace"><rect width="100%" height="100%"></rect></svg>
+  <a href="/astronomical_database/List_of_star_catalogues/{{ planetary_system.catalogue_page_name }}"><svg width="100%" height="100"><rect class="navigation" width="100%" height="100%"/><text class="text" x="10" y="90">Back</text></svg></a>
+  <svg class="vspace"><rect width="100%" height="100%"></rect></svg>
+{% endblock %}
