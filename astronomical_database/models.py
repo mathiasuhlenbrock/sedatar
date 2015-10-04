@@ -198,6 +198,11 @@ class PlanetarySystem(models.Model):
 
     img_host_rel_radius = property(_get_img_host_rel_radius)
 
+    def _get_img_host_rel_inner_radius(self):
+       return self.img_host_rel_radius - 2 
+
+    img_host_rel_inner_radius = property(_get_img_host_rel_inner_radius)
+
     def _get_img_host_radius(self):
         if self.host_radius <= 1. and self.host_radius > 0.:
             return round(50 * self.host_radius)
@@ -276,6 +281,11 @@ class Planet(models.Model):
 
     img_rel_radius = property(_get_img_rel_radius)
 
+    def _get_img_rel_inner_radius(self):
+       return self.img_rel_radius - 2 
+
+    img_rel_inner_radius = property(_get_img_rel_inner_radius)
+
     def _get_img_rel_semimajoraxis(self):
        return self.rel_axis * 250
 
@@ -283,7 +293,7 @@ class Planet(models.Model):
 
     def _get_img_line1_y1(self):
         if self.index:
-            return 252 + (self.index - 1) * 27
+            return 253 + (self.index - 1) * 27
 
     img_line1_y1 = property(_get_img_line1_y1)
 
