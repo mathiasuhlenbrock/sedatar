@@ -75,7 +75,7 @@ with open('astronomical_database/data/csv/categories/categories.csv') as csvfile
 
 with open('astronomical_database/data/csv/news/news.csv') as csvfile:
 
-    reader = csv.DictReader(csvfile, skipinitialspace = True)
+    reader = csv.DictReader(csvfile, skipinitialspace = True, escapechar = '"')
 
     for row in reader:
 
@@ -235,5 +235,8 @@ with open('astronomical_database/data/csv/planets/planets.csv') as csvfile:
         elif row['pl_hostname'].startswith("PSR"):
             SortIntoCatalogue("Parkes Selected Region", density, mass, radius, semimajoraxis)
 
-        else:
+        elif row['pl_hostname'] == "Fomalhaut" or row['pl_hostname'] == "Kapteyn":
             SortIntoCatalogue("Stars with proper names", density, mass, radius, semimajoraxis)
+
+        else:
+            SortIntoCatalogue("Other stars", density, mass, radius, semimajoraxis)

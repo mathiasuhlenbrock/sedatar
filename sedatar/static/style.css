@@ -132,14 +132,15 @@ p
 
 ul
 {
-    list-style-type: none;
+    list-style-position: inside;
+    list-style-type: square;
     padding-left: 0;
 }
 
 a
 {
     text-decoration: none;
-    color: #505050;
+    color: #808080;
     outline: 0; /* Removes dotted border around link */
 }
 
@@ -246,46 +247,55 @@ svg.size_comparison > text
 .spectral_class_0
 {
     fill: #E8E8E8;
+    stroke: #F8F8F8;
 }
 
 .spectral_class_B
 {
     fill: #D8D8D8;
+    stroke: #F8F8F8;
 }
 
 .spectral_class_A
 {
     fill: #B8B8B8;
+    stroke: #F8F8F8;
 }
 
 .spectral_class_F
 {
     fill: #989898;
+    stroke: #F8F8F8;
 }
 
 .spectral_class_G
 {
     fill: #808080;
+    stroke: #F8F8F8;
 }
 
 .spectral_class_K
 {
     fill: #585858;
+    stroke: #F8F8F8;
 }
 
 .spectral_class_M
 {
     fill: #282828;
+    stroke: #F8F8F8;
 }
 
 .spectral_class_L
 {
     fill: #202020;
+    stroke: #F8F8F8;
 }
 
 .spectral_class_T
 {
     fill: #202020;
+    stroke: #F8F8F8;
 }
 
 .spectral_class_WD
@@ -297,6 +307,7 @@ svg.size_comparison > text
 .spectral_class_default
 {
     fill: #000000;
+    stroke: #F8F8F8;
 }
 
 #sun
@@ -316,16 +327,23 @@ svg.planetary_system > ellipse
 .terrestial
 {
     fill: #505050;
+    stroke: #F8F8F8;
+}
+
+.background
+{
+    fill: #F8F8F8;
 }
 
 .gas_giant
 {
-    fill: #808080;
+    stroke: #808080;
 }
 
 .default
 {
     fill: #000000;
+    stroke: #F8F8F8;
 }
 
 svg.planetary_system > line
@@ -341,7 +359,6 @@ svg.planetary_system > text
 
 svg.planetary_system > circle
 {
-    stroke: #F8F8F8;
     stroke-width: 2;
 }
 
@@ -421,4 +438,18 @@ text.text
 {
     padding-left: 20px;
     width: 100%;
+}
+
+#unknown_radius
+{
+    fill-opacity: 0.0;
+    stroke: #F8F8F8;
+    stroke-dasharray: 2,5;
+    stroke-width: 3;
+}
+
+#hatch > rect
+{
+    fill: #808080;
+    stroke: #808080;
 }
