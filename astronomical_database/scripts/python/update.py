@@ -41,11 +41,19 @@ def SortIntoCatalogue(cataloguename, density, mass, radius, semimajoraxis):
                                              host_BminusV = host_BminusV)
 
     system = PlanetarySystem.objects.get(name = row['pl_hostname'])
-    system.planet_set.create(name = row['pl_hostname'] + " " + row["pl_letter"],
-                             density = density,
-                             mass = mass,
-                             radius = radius,
-                             semimajoraxis = semimajoraxis)
+
+    if row["pl_letter"] is not "":
+        system.planet_set.create(name = row['pl_hostname'] + " " + row["pl_letter"],
+                                 density = density,
+                                 mass = mass,
+                                 radius = radius,
+                                 semimajoraxis = semimajoraxis)
+    elif row['pl_name'] is not "":
+        system.planet_set.create(name = row['pl_name'],
+                                 density = density,
+                                 mass = mass,
+                                 radius = radius,
+                                 semimajoraxis = semimajoraxis)
 
 with open('astronomical_database/data/csv/catalogues/catalogues.csv') as csvfile:
 
@@ -78,6 +86,30 @@ with open('astronomical_database/data/csv/news/news.csv') as csvfile:
                     content_left = row['Content_Left'],
                     content_right = row['Content_Right'])
         post.save()
+
+with open('astronomical_database/data/csv/planets/solar_system.csv') as csvfile:
+
+    reader = csv.DictReader(csvfile, skipinitialspace = True)
+
+    for row in reader:
+
+        density = 0.0
+        if row['pl_dens'] is not "":
+            density = float(row['pl_dens'])
+
+        mass = 0.0
+        if row['pl_massj'] is not "":
+            mass = float(row['pl_massj'])
+
+        radius = 0.0
+        if row['pl_radj'] is not "":
+            radius = float(row['pl_radj'])
+
+        semimajoraxis = 0.0
+        if row['pl_orbsmax'] is not "":
+            semimajoraxis = float(row['pl_orbsmax'])
+
+        SortIntoCatalogue("Stars with proper names", density, mass, radius, semimajoraxis)
 
 with open('astronomical_database/data/csv/planets/planets.csv') as csvfile:
 
