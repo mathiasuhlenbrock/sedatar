@@ -260,7 +260,7 @@ class Planet(models.Model):
         elif self.density < 1.869 or self.radius > 0.35:
             return "gas_giant"
         else:
-            return "terrestial"
+            return "terrestrial"
 
     classification = property(_get_classification)
 
