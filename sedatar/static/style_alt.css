@@ -2,11 +2,15 @@ html, body
 {
     height: 100%;
     margin: 0em;
-    background-color: #F8F8F8;
+    background-color: #000000;
     overflow: hidden;
     /* Font settings */
     font-family: "helvetica";
     font-size: 14px;
+    /* Star Trek settings */
+    color: #6460CC; /* blue */
+    font-stretch: ultra-condensed;
+    text-transform: uppercase;
 }
 
 /* Essential CSS for the grid layout */
@@ -62,35 +66,35 @@ body > .grid
 
 #cell1
 {
-    background: #808080;
+    background: #EBEB99; /* beige */
     width: 25px;
 }
 
 #cell2
 {
-    background: #F8F8F8;
+    background: #000000;
     width: 10px;
 }
 
 #cell3
 {
-    background: #505050; /* dark grey */
+    background: #EBEB99; /* beige */
 }
 
 #cell4
 {
-    background: #505050; /* dark grey */
+    background: #EBEB99; /* beige */
     width: 10%;
 }
 
 #cell5
 {
-    background: #F8F8F8;
+    background: #000000;
 }
 
 #cell6
 {
-    background: #F8F8F8;
+    background: #000000;
 }
 
 #cell7
@@ -101,28 +105,28 @@ body > .grid
 
 #cell8
 {
-    background: #505050; /* dark grey */
+    background: #EBEB99; /* beige */
     vertical-align: middle;
 }
 
 #cell9
 {
-    background: #808080;
+    background: #EBEB99; /* beige */
 }
 
 #cell10
 {
-    background: #F8F8F8;
+    background: #000000;
 }
 
 #cell11
 {
-    background: #505050; /* dark grey */
+    background: #EBEB99; /* beige */
 }
 
 #cell12
 {
-    background: #505050; /* dark grey */
+    background: #EBEB99; /* beige */
 }
 
 p
@@ -140,7 +144,7 @@ ul
 a
 {
     text-decoration: none;
-    color: #808080;
+    color: #C285C2;
     outline: 0; /* Removes dotted border around link */
 }
 
@@ -152,8 +156,8 @@ a > svg
 a:hover .navigation
 {
     fill-opacity: 1.0;
-    fill: #505050;
-    stroke: #505050;
+    fill: #6460CC;
+    stroke: #6460CC;
 }
 
 address
@@ -164,6 +168,7 @@ address
 
 h1, h2, h3
 {
+    color: #B2B2F0;
     display: block;
     font-weight: bold;
     margin-top: 0;
@@ -179,7 +184,7 @@ h1
 
 h1.logo
 {
-    color: #000000;
+    color: #6460CC; /* blue */
     font-size: 300%;
     font-stretch: ultra-condensed;
 }
@@ -196,33 +201,39 @@ h3
 
 input
 {
-    border-color: #808080;
+    background-color: #000000;
+    border-color: #6460CC;
     border-style: solid;
+    color: #6460CC;
     font-family: "helvetica";
+    font-stretch: ultra-condensed;
+    text-transform: uppercase;
     width: 600px;
 }
 
 button
 {
-    background-color: #808080;
+    background-color: #B2B2F0;
     border: none;
     color: #000000;
     cursor: pointer;
     font-family: "helvetica";
+    font-stretch: ultra-condensed;
+    text-transform: uppercase;
     width: 100px;
     height: 50px;
 }
 
 button:hover
 {
-    background-color: #505050;
+    background-color: #6460CC;
 }
 
 svg.logo
 {
-    fill: #808080;
+    fill: #EBEB99;
     fill-opacity: 1;
-    stroke: #808080;
+    stroke: #EBEB99;
     stroke-width: 0;
     stroke-linecap: round;
     stroke-linejoin: miter;
@@ -240,74 +251,75 @@ svg.vspace
 
 svg.vspace > rect
 {
-    fill: #F8F8F8;
-    stroke: #F8F8F8;
+    fill: #000000;
+    stroke: #000000;
     stroke-width: 2;
 }
 
 rect.navigation
 {
-    fill: #808080;
-    stroke: #808080;
+    fill: #B2B2F0;
+    stroke: #B2B2F0;
 }
 
 svg.size_comparison > text
 {
+    fill: #6460CC; /* blue */
     text-anchor: middle;
 }
 
 .spectral_class_0
 {
-    fill: #E8E8E8;
-    stroke: #F8F8F8;
+    fill: #5599FF;
+    stroke: #000000;
 }
 
 .spectral_class_B
 {
-    fill: #D8D8D8;
-    stroke: #F8F8F8;
+    fill: #99CCFF;
+    stroke: #000000;
 }
 
 .spectral_class_A
 {
-    fill: #B8B8B8;
-    stroke: #F8F8F8;
+    fill: #B2B2F0;
+    stroke: #000000;
 }
 
 .spectral_class_F
 {
-    fill: #989898;
-    stroke: #F8F8F8;
+    fill: #FFFF99;
+    stroke: #000000;
 }
 
 .spectral_class_G
 {
-    fill: #808080;
-    stroke: #F8F8F8;
+    fill: #EBEB99;
+    stroke: #000000;
 }
 
 .spectral_class_K
 {
-    fill: #585858;
-    stroke: #F8F8F8;
+    fill: #FF9966;
+    stroke: #000000;
 }
 
 .spectral_class_M
 {
-    fill: #282828;
-    stroke: #F8F8F8;
+    fill: #DD6644;
+    stroke: #000000;
 }
 
 .spectral_class_L
 {
-    fill: #202020;
-    stroke: #F8F8F8;
+    fill: #9966CC;
+    stroke: #000000;
 }
 
 .spectral_class_T
 {
-    fill: #202020;
-    stroke: #F8F8F8;
+    fill: #C285C2;
+    stroke: #000000;
 }
 
 .spectral_class_WD
@@ -318,54 +330,56 @@ svg.size_comparison > text
 
 .spectral_class_default
 {
-    fill: #000000;
-    stroke: #F8F8F8;
+    fill: #413839;
+    stroke: #000000;
 }
 
 #sun
 {
-    fill: #808080;
+    fill: #EBEB99;
+    stroke: #000000;
 }
 
 svg.planetary_system > ellipse
 {
     fill: #000000;
     fill-opacity: 0.0;
-    stroke: #000000;
-    stroke-dasharray: 5,2;
+    stroke: #CC99CC;
     stroke-width: 2;
 }
 
-.terrestrial
+.terrestial
 {
-    fill: #505050;
-    stroke: #F8F8F8;
+    fill: #FF9966;
+    stroke: #000000;
 }
 
 .background
 {
-    fill: #F8F8F8;
+    fill: #000000;
 }
 
 .gas_giant
 {
-    stroke: #808080;
+    fill: #B2B2F0;
+    stroke: #B2B2F0;
 }
 
 .default
 {
-    fill: #000000;
-    stroke: #F8F8F8;
+    fill: #413839;
+    stroke: #000000;
 }
 
 svg.planetary_system > line
 {
-    stroke: #808080;
+    stroke: #6460CC;
     stroke-width: 2;
 }
 
 svg.planetary_system > text
 {
+    fill: #6460CC;
     text-anchor: top;
 }
 
@@ -455,13 +469,7 @@ text.text
 #unknown_radius
 {
     fill-opacity: 0.0;
-    stroke: #F8F8F8;
+    stroke: #000000;
     stroke-dasharray: 2,5;
     stroke-width: 3;
-}
-
-#hatch > rect
-{
-    fill: #808080;
-    stroke: #808080;
 }
