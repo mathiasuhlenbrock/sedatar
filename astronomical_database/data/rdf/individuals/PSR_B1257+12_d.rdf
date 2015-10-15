@@ -1,0 +1,10 @@
+<rdf:Description rdf:about="urn://sedatar.org/astronomical_database/individuals/PSR_B1257+12_d">
+  <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class" />
+  <rdfs:label>PSR B1257+12 d</rdfs:label>
+  <ontology:distance>600.00</ontology:distance>
+  <ontology:size></ontology:size>
+  <ontology:mass>0.01227</ontology:mass>
+  <ontology:density></ontology:density>
+  <ontology:semimajoraxis>0.460000</ontology:semimajoraxis>
+  <rdfs:subClassOf rdf:resource="urn://sedatar.org/astronomical_database/astronomy/Exoplanet" />
+</rdf:Description>

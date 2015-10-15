@@ -1,0 +1,10 @@
+<rdf:Description rdf:about="urn://sedatar.org/astronomical_database/individuals/Kepler-18_d">
+  <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class" />
+  <rdfs:label>Kepler 18 d</rdfs:label>
+  <ontology:distance></ontology:distance>
+  <ontology:size>0.623</ontology:size>
+  <ontology:mass>0.05200</ontology:mass>
+  <ontology:density>0.27000</ontology:density>
+  <ontology:semimajoraxis>0.117200</ontology:semimajoraxis>
+  <rdfs:subClassOf rdf:resource="urn://sedatar.org/astronomical_database/astronomy/Exoplanet" />
+</rdf:Description>

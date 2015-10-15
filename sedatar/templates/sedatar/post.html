@@ -1,0 +1,30 @@
+{% extends "sedatar/base.html" %}
+
+{% block content %}
+  <div id="main_text">
+    <div id="text_header">
+      <h1>{{ post.headline }}</h1>
+      <p></p>
+      <h3>{{ post.date|date:"Y-m-d" }} | {{ post.author }}</h3>
+    </div>
+    <div id="text_left_column">
+      {{ post.content_left|safe }}
+    </div>
+    <div id="text_right_column">
+      {{ post.content_right|safe }}
+    </div>
+    <div id="text_footer">
+    </div>
+  </div>
+{% endblock %}
+
+{% block navigation %}
+  <!-- Button "Home" -->
+  <svg class="vspace"><rect width="100%" height="100%"></rect></svg>
+  <a href="/"><svg width="100%" height="100"><rect class="navigation" width="100%" height="100%"/><text class="text" x="10" y="90">Home</text></svg></a>
+
+  <!-- Button "Up" -->
+  <svg class="vspace"><rect width="100%" height="100%"></rect></svg>
+  <a href="../"><svg width="100%" height="100"><rect class="navigation" width="100%" height="100%"/><text class="text" x="10" y="90">Up</text></svg></a>
+  <svg class="vspace"><rect width="100%" height="100%"></rect></svg>
+{% endblock %}

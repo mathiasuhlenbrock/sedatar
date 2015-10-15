@@ -1,0 +1,58 @@
+{% extends "sedatar/base.html" %}
+
+{% block content %}
+  <div id="main_text">
+    <div id="text_header">
+      <h1>Astronomical database</h1>
+      <p>
+        A list of all database entries sorted according to category.
+      </p>
+    </div>
+    <div id="text_multicolumn_2">
+      <table>
+      {% for category in list_of_categories.object_list %}
+        {% if forloop.counter <= 20 %}
+        <tr>
+          <td class="cell_standard">
+            <a href="{{ category.link }}">{{ category.name }}</a>
+          </td>
+        </tr>
+        {% endif %}
+      {% empty %}
+        <tr>
+          <td class="cell_standard">
+            No categories are yet available.
+          </td>
+        </tr>
+      {% endfor %}
+      </table>
+    </div>
+    <div id="text_footer">
+      <br>
+      <div class="pagination">
+        <span class="step-links">
+          {% if list_of_categories.has_previous %}
+            <a href="?page={{ list_of_categories.previous_page_number }}" accesskey="h">previous</a> |
+          {% endif %}
+          <span class="current">
+            page {{ list_of_categories.number }} of {{ list_of_categories.paginator.num_pages }}
+          </span>
+          {% if list_of_categories.has_next %}
+            | <a href="?page={{ list_of_categories.next_page_number }}" accesskey="l">next</a>
+          {% endif %}
+        </span>
+      </div>
+    </div>
+  </div>
+{% endblock %}
+
+{% block navigation %}
+  <!-- Button "Home" -->
+  <svg class="vspace"><rect width="100%" height="100%"></rect></svg>
+  <a href="/"><svg width="100%" height="100"><rect class="navigation" width="100%" height="100%" /><text class="text" x="10" y="90">Home</text></svg></a>
+
+  <!-- Button "Up" -->
+  <svg class="vspace"><rect width="100%" height="100%"></rect></svg>
+  <a href="/List_of_databases/"><svg width="100%" height="100"><rect class="navigation" width="100%" height="100%" /><text class="text" x="10" y="90">Up</text></svg></a>
+  <svg class="vspace"><rect width="100%" height="100%"></rect></svg>
+{% endblock %}

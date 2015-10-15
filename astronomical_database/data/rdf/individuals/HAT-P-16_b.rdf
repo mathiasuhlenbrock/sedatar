@@ -1,0 +1,10 @@
+<rdf:Description rdf:about="urn://sedatar.org/astronomical_database/individuals/HAT-P-16_b">
+  <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class" />
+  <rdfs:label>HAT P 16 b</rdfs:label>
+  <ontology:distance>235.00</ontology:distance>
+  <ontology:size>1.289</ontology:size>
+  <ontology:mass>4.19300</ontology:mass>
+  <ontology:density>2.42000</ontology:density>
+  <ontology:semimajoraxis>0.041300</ontology:semimajoraxis>
+  <rdfs:subClassOf rdf:resource="urn://sedatar.org/astronomical_database/astronomy/Exoplanet" />
+</rdf:Description>

@@ -1,0 +1,10 @@
+<rdf:Description rdf:about="urn://sedatar.org/astronomical_database/individuals/WASP-44_b">
+  <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class" />
+  <rdfs:label>WASP 44 b</rdfs:label>
+  <ontology:distance></ontology:distance>
+  <ontology:size>1.140</ontology:size>
+  <ontology:mass>0.88900</ontology:mass>
+  <ontology:density>0.81100</ontology:density>
+  <ontology:semimajoraxis>0.034730</ontology:semimajoraxis>
+  <rdfs:subClassOf rdf:resource="urn://sedatar.org/astronomical_database/astronomy/Exoplanet" />
+</rdf:Description>

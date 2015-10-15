@@ -1,0 +1,10 @@
+<rdf:Description rdf:about="urn://sedatar.org/astronomical_database/individuals/WASP-12_b">
+  <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class" />
+  <rdfs:label>WASP 12 b</rdfs:label>
+  <ontology:distance></ontology:distance>
+  <ontology:size>1.790</ontology:size>
+  <ontology:mass>1.41000</ontology:mass>
+  <ontology:density>0.24000</ontology:density>
+  <ontology:semimajoraxis>0.022900</ontology:semimajoraxis>
+  <rdfs:subClassOf rdf:resource="urn://sedatar.org/astronomical_database/astronomy/Exoplanet" />
+</rdf:Description>

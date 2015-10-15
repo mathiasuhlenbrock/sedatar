@@ -1,0 +1,6 @@
+<rdf:Description rdf:about="urn://sedatar.org/astronomical_database/individuals/Jupiter">
+  <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class"/>
+  <rdfs:label>Jupiter</rdfs:label>
+  <ontology:size>1.</ontology:size>
+  <rdfs:subClassOf rdf:resource="urn://sedatar.org/astronomical_database/astronomy/Planet"/>
+</rdf:Description>

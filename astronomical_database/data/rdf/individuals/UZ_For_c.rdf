@@ -1,0 +1,10 @@
+<rdf:Description rdf:about="urn://sedatar.org/astronomical_database/individuals/UZ_For_c">
+  <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class" />
+  <rdfs:label>UZ For c</rdfs:label>
+  <ontology:distance></ontology:distance>
+  <ontology:size></ontology:size>
+  <ontology:mass>7.70000</ontology:mass>
+  <ontology:density></ontology:density>
+  <ontology:semimajoraxis>2.800000</ontology:semimajoraxis>
+  <rdfs:subClassOf rdf:resource="urn://sedatar.org/astronomical_database/astronomy/Exoplanet" />
+</rdf:Description>

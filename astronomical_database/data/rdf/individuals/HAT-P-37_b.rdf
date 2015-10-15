@@ -1,0 +1,10 @@
+<rdf:Description rdf:about="urn://sedatar.org/astronomical_database/individuals/HAT-P-37_b">
+  <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class" />
+  <rdfs:label>HAT P 37 b</rdfs:label>
+  <ontology:distance>411.00</ontology:distance>
+  <ontology:size>1.178</ontology:size>
+  <ontology:mass>1.16900</ontology:mass>
+  <ontology:density>0.89000</ontology:density>
+  <ontology:semimajoraxis>0.037900</ontology:semimajoraxis>
+  <rdfs:subClassOf rdf:resource="urn://sedatar.org/astronomical_database/astronomy/Exoplanet" />
+</rdf:Description>

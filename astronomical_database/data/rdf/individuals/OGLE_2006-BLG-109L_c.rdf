@@ -1,0 +1,10 @@
+<rdf:Description rdf:about="urn://sedatar.org/astronomical_database/individuals/OGLE_2006-BLG-109L_c">
+  <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class" />
+  <rdfs:label>OGLE 2006 BLG 109L c</rdfs:label>
+  <ontology:distance>1510.00</ontology:distance>
+  <ontology:size></ontology:size>
+  <ontology:mass>0.27000</ontology:mass>
+  <ontology:density></ontology:density>
+  <ontology:semimajoraxis>4.500000</ontology:semimajoraxis>
+  <rdfs:subClassOf rdf:resource="urn://sedatar.org/astronomical_database/astronomy/Exoplanet" />
+</rdf:Description>

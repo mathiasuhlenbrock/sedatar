@@ -1,0 +1,10 @@
+<rdf:Description rdf:about="urn://sedatar.org/astronomical_database/individuals/HAT-P-54_b">
+  <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class" />
+  <rdfs:label>HAT P 54 b</rdfs:label>
+  <ontology:distance>135.80</ontology:distance>
+  <ontology:size>0.944</ontology:size>
+  <ontology:mass>0.76000</ontology:mass>
+  <ontology:density>1.11800</ontology:density>
+  <ontology:semimajoraxis>0.041170</ontology:semimajoraxis>
+  <rdfs:subClassOf rdf:resource="urn://sedatar.org/astronomical_database/astronomy/Exoplanet" />
+</rdf:Description>

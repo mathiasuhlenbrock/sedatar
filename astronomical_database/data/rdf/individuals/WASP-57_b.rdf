@@ -1,0 +1,10 @@
+<rdf:Description rdf:about="urn://sedatar.org/astronomical_database/individuals/WASP-57_b">
+  <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class" />
+  <rdfs:label>WASP 57 b</rdfs:label>
+  <ontology:distance>455.00</ontology:distance>
+  <ontology:size>0.916</ontology:size>
+  <ontology:mass>0.67200</ontology:mass>
+  <ontology:density>1.16100</ontology:density>
+  <ontology:semimajoraxis>0.038600</ontology:semimajoraxis>
+  <rdfs:subClassOf rdf:resource="urn://sedatar.org/astronomical_database/astronomy/Exoplanet" />
+</rdf:Description>

@@ -1,0 +1,10 @@
+<rdf:Description rdf:about="urn://sedatar.org/astronomical_database/individuals/Ross_458_c">
+  <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class" />
+  <rdfs:label>Ross 458 c</rdfs:label>
+  <ontology:distance>11.43</ontology:distance>
+  <ontology:size>1.220</ontology:size>
+  <ontology:mass>6.28536</ontology:mass>
+  <ontology:density></ontology:density>
+  <ontology:semimajoraxis>1168.000000</ontology:semimajoraxis>
+  <rdfs:subClassOf rdf:resource="urn://sedatar.org/astronomical_database/astronomy/Exoplanet" />
+</rdf:Description>

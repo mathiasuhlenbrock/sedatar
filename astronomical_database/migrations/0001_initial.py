@@ -52,18 +52,6 @@ class Migration(migrations.Migration):
                 ('catalogue', models.ForeignKey(to='astronomical_database.Catalogue')),
             ],
         ),
-        migrations.CreateModel(
-            name='Post',
-            fields=[
-                ('id', models.AutoField(verbose_name='ID', serialize=False, auto_created=True, primary_key=True)),
-                ('name', models.CharField(max_length=200)),
-                ('author', models.CharField(max_length=200)),
-                ('date', models.DateField()),
-                ('headline', models.CharField(max_length=200)),
-                ('content_left', models.TextField(default=b'')),
-                ('content_right', models.TextField(default=b'', blank=True)),
-            ],
-        ),
         migrations.AddField(
             model_name='planet',
             name='system',

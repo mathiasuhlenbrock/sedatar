@@ -1,0 +1,10 @@
+<rdf:Description rdf:about="urn://sedatar.org/astronomical_database/individuals/ROXs_42_B_b">
+  <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class" />
+  <rdfs:label>ROXs 42 B b</rdfs:label>
+  <ontology:distance>135.00</ontology:distance>
+  <ontology:size></ontology:size>
+  <ontology:mass>9.00000</ontology:mass>
+  <ontology:density></ontology:density>
+  <ontology:semimajoraxis>157.000000</ontology:semimajoraxis>
+  <rdfs:subClassOf rdf:resource="urn://sedatar.org/astronomical_database/astronomy/Exoplanet" />
+</rdf:Description>
