@@ -3,7 +3,7 @@
 from django.core.paginator import Paginator, EmptyPage
 from django.shortcuts      import get_object_or_404, render_to_response
 
-from astronomical_database.models import * 
+from astronomical_database.models import *
 
 # Create your views here.
 
@@ -64,6 +64,11 @@ def database(request):
 
 def index(request):
     return render_to_response('astronomical_database/index.html')
+
+def planet(request, planet_page_name):
+    planet = get_object_or_404(Planet, name = planet_page_name.replace("_", " "))
+
+    return render_to_response('astronomical_database/planet.html', {'planet': planet})
 
 def planetary_system(request, planetary_system_page_name):
     planetary_system = get_object_or_404(PlanetarySystem, name = planetary_system_page_name.replace("_", " "))

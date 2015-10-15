@@ -17,9 +17,6 @@ class Migration(migrations.Migration):
                 ('name', models.CharField(max_length=200)),
                 ('acronym', models.CharField(max_length=200)),
             ],
-            options={
-            },
-            bases=(models.Model,),
         ),
         migrations.CreateModel(
             name='Category',
@@ -28,23 +25,19 @@ class Migration(migrations.Migration):
                 ('name', models.CharField(max_length=200)),
                 ('link', models.CharField(max_length=200)),
             ],
-            options={
-            },
-            bases=(models.Model,),
         ),
         migrations.CreateModel(
             name='Planet',
             fields=[
                 ('id', models.AutoField(verbose_name='ID', serialize=False, auto_created=True, primary_key=True)),
                 ('name', models.CharField(max_length=200)),
-                ('density', models.FloatField(default=0.0)),
+                ('year_of_discovery', models.CharField(max_length=200)),
                 ('mass', models.FloatField(default=0.0)),
                 ('radius', models.FloatField(default=0.0)),
+                ('density', models.FloatField(default=0.0)),
                 ('semimajoraxis', models.FloatField(default=0.0)),
+                ('orbital_period', models.FloatField(default=0.0)),
             ],
-            options={
-            },
-            bases=(models.Model,),
         ),
         migrations.CreateModel(
             name='PlanetarySystem',
@@ -58,9 +51,6 @@ class Migration(migrations.Migration):
                 ('host_BminusV', models.FloatField(default=0.0)),
                 ('catalogue', models.ForeignKey(to='astronomical_database.Catalogue')),
             ],
-            options={
-            },
-            bases=(models.Model,),
         ),
         migrations.CreateModel(
             name='Post',
@@ -71,16 +61,12 @@ class Migration(migrations.Migration):
                 ('date', models.DateField()),
                 ('headline', models.CharField(max_length=200)),
                 ('content_left', models.TextField(default=b'')),
-                ('content_right', models.TextField(default=b'')),
+                ('content_right', models.TextField(default=b'', blank=True)),
             ],
-            options={
-            },
-            bases=(models.Model,),
         ),
         migrations.AddField(
             model_name='planet',
             name='system',
             field=models.ForeignKey(to='astronomical_database.PlanetarySystem'),
-            preserve_default=True,
         ),
     ]

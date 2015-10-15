@@ -42,11 +42,11 @@
       <!-- Pluto density: 1.869 g/cm^3, Neptune radius: 0.35 R_Jup -->
       {% for planet in list_of_planets.object_list %}
         {% if planet.density <= 0.0 %}
-          {{ planet.name }} (classification not available)<br>
+          <a href="/astronomical_database/List_of_planets/{{ planet.page_name }}">{{ planet.name }}</a> (classification not available)<br>
         {% elif planet.density < 1.869 or planet.radius > 0.35 %}
-          {{ planet.name }} (gas giant)<br>
+          <a href="/astronomical_database/List_of_planets/{{ planet.page_name }}">{{ planet.name }}</a> (gas giant)<br>
         {% else %}
-          {{ planet.name }} (terrestrial)<br>
+          <a href="/astronomical_database/List_of_planets/{{ planet.page_name }}">{{ planet.name }}</a> (terrestrial)<br>
         {% endif %}
       {% empty %}
         No planets are yet available.
@@ -62,7 +62,7 @@
         Size: {{ planetary_system.string_max_planet_semimajoraxis }}
       </p>
       <!-- Image: Planetary system -->
-      <svg class="planetary_system" width="520" height="442">
+      <svg class="planetary_system" width="520" height="443">
         <defs>
           <pattern id="hatch" x="0" y="0" width="4" height="8" patternUnits="userSpaceOnUse" patternTransform="rotate(30)">
              <rect x="0" y="0" width="2" height="8" />
@@ -104,20 +104,20 @@
         {% if planetary_system.number_of_planets > 1 %}
           {% for planet in list_of_planets.object_list %}
             {% if planet.img_rel_semimajoraxis %}
-              {% if planet.classification == "gas_giant" %}
+              {% if planet.img_classification == "gas_giant" %}
                 <circle class="background" cx="{{ planet.img_cx }}" cy="102" r="{{ planet.img_rel_radius }}" />
-                <circle class="{{ planet.classification }}" cx="{{ planet.img_cx }}" cy="102" r="{{ planet.img_rel_inner_radius }}" fill="url(#hatch)" />
+                <circle class="{{ planet.img_classification }}" cx="{{ planet.img_cx }}" cy="102" r="{{ planet.img_rel_inner_radius }}" fill="url(#hatch)" />
               {% else %}
-                <circle class="{{ planet.classification }}" cx="{{ planet.img_cx }}" cy="102" r="{{ planet.img_rel_radius }}" />
+                <circle class="{{ planet.img_classification }}" cx="{{ planet.img_cx }}" cy="102" r="{{ planet.img_rel_radius }}" />
               {% endif %}
             {% endif %}
           {% endfor %}
         {% else %}
-          {% if list_of_planets.object_list.0.classification == "gas_giant" %}
+          {% if list_of_planets.object_list.0.img_classification == "gas_giant" %}
             <circle class="background" cx="510" cy="102" r="10" />
-            <circle class="{{ list_of_planets.object_list.0.classification }}" cx="510" cy="102" r="8" fill="url(#hatch)" />
+            <circle class="{{ list_of_planets.object_list.0.img_classification }}" cx="510" cy="102" r="8" fill="url(#hatch)" />
           {% else %}
-            <circle class="{{ list_of_planets.object_list.0.classification }}" cx="510" cy="102" r="10" />
+            <circle class="{{ list_of_planets.object_list.0.img_classification }}" cx="510" cy="102" r="10" />
           {% endif %}
         {% endif %}
       </svg>

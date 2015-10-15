@@ -8,7 +8,7 @@ import re
 
 import csv
 
-def SortIntoCatalogue(cataloguename, density, mass, radius, semimajoraxis):
+def SortIntoCatalogue(cataloguename, year_of_discovery, density, mass, radius, semimajoraxis, orbital_period):
     catalogue = Catalogue.objects.get(name = cataloguename)
 
     if not PlanetarySystem.objects.filter(name = row['pl_hostname']).exists():
@@ -44,16 +44,20 @@ def SortIntoCatalogue(cataloguename, density, mass, radius, semimajoraxis):
 
     if row["pl_letter"] is not "":
         system.planet_set.create(name = row['pl_hostname'] + " " + row["pl_letter"],
+                                 year_of_discovery = year_of_discovery,
                                  density = density,
                                  mass = mass,
                                  radius = radius,
-                                 semimajoraxis = semimajoraxis)
+                                 semimajoraxis = semimajoraxis,
+                                 orbital_period = orbital_period)
     elif row['pl_name'] is not "":
         system.planet_set.create(name = row['pl_name'],
+                                 year_of_discovery = year_of_discovery,
                                  density = density,
                                  mass = mass,
                                  radius = radius,
-                                 semimajoraxis = semimajoraxis)
+                                 semimajoraxis = semimajoraxis,
+                                 orbital_period = orbital_period)
 
 with open('astronomical_database/data/csv/catalogues/catalogues.csv') as csvfile:
 
@@ -93,6 +97,10 @@ with open('astronomical_database/data/csv/planets/solar_system.csv') as csvfile:
 
     for row in reader:
 
+        year_of_discovery = ""
+        if row['pl_disc'] is not "":
+            year_of_discovery = row['pl_disc']
+
         density = 0.0
         if row['pl_dens'] is not "":
             density = float(row['pl_dens'])
@@ -109,7 +117,11 @@ with open('astronomical_database/data/csv/planets/solar_system.csv') as csvfile:
         if row['pl_orbsmax'] is not "":
             semimajoraxis = float(row['pl_orbsmax'])
 
-        SortIntoCatalogue("Stars with proper names", density, mass, radius, semimajoraxis)
+        orbital_period = 0.0 
+        if row['pl_orbper'] is not "":
+            orbital_period = float(row['pl_orbper'])
+
+        SortIntoCatalogue("Stars with proper names", year_of_discovery, density, mass, radius, semimajoraxis, orbital_period)
 
 with open('astronomical_database/data/csv/planets/planets.csv') as csvfile:
 
@@ -117,6 +129,10 @@ with open('astronomical_database/data/csv/planets/planets.csv') as csvfile:
 
     for row in reader:
 
+        year_of_discovery = ""
+        if row['pl_disc'] is not "":
+            year_of_discovery = row['pl_disc']
+
         density = 0.0
         if row['pl_dens'] is not "":
             density = float(row['pl_dens'])
@@ -133,110 +149,114 @@ with open('astronomical_database/data/csv/planets/planets.csv') as csvfile:
         if row['pl_orbsmax'] is not "":
             semimajoraxis = float(row['pl_orbsmax'])
 
+        orbital_period = 0.0
+        if row['pl_orbper'] is not "":
+            orbital_period = float(row['pl_orbper'])
+
         if re.match("[0-9]?[0-9][ ]", row['pl_hostname']):
-            SortIntoCatalogue("Flamsteed designation", density, mass, radius, semimajoraxis)
+            SortIntoCatalogue("Flamsteed designation", year_of_discovery, density, mass, radius, semimajoraxis, orbital_period)
 
         elif re.match("HR [0-9]?[0-9]?[0-9]?[0-9]", row['pl_hostname']):
-            SortIntoCatalogue("Harvard Revised Catalogue", density, mass, radius, semimajoraxis)
+            SortIntoCatalogue("Harvard Revised Catalogue", year_of_discovery, density, mass, radius, semimajoraxis, orbital_period)
 
         elif re.match("[A-Z][A-Z] [^0-9]+", row['pl_hostname']) or re.match("V[0-9][0-9][0-9]", row['pl_hostname']):
-            SortIntoCatalogue("General Catalog of Variable Stars", density, mass, radius, semimajoraxis)
+            SortIntoCatalogue("General Catalog of Variable Stars", year_of_discovery, density, mass, radius, semimajoraxis, orbital_period)
 
         elif re.match("[a-z]?[a-z][a-z] ", row['pl_hostname']):
-            SortIntoCatalogue("Bayer designation", density, mass, radius, semimajoraxis)
+            SortIntoCatalogue("Bayer designation", year_of_discovery, density, mass, radius, semimajoraxis, orbital_period)
 
         elif row['pl_hostname'].startswith("1RXS"):
-            SortIntoCatalogue("1st ROSAT X-ray Survey", density, mass, radius, semimajoraxis)
+            SortIntoCatalogue("1st ROSAT X-ray Survey", year_of_discovery, density, mass, radius, semimajoraxis, orbital_period)
 
         elif row['pl_hostname'].startswith("2MASS"):
-            SortIntoCatalogue("Two Micron All Sky Survey", density, mass, radius, semimajoraxis)
+            SortIntoCatalogue("Two Micron All Sky Survey", year_of_discovery, density, mass, radius, semimajoraxis, orbital_period)
 
         elif row['pl_hostname'].startswith("BD"):
-            SortIntoCatalogue("Bonner Durchmusterung", density, mass, radius, semimajoraxis)
+            SortIntoCatalogue("Bonner Durchmusterung", year_of_discovery, density, mass, radius, semimajoraxis, orbital_period)
 
         elif row['pl_hostname'].startswith("CHXR"):
-            SortIntoCatalogue("Chamaeleon X-ray source ROSAT satellite", density, mass, radius, semimajoraxis)
+            SortIntoCatalogue("Chamaeleon X-ray source ROSAT satellite", year_of_discovery, density, mass, radius, semimajoraxis, orbital_period)
 
         elif row['pl_hostname'].startswith("DENIS-P"):
-            SortIntoCatalogue("Deep Near Infrared Survey Provisory designation", density, mass, radius, semimajoraxis)
+            SortIntoCatalogue("Deep Near Infrared Survey Provisory designation", year_of_discovery, density, mass, radius, semimajoraxis, orbital_period)
 
         elif row['pl_hostname'].startswith("CoRoT"):
-            SortIntoCatalogue("CoRoT Catalogue", density, mass, radius, semimajoraxis)
+            SortIntoCatalogue("CoRoT Catalogue", year_of_discovery, density, mass, radius, semimajoraxis, orbital_period)
 
         elif row['pl_hostname'].startswith("GJ"):
-            SortIntoCatalogue("Gliese-Jahreiss catalogue", density, mass, radius, semimajoraxis)
+            SortIntoCatalogue("Gliese-Jahreiss catalogue", year_of_discovery, density, mass, radius, semimajoraxis, orbital_period)
 
         elif row['pl_hostname'].startswith("GSC"):
-            SortIntoCatalogue("Guide Star Catalog", density, mass, radius, semimajoraxis)
+            SortIntoCatalogue("Guide Star Catalog", year_of_discovery, density, mass, radius, semimajoraxis, orbital_period)
 
         elif row['pl_hostname'].startswith("HAT"):
-            SortIntoCatalogue("Hungarian Automated Telescope", density, mass, radius, semimajoraxis)
+            SortIntoCatalogue("Hungarian Automated Telescope", year_of_discovery, density, mass, radius, semimajoraxis, orbital_period)
 
         elif row['pl_hostname'].startswith("HD"):
-            SortIntoCatalogue("Henry Draper Catalogue", density, mass, radius, semimajoraxis)
+            SortIntoCatalogue("Henry Draper Catalogue", year_of_discovery, density, mass, radius, semimajoraxis, orbital_period)
 
         elif row['pl_hostname'].startswith("HIP"):
-            SortIntoCatalogue("Hipparcos Catalogue", density, mass, radius, semimajoraxis)
+            SortIntoCatalogue("Hipparcos Catalogue", year_of_discovery, density, mass, radius, semimajoraxis, orbital_period)
 
         elif row['pl_hostname'].startswith("K2"):
-            SortIntoCatalogue("K2 Variable Star Catalogue", density, mass, radius, semimajoraxis)
+            SortIntoCatalogue("K2 Variable Star Catalogue", year_of_discovery, density, mass, radius, semimajoraxis, orbital_period)
 
         elif row['pl_hostname'].startswith("KIC"):
-            SortIntoCatalogue("Kepler Input Catalog", density, mass, radius, semimajoraxis)
+            SortIntoCatalogue("Kepler Input Catalog", year_of_discovery, density, mass, radius, semimajoraxis, orbital_period)
 
         elif row['pl_hostname'].startswith("KELT"):
-            SortIntoCatalogue("Kilodegree Extremely Little Telescope", density, mass, radius, semimajoraxis)
+            SortIntoCatalogue("Kilodegree Extremely Little Telescope", year_of_discovery, density, mass, radius, semimajoraxis, orbital_period)
 
         elif row['pl_hostname'].startswith("KOI"):
-            SortIntoCatalogue("Kepler Object of Interest", density, mass, radius, semimajoraxis)
+            SortIntoCatalogue("Kepler Object of Interest", year_of_discovery, density, mass, radius, semimajoraxis, orbital_period)
 
         elif "Kepler" in row['pl_hostname']:
-            SortIntoCatalogue("Kepler catalog", density, mass, radius, semimajoraxis)
+            SortIntoCatalogue("Kepler catalog", year_of_discovery, density, mass, radius, semimajoraxis, orbital_period)
 
         elif row['pl_hostname'].startswith("MOA"):
-            SortIntoCatalogue("Microlensing Observations in Astrophysics", density, mass, radius, semimajoraxis)
+            SortIntoCatalogue("Microlensing Observations in Astrophysics", year_of_discovery, density, mass, radius, semimajoraxis, orbital_period)
 
         elif row['pl_hostname'].startswith("NGC"):
-            SortIntoCatalogue("New General Catalogue", density, mass, radius, semimajoraxis)
+            SortIntoCatalogue("New General Catalogue", year_of_discovery, density, mass, radius, semimajoraxis, orbital_period)
 
         elif row['pl_hostname'].startswith("OGLE"):
-            SortIntoCatalogue("Optical Gravitational Lensing Experiment", density, mass, radius, semimajoraxis)
+            SortIntoCatalogue("Optical Gravitational Lensing Experiment", year_of_discovery, density, mass, radius, semimajoraxis, orbital_period)
 
         elif row['pl_hostname'].startswith("POTS"):
-            SortIntoCatalogue("Pre-OmegaTranS project", density, mass, radius, semimajoraxis)
+            SortIntoCatalogue("Pre-OmegaTranS project", year_of_discovery, density, mass, radius, semimajoraxis, orbital_period)
 
         elif row['pl_hostname'].startswith("Qatar"):
-            SortIntoCatalogue("Qatar Exoplanet Survey", density, mass, radius, semimajoraxis)
+            SortIntoCatalogue("Qatar Exoplanet Survey", year_of_discovery, density, mass, radius, semimajoraxis, orbital_period)
 
         elif row['pl_hostname'].startswith("ROXs"):
-            SortIntoCatalogue("Rho Oph X-ray source", density, mass, radius, semimajoraxis)
+            SortIntoCatalogue("Rho Oph X-ray source", year_of_discovery, density, mass, radius, semimajoraxis, orbital_period)
 
         elif row['pl_hostname'].startswith("SWEEPS"):
-            SortIntoCatalogue("Sagittarius Window Eclipsing Extrasolar Planet Search", density, mass, radius, semimajoraxis)
+            SortIntoCatalogue("Sagittarius Window Eclipsing Extrasolar Planet Search", year_of_discovery, density, mass, radius, semimajoraxis, orbital_period)
 
         elif row['pl_hostname'].startswith("TrES"):
-            SortIntoCatalogue("Trans-Atlantic Exoplanet Survey", density, mass, radius, semimajoraxis)
+            SortIntoCatalogue("Trans-Atlantic Exoplanet Survey", year_of_discovery, density, mass, radius, semimajoraxis, orbital_period)
 
         elif row['pl_hostname'].startswith("TYC"):
-            SortIntoCatalogue("Tycho Catalogue", density, mass, radius, semimajoraxis)
+            SortIntoCatalogue("Tycho Catalogue", year_of_discovery, density, mass, radius, semimajoraxis, orbital_period)
 
         elif row['pl_hostname'].startswith("USco"):
-            SortIntoCatalogue("Upper Sco Cerro Tololo Inter-american Obs", density, mass, radius, semimajoraxis)
+            SortIntoCatalogue("Upper Sco Cerro Tololo Inter-american Obs", year_of_discovery, density, mass, radius, semimajoraxis, orbital_period)
 
         elif row['pl_hostname'].startswith("WASP"):
-            SortIntoCatalogue("Wide Angle Search for Planets", density, mass, radius, semimajoraxis)
+            SortIntoCatalogue("Wide Angle Search for Planets", year_of_discovery, density, mass, radius, semimajoraxis, orbital_period)
 
         elif row['pl_hostname'].startswith("WTS"):
-            SortIntoCatalogue("WFCAM Transit Survey", density, mass, radius, semimajoraxis)
+            SortIntoCatalogue("WFCAM Transit Survey", year_of_discovery, density, mass, radius, semimajoraxis, orbital_period)
 
         elif row['pl_hostname'].startswith("XO"):
-            SortIntoCatalogue("XO project", density, mass, radius, semimajoraxis)
+            SortIntoCatalogue("XO project", year_of_discovery, density, mass, radius, semimajoraxis, orbital_period)
 
         elif row['pl_hostname'].startswith("PSR"):
-            SortIntoCatalogue("Parkes Selected Region", density, mass, radius, semimajoraxis)
+            SortIntoCatalogue("Parkes Selected Region", year_of_discovery, density, mass, radius, semimajoraxis, orbital_period)
 
         elif row['pl_hostname'] == "Fomalhaut" or row['pl_hostname'] == "Kapteyn":
-            SortIntoCatalogue("Stars with proper names", density, mass, radius, semimajoraxis)
+            SortIntoCatalogue("Stars with proper names", year_of_discovery, density, mass, radius, semimajoraxis, orbital_period)
 
         else:
-            SortIntoCatalogue("Other stars", density, mass, radius, semimajoraxis)
+            SortIntoCatalogue("Other stars", year_of_discovery, density, mass, radius, semimajoraxis, orbital_period)

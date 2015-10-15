@@ -251,6 +251,11 @@ rect.navigation
     stroke: #808080;
 }
 
+svg.size_comparison > circle
+{
+    stroke-width: 2;
+}
+
 svg.size_comparison > text
 {
     text-anchor: middle;
@@ -313,7 +318,7 @@ svg.size_comparison > text
 .spectral_class_WD
 {
     fill: #FFFFFF;
-    stroke: #000000;
+    stroke: #F8F8F8;
 }
 
 .spectral_class_default
@@ -325,6 +330,12 @@ svg.size_comparison > text
 #sun
 {
     fill: #808080;
+    stroke: #F8F8F8;
+}
+
+#jupiter
+{
+    stroke: #808080;
 }
 
 svg.planetary_system > ellipse

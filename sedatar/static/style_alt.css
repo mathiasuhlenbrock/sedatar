@@ -340,6 +340,12 @@ svg.size_comparison > text
     stroke: #000000;
 }
 
+#jupiter
+{
+    fill: #B2B2F0;
+    stroke: #000000;
+}
+
 svg.planetary_system > ellipse
 {
     fill: #000000;
@@ -348,7 +354,7 @@ svg.planetary_system > ellipse
     stroke-width: 2;
 }
 
-.terrestial
+.terrestrial
 {
     fill: #FF9966;
     stroke: #000000;

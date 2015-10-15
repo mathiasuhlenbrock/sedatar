@@ -233,15 +233,24 @@ class Post(models.Model):
        return self.name
 
 class Planet(models.Model):
-    name          = models.CharField(max_length = 200)
-    system        = models.ForeignKey(PlanetarySystem)
-    density       = models.FloatField(default = 0.0)
-    mass          = models.FloatField(default = 0.0)
-    radius        = models.FloatField(default = 0.0)
-    semimajoraxis = models.FloatField(default = 0.0)
+    name              = models.CharField(max_length = 200)
+    system            = models.ForeignKey(PlanetarySystem)
+    year_of_discovery = models.CharField(max_length = 200)
+    mass              = models.FloatField(default = 0.0)
+    radius            = models.FloatField(default = 0.0)
+    density           = models.FloatField(default = 0.0)
+    semimajoraxis     = models.FloatField(default = 0.0)
+    orbital_period    = models.FloatField(default = 0.0)
+    #temperature      = models.FloatField(default = 0.0)
+    #gravity          = models.FloatField(default = 0.0)
  
     def __unicode__(self):
        return self.name
+
+    def _get_page_name(self):
+        return self.name.replace(" ", "_")
+
+    page_name = property(_get_page_name)
 
     def _get_index(self):
         index = 0
@@ -256,11 +265,11 @@ class Planet(models.Model):
 
     def _get_classification(self):
         if self.density <= 0.0:
-            return "default"
+            return "No classification available"
         elif self.density < 1.869 or self.radius > 0.35:
-            return "gas_giant"
+            return "Gas giant"
         else:
-            return "terrestrial"
+            return "Terrestrial planet"
 
     classification = property(_get_classification)
 
@@ -271,7 +280,77 @@ class Planet(models.Model):
 
     rel_axis = property(_get_rel_axis)
 
+    # String representations of planetary parameters.
+
+    def _get_string_radius(self):
+        if self.radius > 0.:
+            return str(self.radius) + " R<sub>&#9795;</sub>"
+        else:
+            return "Not available"
+
+    string_radius = property(_get_string_radius)
+
+    def _get_string_mass(self):
+        if self.mass > 0.:
+            return str(self.mass) + " M<sub>&#9795;</sub>"
+        else:
+            return "Not available"
+
+    string_mass = property(_get_string_mass)
+
+    def _get_string_density(self):
+        if self.density > 0.:
+            return str(self.density) + " g/cm&sup3;"
+        else:
+            return "Not available"
+
+    string_density = property(_get_string_density)
+
+    def _get_string_semimajoraxis(self):
+        if self.semimajoraxis > 0.:
+            return str(self.semimajoraxis) + " AU"
+        else:
+            return "Not available"
+
+    string_semimajoraxis = property(_get_string_semimajoraxis)
+
+    def _get_string_orbital_period(self):
+        if self.orbital_period > 0:
+            return str(self.orbital_period) + " days"
+        else:
+            return "Not available"
+
+    string_orbital_period = property(_get_string_orbital_period)
+
     # Image parameters.
+
+    def _get_img_classification(self):
+        if self.density <= 0.0:
+            return "default"
+        elif self.density < 1.869 or self.radius > 0.35:
+            return "gas_giant"
+        else:
+            return "terrestrial"
+
+    img_classification = property(_get_img_classification)
+
+    def _get_img_radius(self):
+        if self.radius <= 1. and self.radius > 0.:
+            return round(50 * self.radius)
+        elif self.radius > 1.:
+            return 50
+        else:
+            return 0
+
+    img_radius = property(_get_img_radius)
+
+    def _get_img_jupiter_radius(self):
+        if self.radius <= 1.:
+            return 50
+        else:
+            return round(50 / self.radius)
+
+    img_jupiter_radius = property(_get_img_jupiter_radius)
 
     def _get_img_rel_radius(self):
        if self.radius:
