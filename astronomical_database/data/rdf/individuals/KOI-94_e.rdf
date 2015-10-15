@@ -1,0 +1,10 @@
+<rdf:Description rdf:about="urn://sedatar.org/astronomical_database/individuals/KOI-94_e">
+  <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class" />
+  <rdfs:label>KOI 94 e</rdfs:label>
+  <ontology:distance></ontology:distance>
+  <ontology:size>0.585</ontology:size>
+  <ontology:mass>0.11000</ontology:mass>
+  <ontology:density>0.60000</ontology:density>
+  <ontology:semimajoraxis>0.304600</ontology:semimajoraxis>
+  <rdfs:subClassOf rdf:resource="urn://sedatar.org/astronomical_database/astronomy/Exoplanet" />
+</rdf:Description>

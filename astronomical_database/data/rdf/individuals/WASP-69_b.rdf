@@ -1,0 +1,10 @@
+<rdf:Description rdf:about="urn://sedatar.org/astronomical_database/individuals/WASP-69_b">
+  <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class" />
+  <rdfs:label>WASP 69 b</rdfs:label>
+  <ontology:distance>50.00</ontology:distance>
+  <ontology:size>1.057</ontology:size>
+  <ontology:mass>0.26000</ontology:mass>
+  <ontology:density>0.29100</ontology:density>
+  <ontology:semimajoraxis>0.045250</ontology:semimajoraxis>
+  <rdfs:subClassOf rdf:resource="urn://sedatar.org/astronomical_database/astronomy/Exoplanet" />
+</rdf:Description>

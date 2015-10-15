@@ -1,0 +1,10 @@
+<rdf:Description rdf:about="urn://sedatar.org/astronomical_database/individuals/OGLE_2008-BLG-92L_b">
+  <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class" />
+  <rdfs:label>OGLE 2008 BLG 92L b</rdfs:label>
+  <ontology:distance>8100.00</ontology:distance>
+  <ontology:size></ontology:size>
+  <ontology:mass>0.18000</ontology:mass>
+  <ontology:density></ontology:density>
+  <ontology:semimajoraxis>18.000000</ontology:semimajoraxis>
+  <rdfs:subClassOf rdf:resource="urn://sedatar.org/astronomical_database/astronomy/Exoplanet" />
+</rdf:Description>

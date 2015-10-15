@@ -1,0 +1,10 @@
+<rdf:Description rdf:about="urn://sedatar.org/astronomical_database/individuals/Kepler-23_c">
+  <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class" />
+  <rdfs:label>Kepler 23 c</rdfs:label>
+  <ontology:distance>800.00</ontology:distance>
+  <ontology:size>0.285</ontology:size>
+  <ontology:mass>2.70000</ontology:mass>
+  <ontology:density></ontology:density>
+  <ontology:semimajoraxis>0.099000</ontology:semimajoraxis>
+  <rdfs:subClassOf rdf:resource="urn://sedatar.org/astronomical_database/astronomy/Exoplanet" />
+</rdf:Description>

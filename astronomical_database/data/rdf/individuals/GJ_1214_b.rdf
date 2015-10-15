@@ -1,0 +1,10 @@
+<rdf:Description rdf:about="urn://sedatar.org/astronomical_database/individuals/GJ_1214_b">
+  <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class" />
+  <rdfs:label>GJ 1214 b</rdfs:label>
+  <ontology:distance></ontology:distance>
+  <ontology:size>0.203</ontology:size>
+  <ontology:mass>0.02000</ontology:mass>
+  <ontology:density>3.03000</ontology:density>
+  <ontology:semimajoraxis></ontology:semimajoraxis>
+  <rdfs:subClassOf rdf:resource="urn://sedatar.org/astronomical_database/astronomy/Exoplanet" />
+</rdf:Description>

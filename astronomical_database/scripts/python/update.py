@@ -1,12 +1,7 @@
-from astronomical_database.models import Catalogue
-from astronomical_database.models import Category
-from astronomical_database.models import Planet
-from astronomical_database.models import PlanetarySystem
-from astronomical_database.models import Post
-
-import re
+from astronomical_database.models import *
 
 import csv
+import re
 
 def SortIntoCatalogue(cataloguename, year_of_discovery, density, mass, radius, semimajoraxis, orbital_period):
     catalogue = Catalogue.objects.get(name = cataloguename)
@@ -76,20 +71,6 @@ with open('astronomical_database/data/csv/categories/categories.csv') as csvfile
 
         category = Category(name = row['Category'], link = row['Link'])
         category.save()
-
-with open('astronomical_database/data/csv/news/news.csv') as csvfile:
-
-    reader = csv.DictReader(csvfile, skipinitialspace = True, escapechar = '"')
-
-    for row in reader:
-
-        post = Post(name = row['Date'],
-                    author = row['Author'],
-                    date = row['Date'],
-                    headline = row['Headline'],
-                    content_left = row['Content_Left'],
-                    content_right = row['Content_Right'])
-        post.save()
 
 with open('astronomical_database/data/csv/planets/solar_system.csv') as csvfile:
 

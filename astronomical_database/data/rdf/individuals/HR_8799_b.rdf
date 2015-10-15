@@ -1,0 +1,10 @@
+<rdf:Description rdf:about="urn://sedatar.org/astronomical_database/individuals/HR_8799_b">
+  <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class" />
+  <rdfs:label>HR 8799 b</rdfs:label>
+  <ontology:distance>39.94</ontology:distance>
+  <ontology:size>1.200</ontology:size>
+  <ontology:mass>7.00000</ontology:mass>
+  <ontology:density></ontology:density>
+  <ontology:semimajoraxis>68.000000</ontology:semimajoraxis>
+  <rdfs:subClassOf rdf:resource="urn://sedatar.org/astronomical_database/astronomy/Exoplanet" />
+</rdf:Description>

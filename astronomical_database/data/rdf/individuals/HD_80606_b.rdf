@@ -1,0 +1,10 @@
+<rdf:Description rdf:about="urn://sedatar.org/astronomical_database/individuals/HD_80606_b">
+  <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class" />
+  <rdfs:label>HD 80606 b</rdfs:label>
+  <ontology:distance>29.04</ontology:distance>
+  <ontology:size>0.980</ontology:size>
+  <ontology:mass>3.94000</ontology:mass>
+  <ontology:density></ontology:density>
+  <ontology:semimajoraxis>0.449000</ontology:semimajoraxis>
+  <rdfs:subClassOf rdf:resource="urn://sedatar.org/astronomical_database/astronomy/Exoplanet" />
+</rdf:Description>

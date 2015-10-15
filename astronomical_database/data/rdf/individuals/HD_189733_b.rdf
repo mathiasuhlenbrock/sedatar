@@ -1,0 +1,10 @@
+<rdf:Description rdf:about="urn://sedatar.org/astronomical_database/individuals/HD_189733_b">
+  <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class" />
+  <rdfs:label>HD 189733 b</rdfs:label>
+  <ontology:distance>19.25</ontology:distance>
+  <ontology:size>1.151</ontology:size>
+  <ontology:mass>1.15000</ontology:mass>
+  <ontology:density>1.00400</ontology:density>
+  <ontology:semimajoraxis>0.031420</ontology:semimajoraxis>
+  <rdfs:subClassOf rdf:resource="urn://sedatar.org/astronomical_database/astronomy/Exoplanet" />
+</rdf:Description>
