@@ -1,7 +1,7 @@
 import csv
 import sys 
 
-with open('../../data/csv/planets/planets.09-01-2015.stripped.csv') as csvfile_old:
+with open('../../data/csv/planets/planets.10-01-2015.stripped.csv') as csvfile_old:
 
     reader = csv.DictReader(csvfile_old,skipinitialspace=True)
 
@@ -11,7 +11,7 @@ with open('../../data/csv/planets/planets.09-01-2015.stripped.csv') as csvfile_o
 
         planetlist_old.append(row['pl_hostname'] + " " + row['pl_letter'])
 
-    csvfile_new = open('../../data/csv/planets/planets.10-01-2015.stripped.csv')
+    csvfile_new = open('../../data/csv/planets/planets.11-05-2015.stripped.csv')
 
     reader = csv.DictReader(csvfile_new,skipinitialspace=True)
 
