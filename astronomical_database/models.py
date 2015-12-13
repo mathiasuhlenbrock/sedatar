@@ -199,7 +199,7 @@ class PlanetarySystem(models.Model):
     img_host_rel_radius = property(_get_img_host_rel_radius)
 
     def _get_img_host_rel_inner_radius(self):
-       return self.img_host_rel_radius - 2 
+       return self.img_host_rel_radius - 2
 
     img_host_rel_inner_radius = property(_get_img_host_rel_inner_radius)
 
@@ -361,7 +361,7 @@ class Planet(models.Model):
     img_rel_radius = property(_get_img_rel_radius)
 
     def _get_img_rel_inner_radius(self):
-       return self.img_rel_radius - 2 
+       return self.img_rel_radius - 2
 
     img_rel_inner_radius = property(_get_img_rel_inner_radius)
 

@@ -258,5 +258,8 @@ with open('astronomical_database/data/csv/planets/planets.csv') as csvfile:
         elif row['pl_hostname'] == "Fomalhaut" or row['pl_hostname'] == "Kapteyn":
             SortIntoCatalogue("Stars with proper names", year_of_discovery, density, mass, radius, semimajoraxis, orbital_period)
 
+        elif row['pl_hostname'] == "Fomalhaut" or row['pl_hostname'] == "Kapteyn":
+            SortIntoCatalogue("Stars with proper names", density, mass, radius, semimajoraxis)
+
         else:
-            SortIntoCatalogue("Other stars", year_of_discovery, density, mass, radius, semimajoraxis, orbital_period)
+            SortIntoCatalogue("Other stars", density, mass, radius, semimajoraxis)
