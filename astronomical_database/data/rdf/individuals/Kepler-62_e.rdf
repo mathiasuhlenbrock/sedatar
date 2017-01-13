@@ -1,10 +1,9 @@
 <rdf:Description rdf:about="urn://sedatar.org/astronomical_database/individuals/Kepler-62_e">
-  <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class" />
+  <rdf:type rdf:resource="urn://sedatar.org/astronomical_database/astronomy/Exoplanet" />
   <rdfs:label>Kepler 62 e</rdfs:label>
   <ontology:distance>368.00</ontology:distance>
   <ontology:size>0.144</ontology:size>
   <ontology:mass>0.11300</ontology:mass>
   <ontology:density></ontology:density>
   <ontology:semimajoraxis>0.427000</ontology:semimajoraxis>
-  <rdfs:subClassOf rdf:resource="urn://sedatar.org/astronomical_database/astronomy/Exoplanet" />
 </rdf:Description>

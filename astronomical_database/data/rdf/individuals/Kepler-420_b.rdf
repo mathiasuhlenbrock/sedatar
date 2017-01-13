@@ -1,10 +1,9 @@
 <rdf:Description rdf:about="urn://sedatar.org/astronomical_database/individuals/Kepler-420_b">
-  <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class" />
+  <rdf:type rdf:resource="urn://sedatar.org/astronomical_database/astronomy/Exoplanet" />
   <rdfs:label>Kepler 420 b</rdfs:label>
   <ontology:distance>900.00</ontology:distance>
   <ontology:size>0.940</ontology:size>
   <ontology:mass>1.45000</ontology:mass>
   <ontology:density>2.10000</ontology:density>
   <ontology:semimajoraxis>0.382000</ontology:semimajoraxis>
-  <rdfs:subClassOf rdf:resource="urn://sedatar.org/astronomical_database/astronomy/Exoplanet" />
 </rdf:Description>

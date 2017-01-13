@@ -1,10 +1,9 @@
 <rdf:Description rdf:about="urn://sedatar.org/astronomical_database/individuals/HN_Peg_b">
-  <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class" />
+  <rdf:type rdf:resource="urn://sedatar.org/astronomical_database/astronomy/Exoplanet" />
   <rdfs:label>HN Peg b</rdfs:label>
   <ontology:distance>18.39</ontology:distance>
   <ontology:size>1.051</ontology:size>
   <ontology:mass>21.99870</ontology:mass>
   <ontology:density></ontology:density>
   <ontology:semimajoraxis>773.000000</ontology:semimajoraxis>
-  <rdfs:subClassOf rdf:resource="urn://sedatar.org/astronomical_database/astronomy/Exoplanet" />
 </rdf:Description>

@@ -1,10 +1,9 @@
 <rdf:Description rdf:about="urn://sedatar.org/astronomical_database/individuals/HAT-P-34_b">
-  <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class" />
+  <rdf:type rdf:resource="urn://sedatar.org/astronomical_database/astronomy/Exoplanet" />
   <rdfs:label>HAT P 34 b</rdfs:label>
   <ontology:distance>257.00</ontology:distance>
   <ontology:size>1.197</ontology:size>
   <ontology:mass>3.32800</ontology:mass>
   <ontology:density>2.40000</ontology:density>
   <ontology:semimajoraxis>0.067700</ontology:semimajoraxis>
-  <rdfs:subClassOf rdf:resource="urn://sedatar.org/astronomical_database/astronomy/Exoplanet" />
 </rdf:Description>

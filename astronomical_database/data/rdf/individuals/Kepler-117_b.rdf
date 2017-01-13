@@ -1,10 +1,9 @@
 <rdf:Description rdf:about="urn://sedatar.org/astronomical_database/individuals/Kepler-117_b">
-  <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class" />
+  <rdf:type rdf:resource="urn://sedatar.org/astronomical_database/astronomy/Exoplanet" />
   <rdfs:label>Kepler 117 b</rdfs:label>
   <ontology:distance>1430.00</ontology:distance>
   <ontology:size>0.719</ontology:size>
   <ontology:mass>0.09400</ontology:mass>
   <ontology:density>0.30000</ontology:density>
   <ontology:semimajoraxis>0.144500</ontology:semimajoraxis>
-  <rdfs:subClassOf rdf:resource="urn://sedatar.org/astronomical_database/astronomy/Exoplanet" />
 </rdf:Description>

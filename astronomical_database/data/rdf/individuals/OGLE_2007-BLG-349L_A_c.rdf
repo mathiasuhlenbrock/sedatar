@@ -1,0 +1,9 @@
+<rdf:Description rdf:about="urn://sedatar.org/astronomical_database/individuals/OGLE_2007-BLG-349L_A_c">
+  <rdf:type rdf:resource="urn://sedatar.org/astronomical_database/astronomy/Exoplanet" />
+  <rdfs:label>OGLE 2007 BLG 349L A c</rdfs:label>
+  <ontology:distance>2760.00</ontology:distance>
+  <ontology:size></ontology:size>
+  <ontology:mass>0.25171</ontology:mass>
+  <ontology:density></ontology:density>
+  <ontology:semimajoraxis>2.590000</ontology:semimajoraxis>
+</rdf:Description>

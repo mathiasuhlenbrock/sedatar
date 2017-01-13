@@ -1,10 +1,9 @@
 <rdf:Description rdf:about="urn://sedatar.org/astronomical_database/individuals/HD_114613_b">
-  <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class" />
+  <rdf:type rdf:resource="urn://sedatar.org/astronomical_database/astronomy/Exoplanet" />
   <rdfs:label>HD 114613 b</rdfs:label>
   <ontology:distance>20.48</ontology:distance>
   <ontology:size></ontology:size>
   <ontology:mass></ontology:mass>
   <ontology:density></ontology:density>
   <ontology:semimajoraxis>5.160000</ontology:semimajoraxis>
-  <rdfs:subClassOf rdf:resource="urn://sedatar.org/astronomical_database/astronomy/Exoplanet" />
 </rdf:Description>

@@ -1,10 +1,9 @@
 <rdf:Description rdf:about="urn://sedatar.org/astronomical_database/individuals/XO-2_S_b">
-  <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class" />
+  <rdf:type rdf:resource="urn://sedatar.org/astronomical_database/astronomy/Exoplanet" />
   <rdfs:label>XO 2 S b</rdfs:label>
   <ontology:distance>148.00</ontology:distance>
   <ontology:size></ontology:size>
   <ontology:mass></ontology:mass>
   <ontology:density></ontology:density>
   <ontology:semimajoraxis>0.134400</ontology:semimajoraxis>
-  <rdfs:subClassOf rdf:resource="urn://sedatar.org/astronomical_database/astronomy/Exoplanet" />
 </rdf:Description>

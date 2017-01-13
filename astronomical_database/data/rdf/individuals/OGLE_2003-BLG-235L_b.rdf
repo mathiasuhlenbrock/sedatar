@@ -1,10 +1,9 @@
 <rdf:Description rdf:about="urn://sedatar.org/astronomical_database/individuals/OGLE_2003-BLG-235L_b">
-  <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class" />
+  <rdf:type rdf:resource="urn://sedatar.org/astronomical_database/astronomy/Exoplanet" />
   <rdfs:label>OGLE 2003 BLG 235L b</rdfs:label>
-  <ontology:distance>5200.00</ontology:distance>
+  <ontology:distance>5800.00</ontology:distance>
   <ontology:size></ontology:size>
-  <ontology:mass>1.50000</ontology:mass>
+  <ontology:mass>2.60000</ontology:mass>
   <ontology:density></ontology:density>
-  <ontology:semimajoraxis>3.000000</ontology:semimajoraxis>
-  <rdfs:subClassOf rdf:resource="urn://sedatar.org/astronomical_database/astronomy/Exoplanet" />
+  <ontology:semimajoraxis>4.300000</ontology:semimajoraxis>
 </rdf:Description>

@@ -1,10 +1,9 @@
 <rdf:Description rdf:about="urn://sedatar.org/astronomical_database/individuals/Kepler-24_e">
-  <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class" />
+  <rdf:type rdf:resource="urn://sedatar.org/astronomical_database/astronomy/Exoplanet" />
   <rdfs:label>Kepler 24 e</rdfs:label>
   <ontology:distance>1200.00</ontology:distance>
   <ontology:size>0.248</ontology:size>
   <ontology:mass></ontology:mass>
   <ontology:density></ontology:density>
   <ontology:semimajoraxis>0.138000</ontology:semimajoraxis>
-  <rdfs:subClassOf rdf:resource="urn://sedatar.org/astronomical_database/astronomy/Exoplanet" />
 </rdf:Description>

@@ -1,10 +1,9 @@
 <rdf:Description rdf:about="urn://sedatar.org/astronomical_database/individuals/MOA_2007-BLG-400L_b">
-  <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class" />
+  <rdf:type rdf:resource="urn://sedatar.org/astronomical_database/astronomy/Exoplanet" />
   <rdfs:label>MOA 2007 BLG 400L b</rdfs:label>
   <ontology:distance>5800.00</ontology:distance>
   <ontology:size></ontology:size>
   <ontology:mass>0.83000</ontology:mass>
   <ontology:density></ontology:density>
   <ontology:semimajoraxis>0.720000</ontology:semimajoraxis>
-  <rdfs:subClassOf rdf:resource="urn://sedatar.org/astronomical_database/astronomy/Exoplanet" />
 </rdf:Description>

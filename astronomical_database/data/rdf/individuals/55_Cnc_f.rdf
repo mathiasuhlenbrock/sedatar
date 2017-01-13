@@ -1,10 +1,9 @@
 <rdf:Description rdf:about="urn://sedatar.org/astronomical_database/individuals/55_Cnc_f">
-  <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class" />
+  <rdf:type rdf:resource="urn://sedatar.org/astronomical_database/astronomy/Exoplanet" />
   <rdfs:label>55 Cnc f</rdfs:label>
   <ontology:distance>12.53</ontology:distance>
   <ontology:size></ontology:size>
   <ontology:mass>0.14100</ontology:mass>
   <ontology:density></ontology:density>
   <ontology:semimajoraxis>0.788000</ontology:semimajoraxis>
-  <rdfs:subClassOf rdf:resource="urn://sedatar.org/astronomical_database/astronomy/Exoplanet" />
 </rdf:Description>

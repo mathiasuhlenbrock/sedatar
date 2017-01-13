@@ -1,10 +1,9 @@
 <rdf:Description rdf:about="urn://sedatar.org/astronomical_database/individuals/HD_12661_c">
-  <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class" />
+  <rdf:type rdf:resource="urn://sedatar.org/astronomical_database/astronomy/Exoplanet" />
   <rdfs:label>HD 12661 c</rdfs:label>
   <ontology:distance>37.16</ontology:distance>
   <ontology:size></ontology:size>
   <ontology:mass></ontology:mass>
   <ontology:density></ontology:density>
-  <ontology:semimajoraxis>2.900000</ontology:semimajoraxis>
-  <rdfs:subClassOf rdf:resource="urn://sedatar.org/astronomical_database/astronomy/Exoplanet" />
+  <ontology:semimajoraxis>2.814500</ontology:semimajoraxis>
 </rdf:Description>

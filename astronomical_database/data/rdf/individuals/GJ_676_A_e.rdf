@@ -1,10 +1,9 @@
 <rdf:Description rdf:about="urn://sedatar.org/astronomical_database/individuals/GJ_676_A_e">
-  <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class" />
+  <rdf:type rdf:resource="urn://sedatar.org/astronomical_database/astronomy/Exoplanet" />
   <rdfs:label>GJ 676 A e</rdfs:label>
-  <ontology:distance>16.13</ontology:distance>
+  <ontology:distance>16.90</ontology:distance>
   <ontology:size></ontology:size>
   <ontology:mass></ontology:mass>
   <ontology:density></ontology:density>
-  <ontology:semimajoraxis>0.187000</ontology:semimajoraxis>
-  <rdfs:subClassOf rdf:resource="urn://sedatar.org/astronomical_database/astronomy/Exoplanet" />
+  <ontology:semimajoraxis></ontology:semimajoraxis>
 </rdf:Description>

@@ -1,10 +1,9 @@
 <rdf:Description rdf:about="urn://sedatar.org/astronomical_database/individuals/Kepler-48_c">
-  <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class" />
+  <rdf:type rdf:resource="urn://sedatar.org/astronomical_database/astronomy/Exoplanet" />
   <rdfs:label>Kepler 48 c</rdfs:label>
   <ontology:distance></ontology:distance>
-  <ontology:size>0.280</ontology:size>
-  <ontology:mass>11.61000</ontology:mass>
-  <ontology:density></ontology:density>
+  <ontology:size>0.242</ontology:size>
+  <ontology:mass>0.04597</ontology:mass>
+  <ontology:density>4.01000</ontology:density>
   <ontology:semimajoraxis></ontology:semimajoraxis>
-  <rdfs:subClassOf rdf:resource="urn://sedatar.org/astronomical_database/astronomy/Exoplanet" />
 </rdf:Description>

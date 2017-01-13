@@ -1,10 +1,9 @@
 <rdf:Description rdf:about="urn://sedatar.org/astronomical_database/individuals/SWEEPS-4_b">
-  <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class" />
+  <rdf:type rdf:resource="urn://sedatar.org/astronomical_database/astronomy/Exoplanet" />
   <rdfs:label>SWEEPS 4 b</rdfs:label>
   <ontology:distance>8500.00</ontology:distance>
   <ontology:size>0.810</ontology:size>
   <ontology:mass>3.80000</ontology:mass>
   <ontology:density></ontology:density>
   <ontology:semimajoraxis>0.055000</ontology:semimajoraxis>
-  <rdfs:subClassOf rdf:resource="urn://sedatar.org/astronomical_database/astronomy/Exoplanet" />
 </rdf:Description>

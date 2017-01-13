@@ -1,10 +1,9 @@
 <rdf:Description rdf:about="urn://sedatar.org/astronomical_database/individuals/CoRoT-1_b">
-  <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class" />
+  <rdf:type rdf:resource="urn://sedatar.org/astronomical_database/astronomy/Exoplanet" />
   <rdfs:label>CoRoT 1 b</rdfs:label>
   <ontology:distance></ontology:distance>
   <ontology:size>1.490</ontology:size>
   <ontology:mass>1.03000</ontology:mass>
   <ontology:density>0.38000</ontology:density>
   <ontology:semimajoraxis></ontology:semimajoraxis>
-  <rdfs:subClassOf rdf:resource="urn://sedatar.org/astronomical_database/astronomy/Exoplanet" />
 </rdf:Description>

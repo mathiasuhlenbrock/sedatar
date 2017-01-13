@@ -1,10 +1,9 @@
 <rdf:Description rdf:about="urn://sedatar.org/astronomical_database/individuals/HD_149026_b">
-  <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class" />
+  <rdf:type rdf:resource="urn://sedatar.org/astronomical_database/astronomy/Exoplanet" />
   <rdfs:label>HD 149026 b</rdfs:label>
   <ontology:distance>78.86</ontology:distance>
   <ontology:size>0.813</ontology:size>
   <ontology:mass>0.36800</ontology:mass>
   <ontology:density>0.85000</ontology:density>
   <ontology:semimajoraxis></ontology:semimajoraxis>
-  <rdfs:subClassOf rdf:resource="urn://sedatar.org/astronomical_database/astronomy/Exoplanet" />
 </rdf:Description>

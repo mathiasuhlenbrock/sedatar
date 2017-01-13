@@ -1,10 +1,9 @@
 <rdf:Description rdf:about="urn://sedatar.org/astronomical_database/individuals/K2-19_c">
-  <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class" />
+  <rdf:type rdf:resource="urn://sedatar.org/astronomical_database/astronomy/Exoplanet" />
   <rdfs:label>K2 19 c</rdfs:label>
   <ontology:distance>291.00</ontology:distance>
-  <ontology:size>0.385</ontology:size>
+  <ontology:size>0.434</ontology:size>
   <ontology:mass></ontology:mass>
   <ontology:density></ontology:density>
-  <ontology:semimajoraxis>0.096500</ontology:semimajoraxis>
-  <rdfs:subClassOf rdf:resource="urn://sedatar.org/astronomical_database/astronomy/Exoplanet" />
+  <ontology:semimajoraxis>0.097100</ontology:semimajoraxis>
 </rdf:Description>

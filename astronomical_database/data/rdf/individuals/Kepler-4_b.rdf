@@ -1,10 +1,9 @@
 <rdf:Description rdf:about="urn://sedatar.org/astronomical_database/individuals/Kepler-4_b">
-  <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class" />
+  <rdf:type rdf:resource="urn://sedatar.org/astronomical_database/astronomy/Exoplanet" />
   <rdfs:label>Kepler 4 b</rdfs:label>
   <ontology:distance>550.00</ontology:distance>
   <ontology:size>0.357</ontology:size>
   <ontology:mass>0.07700</ontology:mass>
   <ontology:density>1.91000</ontology:density>
   <ontology:semimajoraxis>0.045600</ontology:semimajoraxis>
-  <rdfs:subClassOf rdf:resource="urn://sedatar.org/astronomical_database/astronomy/Exoplanet" />
 </rdf:Description>

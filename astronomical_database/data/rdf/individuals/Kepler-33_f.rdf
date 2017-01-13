@@ -1,10 +1,9 @@
 <rdf:Description rdf:about="urn://sedatar.org/astronomical_database/individuals/Kepler-33_f">
-  <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class" />
+  <rdf:type rdf:resource="urn://sedatar.org/astronomical_database/astronomy/Exoplanet" />
   <rdfs:label>Kepler 33 f</rdfs:label>
   <ontology:distance></ontology:distance>
   <ontology:size>0.398</ontology:size>
   <ontology:mass></ontology:mass>
   <ontology:density></ontology:density>
   <ontology:semimajoraxis>0.253500</ontology:semimajoraxis>
-  <rdfs:subClassOf rdf:resource="urn://sedatar.org/astronomical_database/astronomy/Exoplanet" />
 </rdf:Description>

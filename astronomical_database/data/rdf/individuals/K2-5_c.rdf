@@ -1,10 +1,9 @@
 <rdf:Description rdf:about="urn://sedatar.org/astronomical_database/individuals/K2-5_c">
-  <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class" />
+  <rdf:type rdf:resource="urn://sedatar.org/astronomical_database/astronomy/Exoplanet" />
   <rdfs:label>K2 5 c</rdfs:label>
   <ontology:distance></ontology:distance>
-  <ontology:size>0.171</ontology:size>
+  <ontology:size>0.202</ontology:size>
   <ontology:mass></ontology:mass>
   <ontology:density></ontology:density>
-  <ontology:semimajoraxis>0.078300</ontology:semimajoraxis>
-  <rdfs:subClassOf rdf:resource="urn://sedatar.org/astronomical_database/astronomy/Exoplanet" />
+  <ontology:semimajoraxis>0.081800</ontology:semimajoraxis>
 </rdf:Description>

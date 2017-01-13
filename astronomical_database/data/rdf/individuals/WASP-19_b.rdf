@@ -1,10 +1,9 @@
 <rdf:Description rdf:about="urn://sedatar.org/astronomical_database/individuals/WASP-19_b">
-  <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class" />
+  <rdf:type rdf:resource="urn://sedatar.org/astronomical_database/astronomy/Exoplanet" />
   <rdfs:label>WASP 19 b</rdfs:label>
   <ontology:distance>250.00</ontology:distance>
-  <ontology:size>1.386</ontology:size>
-  <ontology:mass>1.16800</ontology:mass>
-  <ontology:density>0.58300</ontology:density>
-  <ontology:semimajoraxis>0.016550</ontology:semimajoraxis>
-  <rdfs:subClassOf rdf:resource="urn://sedatar.org/astronomical_database/astronomy/Exoplanet" />
+  <ontology:size>1.392</ontology:size>
+  <ontology:mass>1.06900</ontology:mass>
+  <ontology:density>0.49200</ontology:density>
+  <ontology:semimajoraxis>0.016340</ontology:semimajoraxis>
 </rdf:Description>

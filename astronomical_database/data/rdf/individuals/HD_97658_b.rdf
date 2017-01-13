@@ -1,10 +1,9 @@
 <rdf:Description rdf:about="urn://sedatar.org/astronomical_database/individuals/HD_97658_b">
-  <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class" />
+  <rdf:type rdf:resource="urn://sedatar.org/astronomical_database/astronomy/Exoplanet" />
   <rdfs:label>HD 97658 b</rdfs:label>
   <ontology:distance>21.30</ontology:distance>
-  <ontology:size>0.200</ontology:size>
-  <ontology:mass>0.02400</ontology:mass>
-  <ontology:density>3.90000</ontology:density>
-  <ontology:semimajoraxis>0.080000</ontology:semimajoraxis>
-  <rdfs:subClassOf rdf:resource="urn://sedatar.org/astronomical_database/astronomy/Exoplanet" />
+  <ontology:size>0.209</ontology:size>
+  <ontology:mass>0.02473</ontology:mass>
+  <ontology:density>3.35000</ontology:density>
+  <ontology:semimajoraxis>0.079600</ontology:semimajoraxis>
 </rdf:Description>

@@ -1,10 +1,9 @@
 <rdf:Description rdf:about="urn://sedatar.org/astronomical_database/individuals/Kepler-37_d">
-  <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class" />
+  <rdf:type rdf:resource="urn://sedatar.org/astronomical_database/astronomy/Exoplanet" />
   <rdfs:label>Kepler 37 d</rdfs:label>
   <ontology:distance>66.00</ontology:distance>
-  <ontology:size>0.178</ontology:size>
-  <ontology:mass></ontology:mass>
+  <ontology:size>0.173</ontology:size>
+  <ontology:mass>0.03839</ontology:mass>
   <ontology:density></ontology:density>
-  <ontology:semimajoraxis>0.207600</ontology:semimajoraxis>
-  <rdfs:subClassOf rdf:resource="urn://sedatar.org/astronomical_database/astronomy/Exoplanet" />
+  <ontology:semimajoraxis></ontology:semimajoraxis>
 </rdf:Description>
