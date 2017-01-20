@@ -1,9 +1,0 @@
-<rdf:Description rdf:about="urn://sedatar.org/astronomical_database/individuals/K2-38_c">
-  <rdf:type rdf:resource="urn://sedatar.org/astronomical_database/astronomy/Exoplanet" />
-  <rdfs:label>K2 38 c</rdfs:label>
-  <ontology:distance></ontology:distance>
-  <ontology:size>0.216</ontology:size>
-  <ontology:mass>0.03115</ontology:mass>
-  <ontology:density>3.60000</ontology:density>
-  <ontology:semimajoraxis>0.096400</ontology:semimajoraxis>
-</rdf:Description>

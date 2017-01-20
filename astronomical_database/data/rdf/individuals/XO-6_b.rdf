@@ -1,9 +1,0 @@
-<rdf:Description rdf:about="urn://sedatar.org/astronomical_database/individuals/XO-6_b">
-  <rdf:type rdf:resource="urn://sedatar.org/astronomical_database/astronomy/Exoplanet" />
-  <rdfs:label>XO 6 b</rdfs:label>
-  <ontology:distance>232.72</ontology:distance>
-  <ontology:size>2.070</ontology:size>
-  <ontology:mass>4.40000</ontology:mass>
-  <ontology:density>0.62000</ontology:density>
-  <ontology:semimajoraxis>0.081500</ontology:semimajoraxis>
-</rdf:Description>

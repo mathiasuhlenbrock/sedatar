@@ -1,9 +1,0 @@
-<rdf:Description rdf:about="urn://sedatar.org/astronomical_database/individuals/MOA_2013-BLG-605L_b">
-  <rdf:type rdf:resource="urn://sedatar.org/astronomical_database/astronomy/Exoplanet" />
-  <rdfs:label>MOA 2013 BLG 605L b</rdfs:label>
-  <ontology:distance></ontology:distance>
-  <ontology:size></ontology:size>
-  <ontology:mass>0.01007</ontology:mass>
-  <ontology:density></ontology:density>
-  <ontology:semimajoraxis>0.940000</ontology:semimajoraxis>
-</rdf:Description>

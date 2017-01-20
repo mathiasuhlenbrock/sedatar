@@ -1,9 +1,0 @@
-<rdf:Description rdf:about="urn://sedatar.org/astronomical_database/individuals/K2-27_b">
-  <rdf:type rdf:resource="urn://sedatar.org/astronomical_database/astronomy/Exoplanet" />
-  <rdfs:label>K2 27 b</rdfs:label>
-  <ontology:distance></ontology:distance>
-  <ontology:size>0.397</ontology:size>
-  <ontology:mass>0.09156</ontology:mass>
-  <ontology:density>1.80000</ontology:density>
-  <ontology:semimajoraxis></ontology:semimajoraxis>
-</rdf:Description>

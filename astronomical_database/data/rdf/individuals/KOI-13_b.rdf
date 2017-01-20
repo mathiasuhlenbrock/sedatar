@@ -1,9 +1,0 @@
-<rdf:Description rdf:about="urn://sedatar.org/astronomical_database/individuals/KOI-13_b">
-  <rdf:type rdf:resource="urn://sedatar.org/astronomical_database/astronomy/Exoplanet" />
-  <rdfs:label>KOI 13 b</rdfs:label>
-  <ontology:distance></ontology:distance>
-  <ontology:size>1.512</ontology:size>
-  <ontology:mass>9.28000</ontology:mass>
-  <ontology:density>3.60000</ontology:density>
-  <ontology:semimajoraxis>0.036410</ontology:semimajoraxis>
-</rdf:Description>

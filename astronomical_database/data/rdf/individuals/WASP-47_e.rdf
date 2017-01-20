@@ -1,9 +1,0 @@
-<rdf:Description rdf:about="urn://sedatar.org/astronomical_database/individuals/WASP-47_e">
-  <rdf:type rdf:resource="urn://sedatar.org/astronomical_database/astronomy/Exoplanet" />
-  <rdfs:label>WASP 47 e</rdfs:label>
-  <ontology:distance>200.00</ontology:distance>
-  <ontology:size>0.162</ontology:size>
-  <ontology:mass>0.02863</ontology:mass>
-  <ontology:density>8.50000</ontology:density>
-  <ontology:semimajoraxis>0.017300</ontology:semimajoraxis>
-</rdf:Description>

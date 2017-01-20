@@ -1,9 +1,0 @@
-<rdf:Description rdf:about="urn://sedatar.org/astronomical_database/individuals/WASP-157_b">
-  <rdf:type rdf:resource="urn://sedatar.org/astronomical_database/astronomy/Exoplanet" />
-  <rdfs:label>WASP 157 b</rdfs:label>
-  <ontology:distance></ontology:distance>
-  <ontology:size>1.065</ontology:size>
-  <ontology:mass>0.57400</ontology:mass>
-  <ontology:density>0.64000</ontology:density>
-  <ontology:semimajoraxis>0.052900</ontology:semimajoraxis>
-</rdf:Description>

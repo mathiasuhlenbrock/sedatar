@@ -1,9 +1,0 @@
-<rdf:Description rdf:about="urn://sedatar.org/astronomical_database/individuals/MOA_2010-BLG-477L_b">
-  <rdf:type rdf:resource="urn://sedatar.org/astronomical_database/astronomy/Exoplanet" />
-  <rdfs:label>MOA 2010 BLG 477L b</rdfs:label>
-  <ontology:distance>2300.00</ontology:distance>
-  <ontology:size></ontology:size>
-  <ontology:mass>1.50000</ontology:mass>
-  <ontology:density></ontology:density>
-  <ontology:semimajoraxis>2.000000</ontology:semimajoraxis>
-</rdf:Description>
