@@ -1,0 +1,9 @@
+<rdf:Description rdf:about="urn://sedatar.org/astronomical_database/individuals/Kepler-444_d">
+  <rdf:type rdf:resource="urn://sedatar.org/astronomical_database/astronomy/Exoplanet" />
+  <rdfs:label>Kepler 444 d</rdfs:label>
+  <ontology:distance>35.70</ontology:distance>
+  <ontology:size>0.047</ontology:size>
+  <ontology:mass></ontology:mass>
+  <ontology:density></ontology:density>
+  <ontology:semimajoraxis>0.060000</ontology:semimajoraxis>
+</rdf:Description>

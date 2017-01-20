@@ -1,0 +1,9 @@
+<rdf:Description rdf:about="urn://sedatar.org/astronomical_database/individuals/CHXR_73_b">
+  <rdf:type rdf:resource="urn://sedatar.org/astronomical_database/astronomy/Exoplanet" />
+  <rdfs:label>CHXR 73 b</rdfs:label>
+  <ontology:distance></ontology:distance>
+  <ontology:size></ontology:size>
+  <ontology:mass>12.56900</ontology:mass>
+  <ontology:density></ontology:density>
+  <ontology:semimajoraxis>210.000000</ontology:semimajoraxis>
+</rdf:Description>

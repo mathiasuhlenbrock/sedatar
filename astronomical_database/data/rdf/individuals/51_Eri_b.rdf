@@ -1,0 +1,9 @@
+<rdf:Description rdf:about="urn://sedatar.org/astronomical_database/individuals/51_Eri_b">
+  <rdf:type rdf:resource="urn://sedatar.org/astronomical_database/astronomy/Exoplanet" />
+  <rdfs:label>51 Eri b</rdfs:label>
+  <ontology:distance>29.40</ontology:distance>
+  <ontology:size></ontology:size>
+  <ontology:mass>2.00000</ontology:mass>
+  <ontology:density></ontology:density>
+  <ontology:semimajoraxis>13.200000</ontology:semimajoraxis>
+</rdf:Description>

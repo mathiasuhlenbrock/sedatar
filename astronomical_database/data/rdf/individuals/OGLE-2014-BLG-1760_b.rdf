@@ -1,0 +1,9 @@
+<rdf:Description rdf:about="urn://sedatar.org/astronomical_database/individuals/OGLE-2014-BLG-1760_b">
+  <rdf:type rdf:resource="urn://sedatar.org/astronomical_database/astronomy/Exoplanet" />
+  <rdfs:label>OGLE 2014 BLG 1760 b</rdfs:label>
+  <ontology:distance>6860.00</ontology:distance>
+  <ontology:size></ontology:size>
+  <ontology:mass>0.56000</ontology:mass>
+  <ontology:density></ontology:density>
+  <ontology:semimajoraxis>1.750000</ontology:semimajoraxis>
+</rdf:Description>

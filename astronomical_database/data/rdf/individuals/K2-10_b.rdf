@@ -1,0 +1,9 @@
+<rdf:Description rdf:about="urn://sedatar.org/astronomical_database/individuals/K2-10_b">
+  <rdf:type rdf:resource="urn://sedatar.org/astronomical_database/astronomy/Exoplanet" />
+  <rdfs:label>K2 10 b</rdfs:label>
+  <ontology:distance>271.00</ontology:distance>
+  <ontology:size>0.343</ontology:size>
+  <ontology:mass>0.08495</ontology:mass>
+  <ontology:density>2.60000</ontology:density>
+  <ontology:semimajoraxis></ontology:semimajoraxis>
+</rdf:Description>

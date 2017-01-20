@@ -1,0 +1,9 @@
+<rdf:Description rdf:about="urn://sedatar.org/astronomical_database/individuals/EPIC_211990866_b">
+  <rdf:type rdf:resource="urn://sedatar.org/astronomical_database/astronomy/Exoplanet" />
+  <rdfs:label>EPIC 211990866 b</rdfs:label>
+  <ontology:distance>181.50</ontology:distance>
+  <ontology:size>0.312</ontology:size>
+  <ontology:mass></ontology:mass>
+  <ontology:density></ontology:density>
+  <ontology:semimajoraxis></ontology:semimajoraxis>
+</rdf:Description>

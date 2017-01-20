@@ -1,0 +1,9 @@
+<rdf:Description rdf:about="urn://sedatar.org/astronomical_database/individuals/Kepler-27_c">
+  <rdf:type rdf:resource="urn://sedatar.org/astronomical_database/astronomy/Exoplanet" />
+  <rdfs:label>Kepler 27 c</rdfs:label>
+  <ontology:distance></ontology:distance>
+  <ontology:size>0.437</ontology:size>
+  <ontology:mass>13.80000</ontology:mass>
+  <ontology:density></ontology:density>
+  <ontology:semimajoraxis>0.191000</ontology:semimajoraxis>
+</rdf:Description>

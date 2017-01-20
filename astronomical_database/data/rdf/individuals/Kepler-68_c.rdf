@@ -1,0 +1,9 @@
+<rdf:Description rdf:about="urn://sedatar.org/astronomical_database/individuals/Kepler-68_c">
+  <rdf:type rdf:resource="urn://sedatar.org/astronomical_database/astronomy/Exoplanet" />
+  <rdfs:label>Kepler 68 c</rdfs:label>
+  <ontology:distance>135.00</ontology:distance>
+  <ontology:size>0.089</ontology:size>
+  <ontology:mass>0.02265</ontology:mass>
+  <ontology:density></ontology:density>
+  <ontology:semimajoraxis></ontology:semimajoraxis>
+</rdf:Description>

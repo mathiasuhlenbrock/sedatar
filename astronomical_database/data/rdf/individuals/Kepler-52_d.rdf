@@ -1,0 +1,9 @@
+<rdf:Description rdf:about="urn://sedatar.org/astronomical_database/individuals/Kepler-52_d">
+  <rdf:type rdf:resource="urn://sedatar.org/astronomical_database/astronomy/Exoplanet" />
+  <rdfs:label>Kepler 52 d</rdfs:label>
+  <ontology:distance></ontology:distance>
+  <ontology:size>0.174</ontology:size>
+  <ontology:mass></ontology:mass>
+  <ontology:density></ontology:density>
+  <ontology:semimajoraxis>0.182000</ontology:semimajoraxis>
+</rdf:Description>

@@ -1,0 +1,9 @@
+<rdf:Description rdf:about="urn://sedatar.org/astronomical_database/individuals/OGLE_2005-BLG-169L_b">
+  <rdf:type rdf:resource="urn://sedatar.org/astronomical_database/astronomy/Exoplanet" />
+  <rdfs:label>OGLE 2005 BLG 169L b</rdfs:label>
+  <ontology:distance>4100.00</ontology:distance>
+  <ontology:size></ontology:size>
+  <ontology:mass>0.04436</ontology:mass>
+  <ontology:density></ontology:density>
+  <ontology:semimajoraxis>3.500000</ontology:semimajoraxis>
+</rdf:Description>

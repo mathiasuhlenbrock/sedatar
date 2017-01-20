@@ -1,0 +1,9 @@
+<rdf:Description rdf:about="urn://sedatar.org/astronomical_database/individuals/KOI-12_b">
+  <rdf:type rdf:resource="urn://sedatar.org/astronomical_database/astronomy/Exoplanet" />
+  <rdfs:label>KOI 12 b</rdfs:label>
+  <ontology:distance>426.00</ontology:distance>
+  <ontology:size>1.430</ontology:size>
+  <ontology:mass>10.00000</ontology:mass>
+  <ontology:density></ontology:density>
+  <ontology:semimajoraxis>0.151000</ontology:semimajoraxis>
+</rdf:Description>

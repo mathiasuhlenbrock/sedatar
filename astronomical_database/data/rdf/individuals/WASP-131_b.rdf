@@ -1,0 +1,9 @@
+<rdf:Description rdf:about="urn://sedatar.org/astronomical_database/individuals/WASP-131_b">
+  <rdf:type rdf:resource="urn://sedatar.org/astronomical_database/astronomy/Exoplanet" />
+  <rdfs:label>WASP 131 b</rdfs:label>
+  <ontology:distance>250.00</ontology:distance>
+  <ontology:size>1.220</ontology:size>
+  <ontology:mass>0.27000</ontology:mass>
+  <ontology:density>0.20000</ontology:density>
+  <ontology:semimajoraxis>0.060700</ontology:semimajoraxis>
+</rdf:Description>

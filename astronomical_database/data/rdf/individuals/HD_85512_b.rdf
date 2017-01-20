@@ -1,0 +1,9 @@
+<rdf:Description rdf:about="urn://sedatar.org/astronomical_database/individuals/HD_85512_b">
+  <rdf:type rdf:resource="urn://sedatar.org/astronomical_database/astronomy/Exoplanet" />
+  <rdfs:label>HD 85512 b</rdfs:label>
+  <ontology:distance>11.15</ontology:distance>
+  <ontology:size></ontology:size>
+  <ontology:mass></ontology:mass>
+  <ontology:density></ontology:density>
+  <ontology:semimajoraxis>0.260000</ontology:semimajoraxis>
+</rdf:Description>

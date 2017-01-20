@@ -1,0 +1,9 @@
+<rdf:Description rdf:about="urn://sedatar.org/astronomical_database/individuals/Kepler-68_d">
+  <rdf:type rdf:resource="urn://sedatar.org/astronomical_database/astronomy/Exoplanet" />
+  <rdfs:label>Kepler 68 d</rdfs:label>
+  <ontology:distance>135.00</ontology:distance>
+  <ontology:size></ontology:size>
+  <ontology:mass>0.84007</ontology:mass>
+  <ontology:density></ontology:density>
+  <ontology:semimajoraxis></ontology:semimajoraxis>
+</rdf:Description>

@@ -1,0 +1,9 @@
+<rdf:Description rdf:about="urn://sedatar.org/astronomical_database/individuals/HD_10647_b">
+  <rdf:type rdf:resource="urn://sedatar.org/astronomical_database/astronomy/Exoplanet" />
+  <rdfs:label>HD 10647 b</rdfs:label>
+  <ontology:distance>17.35</ontology:distance>
+  <ontology:size></ontology:size>
+  <ontology:mass></ontology:mass>
+  <ontology:density></ontology:density>
+  <ontology:semimajoraxis>2.015000</ontology:semimajoraxis>
+</rdf:Description>

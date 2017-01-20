@@ -1,0 +1,9 @@
+<rdf:Description rdf:about="urn://sedatar.org/astronomical_database/individuals/BD-08_2823_c">
+  <rdf:type rdf:resource="urn://sedatar.org/astronomical_database/astronomy/Exoplanet" />
+  <rdfs:label>BD 08 2823 c</rdfs:label>
+  <ontology:distance>42.09</ontology:distance>
+  <ontology:size></ontology:size>
+  <ontology:mass></ontology:mass>
+  <ontology:density></ontology:density>
+  <ontology:semimajoraxis>0.680000</ontology:semimajoraxis>
+</rdf:Description>

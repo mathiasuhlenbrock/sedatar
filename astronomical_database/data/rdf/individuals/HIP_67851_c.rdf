@@ -1,0 +1,9 @@
+<rdf:Description rdf:about="urn://sedatar.org/astronomical_database/individuals/HIP_67851_c">
+  <rdf:type rdf:resource="urn://sedatar.org/astronomical_database/astronomy/Exoplanet" />
+  <rdfs:label>HIP 67851 c</rdfs:label>
+  <ontology:distance></ontology:distance>
+  <ontology:size></ontology:size>
+  <ontology:mass></ontology:mass>
+  <ontology:density></ontology:density>
+  <ontology:semimajoraxis>3.820000</ontology:semimajoraxis>
+</rdf:Description>

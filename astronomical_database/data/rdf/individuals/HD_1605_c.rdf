@@ -1,0 +1,9 @@
+<rdf:Description rdf:about="urn://sedatar.org/astronomical_database/individuals/HD_1605_c">
+  <rdf:type rdf:resource="urn://sedatar.org/astronomical_database/astronomy/Exoplanet" />
+  <rdfs:label>HD 1605 c</rdfs:label>
+  <ontology:distance>84.60</ontology:distance>
+  <ontology:size></ontology:size>
+  <ontology:mass></ontology:mass>
+  <ontology:density></ontology:density>
+  <ontology:semimajoraxis>3.520000</ontology:semimajoraxis>
+</rdf:Description>

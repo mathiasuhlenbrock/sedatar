@@ -1,0 +1,9 @@
+<rdf:Description rdf:about="urn://sedatar.org/astronomical_database/individuals/DENIS-P_J082303.1-491201_b">
+  <rdf:type rdf:resource="urn://sedatar.org/astronomical_database/astronomy/Exoplanet" />
+  <rdfs:label>DENIS P J082303.1 491201 b</rdfs:label>
+  <ontology:distance>20.77</ontology:distance>
+  <ontology:size></ontology:size>
+  <ontology:mass>28.50000</ontology:mass>
+  <ontology:density></ontology:density>
+  <ontology:semimajoraxis>0.360000</ontology:semimajoraxis>
+</rdf:Description>

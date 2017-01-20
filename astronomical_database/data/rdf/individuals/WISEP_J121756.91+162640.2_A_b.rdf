@@ -1,0 +1,9 @@
+<rdf:Description rdf:about="urn://sedatar.org/astronomical_database/individuals/WISEP_J121756.91+162640.2_A_b">
+  <rdf:type rdf:resource="urn://sedatar.org/astronomical_database/astronomy/Exoplanet" />
+  <rdfs:label>WISEP J121756.91+162640.2 A b</rdfs:label>
+  <ontology:distance>10.10</ontology:distance>
+  <ontology:size>0.934</ontology:size>
+  <ontology:mass>22.00000</ontology:mass>
+  <ontology:density></ontology:density>
+  <ontology:semimajoraxis>8.000000</ontology:semimajoraxis>
+</rdf:Description>

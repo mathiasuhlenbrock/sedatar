@@ -1,0 +1,9 @@
+<rdf:Description rdf:about="urn://sedatar.org/astronomical_database/individuals/CoRoT-25_b">
+  <rdf:type rdf:resource="urn://sedatar.org/astronomical_database/astronomy/Exoplanet" />
+  <rdfs:label>CoRoT 25 b</rdfs:label>
+  <ontology:distance>1000.00</ontology:distance>
+  <ontology:size>1.080</ontology:size>
+  <ontology:mass>0.27000</ontology:mass>
+  <ontology:density>0.15000</ontology:density>
+  <ontology:semimajoraxis>0.057800</ontology:semimajoraxis>
+</rdf:Description>
