@@ -1,57 +1,70 @@
 {% extends "sedatar/base.html" %}
-
 {% block content %}
-  <div id="main_text">
-    <div id="text_left_column">
-      <h1>About this website</h1>
-      <p>
-        The purpose of this website is to provide simple schematic depictions of known planetary
-        systems, alongside with some additional information about the planets and their host stars.
-        Planetary and stellar data is provided by
-        <a href="http://exoplanetarchive.ipac.caltech.edu/">NASA's exoplanet archive</a> and is
-        taken 'as is'. This is a hobbyist project and makes no claims about being complete, correct,
-        consistent or even useful.
-      </p>
-      <h2>Contact</h2>
-      <br>
-      <address>
-        Mathias Uhlenbrock
-        <br>
-        Eickenstraße 37
-        <br>
-        51709 Marienheide
-        <br>
-        Germany
-      </address>
-      <p>
-        Phone: +49 (0)160 1757921
-        <br>
-        Email: mathias.uhlenbrock@gmail.com
-      </p>
-      <h2>This website is powered by</h2>
-      <p>
-        Django 1.9
-        <br>
-        NLTK 3.1
-        <br>
-        PostgreSQL 9.1.19
-        <br>
-        Quepy 0.2
-      </p>
-      &copy; 2015 Mathias Uhlenbrock. All rights reserved.
+    <div id="main_text">
+        <div id="text_left_column">
+            <h1>About this website</h1>
+            <p>
+                The purpose of this website is to provide simple schematic depictions of known planetary
+                systems, alongside with some additional information about the planets and their host stars.
+                Planetary and stellar data is provided by
+                <a href="http://exoplanetarchive.ipac.caltech.edu/">NASA's exoplanet archive</a> and is
+                taken 'as is'. This is a hobbyist project and makes no claims about being complete, correct,
+                consistent or even useful.
+            </p>
+            <h2>Contact</h2>
+            <br>
+            <address>
+                Mathias Uhlenbrock
+                <br>
+                Wilhelmshavener Straße 43
+                <br>
+                10551 Berlin
+                <br>
+                Germany
+            </address>
+            <p>
+                Phone: +49 (0)160 1757921
+                <br>
+                Email: mathias.uhlenbrock@gmail.com
+            </p>
+            <h2>This website is powered by</h2>
+            <p>
+                Django 1.9
+                <br>
+                NLTK 3.1
+                <br>
+                PostgreSQL 11.4
+                <br>
+                Quepy 0.2
+            </p>
+            &copy; 2019 Mathias Uhlenbrock. All rights reserved.
+        </div>
+        <div id="text_right_column">
+        </div>
     </div>
-    <div id="text_right_column">
-    </div>
-  </div>
 {% endblock %}
-
 {% block navigation %}
-  <!-- Button "Home" -->
-  <svg class="vspace"><rect width="100%" height="100%"></rect></svg>
-  <a href="/"><svg width="100%" height="100"><rect class="navigation" width="100%" height="100%"/><text class="text" x="10" y="90">Home</text></svg></a>
-
-  <!-- Button "Up" -->
-  <svg class="vspace"><rect width="100%" height="100%"></rect></svg>
-  <a href="../"><svg width="100%" height="100"><rect class="navigation" width="100%" height="100%"/><text class="text" x="10" y="90">Up</text></svg></a>
-  <svg class="vspace"><rect width="100%" height="100%"></rect></svg>
+    <!-- Button "Home" -->
+    <svg class="vspace">
+        <rect width="100%" height="100%"></rect>
+    </svg>
+    <a href="/">
+        <svg width="100%" height="100">
+            <rect class="navigation" width="100%" height="100%"></rect>
+            <text class="text" x="10" y="90">Home</text>
+        </svg>
+    </a>
+    <!-- Button "Up" -->
+    <svg class="vspace">
+        <rect width="100%" height="100%"></rect>
+    </svg>
+    <a href="../">
+        <svg width="100%" height="100">
+            <rect class="navigation" width="100%" height="100%"></rect>
+            <text class="text" x="10" y="90">Up</text>
+        </svg>
+    </a>
+    <svg class="vspace">
+        <rect width="100%" height="100%"></rect>
+    </svg>
 {% endblock %}
