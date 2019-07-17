@@ -1,30 +1,23 @@
 import nltk 
 import quepy
 import rdflib
-import sparqlgen
 
-if __name__ == "__main__":
-    question = "What is a terrestrial planet?"
-
+if __name__ == '__main__':
+    question = 'What is a terrestrial planet?'
     tokens = nltk.wordpunct_tokenize(question)
-    print tokens
-
+    print(tokens)
     tags = nltk.pos_tag(tokens)
-    print tags
-
+    print(tags)
     g = rdflib.Graph()
-    g.parse("astronomical_database/data/rdf/astronomical_database.rdf")
-
-    sparqlgen = quepy.install("sparqlgen")
-
+    g.parse('astronomical_database/data/rdf/astronomical_database.rdf')
+    sparqlgen = quepy.install('sparqlgen')
     target, query, metadata = sparqlgen.get_query(question)
-
     if query:
         results = g.query(query)
         if results:
             for result in results:
-                print result
+                print(result)
         else:
-            print "No answer found."
+            print('No answer found.')
     else:
-        print "Query not generated."
+        print('Query not generated.')
