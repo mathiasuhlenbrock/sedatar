@@ -31,7 +31,6 @@ SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTO', 'https')
 ALLOWED_HOSTS = ['*']
 
 # Application definition
-
 INSTALLED_APPS = (
     'django.contrib.admin',
     'django.contrib.auth',
@@ -41,6 +40,12 @@ INSTALLED_APPS = (
     'django.contrib.staticfiles',
     'astronomical_database',
     'sedatar',
+)
+
+MIDDLEWARE = (
+    'django.contrib.auth.middleware.AuthenticationMiddleware',
+    'django.contrib.sessions.middleware.SessionMiddleware',
+    'django.contrib.messages.middleware.MessageMiddleware',
 )
 
 MIDDLEWARE_CLASSES = (
@@ -74,11 +79,15 @@ TEMPLATES = [
 
 WSGI_APPLICATION = 'sedatar.wsgi.application'
 
-# Parse database configuration from $DATABASE_URL
-import dj_database_url
-
 DATABASES = {
-    'default': dj_database_url.config()
+    'default': {
+        'ENGINE': 'django.db.backends.postgresql',
+        # 'NAME': 'sedatar-v0.1-develop-db',
+        # 'USER': 'postgres',
+        'NAME': 'postgres',
+        'USER': 'uhlenbrock',
+        # 'PASSWORD': 'space2063',
+    }
 }
 
 # Internationalization
