@@ -24,7 +24,7 @@ urlpatterns = [
     url(r'^Answer/$', views.answer, name='answer'),
     url(r'^Astronomical_database/', include('astronomical_database.urls')),
     url(r'^List_of_databases/$', views.list_of_databases, name='list_of_databases'),
-    url(r'^List_of_posts/(?P<post_date>[a-zA-Z_0-9\-]+)/$', views.post, name='post'),
+    url(r'^List_of_posts/(?P<post_date>[a-zA-Z_0-9\-+.]+)/$', views.post, name='post'),
     url(r'^List_of_posts/$', views.list_of_posts, name='list_of_posts'),
 ]
 
