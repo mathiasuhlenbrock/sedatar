@@ -8,27 +8,29 @@
             </p>
         </div>
         <div id="text_multicolumn_2">
-            {% if list_of_catalogues.object_list %}
-                <table>
-                    {% for catalogue in list_of_catalogues.object_list %}
-                        <tr>
-                            <td class="cell_standard">
-                                {{ catalogue.acronym }}
-                            </td>
-                            <td class="cell_standard">
-                                <a href="/Astronomical_database/List_of_star_catalogues/{{ catalogue.page_name }}/">{{ catalogue.name }}</a>
-                                {% if catalogue.number_of_planetary_systems == 1 %}
-                                    ({{ catalogue.number_of_planetary_systems }} star)
-                                {% else %}
-                                    ({{ catalogue.number_of_planetary_systems }} stars)
-                                {% endif %}
-                            </td>
-                        </tr>
-                    {% endfor %}
-                </table>
-            {% else %}
-                <p>No star catalogues are yet available.</p>
-            {% endif %}
+            <table>
+                {% for catalogue in list_of_catalogues.object_list %}
+                    <tr>
+                        <td class="cell_standard">
+                            {{ catalogue.acronym }}
+                        </td>
+                        <td class="cell_standard">
+                            <a href="/Astronomical_database/List_of_star_catalogues/{{ catalogue.page_name }}/">{{ catalogue.name }}</a>
+                            {% if catalogue.number_of_planetary_systems == 1 %}
+                                ({{ catalogue.number_of_planetary_systems }} star)
+                            {% else %}
+                                ({{ catalogue.number_of_planetary_systems }} stars)
+                            {% endif %}
+                        </td>
+                    </tr>
+                {% empty %}
+                    <tr>
+                        <td class="cell_standard">
+                            No star catalogues are yet available.
+                        </td>
+                    </tr>
+                {% endfor %}
+            </table>
         </div>
         <div id="text_footer">
             <br>

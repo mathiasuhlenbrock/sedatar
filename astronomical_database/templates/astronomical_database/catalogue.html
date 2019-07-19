@@ -8,24 +8,26 @@
             </p>
         </div>
         <div id="text_multicolumn_4">
-            {% if list_of_planetary_systems.object_list %}
-                <table>
-                    {% for planetary_system in list_of_planetary_systems.object_list %}
-                        <tr>
-                            <td class="cell_standard">
-                                <a href="/Astronomical_database/List_of_planetary_systems/{{ planetary_system.page_name }}/">{{ planetary_system.name }}</a>
-                                {% if planetary_system.number_of_planets == 1 %}
-                                    ({{ planetary_system.number_of_planets }} Planet)
-                                {% else %}
-                                    ({{ planetary_system.number_of_planets }} Planets)
-                                {% endif %}
-                            </td>
-                        </tr>
-                    {% endfor %}
-                </table>
-            {% else %}
-                <p>No stars with planetary systems are yet available.</p>
-            {% endif %}
+            <table>
+                {% for planetary_system in list_of_planetary_systems.object_list %}
+                    <tr>
+                        <td class="cell_standard">
+                            <a href="/Astronomical_database/List_of_planetary_systems/{{ planetary_system.page_name }}/">{{ planetary_system.name }}</a>
+                            {% if planetary_system.number_of_planets == 1 %}
+                                ({{ planetary_system.number_of_planets }} Planet)
+                            {% else %}
+                                ({{ planetary_system.number_of_planets }} Planets)
+                            {% endif %}
+                        </td>
+                    </tr>
+                {% empty %}
+                    <tr>
+                        <td class="cell_standard">
+                            No stars with planetary systems are yet available.
+                        </td>
+                    </tr>
+                {% endfor %}
+            </table>
         </div>
         <div id="text_footer">
             <br>
