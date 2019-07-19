@@ -11,40 +11,19 @@
             {% if list_of_catalogues.object_list %}
                 <table>
                     {% for catalogue in list_of_catalogues.object_list %}
-                        {% if forloop.counter <= 20 %}
-                            <tr>
-                                <td class="cell_standard">
-                                    {{ catalogue.acronym }}
-                                </td>
-                                <td class="cell_standard">
-                                    <a href="/Astronomical_database/List_of_star_catalogues/{{ catalogue.page_name }}/">{{ catalogue.name }}</a>
-                                    {% if catalogue.number_of_planetary_systems == 1 %}
-                                        ({{ catalogue.number_of_planetary_systems }} star)
-                                    {% else %}
-                                        ({{ catalogue.number_of_planetary_systems }} stars)
-                                    {% endif %}
-                                </td>
-                            </tr>
-                        {% endif %}
-                    {% endfor %}
-                </table>
-                <table>
-                    {% for catalogue in list_of_catalogues.object_list %}
-                        {% if forloop.counter > 20 %}
-                            <tr>
-                                <td class="cell_standard">
-                                    {{ catalogue.acronym }}
-                                </td>
-                                <td class="cell_standard">
-                                    <a href="/Astronomical_database/List_of_star_catalogues/{{ catalogue.page_name }}/">{{ catalogue.name }}</a>
-                                    {% if catalogue.number_of_planetary_systems == 1 %}
-                                        ({{ catalogue.number_of_planetary_systems }} star)
-                                    {% else %}
-                                        ({{ catalogue.number_of_planetary_systems }} stars)
-                                    {% endif %}
-                                </td>
-                            </tr>
-                        {% endif %}
+                        <tr>
+                            <td class="cell_standard">
+                                {{ catalogue.acronym }}
+                            </td>
+                            <td class="cell_standard">
+                                <a href="/Astronomical_database/List_of_star_catalogues/{{ catalogue.page_name }}/">{{ catalogue.name }}</a>
+                                {% if catalogue.number_of_planetary_systems == 1 %}
+                                    ({{ catalogue.number_of_planetary_systems }} star)
+                                {% else %}
+                                    ({{ catalogue.number_of_planetary_systems }} stars)
+                                {% endif %}
+                            </td>
+                        </tr>
                     {% endfor %}
                 </table>
             {% else %}
