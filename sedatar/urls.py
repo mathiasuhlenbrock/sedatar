@@ -13,19 +13,49 @@ Including another URLconf
     1. Add an import:  from blog import urls as blog_urls
     2. Add a URL to urlpatterns:  url(r'^blog/', include(blog_urls))
 """
-from django.conf.urls import include, url
+from django.urls import include, path, re_path
 from django.contrib import admin
 from . import views
 
 urlpatterns = [
-    url(r'^$', views.index, name='index'),
-    url(r'^About/$', views.about, name='about'),
-    url(r'^Admin/', admin.site.urls),
-    url(r'^Answer/$', views.answer, name='answer'),
-    url(r'^Astronomical_database/', include('astronomical_database.urls')),
-    url(r'^List_of_databases/$', views.list_of_databases, name='list_of_databases'),
-    url(r'^List_of_posts/(?P<post_date>[a-zA-Z_0-9\-+.]+)/$', views.post, name='post'),
-    url(r'^List_of_posts/$', views.list_of_posts, name='list_of_posts'),
+    path(
+        '',
+        views.index,
+        name='index'
+    ),
+    path(
+        'About/',
+        views.about,
+        name='about'
+    ),
+    path(
+        'Admin/',
+        admin.site.urls
+    ),
+    path(
+        'Answer/',
+        views.answer,
+        name='answer'
+    ),
+    path(
+        'Astronomical_database/',
+        include('astronomical_database.urls')
+    ),
+    path(
+        'List_of_databases/',
+        views.list_of_databases,
+        name='list_of_databases'
+    ),
+    re_path(
+        r'^List_of_posts/(?P<post_date>[a-zA-Z_0-9-+.]+)/$',
+        views.post,
+        name='post'
+    ),
+    path(
+        'List_of_posts/',
+        views.list_of_posts,
+        name='list_of_posts'
+    ),
 ]
 
 admin.site.site_title = 'Database Administration'
