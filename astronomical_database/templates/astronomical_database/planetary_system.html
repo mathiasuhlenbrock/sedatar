@@ -42,13 +42,13 @@
                 <!-- Pluto density: 1.869 g/cm^3, Neptune radius: 0.35 R_Jup -->
                 {% for planet in list_of_planets.object_list %}
                     {% if planet.density <= 0.0 %}
-                        <a href="/Astronomical_database/List_of_planets/{{ planet.page_name }}">{{ planet.name }}</a>
+                        <a href="/Astronomical_database/List_of_planets/{{ planet.page_name }}/">{{ planet.name }}</a>
                         (classification not available)<br>
                     {% elif planet.density < 1.869 or planet.radius > 0.35 %}
-                        <a href="/Astronomical_database/List_of_planets/{{ planet.page_name }}">{{ planet.name }}</a>
+                        <a href="/Astronomical_database/List_of_planets/{{ planet.page_name }}/">{{ planet.name }}</a>
                         (gas giant)<br>
                     {% else %}
-                        <a href="/Astronomical_database/List_of_planets/{{ planet.page_name }}">{{ planet.name }}</a>
+                        <a href="/Astronomical_database/List_of_planets/{{ planet.page_name }}/">{{ planet.name }}</a>
                         (terrestrial)<br>
                     {% endif %}
                 {% empty %}
