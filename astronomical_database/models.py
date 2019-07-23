@@ -42,10 +42,6 @@ class PlanetarySystem(models.Model):
         return self.name.replace(' ', '_')
 
     @property
-    def catalogue_page_name(self):
-        return str(self.catalogue).replace(' ', '_')
-
-    @property
     def number_of_planets(self):
         return self.planet_set.all().count()
 
