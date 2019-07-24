@@ -9,7 +9,7 @@ Django==2.2.3
 #keepalive==0.5
 #nltk==3.1
 #numpy==1.10.1
-psycopg2==2.8.3
+#psycopg2==2.8.3
 #pyparsing==2.0.6
 quepy==0.2
 #rdflib==4.2.1
