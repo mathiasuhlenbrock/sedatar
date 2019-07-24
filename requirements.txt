@@ -1,6 +1,6 @@
 #dj-database-url==0.3.0
 dj-static==0.0.6
-Django>=2.0
+Django==2.2.3
 #django-toolbelt==0.0.1
 #docopt==0.6.2
 #gunicorn==19.4.1
@@ -9,7 +9,7 @@ Django>=2.0
 #keepalive==0.5
 #nltk==3.1
 #numpy==1.10.1
-#psycopg2==2.8.3
+psycopg2==2.8.3
 #pyparsing==2.0.6
 quepy==0.2
 #rdflib==4.2.1
