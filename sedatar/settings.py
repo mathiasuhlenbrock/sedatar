@@ -68,16 +68,23 @@ TEMPLATES = [
 
 WSGI_APPLICATION = 'sedatar.wsgi.application'
 
+# Parse database configuration from $DATABASE_URL
+import dj_database_url
+
 DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.postgresql',
-        # 'NAME': 'sedatar-v0.1-develop-db',
-        # 'USER': 'postgres',
-        'NAME': 'postgres',
-        'USER': 'uhlenbrock',
-        # 'PASSWORD': 'space2063',
-    }
+    'default': dj_database_url.config()
 }
+
+# DATABASES = {
+#     'default': {
+#         'ENGINE': 'django.db.backends.postgresql',
+#         # 'NAME': 'sedatar-v0.1-develop-db',
+#         # 'USER': 'postgres',
+#         'NAME': 'postgres',
+#         'USER': 'uhlenbrock',
+#         # 'PASSWORD': 'space2063',
+#     }
+# }
 
 # Internationalization
 # https://docs.djangoproject.com/en/1.8/topics/i18n/
