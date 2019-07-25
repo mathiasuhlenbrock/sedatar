@@ -1,0 +1,9 @@
+<rdf:Description rdf:about="urn://sedatar.org/astronomical_database/individuals/WASP-73_b">
+  <rdf:type rdf:resource="urn://sedatar.org/astronomical_database/astronomy/Exoplanet" />
+  <rdfs:label>WASP 73 b</rdfs:label>
+  <ontology:distance></ontology:distance>
+  <ontology:size>1.160</ontology:size>
+  <ontology:mass>1.88000</ontology:mass>
+  <ontology:density>1.59600</ontology:density>
+  <ontology:semimajoraxis>0.055120</ontology:semimajoraxis>
+</rdf:Description>

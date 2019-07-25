@@ -1,0 +1,9 @@
+<rdf:Description rdf:about="urn://sedatar.org/astronomical_database/individuals/eps_Eri_b">
+  <rdf:type rdf:resource="urn://sedatar.org/astronomical_database/astronomy/Exoplanet" />
+  <rdfs:label>eps Eri b</rdfs:label>
+  <ontology:distance>3.21</ontology:distance>
+  <ontology:size></ontology:size>
+  <ontology:mass>1.55000</ontology:mass>
+  <ontology:density></ontology:density>
+  <ontology:semimajoraxis>3.390000</ontology:semimajoraxis>
+</rdf:Description>

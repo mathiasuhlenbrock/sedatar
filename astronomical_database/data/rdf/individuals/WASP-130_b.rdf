@@ -1,0 +1,9 @@
+<rdf:Description rdf:about="urn://sedatar.org/astronomical_database/individuals/WASP-130_b">
+  <rdf:type rdf:resource="urn://sedatar.org/astronomical_database/astronomy/Exoplanet" />
+  <rdfs:label>WASP 130 b</rdfs:label>
+  <ontology:distance>180.00</ontology:distance>
+  <ontology:size>0.890</ontology:size>
+  <ontology:mass>1.23000</ontology:mass>
+  <ontology:density>2.34000</ontology:density>
+  <ontology:semimajoraxis>0.101200</ontology:semimajoraxis>
+</rdf:Description>

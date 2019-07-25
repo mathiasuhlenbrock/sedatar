@@ -1,0 +1,9 @@
+<rdf:Description rdf:about="urn://sedatar.org/astronomical_database/individuals/K2-19_b">
+  <rdf:type rdf:resource="urn://sedatar.org/astronomical_database/astronomy/Exoplanet" />
+  <rdfs:label>K2 19 b</rdfs:label>
+  <ontology:distance>291.00</ontology:distance>
+  <ontology:size>0.691</ontology:size>
+  <ontology:mass></ontology:mass>
+  <ontology:density></ontology:density>
+  <ontology:semimajoraxis>0.074000</ontology:semimajoraxis>
+</rdf:Description>

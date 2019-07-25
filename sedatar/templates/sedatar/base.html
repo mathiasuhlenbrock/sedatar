@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8"/>
+    <link rel="stylesheet" type="text/css" href="/static/style.css" title="Default"/>
+    <link rel="alternate stylesheet" type="text/css" href="/static/style_alt.css" title="Star Trek"/>
+    <title>Sedatar</title>
+</head>
+<body>
+<div class="grid">
+    <div class="row">
+        <div id="cell1" class="column"></div>
+        <div id="cell2" class="column"></div>
+        <div id="cell3" class="column"></div>
+        <div id="cell4" class="column"></div>
+    </div>
+    <div class="row expand">
+        <div id="cell5" class="column"></div>
+        <div id="cell6" class="column"></div>
+        <div id="cell7" class="column">
+            <!-- Begin main window -->
+            {% block content %}
+            {% endblock %}
+            <!-- End main window -->
+        </div>
+        <div id="cell8" class="column">
+            <!-- Begin navigation bar -->
+            {% block navigation %}
+            {% endblock %}
+            <!-- End navigation bar -->
+        </div>
+    </div>
+    <div class="row">
+        <div id="cell9" class="column"></div>
+        <div id="cell10" class="column"></div>
+        <div id="cell11" class="column"></div>
+        <div id="cell12" class="column"></div>
+    </div>
+</div>
+</body>
+</html>

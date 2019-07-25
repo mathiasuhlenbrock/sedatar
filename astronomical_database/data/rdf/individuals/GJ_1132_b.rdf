@@ -1,0 +1,9 @@
+<rdf:Description rdf:about="urn://sedatar.org/astronomical_database/individuals/GJ_1132_b">
+  <rdf:type rdf:resource="urn://sedatar.org/astronomical_database/astronomy/Exoplanet" />
+  <rdfs:label>GJ 1132 b</rdfs:label>
+  <ontology:distance>12.04</ontology:distance>
+  <ontology:size>0.103</ontology:size>
+  <ontology:mass>0.00510</ontology:mass>
+  <ontology:density>6.00000</ontology:density>
+  <ontology:semimajoraxis></ontology:semimajoraxis>
+</rdf:Description>

@@ -1,0 +1,9 @@
+<rdf:Description rdf:about="urn://sedatar.org/astronomical_database/individuals/CoRoT-22_b">
+  <rdf:type rdf:resource="urn://sedatar.org/astronomical_database/astronomy/Exoplanet" />
+  <rdfs:label>CoRoT 22 b</rdfs:label>
+  <ontology:distance>592.00</ontology:distance>
+  <ontology:size>0.435</ontology:size>
+  <ontology:mass>0.03800</ontology:mass>
+  <ontology:density>0.24900</ontology:density>
+  <ontology:semimajoraxis>0.092000</ontology:semimajoraxis>
+</rdf:Description>

@@ -1,0 +1,33 @@
+{% extends "sedatar/base.html" %}
+{% block content %}
+    <div id="main_text">
+        <div id="text_left_column">
+            <h3>Your question</h3>
+            <br>
+            {{ search.question }}
+            <br>
+            <br>
+            <br>
+            <h3>Your answer</h3>
+            <br>
+            {{ search.answer }}
+        </div>
+        <div id="text_right_column">
+        </div>
+    </div>
+{% endblock %}
+{% block navigation %}
+    <!-- Button "New search" -->
+    <svg class="vspace">
+        <rect width="100%" height="100%"></rect>
+    </svg>
+    <a href="/">
+        <svg width="100%" height="100">
+            <rect class="navigation" width="100%" height="100%"></rect>
+            <text class="text" x="10" y="90">New search</text>
+        </svg>
+    </a>
+    <svg class="vspace">
+        <rect width="100%" height="100%"></rect>
+    </svg>
+{% endblock %}

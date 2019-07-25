@@ -1,0 +1,9 @@
+<rdf:Description rdf:about="urn://sedatar.org/astronomical_database/individuals/Kepler-289_d">
+  <rdf:type rdf:resource="urn://sedatar.org/astronomical_database/astronomy/Exoplanet" />
+  <rdfs:label>Kepler 289 d</rdfs:label>
+  <ontology:distance>700.00</ontology:distance>
+  <ontology:size>0.239</ontology:size>
+  <ontology:mass>0.01300</ontology:mass>
+  <ontology:density>1.20000</ontology:density>
+  <ontology:semimajoraxis>0.330000</ontology:semimajoraxis>
+</rdf:Description>

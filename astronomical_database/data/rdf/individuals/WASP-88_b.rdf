@@ -1,0 +1,9 @@
+<rdf:Description rdf:about="urn://sedatar.org/astronomical_database/individuals/WASP-88_b">
+  <rdf:type rdf:resource="urn://sedatar.org/astronomical_database/astronomy/Exoplanet" />
+  <rdfs:label>WASP 88 b</rdfs:label>
+  <ontology:distance></ontology:distance>
+  <ontology:size>1.700</ontology:size>
+  <ontology:mass>0.56000</ontology:mass>
+  <ontology:density>0.14600</ontology:density>
+  <ontology:semimajoraxis>0.064310</ontology:semimajoraxis>
+</rdf:Description>

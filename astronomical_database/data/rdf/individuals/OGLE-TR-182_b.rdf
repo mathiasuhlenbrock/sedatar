@@ -1,0 +1,9 @@
+<rdf:Description rdf:about="urn://sedatar.org/astronomical_database/individuals/OGLE-TR-182_b">
+  <rdf:type rdf:resource="urn://sedatar.org/astronomical_database/astronomy/Exoplanet" />
+  <rdfs:label>OGLE TR 182 b</rdfs:label>
+  <ontology:distance></ontology:distance>
+  <ontology:size>1.130</ontology:size>
+  <ontology:mass>1.01000</ontology:mass>
+  <ontology:density></ontology:density>
+  <ontology:semimajoraxis>0.051000</ontology:semimajoraxis>
+</rdf:Description>

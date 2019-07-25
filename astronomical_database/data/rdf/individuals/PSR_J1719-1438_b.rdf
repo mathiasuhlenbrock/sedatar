@@ -1,0 +1,9 @@
+<rdf:Description rdf:about="urn://sedatar.org/astronomical_database/individuals/PSR_J1719-1438_b">
+  <rdf:type rdf:resource="urn://sedatar.org/astronomical_database/astronomy/Exoplanet" />
+  <rdfs:label>PSR J1719 1438 b</rdfs:label>
+  <ontology:distance>1200.00</ontology:distance>
+  <ontology:size></ontology:size>
+  <ontology:mass>1.20000</ontology:mass>
+  <ontology:density>23.00000</ontology:density>
+  <ontology:semimajoraxis>0.004400</ontology:semimajoraxis>
+</rdf:Description>

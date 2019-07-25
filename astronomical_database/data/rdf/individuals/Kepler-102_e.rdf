@@ -1,0 +1,9 @@
+<rdf:Description rdf:about="urn://sedatar.org/astronomical_database/individuals/Kepler-102_e">
+  <rdf:type rdf:resource="urn://sedatar.org/astronomical_database/astronomy/Exoplanet" />
+  <rdfs:label>Kepler 102 e</rdfs:label>
+  <ontology:distance></ontology:distance>
+  <ontology:size>0.198</ontology:size>
+  <ontology:mass>0.02800</ontology:mass>
+  <ontology:density>4.68000</ontology:density>
+  <ontology:semimajoraxis></ontology:semimajoraxis>
+</rdf:Description>

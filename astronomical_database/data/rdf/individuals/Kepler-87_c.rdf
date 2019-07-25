@@ -1,0 +1,9 @@
+<rdf:Description rdf:about="urn://sedatar.org/astronomical_database/individuals/Kepler-87_c">
+  <rdf:type rdf:resource="urn://sedatar.org/astronomical_database/astronomy/Exoplanet" />
+  <rdfs:label>Kepler 87 c</rdfs:label>
+  <ontology:distance></ontology:distance>
+  <ontology:size>0.548</ontology:size>
+  <ontology:mass>0.02000</ontology:mass>
+  <ontology:density>0.15200</ontology:density>
+  <ontology:semimajoraxis>0.676000</ontology:semimajoraxis>
+</rdf:Description>

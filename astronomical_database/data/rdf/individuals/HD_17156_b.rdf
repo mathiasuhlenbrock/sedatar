@@ -1,0 +1,9 @@
+<rdf:Description rdf:about="urn://sedatar.org/astronomical_database/individuals/HD_17156_b">
+  <rdf:type rdf:resource="urn://sedatar.org/astronomical_database/astronomy/Exoplanet" />
+  <rdfs:label>HD 17156 b</rdfs:label>
+  <ontology:distance>75.00</ontology:distance>
+  <ontology:size>1.020</ontology:size>
+  <ontology:mass>3.22000</ontology:mass>
+  <ontology:density>3.78000</ontology:density>
+  <ontology:semimajoraxis>0.161400</ontology:semimajoraxis>
+</rdf:Description>

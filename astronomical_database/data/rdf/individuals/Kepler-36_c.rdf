@@ -1,0 +1,9 @@
+<rdf:Description rdf:about="urn://sedatar.org/astronomical_database/individuals/Kepler-36_c">
+  <rdf:type rdf:resource="urn://sedatar.org/astronomical_database/astronomy/Exoplanet" />
+  <rdfs:label>Kepler 36 c</rdfs:label>
+  <ontology:distance>470.00</ontology:distance>
+  <ontology:size>0.328</ontology:size>
+  <ontology:mass>0.02500</ontology:mass>
+  <ontology:density>0.89000</ontology:density>
+  <ontology:semimajoraxis>0.128300</ontology:semimajoraxis>
+</rdf:Description>

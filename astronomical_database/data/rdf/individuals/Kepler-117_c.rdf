@@ -1,0 +1,9 @@
+<rdf:Description rdf:about="urn://sedatar.org/astronomical_database/individuals/Kepler-117_c">
+  <rdf:type rdf:resource="urn://sedatar.org/astronomical_database/astronomy/Exoplanet" />
+  <rdfs:label>Kepler 117 c</rdfs:label>
+  <ontology:distance>1430.00</ontology:distance>
+  <ontology:size>1.101</ontology:size>
+  <ontology:mass>1.84000</ontology:mass>
+  <ontology:density>1.74000</ontology:density>
+  <ontology:semimajoraxis>0.280400</ontology:semimajoraxis>
+</rdf:Description>

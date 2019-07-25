@@ -8,6 +8,7 @@ __pycache__/
 # Distribution / packaging
 .Python
 env/
+virtual/
 build/
 develop-eggs/
 dist/
@@ -55,3 +56,9 @@ docs/_build/
 
 # PyBuilder
 target/
+
+# PyCharm
+.idea/
+
+# Static files
+staticfiles/

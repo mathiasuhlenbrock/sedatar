@@ -1,0 +1,9 @@
+<rdf:Description rdf:about="urn://sedatar.org/astronomical_database/individuals/Kepler-76_b">
+  <rdf:type rdf:resource="urn://sedatar.org/astronomical_database/astronomy/Exoplanet" />
+  <rdfs:label>Kepler 76 b</rdfs:label>
+  <ontology:distance></ontology:distance>
+  <ontology:size>1.360</ontology:size>
+  <ontology:mass>2.01000</ontology:mass>
+  <ontology:density>1.10000</ontology:density>
+  <ontology:semimajoraxis>0.027400</ontology:semimajoraxis>
+</rdf:Description>

@@ -1,0 +1,9 @@
+<rdf:Description rdf:about="urn://sedatar.org/astronomical_database/individuals/WASP-45_b">
+  <rdf:type rdf:resource="urn://sedatar.org/astronomical_database/astronomy/Exoplanet" />
+  <rdfs:label>WASP 45 b</rdfs:label>
+  <ontology:distance></ontology:distance>
+  <ontology:size>0.992</ontology:size>
+  <ontology:mass>1.00200</ontology:mass>
+  <ontology:density>1.27500</ontology:density>
+  <ontology:semimajoraxis>0.040500</ontology:semimajoraxis>
+</rdf:Description>
