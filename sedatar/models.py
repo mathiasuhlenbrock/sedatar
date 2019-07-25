@@ -1,4 +1,4 @@
-import quepy
+# import quepy
 import rdflib
 from django.db import models
 
@@ -36,16 +36,16 @@ class Search(models.Model):
 
     @property
     def answer(self):
-        g = rdflib.Graph()
-        g.parse('astronomical_database/data/rdf/astronomical_database.rdf')
-        sparqlgen = quepy.install('sparqlgen')
-        target, query, metadata = sparqlgen.get_query(self.question_str)
-        if query:
-            results = g.query(query)
-            if results:
-                for result in results:
-                    return '%s' % result
-            else:
-                return 'No answer found.'
-        else:
-            return 'Query not generated.'
+        # g = rdflib.Graph()
+        # g.parse('astronomical_database/data/rdf/astronomical_database.rdf')
+        # sparqlgen = quepy.install('sparqlgen')
+        # target, query, metadata = sparqlgen.get_query(self.question_str)
+        # if query:
+        #     results = g.query(query)
+        #     if results:
+        #         for result in results:
+        #             return '%s' % result
+        #     else:
+        #         return 'No answer found.'
+        # else:
+        return 'Query not generated.'
