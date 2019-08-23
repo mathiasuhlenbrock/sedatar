@@ -258,11 +258,11 @@ with open('astronomical_database/data/csv/planets/planets.csv') as csvfile:
                 'Luyten Half-Second catalogue',
                 row, year_of_discovery, density, mass, radius, semimajoraxis, orbital_period
             )
-        #elif row['pl_hostname'].startswith('L '):
-        #    sort_into_catalogue(
-        #        'Luyten catalogue',
-        #        row, year_of_discovery, density, mass, radius, semimajoraxis, orbital_period
-        #    )
+        elif row['pl_hostname'].startswith('L '):
+            sort_into_catalogue(
+                'Luyten catalogue',
+                row, year_of_discovery, density, mass, radius, semimajoraxis, orbital_period
+            )
         elif row['pl_hostname'].startswith('LSPM'):
             sort_into_catalogue(
                 'Lépine-Shara Proper Motion catalog',
