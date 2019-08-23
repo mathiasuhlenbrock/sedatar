@@ -78,11 +78,8 @@ DATABASES = {
 # DATABASES = {
 #     'default': {
 #         'ENGINE': 'django.db.backends.postgresql',
-#         # 'NAME': 'sedatar-v0.1-develop-db',
-#         # 'USER': 'postgres',
 #         'NAME': 'postgres',
 #         'USER': 'uhlenbrock',
-#         # 'PASSWORD': 'space2063',
 #     }
 # }
 

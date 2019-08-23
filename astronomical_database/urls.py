@@ -8,7 +8,7 @@ urlpatterns = [
         name='list_of_categories'
     ),
     re_path(
-        r'^List_of_star_catalogues/(?P<catalogue_page_name>[a-zA-Z_0-9\-+.]+)/$',
+        r'^List_of_star_catalogues/(?P<catalogue_page_name>[a-zéA-Z_0-9\-+.]+)/$',
         views.catalogue,
         name='catalogue'
     ),
@@ -18,12 +18,12 @@ urlpatterns = [
         name='list_of_catalogues'
     ),
     re_path(
-        r'^List_of_planetary_systems/(?P<planetary_system_page_name>[a-zA-Z_0-9\-+.]+)/$',
+        r'^List_of_planetary_systems/(?P<planetary_system_page_name>[a-zA-Z_0-9\-+\'.]+)/$',
         views.planetary_system,
         name='planetary_system'
     ),
     re_path(
-        r'^List_of_planets/(?P<planet_page_name>[a-zA-Z_0-9\-+.]+)/$',
+        r'^List_of_planets/(?P<planet_page_name>[a-zA-Z_0-9\-+\'.]+)/$',
         views.planet,
         name='planet'
     ),
