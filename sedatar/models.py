@@ -1,5 +1,5 @@
 # import quepy
-import rdflib
+# import rdflib
 from django.db import models
 
 
