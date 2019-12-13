@@ -10,4 +10,4 @@ Planetary and stellar data is provided by [NASA's exoplanet
 archive](http://exoplanetarchive.ipac.caltech.edu) and is taken 'as is'. This is a hobbyist project
 and makes no claims about being complete, correct or consistent.
 
-So far, the website has been tested only with Chrome 76.
+So far, the website has been tested only with Chrome 79.
