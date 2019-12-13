@@ -409,9 +409,9 @@ with open('astronomical_database/data/csv/planets/planets.csv') as csvfile:
                 row, year_of_discovery, density, mass, radius, semimajoraxis, orbital_period
             )
         elif row['pl_hostname'] == 'Fomalhaut' \
-            or row['pl_hostname'] == 'Kapteyn' \
-            or row['pl_hostname'] == 'Proxima Cen' \
-            or row['pl_hostname'] == 'Teegarden\'s Star':
+                or row['pl_hostname'] == 'Kapteyn' \
+                or row['pl_hostname'] == 'Proxima Cen' \
+                or row['pl_hostname'] == 'Teegarden\'s Star':
             sort_into_catalogue(
                 'Stars with proper names',
                 row, year_of_discovery, density, mass, radius, semimajoraxis, orbital_period

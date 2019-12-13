@@ -1,4 +1,4 @@
-import nltk 
+import nltk
 import quepy
 import rdflib
 
