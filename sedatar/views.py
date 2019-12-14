@@ -14,7 +14,7 @@ def answer(request):
     form = SearchForm(request.POST)
     if form.is_valid():
         search = Search(question=form.cleaned_data['question'])
-        search.save()
+        # search.save()
         return render_to_response('sedatar/answer.html', {'search': search})
 
 
