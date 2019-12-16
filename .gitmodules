@@ -1,0 +1,3 @@
+[submodule "quepy"]
+	path = quepy
+	url = https://github.com/mathiasuhlenbrock/quepy.git

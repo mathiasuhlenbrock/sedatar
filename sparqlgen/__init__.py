@@ -4,4 +4,4 @@
 Init for sparqlgen quepy.
 """
 
-from basic import *
+from .basic import *

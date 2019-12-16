@@ -1,4 +1,4 @@
-<rdf:Description rdf:about="urn://sedatar.org/astronomical_database/astronomy/Astronomical_Object/">
+<rdf:Description rdf:about="urn://sedatar.org/astronomical_database/astronomy/Astronomical_Object">
   <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class" />
   <rdfs:label>astronomical object</rdfs:label>
   <rdfs:subClassOf rdf:resource="urn://sedatar.org/astronomical_database/common/Thing" />
