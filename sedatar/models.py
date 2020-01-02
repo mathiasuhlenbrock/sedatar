@@ -37,6 +37,26 @@ class Search(models.Model):
             determiner = 'An'
         return determiner + ' %s.' % result
 
+    @staticmethod
+    def render_answer_density(result):
+        unit = 'g/cm&sup3;'
+        return '%s ' % result + unit + '.'
+
+    @staticmethod
+    def render_answer_distance(result):
+        unit = 'ly'
+        return '%s ' % result + unit + '.'
+
+    @staticmethod
+    def render_answer_mass(result):
+        unit = 'M<sub>&#9795;</sub>'
+        return '%s ' % result + unit + '.'
+
+    @staticmethod
+    def render_answer_size(result):
+        unit = 'R<sub>&#9795;</sub>'
+        return '%s ' % result + unit + '.'
+
     @property
     def question_str(self):
         return '%s' % self.question
@@ -55,5 +75,13 @@ class Search(models.Model):
         for result in results:
             if metadata == 'definition':
                 return self.render_answer_definition(result)
+            elif metadata == 'density':
+                return self.render_answer_density(result)
+            elif metadata == 'distance':
+                return self.render_answer_distance(result)
+            elif metadata == 'mass':
+                return self.render_answer_mass(result)
+            elif metadata == 'size':
+                return self.render_answer_size(result)
             else:
                 return 'No method found to render the answer.'

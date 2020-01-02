@@ -43,7 +43,7 @@ class WhatIsInstance(QuestionTemplate):
             (Token("is") + Question(Token("the"))) | (Token("are") + Token("the"))) + Thing() + Question(Pos("."))
 
     def interpret(self, match):
-        return IsInstanceOf(match.thing)
+        return LabelOf(IsInstanceOf(match.thing)), 'definition'
 
 
 class PropertyOfQuestion(QuestionTemplate):
@@ -56,10 +56,10 @@ class PropertyOfQuestion(QuestionTemplate):
 
     def interpret(self, match):
         if match.prop == "density":
-            return DensityOf(match.thing)
+            return DensityOf(match.thing), 'density'
         elif match.prop == "distance":
-            return DistanceOf(match.thing)
+            return DistanceOf(match.thing), 'distance'
         elif match.prop == "mass":
-            return MassOf(match.thing)
+            return MassOf(match.thing), 'mass'
         elif match.prop == "size" or match.prop == "radius":
-            return SizeOf(match.thing)
+            return SizeOf(match.thing), 'size'
