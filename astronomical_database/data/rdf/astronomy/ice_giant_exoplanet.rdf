@@ -1,5 +1,0 @@
-<rdf:Description rdf:about="urn://sedatar.org/astronomical_database/astronomy/Ice_Giant_Exoplanet">
-  <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class" />
-  <rdfs:label>ice giant exoplanet</rdfs:label>
-  <rdfs:subClassOf rdf:resource="urn://sedatar.org/astronomical_database/astronomy/Exoplanet" />
-</rdf:Description>
