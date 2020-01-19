@@ -72,7 +72,7 @@ class PlanetarySystem(models.Model):
         else:
             return 'Classification not available'
 
-    # Auxilliary parameters.
+    # Auxiliary parameters.
 
     @property
     def host_distance_ly(self):
@@ -228,7 +228,7 @@ class Planet(models.Model):
         else:
             return 'Terrestrial planet'
 
-    # Auxilliary parameters.
+    # Auxiliary parameters.
 
     @property
     def rel_axis(self):
