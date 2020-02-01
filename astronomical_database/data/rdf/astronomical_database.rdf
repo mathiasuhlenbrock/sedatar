@@ -42,6 +42,7 @@
 <rdf:Description rdf:about="urn://sedatar.org/astronomical_database/astronomy/Gas_Giant">
   <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class" />
   <rdfs:label>gas giant</rdfs:label>
+  <ontology:numberOfInstances>396</ontology:numberOfInstances>
   <rdfs:subClassOf rdf:resource="urn://sedatar.org/astronomical_database/astronomy/Planet" />
 </rdf:Description>
 <rdf:Description rdf:about="urn://sedatar.org/astronomical_database/astronomy/Giant_Star">
@@ -72,11 +73,13 @@
 <rdf:Description rdf:about="urn://sedatar.org/astronomical_database/astronomy/Planet">
   <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class" />
   <rdfs:label>planet</rdfs:label>
+  <ontology:numberOfInstances>4112</ontology:numberOfInstances>
   <rdfs:subClassOf rdf:resource="urn://sedatar.org/astronomical_database/astronomy/Astronomical_Object" />
 </rdf:Description>
 <rdf:Description rdf:about="urn://sedatar.org/astronomical_database/astronomy/Planetary_System">
   <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class" />
   <rdfs:label>planetary system</rdfs:label>
+  <ontology:numberOfInstances>3053</ontology:numberOfInstances>
   <rdfs:subClassOf rdf:resource="urn://sedatar.org/astronomical_database/astronomy/Astronomical_Object" />
 </rdf:Description>
 <rdf:Description rdf:about="urn://sedatar.org/astronomical_database/astronomy/Pulsar">
@@ -102,6 +105,7 @@
 <rdf:Description rdf:about="urn://sedatar.org/astronomical_database/astronomy/Terrestrial_Planet">
   <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class" />
   <rdfs:label>terrestrial planet</rdfs:label>
+  <ontology:numberOfInstances>103</ontology:numberOfInstances>
   <rdfs:subClassOf rdf:resource="urn://sedatar.org/astronomical_database/astronomy/Planet" />
 </rdf:Description>
 <rdf:Description rdf:about="urn://sedatar.org/astronomical_database/common/Thing">
