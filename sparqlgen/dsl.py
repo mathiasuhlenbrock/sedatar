@@ -39,6 +39,11 @@ class MassOf(FixedRelation):
     reverse = True
 
 
+class NumberOf(FixedRelation):
+    relation = "ontology:numberOfInstances"
+    reverse = True
+
+
 class SizeOf(FixedRelation):
     relation = "ontology:size"
     reverse = True

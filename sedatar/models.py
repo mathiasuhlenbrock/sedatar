@@ -59,7 +59,11 @@ class Search(models.Model):
         for result in results:
             if metadata == 'definition':
                 return self.render_answer_definition(result)
-            elif metadata == 'density' or metadata == 'distance' or metadata == 'mass' or metadata == 'size':
+            elif metadata == 'density' \
+                    or metadata == 'distance' \
+                    or metadata == 'mass' \
+                    or metadata == 'number' \
+                    or metadata == 'size':
                 return self.render_answer_property(result)
             else:
                 return 'No method found to render the answer.'

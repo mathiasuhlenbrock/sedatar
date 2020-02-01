@@ -4,16 +4,28 @@
 Basic queries for sparqlgen quepy.
 """
 
+from nltk.stem import WordNetLemmatizer
 from refo import Question, Plus
 from quepy.quepy.parsing import Lemma, Particle, Pos, QuestionTemplate, Token
 from .dsl import *
 
 
 class Thing(Particle):
-    regex = Plus(Pos("JJ") | Pos("DT") | Pos("NN") | Pos("NNS") | Pos("NNP") | Pos("NNPS") | Pos("CD") | Pos('PRP'))
+    regex = Plus(Pos("JJ") | Pos("DT") | Pos("NN") | Pos("NNP") | Pos("CD") | Pos('PRP'))
 
     def interpret(self, match):
         return HasKeyword(match.words.tokens)
+
+
+class Things(Particle):
+    regex = Plus(Pos("JJ") | Pos("DT") | Pos("NN") | Pos("NNS") | Pos("NNPS") | Pos("CD") | Pos('PRP'))
+
+    def interpret(self, match):
+        token_list = match.words.tokens.split()
+        wnl = WordNetLemmatizer()
+        token_list[-1] = wnl.lemmatize(token_list[-1])
+        tokens = " ".join(token_list)
+        return HasKeyword(tokens)
 
 
 class Prop(Particle):
@@ -25,7 +37,7 @@ class Prop(Particle):
 
 class WhatIsClass(QuestionTemplate):
     """
-    Regex for questions like "What is a/an | are ..."
+    Regex for questions like "What is a/an | are ...?"
     Ex: "What is a planet?"
     """
     regex = Lemma("what") + (Token("is") + (Token("a") | Token("an")) | Token("are")) + Thing() + Question(Pos("."))
@@ -36,7 +48,7 @@ class WhatIsClass(QuestionTemplate):
 
 class WhatIsInstance(QuestionTemplate):
     """
-    Regex for questions like "What is (the) | are the ..."
+    Regex for questions like "What is (the) | are the ...?"
     Ex: "What is Kepler 11 b?"
     """
     regex = Lemma("what") + (
@@ -46,7 +58,18 @@ class WhatIsInstance(QuestionTemplate):
         return LabelOf(IsInstanceOf(match.thing)), 'definition'
 
 
-class PropertyOfQuestion(QuestionTemplate):
+class HowMany(QuestionTemplate):
+    """
+    Regex for questions like "How many ...s are there?"
+    Ex: "How many terrestrial planets are there?"
+    """
+    regex = Lemma("how") + Token("many") + Things() + Token("are") + Token("there") + Question(Pos("."))
+
+    def interpret(self, match):
+        return NumberOf(match.things), 'number'
+
+
+class PropertyOf(QuestionTemplate):
     """
     Regex for questions about various properties of a thing.
     Ex: "What is the size of Jupiter?"
