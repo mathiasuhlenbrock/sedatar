@@ -87,9 +87,10 @@ for planetarySystem in PlanetarySystem.objects.all():
 
 
 def insert_number_of_instances(entity, number_of_instances):
-    planets = open('astronomical_database/data/rdf/astronomical_database.rdf')
-    planets_data = planets.read()
-    root_element = etree.fromstring(planets_data)
+    file_name = 'astronomical_database/data/rdf/astronomical_database.rdf'
+    rdf_file = open(file_name)
+    rdf_data = rdf_file.read()
+    root_element = etree.fromstring(rdf_data)
     target_element = root_element.xpath(
         '//rdf:Description[@rdf:about="urn://sedatar.org/astronomical_database/astronomy/'
         + entity + '"]/ontology:numberOfInstances',
@@ -99,17 +100,15 @@ def insert_number_of_instances(entity, number_of_instances):
         }
     )
     target_element[0].text = str(number_of_instances)
-    etree.ElementTree(root_element).write(
-        'astronomical_database/data/rdf/astronomical_database.rdf', pretty_print=True
-    )
+    etree.ElementTree(root_element).write(file_name, pretty_print=True)
 
+
+call(["astronomical_database/scripts/shell/update_astronomical_database_rdf.sh"])
 
 insert_number_of_instances('Planet', Planet.objects.all().count())
 insert_number_of_instances('Terrestrial_Planet', number_of_terrestrial_planets)
 insert_number_of_instances('Gas_Giant', number_of_gas_giants)
-insert_number_of_instances('Planet', PlanetarySystem.objects.all().count())
-
-call(["astronomical_database/scripts/shell/update_astronomical_database_rdf.sh"])
+insert_number_of_instances('Planetary_System', PlanetarySystem.objects.all().count())
 
 # Persistence with Sleepycat.
 # G = rdflib.ConjunctiveGraph('Sleepycat')
