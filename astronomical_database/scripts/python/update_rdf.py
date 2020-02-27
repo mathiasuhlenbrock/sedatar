@@ -3,9 +3,12 @@ Documentation goes here.
 """
 
 # import rdflib
+from lxml import etree
 from subprocess import call
 from astronomical_database.models import Planet, PlanetarySystem
 
+number_of_terrestrial_planets = 0
+number_of_gas_giants = 0
 for planet in Planet.objects.all():
     outputFile = open(
         "astronomical_database/data/rdf/individuals/"
@@ -18,10 +21,12 @@ for planet in Planet.objects.all():
         + planet.name.replace(' ', '_') + "\">\n"
     )
     if planet.classification == 'Terrestrial planet':
+        number_of_terrestrial_planets += 1
         outputFile.write(
             "  <rdf:type rdf:resource=\"urn://sedatar.org/astronomical_database/astronomy/Terrestrial_Planet\" />\n"
         )
     elif planet.classification == 'Gas giant':
+        number_of_gas_giants += 1
         outputFile.write(
             "  <rdf:type rdf:resource=\"urn://sedatar.org/astronomical_database/astronomy/Gas_Giant\" />\n"
         )
@@ -80,9 +85,41 @@ for planetarySystem in PlanetarySystem.objects.all():
     outputFile.write("</rdf:Description>")
     outputFile.close()
 
+
+def insert_number_of_instances(entity, number_of_instances):
+    planets = open('astronomical_database/data/rdf/astronomical_database.rdf')
+    planets_data = planets.read()
+    root_element = etree.fromstring(planets_data)
+    target_element = root_element.xpath(
+        '//rdf:Description[@rdf:about="urn://sedatar.org/astronomical_database/astronomy/'
+        + entity + '"]/ontology:numberOfInstances',
+        namespaces={
+            'rdf': 'http://www.w3.org/1999/02/22-rdf-syntax-ns#',
+            'ontology': 'urn://sedatar.org/'
+        }
+    )
+    target_element[0].text = str(number_of_instances)
+    etree.ElementTree(root_element).write(
+        'astronomical_database/data/rdf/astronomical_database.rdf', pretty_print=True
+    )
+
+
+insert_number_of_instances('Planet', Planet.objects.all().count())
+insert_number_of_instances('Terrestrial_Planet', number_of_terrestrial_planets)
+insert_number_of_instances('Gas_Giant', number_of_gas_giants)
+insert_number_of_instances('Planet', PlanetarySystem.objects.all().count())
+
 call(["astronomical_database/scripts/shell/update_astronomical_database_rdf.sh"])
 
+# Persistence with Sleepycat.
 # G = rdflib.ConjunctiveGraph('Sleepycat')
 # G.open('astronomical_database/data/rdf/triplestore', create=True)
+# G.parse("astronomical_database/data/rdf/astronomical_database.rdf")
+# G.close()
+
+# Persistence with SQLAlchemy.
+# store = rdflib.plugin.get("SQLAlchemy", rdflib.store.Store)(identifier=rdflib.URIRef('triplestore'))
+# G = rdflib.Graph(store, identifier=rdflib.URIRef('triplestore'))
+# G.open(rdflib.Literal('sqlite://'), create=True) # In Memory!
 # G.parse("astronomical_database/data/rdf/astronomical_database.rdf")
 # G.close()
