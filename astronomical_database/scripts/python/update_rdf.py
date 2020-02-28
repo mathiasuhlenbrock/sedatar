@@ -120,6 +120,6 @@ insert_number_of_instances('Planetary_System', PlanetarySystem.objects.all().cou
 # store = rdflib.plugin.get("SQLAlchemy", rdflib.store.Store)(identifier=rdflib.URIRef('triplestore'))
 # G = rdflib.Graph(store, identifier=rdflib.URIRef('triplestore'))
 # # G.open(rdflib.Literal('sqlite://'), create=True) # In Memory!
-# G.open(rdflib.Literal('postgresql+psycopg2://uhlenbrock:d@localhost:5432/postgres'), create=True)
+# G.open(rdflib.Literal('postgresql+psycopg2://uhlenbrock:@localhost:5432/postgres'), create=True)
 # G.parse("astronomical_database/data/rdf/astronomical_database.rdf")
 # G.close()

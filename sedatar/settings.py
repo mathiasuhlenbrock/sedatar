@@ -22,7 +22,7 @@ BASE_DIR = os.path.dirname(os.path.abspath(__file__))
 SECRET_KEY = '-s^7m%fx+*no=(*_r-&kzwwllj_4^)=lpv1gy$e)*r65j_jyt9'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
 # Honor the 'X-Forwarded-Proto' header for request.is_secure()
 SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTO', 'https')
@@ -70,10 +70,18 @@ TEMPLATES = [
 WSGI_APPLICATION = 'sedatar.wsgi.application'
 
 # Parse database configuration from $DATABASE_URL
-import dj_database_url
+# import dj_database_url
+#
+# DATABASES = {
+#     'default': dj_database_url.config()
+# }
 
 DATABASES = {
-    'default': dj_database_url.config()
+    'default': {
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME': 'postgres',
+        'USER': 'uhlenbrock',
+    }
 }
 
 # Internationalization
