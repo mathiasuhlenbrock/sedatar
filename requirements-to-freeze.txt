@@ -6,4 +6,5 @@ lxml
 nltk
 psycopg2
 rdflib
+#rdflib-sqlalchemy
 REfO
