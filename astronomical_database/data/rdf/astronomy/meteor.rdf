@@ -1,5 +1,8 @@
+<!--
 <rdf:Description rdf:about="urn://sedatar.org/astronomical_database/astronomy/Meteor">
   <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class" />
   <rdfs:label>meteor</rdfs:label>
+  <ontology:numberOfInstances></ontology:numberOfInstances>
   <rdfs:subClassOf rdf:resource="urn://sedatar.org/astronomical_database/astronomy/Astronomical_Object" />
 </rdf:Description>
+-->
