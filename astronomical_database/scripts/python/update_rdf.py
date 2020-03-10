@@ -86,13 +86,13 @@ for planetarySystem in PlanetarySystem.objects.all():
     outputFile.close()
 
 
-def insert_number_of_instances(entity, number_of_instances):
+def insert_number_of_instances(namespace, entity, number_of_instances):
     file_name = 'astronomical_database/data/rdf/astronomical_database.rdf'
     rdf_file = open(file_name)
     rdf_data = rdf_file.read()
     root_element = etree.fromstring(rdf_data)
     target_element = root_element.xpath(
-        '//rdf:Description[@rdf:about="urn://sedatar.org/astronomical_database/astronomy/'
+        '//rdf:Description[@rdf:about="urn://sedatar.org/astronomical_database/' + namespace + '/'
         + entity + '"]/ontology:numberOfInstances',
         namespaces={
             'rdf': 'http://www.w3.org/1999/02/22-rdf-syntax-ns#',
@@ -105,10 +105,15 @@ def insert_number_of_instances(entity, number_of_instances):
 
 call(["astronomical_database/scripts/shell/update_astronomical_database_rdf.sh"])
 
-insert_number_of_instances('Planet', Planet.objects.all().count())
-insert_number_of_instances('Terrestrial_Planet', number_of_terrestrial_planets)
-insert_number_of_instances('Gas_Giant', number_of_gas_giants)
-insert_number_of_instances('Planetary_System', PlanetarySystem.objects.all().count())
+number_of_planets = Planet.objects.all().count()
+number_of_planetary_systems = PlanetarySystem.objects.all().count()
+insert_number_of_instances('astronomy', 'Planet', number_of_planets)
+insert_number_of_instances('astronomy', 'Terrestrial_Planet', number_of_terrestrial_planets)
+insert_number_of_instances('astronomy', 'Gas_Giant', number_of_gas_giants)
+insert_number_of_instances('astronomy', 'Planetary_System', number_of_planetary_systems)
+insert_number_of_instances('astronomy', 'Astronomical_Object', number_of_planets + number_of_planetary_systems)
+insert_number_of_instances('astronomy', 'Exoplanet', number_of_planets - 8)
+insert_number_of_instances('common', 'Thing', number_of_planets + number_of_planetary_systems)
 
 # Persistence with Sleepycat.
 # G = rdflib.ConjunctiveGraph('Sleepycat')

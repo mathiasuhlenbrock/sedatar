@@ -10,7 +10,7 @@
 <rdf:Description rdf:about="urn://sedatar.org/astronomical_database/astronomy/Astronomical_Object">
   <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class"/>
   <rdfs:label>astronomical object</rdfs:label>
-  <ontology:numberOfInstances/>
+  <ontology:numberOfInstances>7165</ontology:numberOfInstances>
   <rdfs:subClassOf rdf:resource="urn://sedatar.org/astronomical_database/common/Thing"/>
 </rdf:Description>
 <!--
@@ -40,7 +40,7 @@
 <rdf:Description rdf:about="urn://sedatar.org/astronomical_database/astronomy/Exoplanet">
   <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class"/>
   <rdfs:label>exoplanet</rdfs:label>
-  <ontology:numberOfInstances/>
+  <ontology:numberOfInstances>4104</ontology:numberOfInstances>
   <rdfs:subClassOf rdf:resource="urn://sedatar.org/astronomical_database/astronomy/Planet"/>
 </rdf:Description>
 <!--
@@ -147,9 +147,14 @@
   <ontology:numberOfInstances>103</ontology:numberOfInstances>
   <rdfs:subClassOf rdf:resource="urn://sedatar.org/astronomical_database/astronomy/Planet"/>
 </rdf:Description>
+<rdf:Description rdf:about="urn://sedatar.org/astronomical_database/common/Class">
+  <rdfs:label>class</rdfs:label>
+  <ontology:numberOfInstances>7</ontology:numberOfInstances>
+</rdf:Description>
 <rdf:Description rdf:about="urn://sedatar.org/astronomical_database/common/Thing">
   <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class"/>
   <rdfs:label>thing</rdfs:label>
+  <ontology:numberOfInstances>7165</ontology:numberOfInstances>
 </rdf:Description>
 <rdf:Description rdf:about="urn://sedatar.org/astronomical_database/individuals/11_Com">
   <rdf:type rdf:resource="urn://sedatar.org/astronomical_database/astronomy/Planetary_System"/>
