@@ -102,5 +102,7 @@ class List(QuestionTemplate):
             return LabelOf(Exoplanets()), 'list'
         elif match.things == 'gas giant':
             return LabelOf(GasGiants()), 'list'
+        elif match.things == 'planetary system':
+            return LabelOf(PlanetarySystems()), 'list'
         elif match.things == 'terrestrial planet':
             return LabelOf(TerrestrialPlanets()), 'list'

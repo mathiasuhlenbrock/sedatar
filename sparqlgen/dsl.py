@@ -61,5 +61,9 @@ class GasGiants(FixedType):
     fixedtype = '<urn://sedatar.org/astronomical_database/astronomy/Gas_Giant>'
 
 
+class PlanetarySystems(FixedType):
+    fixedtype = '<urn://sedatar.org/astronomical_database/astronomy/Planetary_System>'
+
+
 class TerrestrialPlanets(FixedType):
     fixedtype = '<urn://sedatar.org/astronomical_database/astronomy/Terrestrial_Planet>'
