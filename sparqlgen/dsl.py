@@ -4,7 +4,7 @@
 Domain specific language for sparqlgen quepy.
 """
 
-from quepy.quepy.dsl import FixedRelation, HasKeyword
+from quepy.quepy.dsl import FixedRelation, FixedType, HasKeyword
 
 HasKeyword.relation = "rdfs:label"
 
@@ -47,3 +47,19 @@ class NumberOf(FixedRelation):
 class SizeOf(FixedRelation):
     relation = "ontology:size"
     reverse = True
+
+
+class Classes(FixedType):
+    fixedtype = '<http://www.w3.org/2000/01/rdf-schema#Class>'
+
+
+class Exoplanets(FixedType):
+    fixedtype = '<urn://sedatar.org/astronomical_database/astronomy/Exoplanets>'
+
+
+class GasGiants(FixedType):
+    fixedtype = '<urn://sedatar.org/astronomical_database/astronomy/Gas_Giant>'
+
+
+class TerrestrialPlanets(FixedType):
+    fixedtype = '<urn://sedatar.org/astronomical_database/astronomy/Terrestrial_Planet>'

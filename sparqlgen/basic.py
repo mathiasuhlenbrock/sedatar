@@ -25,7 +25,7 @@ class Things(Particle):
         wnl = WordNetLemmatizer()
         token_list[-1] = wnl.lemmatize(token_list[-1])
         tokens = " ".join(token_list)
-        return HasKeyword(tokens)
+        return tokens
 
 
 class Prop(Particle):
@@ -66,7 +66,7 @@ class HowMany(QuestionTemplate):
     regex = Lemma("how") + Token("many") + Things() + Token("are") + Token("there") + Question(Pos("."))
 
     def interpret(self, match):
-        return NumberOf(match.things), 'number'
+        return NumberOf(HasKeyword(match.things)), 'number'
 
 
 class PropertyOf(QuestionTemplate):
@@ -86,3 +86,21 @@ class PropertyOf(QuestionTemplate):
             return MassOf(match.thing), 'mass'
         elif match.prop == "size" or match.prop == "radius":
             return SizeOf(match.thing), 'size'
+
+
+class List(QuestionTemplate):
+    """
+    Regex for commands like "List all ...s!"
+    Ex: "List all terrestrial planets!"
+    """
+    regex = Token("List") + Token('all') + Things() + Question(Pos("."))
+
+    def interpret(self, match):
+        if match.things == 'class':
+            return LabelOf(Classes()), 'list'
+        elif match.things == 'exoplanet':
+            return LabelOf(Exoplanets()), 'list'
+        elif match.things == 'gas giant':
+            return LabelOf(GasGiants()), 'list'
+        elif match.things == 'terrestrial planet':
+            return LabelOf(TerrestrialPlanets()), 'list'

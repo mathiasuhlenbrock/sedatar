@@ -35,11 +35,15 @@ class Search(models.Model):
         determiner = 'A'
         if result[0][0] in ['a', 'e', 'i', 'o', 'u']:
             determiner = 'An'
-        return determiner + ' %s.' % result
+        return determiner + ' %s' % result
+
+    @staticmethod
+    def render_answer_list_item(result):
+        return '%s' % result
 
     @staticmethod
     def render_answer_property(result):
-        return '%s.' % result
+        return '%s' % result
 
     @property
     def question_str(self):
@@ -56,14 +60,18 @@ class Search(models.Model):
         results = g.query(query)
         if not results:
             return 'No answer found.'
+        answer = list()
         for result in results:
             if metadata == 'definition':
-                return self.render_answer_definition(result)
+                answer.append(self.render_answer_definition(result))
             elif metadata == 'density' \
                     or metadata == 'distance' \
                     or metadata == 'mass' \
                     or metadata == 'number' \
                     or metadata == 'size':
-                return self.render_answer_property(result)
+                answer.append(self.render_answer_property(result))
+            elif metadata == 'list':
+                answer.append(self.render_answer_list_item(result).capitalize())
             else:
-                return 'No method found to render the answer.'
+                answer.append('No method found to render the answer')
+        return '<br>'.join(sorted(answer)) + '.'
