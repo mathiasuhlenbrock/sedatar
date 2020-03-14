@@ -49,8 +49,17 @@ class SizeOf(FixedRelation):
     reverse = True
 
 
+class UnknownOf(FixedRelation):
+    relation = "ontology:unknown"
+    reverse = True
+
+
 class Classes(FixedType):
     fixedtype = '<http://www.w3.org/2000/01/rdf-schema#Class>'
+
+
+class Unknowns(FixedType):
+    fixedtype = '<>'
 
 
 class Exoplanets(FixedType):

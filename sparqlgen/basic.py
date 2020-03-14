@@ -86,6 +86,8 @@ class PropertyOf(QuestionTemplate):
             return MassOf(match.thing), 'mass'
         elif match.prop == "size" or match.prop == "radius":
             return SizeOf(match.thing), 'size'
+        else:
+            return UnknownOf(match.thing)
 
 
 class List(QuestionTemplate):
@@ -106,3 +108,5 @@ class List(QuestionTemplate):
             return LabelOf(PlanetarySystems()), 'list'
         elif match.things == 'terrestrial planet':
             return LabelOf(TerrestrialPlanets()), 'list'
+        else:
+            return LabelOf(Unknowns())
