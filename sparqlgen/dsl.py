@@ -63,7 +63,7 @@ class Unknowns(FixedType):
 
 
 class Exoplanets(FixedType):
-    fixedtype = '<urn://sedatar.org/astronomical_database/astronomy/Exoplanets>'
+    fixedtype = '<urn://sedatar.org/astronomical_database/astronomy/Exoplanet>'
 
 
 class GasGiants(FixedType):
