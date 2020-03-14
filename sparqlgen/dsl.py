@@ -6,51 +6,51 @@ Domain specific language for sparqlgen quepy.
 
 from quepy.quepy.dsl import FixedRelation, FixedType, HasKeyword
 
-HasKeyword.relation = "rdfs:label"
+HasKeyword.relation = 'rdfs:label'
 
 
 class DensityOf(FixedRelation):
-    relation = "ontology:density"
+    relation = 'ontology:density'
     reverse = True
 
 
 class DistanceOf(FixedRelation):
-    relation = "ontology:distance"
+    relation = 'ontology:distance'
     reverse = True
 
 
 class IsDefinedIn(FixedRelation):
-    relation = "rdfs:subClassOf"
+    relation = 'rdfs:subClassOf'
     reverse = True
 
 
 class IsInstanceOf(FixedRelation):
-    relation = "rdf:type"
+    relation = 'rdf:type'
     reverse = True
 
 
 class LabelOf(FixedRelation):
-    relation = "rdfs:label"
+    relation = 'rdfs:label'
     reverse = True
 
 
 class MassOf(FixedRelation):
-    relation = "ontology:mass"
+    relation = 'ontology:mass'
     reverse = True
 
 
 class NumberOf(FixedRelation):
-    relation = "ontology:numberOfInstances"
+    relation = 'ontology:numberOfInstances'
     reverse = True
 
 
 class SizeOf(FixedRelation):
-    relation = "ontology:size"
+    relation = 'ontology:size'
     reverse = True
 
 
 class UnknownOf(FixedRelation):
-    relation = "ontology:unknown"
+    relation = 'ontology:unknown'
     reverse = True
 
 
