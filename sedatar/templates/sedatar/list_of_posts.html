@@ -32,13 +32,13 @@
             <div class="pagination">
         <span class="step-links">
             {% if list_of_posts.has_previous %}
-                <a href="?page={{ list_of_posts.previous_page_number }}" accesskey="h">previous</a> |
+                <a href="?page={{ list_of_posts.previous_page_number }}" accesskey="h">Previous</a> |
             {% endif %}
             <span class="current">
-                page {{ list_of_posts.number }} of {{ list_of_posts.paginator.num_pages }}
+                Page {{ list_of_posts.number }} of {{ list_of_posts.paginator.num_pages }}
             </span>
             {% if list_of_posts.has_next %}
-                | <a href="?page={{ list_of_posts.next_page_number }}" accesskey="l">next</a>
+                | <a href="?page={{ list_of_posts.next_page_number }}" accesskey="l">Next</a>
             {% endif %}
         </span>
             </div>
