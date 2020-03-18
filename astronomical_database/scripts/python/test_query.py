@@ -21,6 +21,13 @@ result = g.query("""
     #     ?x0 rdfs:label ?x1.
     # }
 
+    # All things.
+    # SELECT DISTINCT ?x2 WHERE {
+    #     ?x0 rdf:type ?x1.
+    #     ?x1 rdfs:subClassOf* <urn://sedatar.org/astronomical_database/common/Thing>.
+    #     ?x0 rdfs:label ?x2.
+    # }
+
     # Number of planets.
     # SELECT DISTINCT ?x1 WHERE {
     #     ?x0 rdfs:label "planet".
