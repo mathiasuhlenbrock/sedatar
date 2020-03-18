@@ -6,7 +6,7 @@ search = Search()
 def test_question(question, answer):
     search.question = question
     print(question + ': ' + answer)
-    assert search.answer == answer
+    assert search.answer[-1] == answer
 
 
 print('Testing...')
@@ -20,6 +20,8 @@ try:
     test_question('What is the size of Kepler 11?', '0.466 AU.')
     test_question('What is the size of Kepler 11 b?', '0.161 R<sub>♃</sub>.')
     test_question('How many planets are there?', '4112.')
+    test_question('What is the number of planets?', 'Query not generated.')
+    test_question('What is an animal?', 'No answer found.')
 except AssertionError:
     print('ERROR: Test failed.')
 print('Tests complete.')
