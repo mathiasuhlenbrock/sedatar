@@ -19,11 +19,15 @@ class Thing(Particle):
 
 class Things(Particle):
     regex = Plus(Pos('JJ') | Pos('DT') | Pos('NN') | Pos('NNS') | Pos('NNPS') | Pos('CD') | Pos('PRP'))
+    custom_lemmas = {'exoplanets': 'exoplanet'}
 
     def interpret(self, match):
         token_list = match.words.tokens.split()
         wnl = WordNetLemmatizer()
-        token_list[-1] = wnl.lemmatize(token_list[-1])
+        lemma = wnl.lemmatize(token_list[-1])
+        if token_list[-1] == lemma:
+            lemma = self.custom_lemmas[lemma] if self.custom_lemmas[lemma] else lemma
+        token_list[-1] = lemma
         tokens = ' '.join(token_list)
         return tokens
 
