@@ -25,19 +25,20 @@
             </table>
         </div>
         <div id="text_footer">
-            <br>
             <div class="pagination">
-        <span class="step-links">
-            {% if list_of_categories.has_previous %}
-                <a href="?page={{ list_of_categories.previous_page_number }}" accesskey="h">Previous</a> |
-            {% endif %}
-            <span class="current">
-                Page {{ list_of_categories.number }} of {{ list_of_categories.paginator.num_pages }}
-            </span>
-            {% if list_of_categories.has_next %}
-                | <a href="?page={{ list_of_categories.next_page_number }}" accesskey="l">Next</a>
-            {% endif %}
-        </span>
+                <p>
+                <span class="step-links">
+                    {% if list_of_categories.has_previous %}
+                        <a href="?page={{ list_of_categories.previous_page_number }}" accesskey="h">Previous</a> |
+                    {% endif %}
+                    <span class="current">
+                        Page {{ list_of_categories.number }} of {{ list_of_categories.paginator.num_pages }}
+                    </span>
+                    {% if list_of_categories.has_next %}
+                        | <a href="?page={{ list_of_categories.next_page_number }}" accesskey="l">Next</a>
+                    {% endif %}
+                </span>
+                </p>
             </div>
         </div>
     </div>
@@ -57,7 +58,7 @@
     <svg class="vspace">
         <rect width="100%" height="100%"></rect>
     </svg>
-    <a href="/List_of_databases/">
+    <a href="{% url 'list_of_databases' %}">
         <svg width="100%" height="100">
             <rect class="navigation" width="100%" height="100%"></rect>
             <text class="text" x="10" y="90">Up</text>
