@@ -8,15 +8,11 @@
     </svg>
     {% endcomment %}
     <h1 class="logo">SEDATAR - SEMANTIC DATA ACCESS AND RETRIEVAL</h1>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
+    <div id="main_page_vertical_space">
+    </div>
     <form name="Search" action="{% url 'answer' %}" method="post" autocomplete="off">
         {% csrf_token %}
         <h3>Ask your question</h3>
-        <br>
         {{ form.as_p }}
         <button type="submit" value="SUBMIT">Submit</button>
     </form>
