@@ -102,15 +102,21 @@ class List(QuestionTemplate):
     regex = Token('List') + Token('all') + Things() + Question(Pos('.'))
 
     def interpret(self, match):
-        if match.things == 'class':
-            return LabelOf(Classes()), 'list'
+        if match.things == 'astronomical object':
+            return LabelOf(IsSubTypeOf(AstronomicalObjects())), 'list'
+        elif match.things == 'class':
+            return LabelOf(IsSubTypeOf(Classes())), 'list'
         elif match.things == 'exoplanet':
-            return LabelOf(Exoplanets()), 'list'
+            return LabelOf(IsSubTypeOf(Exoplanets())), 'list'
         elif match.things == 'gas giant':
-            return LabelOf(GasGiants()), 'list'
+            return LabelOf(IsSubTypeOf(GasGiants())), 'list'
         elif match.things == 'planetary system':
-            return LabelOf(PlanetarySystems()), 'list'
+            return LabelOf(IsSubTypeOf(PlanetarySystems())), 'list'
+        elif match.things == 'planet':
+            return LabelOf(IsSubTypeOf(Planets())), 'list'
         elif match.things == 'terrestrial planet':
-            return LabelOf(TerrestrialPlanets()), 'list'
+            return LabelOf(IsSubTypeOf(TerrestrialPlanets())), 'list'
+        elif match.things == 'thing':
+            return LabelOf(IsSubTypeOf(AllThings())), 'list'
         else:
-            return LabelOf(Unknowns())
+            return LabelOf(IsSubTypeOf(Unknowns()))
