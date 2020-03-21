@@ -23,9 +23,9 @@ result = g.query("""
 
     # All things.
     # SELECT DISTINCT ?x2 WHERE {
-    #     ?x0 rdf:type ?x1.
-    #     ?x1 rdfs:subClassOf* <urn://sedatar.org/astronomical_database/common/Thing>.
-    #     ?x0 rdfs:label ?x2.
+    #     ?x0 rdfs:subClassOf* <urn://sedatar.org/astronomical_database/common/Thing>.
+    #     ?x1 rdf:type ?x0.
+    #     ?x1 rdfs:label ?x2.
     # }
 
     # Number of planets.
