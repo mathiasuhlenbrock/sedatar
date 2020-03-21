@@ -21,11 +21,32 @@ def answer(request):
     """
     Documentation goes here.
     """
-    form = SearchForm(request.POST)
-    if form.is_valid():
-        search = Search(question=form.cleaned_data['question'])
-        # search.save()
-        return render_to_response('sedatar/answer.html', {'search': search})
+    if request.method == 'POST':
+        form = SearchForm(request.POST)
+        if form.is_valid():
+            search = Search(question=form.cleaned_data['question'])
+        else:
+            return
+    else:
+        search = Search(question=request.GET.get('question'))
+    paginator = Paginator(search.answer, 25)
+    # Make sure page request is an int. If not, deliver first page.
+    try:
+        page = int(request.GET.get('page', '1'))
+    except ValueError:
+        page = 1
+    # If page request (9999) is out of range, deliver last page of results.
+    try:
+        the_list_of_answers = paginator.page(page)
+    except (EmptyPage, InvalidPage):
+        the_list_of_answers = paginator.page(paginator.num_pages)
+    return render_to_response(
+        'sedatar/answer.html',
+        {
+            'question': search.question,
+            'list_of_answers': the_list_of_answers
+        }
+    )
 
 
 def index(request):

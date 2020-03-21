@@ -29,6 +29,19 @@ class Post(models.Model):
 
 class Search(models.Model):
     question = models.CharField(max_length=200)
+    g = rdflib.Graph()
+    g.parse('astronomical_database/data/rdf/astronomical_database.rdf')
+
+    # Persistence with SQLAlchemy.
+    # store = rdflib.plugin.get("SQLAlchemy", rdflib.store.Store)(identifier=rdflib.URIRef('triplestore'))
+    # g = rdflib.Graph(store, identifier=rdflib.URIRef('triplestore'))
+    # g.open(rdflib.Literal('postgresql+psycopg2://uhlenbrock:@localhost:5432/postgres'))
+
+    @staticmethod
+    def format(answer):
+        answer = sorted(answer)
+        answer[-1] += '.'
+        return answer
 
     @staticmethod
     def render_answer_definition(result):
@@ -51,16 +64,16 @@ class Search(models.Model):
 
     @property
     def answer(self):
-        g = rdflib.Graph()
-        g.parse('astronomical_database/data/rdf/astronomical_database.rdf')
         sparqlgen = quepy.install('sparqlgen')
         target, query, metadata = sparqlgen.get_query(self.question_str)
-        if not query:
-            return 'Query not generated.'
-        results = g.query(query)
-        if not results:
-            return 'No answer found.'
         answer = list()
+        if not query:
+            answer.append('Query not generated')
+            return self.format(answer)
+        results = self.g.query(query)
+        if not results:
+            answer.append('No answer found')
+            return self.format(answer)
         for result in results:
             if metadata == 'definition':
                 answer.append(self.render_answer_definition(result))
@@ -74,4 +87,4 @@ class Search(models.Model):
                 answer.append(self.render_answer_list_item(result).capitalize())
             else:
                 answer.append('No method found to render the answer')
-        return '<br>'.join(sorted(answer)) + '.'
+        return self.format(answer)
