@@ -15,7 +15,9 @@
                             {{ catalogue.acronym }}
                         </td>
                         <td class="cell_standard">
-                            <a href="/Astronomical_database/List_of_star_catalogues/{{ catalogue.page_name }}/">{{ catalogue.name }}</a>
+                            <a href="/Astronomical_database/List_of_star_catalogues/{{ catalogue.page_name }}/">
+                                {{ catalogue.name }}
+                            </a>
                             {% if catalogue.number_of_planetary_systems == 1 %}
                                 ({{ catalogue.number_of_planetary_systems }} star)
                             {% else %}

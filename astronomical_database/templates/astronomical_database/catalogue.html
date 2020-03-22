@@ -12,7 +12,9 @@
                 {% for planetary_system in list_of_planetary_systems.object_list %}
                     <tr>
                         <td class="cell_standard">
-                            <a href="/Astronomical_database/List_of_planetary_systems/{{ planetary_system.page_name }}/">{{ planetary_system.name }}</a>
+                            <a href="/Astronomical_database/List_of_planetary_systems/{{ planetary_system.page_name }}/">
+                                {{ planetary_system.name }}
+                            </a>
                             {% if planetary_system.number_of_planets == 1 %}
                                 ({{ planetary_system.number_of_planets }} Planet)
                             {% else %}
@@ -34,10 +36,12 @@
                 <p>
                 <span class="step-links">
                     {% if list_of_planetary_systems.has_previous %}
-                        <a href="?page={{ list_of_planetary_systems.previous_page_number }}" accesskey="h">Previous</a> |
+                        <a href="?page={{ list_of_planetary_systems.previous_page_number }}"
+                           accesskey="h">Previous</a> |
                     {% endif %}
                     <span class="current">
-                        Page {{ list_of_planetary_systems.number }} of {{ list_of_planetary_systems.paginator.num_pages }}
+                        Page {{ list_of_planetary_systems.number }}
+                        of {{ list_of_planetary_systems.paginator.num_pages }}
                     </span>
                     {% if list_of_planetary_systems.has_next %}
                         | <a href="?page={{ list_of_planetary_systems.next_page_number }}" accesskey="l">Next</a>
