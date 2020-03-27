@@ -15,6 +15,7 @@ Django = "~=2.2"
 REfO = "*"
 rdflib = "*"
 lxml = "*"
+somajo = "*"
 
 [requires]
 python_version = "3.7"
