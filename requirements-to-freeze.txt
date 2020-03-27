@@ -1,0 +1,10 @@
+dj-database-url
+dj-static
+Django~=2.2
+gunicorn
+lxml
+nltk
+psycopg2
+rdflib
+#rdflib-sqlalchemy
+REfO

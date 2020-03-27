@@ -1,6 +1,8 @@
-<rdf:Description rdf:about="urn://sedatar.org/astronomical_database/astronomy/Terrestrial_Planet">
+<!--
+<rdf:Description rdf:about="urn://sedatar.org/astronomical_database/astronomy/Ice_Giant">
   <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class" />
-  <rdfs:label>terrestrial planet</rdfs:label>
+  <rdfs:label>ice giant</rdfs:label>
   <ontology:numberOfInstances></ontology:numberOfInstances>
   <rdfs:subClassOf rdf:resource="urn://sedatar.org/astronomical_database/astronomy/Planet" />
 </rdf:Description>
+-->

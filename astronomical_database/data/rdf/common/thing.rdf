@@ -1,4 +1,5 @@
 <rdf:Description rdf:about="urn://sedatar.org/astronomical_database/common/Thing">
   <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class" />
   <rdfs:label>thing</rdfs:label>
+  <ontology:numberOfInstances></ontology:numberOfInstances>
 </rdf:Description>

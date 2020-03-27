@@ -29,13 +29,53 @@ class Post(models.Model):
 
 class Search(models.Model):
     question = models.CharField(max_length=200)
+    g = rdflib.Graph()
+    g.parse('astronomical_database/data/rdf/astronomical_database.rdf')
+
+    # Persistence with SQLAlchemy.
+    # store = rdflib.plugin.get("SQLAlchemy", rdflib.store.Store)(identifier=rdflib.URIRef('triplestore'))
+    # g = rdflib.Graph(store, identifier=rdflib.URIRef('triplestore'))
+    # g.open(rdflib.Literal('postgresql+psycopg2://uhlenbrock:@localhost:5432/postgres'))
+
+    @staticmethod
+    def format(answer):
+        answer = sorted(answer)
+        answer[-1] += '.'
+        return answer
 
     @staticmethod
     def render_answer_definition(result):
         determiner = 'A'
         if result[0][0] in ['a', 'e', 'i', 'o', 'u']:
             determiner = 'An'
-        return determiner + ' %s.' % result
+        return determiner + ' %s' % result
+
+    @staticmethod
+    def render_answer_list_item(result, metadata):
+        instances = metadata.get('instances')
+        if instances == 'classes':
+            item = '%s' % result
+            return item.capitalize()
+        elif instances == 'exoplanets' \
+                or instances == 'gas_giants' \
+                or instances == 'terrestrial_planets' \
+                or instances == 'planets':
+            planet = '%s' % result
+            planet = planet.replace(' ', '_')
+            return '<a href="/Astronomical_database/List_of_planets/' \
+                   + planet + '/">' + planet + '</>'
+        elif instances == 'planetary_systems':
+            planetary_system = '%s' % result
+            planetary_system = planetary_system.replace(' ', '_')
+            return '<a href="/Astronomical_database/List_of_planetary_systems/' \
+                   + planetary_system + '/">' + planetary_system + '</>'
+        else:
+            item = '%s' % result
+            return item
+
+    @staticmethod
+    def render_answer_property(result):
+        return '%s' % result
 
     @property
     def question_str(self):
@@ -43,17 +83,27 @@ class Search(models.Model):
 
     @property
     def answer(self):
-        g = rdflib.Graph()
-        g.parse('astronomical_database/data/rdf/astronomical_database.rdf')
         sparqlgen = quepy.install('sparqlgen')
         target, query, metadata = sparqlgen.get_query(self.question_str)
+        answer = list()
         if not query:
-            return 'Query not generated.'
-        results = g.query(query)
+            answer.append('Query not generated')
+            return self.format(answer)
+        results = self.g.query(query)
         if not results:
-            return 'No answer found.'
+            answer.append('No answer found')
+            return self.format(answer)
         for result in results:
             if metadata == 'definition':
-                return self.render_answer_definition(result)
+                answer.append(self.render_answer_definition(result))
+            elif metadata == 'density' \
+                    or metadata == 'distance' \
+                    or metadata == 'mass' \
+                    or metadata == 'number' \
+                    or metadata == 'size':
+                answer.append(self.render_answer_property(result))
+            elif metadata.get('category') == 'list':
+                answer.append(self.render_answer_list_item(result, metadata))
             else:
-                return 'No method found to render the answer.'
+                answer.append('No method found to render the answer')
+        return self.format(answer)

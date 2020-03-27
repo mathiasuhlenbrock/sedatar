@@ -3,14 +3,36 @@
     <div id="main_text">
         <div id="text_left_column">
             <h3>Your question</h3>
-            <br>
-            {{ search.question }}
-            <br>
-            <br>
-            <br>
+            <p>
+                {{ question }}
+            </p>
             <h3>Your answer</h3>
-            <br>
-            {{ search.answer }}
+            <table style="margin-top: 2em; border-spacing: 0px">
+                {% for answer in list_of_answers.object_list %}
+                    <tr>
+                        <td class="cell_standard">
+                            {{ answer|safe }}
+                        </td>
+                    </tr>
+                {% endfor %}
+            </table>
+            <div class="pagination">
+                <p>
+                <span class="step-links">
+                    {% if list_of_answers.has_previous %}
+                        <a href="?page={{ list_of_answers.previous_page_number }}&question={{ question }}"
+                           accesskey="h">Previous</a> |
+                    {% endif %}
+                    <span class="current">
+                        Page {{ list_of_answers.number }} of {{ list_of_answers.paginator.num_pages }}
+                    </span>
+                    {% if list_of_answers.has_next %}
+                        | <a href="?page={{ list_of_answers.next_page_number }}&question={{ question }}"
+                             accesskey="l">Next</a>
+                    {% endif %}
+                </span>
+                </p>
+            </div>
         </div>
         <div id="text_right_column">
         </div>

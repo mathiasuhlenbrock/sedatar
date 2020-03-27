@@ -1,24 +1,58 @@
+"""
+Documentation goes here.
+"""
+
 from django.core.paginator import Paginator, EmptyPage, InvalidPage
 from django.http import HttpResponseRedirect
 from django.shortcuts import get_object_or_404, render_to_response
 from django.template.context_processors import csrf
-from sedatar.forms import *
-from sedatar.models import *
+from sedatar.forms import SearchForm
+from sedatar.models import Database, Post, Search
 
 
 def about(request):
+    """
+    Documentation goes here.
+    """
     return render_to_response('sedatar/about.html')
 
 
 def answer(request):
-    form = SearchForm(request.POST)
-    if form.is_valid():
-        search = Search(question=form.cleaned_data['question'])
-        # search.save()
-        return render_to_response('sedatar/answer.html', {'search': search})
+    """
+    Documentation goes here.
+    """
+    if request.method == 'POST':
+        form = SearchForm(request.POST)
+        if form.is_valid():
+            search = Search(question=form.cleaned_data['question'])
+        else:
+            return
+    else:
+        search = Search(question=request.GET.get('question'))
+    paginator = Paginator(search.answer, 20)
+    # Make sure page request is an int. If not, deliver first page.
+    try:
+        page = int(request.GET.get('page', '1'))
+    except ValueError:
+        page = 1
+    # If page request (9999) is out of range, deliver last page of results.
+    try:
+        the_list_of_answers = paginator.page(page)
+    except (EmptyPage, InvalidPage):
+        the_list_of_answers = paginator.page(paginator.num_pages)
+    return render_to_response(
+        'sedatar/answer.html',
+        {
+            'question': search.question,
+            'list_of_answers': the_list_of_answers
+        }
+    )
 
 
 def index(request):
+    """
+    Documentation goes here.
+    """
     # if this is a POST request we need to process the form data
     if request.method == 'POST':
         # create a form instance and populate it with data from the request:
@@ -38,6 +72,9 @@ def index(request):
 
 
 def list_of_databases(request):
+    """
+    Documentation goes here.
+    """
     paginator = Paginator(Database.objects.order_by('name'), 40)
     # Make sure page request is an int. If not, deliver first page.
     try:
@@ -53,6 +90,9 @@ def list_of_databases(request):
 
 
 def list_of_posts(request):
+    """
+    Documentation goes here.
+    """
     paginator = Paginator(Post.objects.order_by('-date'), 20)
     # Make sure page request is an int. If not, deliver first page.
     try:
@@ -68,5 +108,8 @@ def list_of_posts(request):
 
 
 def post(request, post_date):
+    """
+    Documentation goes here.
+    """
     the_post = get_object_or_404(Post, date=post_date)
     return render_to_response('sedatar/post.html', {'post': the_post})

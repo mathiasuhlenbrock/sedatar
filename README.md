@@ -10,4 +10,5 @@ Planetary and stellar data is provided by [NASA's exoplanet
 archive](http://exoplanetarchive.ipac.caltech.edu) and is taken 'as is'. This is a hobbyist project
 and makes no claims about being complete, correct or consistent.
 
-So far, the website has been tested only with Chrome 79.
+You are welcome to visit the website at [https://sedatar.herokuapp.com](https://sedatar.herokuapp.com).
+So far, it has been tested only with Chrome 80.

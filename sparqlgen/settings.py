@@ -12,13 +12,13 @@ Settings.
 """
 
 # Generated query language
-LANGUAGE = "sparql"
+LANGUAGE = 'sparql'
 
 # NLTK config
-NLTK_DATA_PATH = ["nltk_data"]  # List of paths with NLTK data
+NLTK_DATA_PATH = ['nltk_data']  # List of paths with NLTK data
 
 # Encoding config
-DEFAULT_ENCODING = "utf-8"
+DEFAULT_ENCODING = 'utf-8'
 
 # Sparql config
 SPARQL_PREAMBLE = u"""
