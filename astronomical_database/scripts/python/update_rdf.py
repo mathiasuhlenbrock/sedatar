@@ -35,7 +35,7 @@ for planet in Planet.objects.all():
             "  <rdf:type rdf:resource=\"urn://sedatar.org/astronomical_database/astronomy/Exoplanet\" />\n"
         )
     outputFile.write(
-        "  <rdfs:label>" + planet.name.replace('-', ' ') + "</rdfs:label>\n"
+        "  <rdfs:label>" + planet.name + "</rdfs:label>\n"
     )
     if planet.system.host_distance_ly:
         outputFile.write("  <ontology:distance rdf:datatype=\"http://www.w3.org/2001/XMLSchema#float\">"
@@ -71,7 +71,7 @@ for planetarySystem in PlanetarySystem.objects.all():
         "  <rdf:type rdf:resource=\"urn://sedatar.org/astronomical_database/astronomy/Planetary_System\" />\n"
     )
     outputFile.write(
-        "  <rdfs:label>" + planetarySystem.name.replace('-', ' ') + "</rdfs:label>\n"
+        "  <rdfs:label>" + planetarySystem.name + "</rdfs:label>\n"
     )
     if planetarySystem.host_distance_ly:
         outputFile.write("  <ontology:distance rdf:datatype=\"http://www.w3.org/2001/XMLSchema#float\">"

@@ -11,7 +11,7 @@ from .dsl import *
 
 
 class Thing(Particle):
-    regex = Plus(Pos('JJ') | Pos('DT') | Pos('NN') | Pos('NNP') | Pos('CD') | Pos('PRP'))
+    regex = Plus(Pos('JJ') | Pos('DT') | Pos('NN') | Pos('NNP') | Pos('CD') | Pos('PRP') | Pos(':'))
 
     def interpret(self, match):
         return HasKeyword(match.words.tokens)
@@ -103,20 +103,44 @@ class List(QuestionTemplate):
 
     def interpret(self, match):
         if match.things == 'astronomical object':
-            return LabelOf(IsSubTypeOf(AstronomicalObjects())), 'list'
+            return LabelOf(IsSubTypeOf(AstronomicalObjects())), {
+                'category': 'list',
+                'instances': 'astronomical_objects'
+            }
         elif match.things == 'class':
-            return LabelOf(IsSubTypeOf(Classes())), 'list'
+            return LabelOf(IsSubTypeOf(Classes())), {
+                'category': 'list',
+                'instances': 'classes'
+            }
         elif match.things == 'exoplanet':
-            return LabelOf(IsSubTypeOf(Exoplanets())), 'list'
+            return LabelOf(IsSubTypeOf(Exoplanets())), {
+                'category': 'list',
+                'instances': 'exoplanets'
+            }
         elif match.things == 'gas giant':
-            return LabelOf(IsSubTypeOf(GasGiants())), 'list'
+            return LabelOf(IsSubTypeOf(GasGiants())), {
+                'category': 'list',
+                'instances': 'gas_giants'
+            }
         elif match.things == 'planetary system':
-            return LabelOf(IsSubTypeOf(PlanetarySystems())), 'list'
+            return LabelOf(IsSubTypeOf(PlanetarySystems())), {
+                'category': 'list',
+                'instances': 'planetary_systems'
+            }
         elif match.things == 'planet':
-            return LabelOf(IsSubTypeOf(Planets())), 'list'
+            return LabelOf(IsSubTypeOf(Planets())), {
+                'category': 'list',
+                'instances': 'planets'
+            }
         elif match.things == 'terrestrial planet':
-            return LabelOf(IsSubTypeOf(TerrestrialPlanets())), 'list'
+            return LabelOf(IsSubTypeOf(TerrestrialPlanets())), {
+                'category': 'list',
+                'instances': 'terrestrial_planets'
+            }
         elif match.things == 'thing':
-            return LabelOf(IsSubTypeOf(AllThings())), 'list'
+            return LabelOf(IsSubTypeOf(AllThings())), {
+                'category': 'list',
+                'instances': 'things'
+            }
         else:
             return LabelOf(IsSubTypeOf(Unknowns()))

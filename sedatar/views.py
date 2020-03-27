@@ -29,7 +29,7 @@ def answer(request):
             return
     else:
         search = Search(question=request.GET.get('question'))
-    paginator = Paginator(search.answer, 25)
+    paginator = Paginator(search.answer, 20)
     # Make sure page request is an int. If not, deliver first page.
     try:
         page = int(request.GET.get('page', '1'))

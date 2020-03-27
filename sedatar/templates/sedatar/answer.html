@@ -3,17 +3,19 @@
     <div id="main_text">
         <div id="text_left_column">
             <h3>Your question</h3>
-            <br>
-            {{ question }}
-            <br>
-            <br>
-            <br>
+            <p>
+                {{ question }}
+            </p>
             <h3>Your answer</h3>
-            <br>
-            {% for answer in list_of_answers.object_list %}
-                {{ answer|safe }}
-                <br>
-            {% endfor %}
+            <table style="margin-top: 2em; border-spacing: 0px">
+                {% for answer in list_of_answers.object_list %}
+                    <tr>
+                        <td class="cell_standard">
+                            {{ answer|safe }}
+                        </td>
+                    </tr>
+                {% endfor %}
+            </table>
             <div class="pagination">
                 <p>
                 <span class="step-links">

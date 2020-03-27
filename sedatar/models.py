@@ -51,8 +51,27 @@ class Search(models.Model):
         return determiner + ' %s' % result
 
     @staticmethod
-    def render_answer_list_item(result):
-        return '%s' % result
+    def render_answer_list_item(result, metadata):
+        instances = metadata.get('instances')
+        if instances == 'classes':
+            item = '%s' % result
+            return item.capitalize()
+        elif instances == 'exoplanets' \
+                or instances == 'gas_giants' \
+                or instances == 'terrestrial_planets' \
+                or instances == 'planets':
+            planet = '%s' % result
+            planet = planet.replace(' ', '_')
+            return '<a href="/Astronomical_database/List_of_planets/' \
+                   + planet + '/">' + planet + '</>'
+        elif instances == 'planetary_systems':
+            planetary_system = '%s' % result
+            planetary_system = planetary_system.replace(' ', '_')
+            return '<a href="/Astronomical_database/List_of_planetary_systems/' \
+                   + planetary_system + '/">' + planetary_system + '</>'
+        else:
+            item = '%s' % result
+            return item
 
     @staticmethod
     def render_answer_property(result):
@@ -83,8 +102,8 @@ class Search(models.Model):
                     or metadata == 'number' \
                     or metadata == 'size':
                 answer.append(self.render_answer_property(result))
-            elif metadata == 'list':
-                answer.append(self.render_answer_list_item(result).capitalize())
+            elif metadata.get('category') == 'list':
+                answer.append(self.render_answer_list_item(result, metadata))
             else:
                 answer.append('No method found to render the answer')
         return self.format(answer)
