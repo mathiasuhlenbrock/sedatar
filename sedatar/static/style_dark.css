@@ -1,0 +1,412 @@
+@media (prefers-color-scheme: dark) {
+    html, body {
+        height: 100%;
+        margin: 0;
+        background-color: #000000;
+        overflow: hidden;
+        /* Font settings */
+        font-family: "helvetica";
+        font-size: 14px;
+        /* Star Trek settings */
+        color: #6460CC; /* blue */
+        font-stretch: ultra-condensed;
+        text-transform: uppercase;
+    }
+
+    /* Essential CSS for the grid layout */
+    /* NOTE IE7 and older explorers don't know anything about CSS-tables, so we use a CSS hack to
+     * exclude them. */
+    body > .grid {
+        margin: 0;
+        padding: 1em;
+    }
+
+    * > .grid {
+        -moz-box-sizing: border-box;
+        -webkit-box-sizing: border-box;
+        box-sizing: border-box;
+        display: table;
+        width: 100%;
+        height: 100%;
+    }
+
+    /* NOTE This is the only block IE7- should read */
+    .grid > .row, .grid > .column, .grid > .row > .column {
+        height: 0.1%; /* Forces child-margins inside the box */
+        position: relative;
+    }
+
+    .grid > .row {
+        display: table-row;
+        height: 25px;
+    }
+
+    .grid > .row.expand {
+        height: auto;
+    }
+
+    .grid > .column, .grid > .row > .column {
+        display: table-cell;
+        height: auto; /* Just to reset the IE7 fix */
+    }
+
+    .grid > .column.expand, .grid > .row > .column.expand {
+        width: auto;
+    }
+
+    #main_page_vertical_space {
+        display: block;
+        width: 100%;
+        height: 100px;
+    }
+
+    #cell1 {
+        background: #B2B2F0; /* light blue */
+        width: 25px;
+    }
+
+    #cell2 {
+        background: #000000;
+        width: 10px;
+    }
+
+    #cell3 {
+        background: #EBEB99; /* beige */
+    }
+
+    #cell4 {
+        background: #EBEB99; /* beige */
+        width: 10%;
+    }
+
+    #cell5 {
+        background: #000000;
+    }
+
+    #cell6 {
+        background: #000000;
+    }
+
+    #cell7 {
+        vertical-align: middle;
+        text-align: center;
+    }
+
+    #cell8 {
+        background: #EBEB99; /* beige */
+        vertical-align: middle;
+    }
+
+    #cell9 {
+        background: #B2B2F0; /* light blue */
+    }
+
+    #cell10 {
+        background: #000000;
+    }
+
+    #cell11 {
+        background: #EBEB99; /* beige */
+    }
+
+    #cell12 {
+        background: #EBEB99; /* beige */
+    }
+
+    p {
+        margin-top: 2em;
+        margin-bottom: 2em;
+    }
+
+    ul {
+        list-style-position: inside;
+        list-style-type: square;
+        padding-left: 0;
+    }
+
+    a {
+        text-decoration: none;
+        color: #C285C2;
+        outline: 0; /* Removes dotted border around link */
+    }
+
+    a > svg {
+        display: block;
+    }
+
+    a:hover .navigation {
+        fill-opacity: 1.0;
+        fill: #6460CC;
+        stroke: #6460CC;
+    }
+
+    address {
+        display: block;
+        font-style: normal;
+    }
+
+    h1, h2, h3 {
+        color: #B2B2F0;
+        display: block;
+        font-weight: bold;
+        margin: 0;
+    }
+
+    h1 {
+        font-size: 2em;
+    }
+
+    h1.logo {
+        color: #6460CC; /* blue */
+        font-size: 300%;
+        font-stretch: ultra-condensed;
+    }
+
+    h2 {
+        font-size: 1.5em;
+    }
+
+    h3 {
+        font-size: 1em;
+    }
+
+    input {
+        background-color: #000000;
+        border-color: #6460CC;
+        border-style: solid;
+        color: #6460CC;
+        font-family: "helvetica";
+        font-stretch: ultra-condensed;
+        text-transform: uppercase;
+        width: 400px;
+    }
+
+    button {
+        background-color: #B2B2F0;
+        border: none;
+        color: #000000;
+        cursor: pointer;
+        font-family: "helvetica";
+        font-stretch: ultra-condensed;
+        text-transform: uppercase;
+        width: 100px;
+        height: 50px;
+    }
+
+    button:hover {
+        background-color: #6460CC;
+    }
+
+    svg.logo {
+        fill: #EBEB99;
+        fill-opacity: 1;
+        stroke: #EBEB99;
+        stroke-width: 0;
+        stroke-linecap: round;
+        stroke-linejoin: miter;
+        stroke-miterlimit: 4;
+        stroke-opacity: 1;
+        stroke-dasharray: none;
+    }
+
+    svg.vspace {
+        display: block;
+        width: 100%;
+        height: 10px;
+    }
+
+    svg.vspace > rect {
+        fill: #000000;
+        stroke: #000000;
+        stroke-width: 2;
+    }
+
+    rect.navigation {
+        fill: #B2B2F0;
+        stroke: #B2B2F0;
+    }
+
+    svg.size_comparison > text {
+        fill: #6460CC; /* blue */
+        text-anchor: middle;
+    }
+
+    .spectral_class_0 {
+        fill: #5599FF;
+        stroke: #000000;
+    }
+
+    .spectral_class_B {
+        fill: #99CCFF;
+        stroke: #000000;
+    }
+
+    .spectral_class_A {
+        fill: #B2B2F0;
+        stroke: #000000;
+    }
+
+    .spectral_class_F {
+        fill: #FFFF99;
+        stroke: #000000;
+    }
+
+    .spectral_class_G {
+        fill: #EBEB99;
+        stroke: #000000;
+    }
+
+    .spectral_class_K {
+        fill: #FF9966;
+        stroke: #000000;
+    }
+
+    .spectral_class_M {
+        fill: #DD6644;
+        stroke: #000000;
+    }
+
+    .spectral_class_L {
+        fill: #9966CC;
+        stroke: #000000;
+    }
+
+    .spectral_class_T {
+        fill: #C285C2;
+        stroke: #000000;
+    }
+
+    .spectral_class_WD {
+        fill: #FFFFFF;
+        stroke: #000000;
+    }
+
+    .spectral_class_default {
+        fill: #413839;
+        stroke: #000000;
+    }
+
+    #sun {
+        fill: #EBEB99;
+        stroke: #000000;
+    }
+
+    #jupiter {
+        fill: #B2B2F0;
+        stroke: #000000;
+    }
+
+    svg.planetary_system > ellipse {
+        fill: #000000;
+        fill-opacity: 0.0;
+        stroke: #CC99CC;
+        stroke-width: 2;
+    }
+
+    .terrestrial {
+        fill: #FF9966;
+        stroke: #000000;
+    }
+
+    .background {
+        fill: #000000;
+    }
+
+    .gas_giant {
+        fill: #B2B2F0;
+        stroke: #B2B2F0;
+    }
+
+    .default {
+        fill: #413839;
+        stroke: #000000;
+    }
+
+    svg.planetary_system > line {
+        stroke: #6460CC;
+        stroke-width: 2;
+    }
+
+    svg.planetary_system > text {
+        fill: #6460CC;
+        text-anchor: start;
+    }
+
+    svg.planetary_system > circle {
+        stroke-width: 2;
+    }
+
+    text.text {
+        fill: #000000;
+    }
+
+    .cell_standard {
+        padding-right: 20px;
+    }
+
+    #main_text {
+        width: 100%;
+        margin: 0 auto;
+        text-align: justify;
+    }
+
+    #text_header {
+        padding-left: 20px;
+        width: 100%;
+    }
+
+    #text_left_column {
+        float: left;
+        padding-top: 20px;
+        padding-left: 20px;
+        width: 46%;
+    }
+
+    #text_right_column {
+        float: right;
+        padding-top: 20px;
+        padding-right: 30px;
+        width: 46%;
+    }
+
+    #text_left_column_planetarysystem {
+        float: left;
+        padding-top: 20px;
+        padding-left: 20px;
+        width: 41%;
+    }
+
+    #text_right_column_planetarysystem {
+        float: right;
+        padding-top: 20px;
+        padding-right: 30px;
+        width: 51%;
+    }
+
+    #text_multicolumn_2 {
+        padding-left: 20px;
+        padding-right: 20px;
+        width: 96%;
+        -moz-column-count: 2;
+        -webkit-column-count: 2;
+    }
+
+    #text_multicolumn_4 {
+        padding-left: 20px;
+        width: 100%;
+        -moz-column-count: 4;
+        -webkit-column-count: 4;
+    }
+
+    #text_footer {
+        padding-left: 20px;
+        width: 100%;
+    }
+
+    #unknown_radius {
+        fill-opacity: 0.0;
+        stroke: #000000;
+        stroke-dasharray: 2, 5;
+        stroke-width: 3;
+    }
+}
