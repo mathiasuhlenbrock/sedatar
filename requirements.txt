@@ -5,7 +5,8 @@ gunicorn
 lxml
 nltk
 psycopg2
-rdflib~=4.2
+rdflib~=5.0
 #rdflib-sqlalchemy
 REfO
+requests
 somajo
