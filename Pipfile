@@ -13,7 +13,7 @@ nltk = "*"
 psycopg2 = "*"
 Django = "~=2.2"
 REfO = "*"
-rdflib = "*"
+rdflib = "~=4.2"
 lxml = "*"
 somajo = "*"
 
