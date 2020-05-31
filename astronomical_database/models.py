@@ -4,6 +4,7 @@ from django.db import models
 class Catalogue(models.Model):
     name = models.CharField(max_length=200)
     acronym = models.CharField(max_length=200)
+    ordering_strategy = models.PositiveSmallIntegerField(default=0)
 
     def __unicode__(self):
         return self.name
@@ -284,7 +285,7 @@ class Planet(models.Model):
 
     @property
     def img_radius(self):
-        if 1. >= self.radius > 0.:
+        if 0. < self.radius <= 1.:
             return round(50 * self.radius)
         elif self.radius > 1.:
             return 50

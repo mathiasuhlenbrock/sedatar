@@ -59,7 +59,7 @@ with open('astronomical_database/data/csv/catalogues/catalogues.csv') as csvfile
             catalogue.delete()
     reader = csv.DictReader(csvfile, skipinitialspace=True)
     for row in reader:
-        catalogue = Catalogue(name=row['Catalogue'], acronym=row['Acronym'])
+        catalogue = Catalogue(name=row['Catalogue'], acronym=row['Acronym'], ordering_strategy=row['Ordering'])
         catalogue.save()
 
 with open('astronomical_database/data/csv/categories/categories.csv') as csvfile:

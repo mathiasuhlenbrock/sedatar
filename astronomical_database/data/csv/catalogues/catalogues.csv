@@ -1,60 +1,60 @@
-Catalogue,                                             Acronym
-1st ROSAT X-ray Survey,                                1RXS
-Bayer designation,
-Bonner Durchmusterung,                                 BD
-Canada-France Brown Dwarf Survey,                      CFBDSIR
-Catalogue of High Proper Motion Stars,                 Wolf
-Chamaeleon X-ray source ROSAT satellite,               CHXR
-CoRoT Catalogue,                                       CoRoT
-Deep Near Infrared Survey Provisory designation,       DENIS-P
-Ecliptic Plane Input Catalog,                          EPIC
-Flamsteed designation,
-General Catalog of Variable Stars,
-Gliese-Jahreiss catalogue,                             GJ
-Guide Star Catalog,                                    GSC
-Harvard Revised Catalogue,                             HR
-Henry Draper Catalogue,                                HD
-Hipparcos Catalogue,                                   HIP
-Hungarian Automated Telescope,                         HAT
-Index Catalogue,                                       IC
-K2 Variable Star Catalogue,                            K2VarCat
-Kepler Input Catalog,                                  KIC
-Kepler Object of Interest,                             KOI
-Kepler catalog,                                        Kepler
-Kilodegree Extremely Little Telescope,                 KELT
-Korea Microlensing Telescope Network,                  KMT
-Kourovka Planet Search,                                KPS
-Lupus,                                                 Lupus
-Luyten Half-Second catalogue,                          LHS
-Luyten catalogue,                                      L
-Lépine-Shara Proper Motion catalog,                    LSPM
-Massachusetts X-ray Burster,                           MXB
-Microlensing Observations in Astrophysics,             MOA
-New General Catalogue,                                 NGC
-Next Generation Transit Survey,                        NGTS
-Northern Sky Variability Survey,                       NSVS
-Optical Gravitational Lensing Experiment,              OGLE
-Other stars,
-Parkes Selected Region,                                PSR
-Pico dos Dias survey,                                  PDS
-Planet Hunters,                                        PH
-Pre-OmegaTranS project,                                POTS
-Qatar Exoplanet Survey,                                QATAR
-Rho Oph X-ray source,                                  ROXs
-Ross Catalogue of New Proper Motion Stars,             Ross
-Sagittarius Window Eclipsing Extrasolar Planet Search, SWEEPS
-Stars with proper names,
-TESS Object of Interest,                               TOI
-Taurus Auriga Perseus,                                 TAP
-Trans-Atlantic Exoplanet Survey,                       TrES
-Transient Confirmation Page,                           TCP
-Transiting Planets and Planetesimals Small Telescope,  TRAPPIST
-Two Micron All Sky Survey,                             2MASS
-Tycho Catalogue,                                       TYC
-United Kingdom Infrared Telescope,                     UKIRT
-Upper Sco Cerro Tololo Inter-american Obs,             UScoCTIO
-VISTA Hemisphere Survey,                               VHS
-WFCAM Transit Survey,                                  WTS
-Wide Angle Search for Planets,                         WASP
-Wide-field Infrared Survey Explorer,                   WISE
-XO project,                                            XO
+Catalogue,                                             Acronym,  Ordering
+1st ROSAT X-ray Survey,                                1RXS,     0
+Bayer designation,                                     ,         0
+Bonner Durchmusterung,                                 BD,       0
+Canada-France Brown Dwarf Survey,                      CFBDSIR,  0
+Catalogue of High Proper Motion Stars,                 Wolf,     1
+Chamaeleon X-ray source ROSAT satellite,               CHXR,     0
+CoRoT Catalogue,                                       CoRoT,    1
+Deep Near Infrared Survey Provisory designation,       DENIS-P,  0
+Ecliptic Plane Input Catalog,                          EPIC,     0
+Flamsteed designation,                                 ,         0
+General Catalog of Variable Stars,                     ,         0
+Gliese-Jahreiss catalogue,                             GJ,       1
+Guide Star Catalog,                                    GSC,      0
+Harvard Revised Catalogue,                             HR,       1
+Henry Draper Catalogue,                                HD,       1
+Hipparcos Catalogue,                                   HIP,      1
+Hungarian Automated Telescope,                         HAT,      1
+Index Catalogue,                                       IC,       0
+K2 Variable Star Catalogue,                            K2VarCat, 2
+Kepler Input Catalog,                                  KIC,      0
+Kepler Object of Interest,                             KOI,      1
+Kepler catalog,                                        Kepler,   1
+Kilodegree Extremely Little Telescope,                 KELT,     1
+Korea Microlensing Telescope Network,                  KMT,      0
+Kourovka Planet Search,                                KPS,      0
+Lupus,                                                 Lupus,    0
+Luyten Half-Second catalogue,                          LHS,      0
+Luyten catalogue,                                      L,        1
+Lépine-Shara Proper Motion catalog,                    LSPM,     0
+Massachusetts X-ray Burster,                           MXB,      0
+Microlensing Observations in Astrophysics,             MOA,      0
+New General Catalogue,                                 NGC,      0
+Next Generation Transit Survey,                        NGTS,     1
+Northern Sky Variability Survey,                       NSVS,     0
+Optical Gravitational Lensing Experiment,              OGLE,     0
+Other stars,                                           ,         0
+Parkes Selected Region,                                PSR,      0
+Pico dos Dias survey,                                  PDS,      0
+Planet Hunters,                                        PH,       0
+Pre-OmegaTranS project,                                POTS,     0
+Qatar Exoplanet Survey,                                QATAR,    1
+Rho Oph X-ray source,                                  ROXs,     0
+Ross Catalogue of New Proper Motion Stars,             Ross,     0
+Sagittarius Window Eclipsing Extrasolar Planet Search, SWEEPS,   1
+Stars with proper names,                               ,         0
+TESS Object of Interest,                               TOI,      0
+Taurus Auriga Perseus,                                 TAP,      0
+Trans-Atlantic Exoplanet Survey,                       TrES,     0
+Transient Confirmation Page,                           TCP,      0
+Transiting Planets and Planetesimals Small Telescope,  TRAPPIST, 0
+Two Micron All Sky Survey,                             2MASS,    0
+Tycho Catalogue,                                       TYC,      0
+United Kingdom Infrared Telescope,                     UKIRT,    0
+Upper Sco Cerro Tololo Inter-american Obs,             UScoCTIO, 0
+VISTA Hemisphere Survey,                               VHS,      0
+WFCAM Transit Survey,                                  WTS,      0
+Wide Angle Search for Planets,                         WASP,     1
+Wide-field Infrared Survey Explorer,                   WISE,     0
+XO project,                                            XO,       0
