@@ -1,11 +1,29 @@
 import csv
+# import math
 import re
+# from astronomical_database.constants import JUPITER_MASS, JUPITER_RADIUS
 from astronomical_database.models import *
+
+
+# def consistency_check(mass, radius, density):
+#     if not (mass and radius and density):
+#         if mass and radius:
+#             print('WARNING: Density is missing.')
+#             density = (mass * JUPITER_MASS * 1000) / (4 / 3 * math.pi * math.pow(radius * JUPITER_RADIUS * 100, 3))
+#         elif mass and density:
+#             print('WARNING: Radius is missing.')
+#             radius = math.pow((mass * JUPITER_MASS * 1000) /
+#                               (density * 4 / 3 * math.pi), 1 / 3) / JUPITER_RADIUS * 100
+#         elif radius and density:
+#             print('WARNING: Mass is missing.')
+#             mass = (density * 4 / 3 * math.pi * math.pow(radius * JUPITER_RADIUS * 100, 3)) / JUPITER_MASS * 1000
+#     return mass, radius, density
 
 
 def sort_into_catalogue(cataloguename, row, year_of_discovery, density, mass, radius, semimajoraxis, orbital_period):
     from astronomical_database.models import Catalogue, PlanetarySystem
     the_catalogue = Catalogue.objects.get(name=cataloguename)
+    # mass, radius, density = consistency_check(mass, radius, density)
     if not PlanetarySystem.objects.filter(name=row['pl_hostname']).exists():
         host_distance = 0.0
         if row['st_dist'] is not '':
