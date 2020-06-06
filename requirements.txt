@@ -1,12 +1,12 @@
 dj-database-url
 dj-static
-Django~=2.2
+django~=2.2
 gunicorn
 lxml
 nltk
 psycopg2
 rdflib~=5.0
 #rdflib-sqlalchemy
-REfO
+refo
 requests
 somajo
