@@ -1,9 +1,0 @@
-<rdf:Description rdf:about="urn://sedatar.org/astronomical_database/individuals/K2-32_c">
-  <rdf:type rdf:resource="urn://sedatar.org/astronomical_database/astronomy/Exoplanet" />
-  <rdfs:label>K2 32 c</rdfs:label>
-  <ontology:distance></ontology:distance>
-  <ontology:size>0.310</ontology:size>
-  <ontology:mass></ontology:mass>
-  <ontology:density></ontology:density>
-  <ontology:semimajoraxis>0.140700</ontology:semimajoraxis>
-</rdf:Description>

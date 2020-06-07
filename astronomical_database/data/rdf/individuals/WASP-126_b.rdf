@@ -1,9 +1,0 @@
-<rdf:Description rdf:about="urn://sedatar.org/astronomical_database/individuals/WASP-126_b">
-  <rdf:type rdf:resource="urn://sedatar.org/astronomical_database/astronomy/Exoplanet" />
-  <rdfs:label>WASP 126 b</rdfs:label>
-  <ontology:distance>234.00</ontology:distance>
-  <ontology:size>0.960</ontology:size>
-  <ontology:mass>0.28000</ontology:mass>
-  <ontology:density>0.41000</ontology:density>
-  <ontology:semimajoraxis>0.044900</ontology:semimajoraxis>
-</rdf:Description>

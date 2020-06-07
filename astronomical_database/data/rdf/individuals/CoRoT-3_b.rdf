@@ -1,9 +1,0 @@
-<rdf:Description rdf:about="urn://sedatar.org/astronomical_database/individuals/CoRoT-3_b">
-  <rdf:type rdf:resource="urn://sedatar.org/astronomical_database/astronomy/Exoplanet" />
-  <rdfs:label>CoRoT 3 b</rdfs:label>
-  <ontology:distance>680.00</ontology:distance>
-  <ontology:size>1.010</ontology:size>
-  <ontology:mass>21.66000</ontology:mass>
-  <ontology:density>26.40000</ontology:density>
-  <ontology:semimajoraxis></ontology:semimajoraxis>
-</rdf:Description>

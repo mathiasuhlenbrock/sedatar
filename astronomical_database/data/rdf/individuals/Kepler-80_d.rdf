@@ -1,9 +1,0 @@
-<rdf:Description rdf:about="urn://sedatar.org/astronomical_database/individuals/Kepler-80_d">
-  <rdf:type rdf:resource="urn://sedatar.org/astronomical_database/astronomy/Exoplanet" />
-  <rdfs:label>Kepler 80 d</rdfs:label>
-  <ontology:distance>357.00</ontology:distance>
-  <ontology:size>0.136</ontology:size>
-  <ontology:mass>0.02124</ontology:mass>
-  <ontology:density>7.04000</ontology:density>
-  <ontology:semimajoraxis>0.037200</ontology:semimajoraxis>
-</rdf:Description>

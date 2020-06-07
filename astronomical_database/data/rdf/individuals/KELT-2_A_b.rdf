@@ -1,9 +1,0 @@
-<rdf:Description rdf:about="urn://sedatar.org/astronomical_database/individuals/KELT-2_A_b">
-  <rdf:type rdf:resource="urn://sedatar.org/astronomical_database/astronomy/Exoplanet" />
-  <rdfs:label>KELT 2 A b</rdfs:label>
-  <ontology:distance>124.22</ontology:distance>
-  <ontology:size>1.286</ontology:size>
-  <ontology:mass>1.52200</ontology:mass>
-  <ontology:density></ontology:density>
-  <ontology:semimajoraxis>0.054960</ontology:semimajoraxis>
-</rdf:Description>

@@ -1,9 +1,0 @@
-<rdf:Description rdf:about="urn://sedatar.org/astronomical_database/individuals/OGLE_2014-BLG-0676L_b">
-  <rdf:type rdf:resource="urn://sedatar.org/astronomical_database/astronomy/Exoplanet" />
-  <rdfs:label>OGLE 2014 BLG 0676L b</rdfs:label>
-  <ontology:distance>2220.00</ontology:distance>
-  <ontology:size></ontology:size>
-  <ontology:mass>3.09000</ontology:mass>
-  <ontology:density></ontology:density>
-  <ontology:semimajoraxis>4.400000</ontology:semimajoraxis>
-</rdf:Description>

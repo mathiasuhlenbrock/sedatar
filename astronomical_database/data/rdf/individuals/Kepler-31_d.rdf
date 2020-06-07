@@ -1,9 +1,0 @@
-<rdf:Description rdf:about="urn://sedatar.org/astronomical_database/individuals/Kepler-31_d">
-  <rdf:type rdf:resource="urn://sedatar.org/astronomical_database/astronomy/Exoplanet" />
-  <rdfs:label>Kepler 31 d</rdfs:label>
-  <ontology:distance>2100.00</ontology:distance>
-  <ontology:size>0.348</ontology:size>
-  <ontology:mass>6.80000</ontology:mass>
-  <ontology:density></ontology:density>
-  <ontology:semimajoraxis>0.400000</ontology:semimajoraxis>
-</rdf:Description>

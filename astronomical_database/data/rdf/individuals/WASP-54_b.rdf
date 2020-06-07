@@ -1,9 +1,0 @@
-<rdf:Description rdf:about="urn://sedatar.org/astronomical_database/individuals/WASP-54_b">
-  <rdf:type rdf:resource="urn://sedatar.org/astronomical_database/astronomy/Exoplanet" />
-  <rdfs:label>WASP 54 b</rdfs:label>
-  <ontology:distance>200.00</ontology:distance>
-  <ontology:size>1.653</ontology:size>
-  <ontology:mass>0.63600</ontology:mass>
-  <ontology:density>0.18800</ontology:density>
-  <ontology:semimajoraxis>0.049870</ontology:semimajoraxis>
-</rdf:Description>

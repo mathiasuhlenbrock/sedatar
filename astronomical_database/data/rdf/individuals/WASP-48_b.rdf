@@ -1,9 +1,0 @@
-<rdf:Description rdf:about="urn://sedatar.org/astronomical_database/individuals/WASP-48_b">
-  <rdf:type rdf:resource="urn://sedatar.org/astronomical_database/astronomy/Exoplanet" />
-  <rdfs:label>WASP 48 b</rdfs:label>
-  <ontology:distance></ontology:distance>
-  <ontology:size>1.396</ontology:size>
-  <ontology:mass>0.90700</ontology:mass>
-  <ontology:density>0.41500</ontology:density>
-  <ontology:semimajoraxis>0.033200</ontology:semimajoraxis>
-</rdf:Description>

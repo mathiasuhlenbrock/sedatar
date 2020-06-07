@@ -1,9 +1,0 @@
-<rdf:Description rdf:about="urn://sedatar.org/astronomical_database/individuals/HAT-P-2_b">
-  <rdf:type rdf:resource="urn://sedatar.org/astronomical_database/astronomy/Exoplanet" />
-  <rdfs:label>HAT P 2 b</rdfs:label>
-  <ontology:distance>135.32</ontology:distance>
-  <ontology:size>1.157</ontology:size>
-  <ontology:mass>9.09000</ontology:mass>
-  <ontology:density>7.29000</ontology:density>
-  <ontology:semimajoraxis>0.068780</ontology:semimajoraxis>
-</rdf:Description>

@@ -1,9 +1,0 @@
-<rdf:Description rdf:about="urn://sedatar.org/astronomical_database/individuals/HAT-P-35_b">
-  <rdf:type rdf:resource="urn://sedatar.org/astronomical_database/astronomy/Exoplanet" />
-  <rdfs:label>HAT P 35 b</rdfs:label>
-  <ontology:distance>535.00</ontology:distance>
-  <ontology:size>1.332</ontology:size>
-  <ontology:mass>1.05400</ontology:mass>
-  <ontology:density>0.55000</ontology:density>
-  <ontology:semimajoraxis>0.049800</ontology:semimajoraxis>
-</rdf:Description>

@@ -1,9 +1,0 @@
-<rdf:Description rdf:about="urn://sedatar.org/astronomical_database/individuals/HAT-P-51_b">
-  <rdf:type rdf:resource="urn://sedatar.org/astronomical_database/astronomy/Exoplanet" />
-  <rdfs:label>HAT P 51 b</rdfs:label>
-  <ontology:distance>470.00</ontology:distance>
-  <ontology:size>1.293</ontology:size>
-  <ontology:mass>0.30900</ontology:mass>
-  <ontology:density>0.17800</ontology:density>
-  <ontology:semimajoraxis>0.050690</ontology:semimajoraxis>
-</rdf:Description>

@@ -1,9 +1,0 @@
-<rdf:Description rdf:about="urn://sedatar.org/astronomical_database/individuals/K2-21_b">
-  <rdf:type rdf:resource="urn://sedatar.org/astronomical_database/astronomy/Exoplanet" />
-  <rdfs:label>K2 21 b</rdfs:label>
-  <ontology:distance>65.00</ontology:distance>
-  <ontology:size>0.142</ontology:size>
-  <ontology:mass></ontology:mass>
-  <ontology:density>2.70000</ontology:density>
-  <ontology:semimajoraxis>0.073100</ontology:semimajoraxis>
-</rdf:Description>

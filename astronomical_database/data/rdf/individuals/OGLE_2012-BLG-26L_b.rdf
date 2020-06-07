@@ -1,9 +1,0 @@
-<rdf:Description rdf:about="urn://sedatar.org/astronomical_database/individuals/OGLE_2012-BLG-26L_b">
-  <rdf:type rdf:resource="urn://sedatar.org/astronomical_database/astronomy/Exoplanet" />
-  <rdfs:label>OGLE 2012 BLG 26L b</rdfs:label>
-  <ontology:distance>4019.00</ontology:distance>
-  <ontology:size></ontology:size>
-  <ontology:mass>0.14500</ontology:mass>
-  <ontology:density></ontology:density>
-  <ontology:semimajoraxis>4.000000</ontology:semimajoraxis>
-</rdf:Description>

@@ -1,4 +1,0 @@
-<rdf:Description rdf:about="urn://sedatar.org/astronomical_database/common/Class">
-  <rdfs:label>class</rdfs:label>
-  <ontology:numberOfInstances>7</ontology:numberOfInstances>
-</rdf:Description>

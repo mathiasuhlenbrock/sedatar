@@ -1,9 +1,0 @@
-<rdf:Description rdf:about="urn://sedatar.org/astronomical_database/individuals/Kepler-20_b">
-  <rdf:type rdf:resource="urn://sedatar.org/astronomical_database/astronomy/Exoplanet" />
-  <rdfs:label>Kepler 20 b</rdfs:label>
-  <ontology:distance>290.00</ontology:distance>
-  <ontology:size>0.170</ontology:size>
-  <ontology:mass>0.02700</ontology:mass>
-  <ontology:density>6.50000</ontology:density>
-  <ontology:semimajoraxis>0.045370</ontology:semimajoraxis>
-</rdf:Description>

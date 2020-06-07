@@ -1,9 +1,0 @@
-<rdf:Description rdf:about="urn://sedatar.org/astronomical_database/individuals/CFBDSIR_J145829+101343_b">
-  <rdf:type rdf:resource="urn://sedatar.org/astronomical_database/astronomy/Exoplanet" />
-  <rdfs:label>CFBDSIR J145829+101343 b</rdfs:label>
-  <ontology:distance>23.10</ontology:distance>
-  <ontology:size></ontology:size>
-  <ontology:mass>10.50000</ontology:mass>
-  <ontology:density></ontology:density>
-  <ontology:semimajoraxis>2.600000</ontology:semimajoraxis>
-</rdf:Description>

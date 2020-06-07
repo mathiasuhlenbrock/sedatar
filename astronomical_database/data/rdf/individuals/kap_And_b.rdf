@@ -1,9 +1,0 @@
-<rdf:Description rdf:about="urn://sedatar.org/astronomical_database/individuals/kap_And_b">
-  <rdf:type rdf:resource="urn://sedatar.org/astronomical_database/astronomy/Exoplanet" />
-  <rdfs:label>kap And b</rdfs:label>
-  <ontology:distance>52.03</ontology:distance>
-  <ontology:size></ontology:size>
-  <ontology:mass>13.61600</ontology:mass>
-  <ontology:density></ontology:density>
-  <ontology:semimajoraxis>55.000000</ontology:semimajoraxis>
-</rdf:Description>

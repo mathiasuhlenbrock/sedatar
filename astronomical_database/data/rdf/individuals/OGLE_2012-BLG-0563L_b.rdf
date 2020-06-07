@@ -1,9 +1,0 @@
-<rdf:Description rdf:about="urn://sedatar.org/astronomical_database/individuals/OGLE_2012-BLG-0563L_b">
-  <rdf:type rdf:resource="urn://sedatar.org/astronomical_database/astronomy/Exoplanet" />
-  <rdfs:label>OGLE 2012 BLG 0563L b</rdfs:label>
-  <ontology:distance>1300.00</ontology:distance>
-  <ontology:size></ontology:size>
-  <ontology:mass>0.39000</ontology:mass>
-  <ontology:density></ontology:density>
-  <ontology:semimajoraxis>0.900000</ontology:semimajoraxis>
-</rdf:Description>

@@ -1,9 +1,0 @@
-<rdf:Description rdf:about="urn://sedatar.org/astronomical_database/individuals/HR_8799_d">
-  <rdf:type rdf:resource="urn://sedatar.org/astronomical_database/astronomy/Exoplanet" />
-  <rdfs:label>HR 8799 d</rdfs:label>
-  <ontology:distance>39.40</ontology:distance>
-  <ontology:size>1.200</ontology:size>
-  <ontology:mass>10.00000</ontology:mass>
-  <ontology:density></ontology:density>
-  <ontology:semimajoraxis>24.000000</ontology:semimajoraxis>
-</rdf:Description>
