@@ -1,7 +1,7 @@
 import csv
 # import math
 import re
-# from astronomical_database.constants import JUPITER_MASS, JUPITER_RADIUS
+# from astronomical_database.constants import M_JUPITER, R_JUPITER
 from astronomical_database.models import *
 
 
@@ -9,14 +9,14 @@ from astronomical_database.models import *
 #     if not (mass and radius and density):
 #         if mass and radius:
 #             print('WARNING: Density is missing.')
-#             density = (mass * JUPITER_MASS * 1000) / (4 / 3 * math.pi * math.pow(radius * JUPITER_RADIUS * 100, 3))
+#             density = (mass * M_JUPITER * 1000) / (4 / 3 * math.pi * math.pow(radius * R_JUPITER * 100, 3))
 #         elif mass and density:
 #             print('WARNING: Radius is missing.')
-#             radius = math.pow((mass * JUPITER_MASS * 1000) /
-#                               (density * 4 / 3 * math.pi), 1 / 3) / JUPITER_RADIUS * 100
+#             radius = math.pow((mass * M_JUPITER * 1000) /
+#                               (density * 4 / 3 * math.pi), 1 / 3) / R_JUPITER * 100
 #         elif radius and density:
 #             print('WARNING: Mass is missing.')
-#             mass = (density * 4 / 3 * math.pi * math.pow(radius * JUPITER_RADIUS * 100, 3)) / JUPITER_MASS * 1000
+#             mass = (density * 4 / 3 * math.pi * math.pow(radius * R_JUPITER * 100, 3)) / M_JUPITER * 1000
 #     return mass, radius, density
 
 
