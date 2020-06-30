@@ -3,9 +3,7 @@
     <div id="main_text">
         <div id="text_left_column">
             <h1>{{ planet.name }}</h1>
-            <p>
-                {{ planet.classification }}
-            </p>
+            <p>{{ planet.classification }}</p>
             <!-- Image: Size comparison -->
             <svg class="size_comparison" width="520" height="145">
                 <defs>
@@ -14,43 +12,75 @@
                         <rect x="0" y="0" width="2" height="8"></rect>
                     </pattern>
                 </defs>
-                <!-- Star icon -->
+                <!-- Planet name -->
+                <text class="text" x="160" y="122">{{ planet.name }}</text>
+                <!-- Planet icon -->
                 {% if planet.img_radius %}
-                    <circle class="{{ planet.img_classification }}" cx="160" cy="52" r="{{ planet.img_radius }}"
-                            fill="url(#hatch)"></circle>
+                    {% if planet.img_classification == 'terrestrial' %}
+                        <circle class="{{ planet.img_classification }}" cx="160" cy="52" r="{{ planet.img_alt_radius }}"
+                                fill="url(#hatch)"></circle>
+                        <!-- Earth icon -->
+                        <circle class="{{ planet.img_classification }}" cx="360" cy="52"
+                                r="{{ planet.img_earth_radius }}" fill="url(#hatch)"></circle>
+                        <text id="text" x="360" y="122">Earth</text>
+                    {% else %}
+                        <circle class="{{ planet.img_classification }}" cx="160" cy="52" r="{{ planet.img_radius }}"
+                                fill="url(#hatch)"></circle>
+                        <!-- Jupiter icon -->
+                        <circle id="jupiter" cx="360" cy="52" r="{{ planet.img_jupiter_radius }}"
+                                fill="url(#hatch)"></circle>
+                        <text id="text" x="360" y="122">Jupiter</text>
+                    {% endif %}
                 {% else %}
                     <circle class="{{ planet.img_classification }}" cx="160" cy="52" r="52.0"
                             fill="url(#hatch)"></circle>
                     <circle id="unknown_radius" cx="160" cy="52" r="50.0"></circle>
+                    <!-- Jupiter icon -->
+                    <circle id="jupiter" cx="360" cy="52" r="{{ planet.img_jupiter_radius }}"
+                            fill="url(#hatch)"></circle>
+                    <text id="text" x="360" y="122">Jupiter</text>
                 {% endif %}
-                <text class="text" x="160" y="122">{{ planet.name }}</text>
-                <!-- Jupiter icon -->
-                <circle id="jupiter" cx="360" cy="52" r="{{ planet.img_jupiter_radius }}" fill="url(#hatch)"></circle>
-                <text id="text" x="360" y="122">Jupiter</text>
             </svg>
             <h2>Planetary parameters</h2>
-            <p>
-                Year of discovery: {{ planet.year_of_discovery }}
-                <br>
-                {% if planet.system.host_distance_ly > 0 %}
-                    Distance from earth: {{ planet.system.host_distance_ly|floatformat }} ly
-                {% else %}
-                    Distance from earth: Not available
-                {% endif %}
-                <br>
-                Radius: {{ planet.string_radius|safe }}
-                <br>
-                Mass: {{ planet.string_mass|safe }}
-                <br>
-                Density: {{ planet.string_density|safe }}
-                <br>
-                Semi-major axis: {{ planet.string_semimajoraxis|safe }}
-                <br>
-                Orbital period: {{ planet.string_orbital_period|safe }}
-            </p>
+            <p></p>
+            <table>
+                <tbody>
+                <tr>
+                    <td class="cell_standard">Year of discovery</td>
+                    <td class="cell_standard">{{ planet.year_of_discovery }}</td>
+                </tr>
+                <tr>
+                    <td class="cell_standard">Distance from Earth</td>
+                    {% if planet.system.host_distance_ly > 0 %}
+                        <td class="cell_standard">{{ planet.system.host_distance_ly|floatformat }} ly</td>
+                    {% else %}
+                        <td class="cell_standard">Not available</td>
+                    {% endif %}
+                </tr>
+                <tr class="row_subscript">
+                    <td class="cell_standard">Radius</td>
+                    <td class="cell_standard">{{ planet.string_radius|safe }}</td>
+                </tr>
+                <tr class="row_subscript">
+                    <td class="cell_standard">Mass</td>
+                    <td class="cell_standard">{{ planet.string_mass|safe }}</td>
+                </tr>
+                <tr>
+                    <td class="cell_standard">Density</td>
+                    <td class="cell_standard">{{ planet.string_density|safe }}</td>
+                </tr>
+                <tr>
+                    <td class="cell_standard">Semi-major axis</td>
+                    <td class="cell_standard">{{ planet.string_semimajoraxis|safe }}</td>
+                </tr>
+                <tr>
+                    <td class="cell_standard">Orbital period</td>
+                    <td class="cell_standard">{{ planet.string_orbital_period|safe }}</td>
+                </tr>
+                </tbody>
+            </table>
         </div>
-        <div id="text_right_column">
-        </div>
+        <div id="text_right_column"></div>
     </div>
 {% endblock %}
 {% block navigation %}

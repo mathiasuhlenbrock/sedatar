@@ -89,6 +89,13 @@ def list_of_databases(request):
     return render_to_response('sedatar/list_of_databases.html', {'list_of_databases': the_list_of_databases})
 
 
+def list_of_dependencies(request):
+    """
+    Documentation goes here.
+    """
+    return render_to_response('sedatar/list_of_dependencies.html')
+
+
 def list_of_posts(request):
     """
     Documentation goes here.

@@ -1,0 +1,86 @@
+{% extends "sedatar/base.html" %}
+{% block content %}
+    <div id="main_text">
+        <div id="text_left_column">
+            <h1>List of dependencies</h1>
+            <!-- Table cannot be within paragraph. -->
+            <p></p>
+            <table>
+                <tbody>
+                <tr>
+                    <td class="cell_standard">Django</td>
+                    <td class="cell_standard"><a href="https://github.com/django/django/">2.2.13</a></td>
+                </tr>
+                <tr>
+                    <td class="cell_standard">gunicorn</td>
+                    <td class="cell_standard"><a href="https://github.com/benoitc/gunicorn">20.0.4</a></td>
+                </tr>
+                <tr>
+                    <td class="cell_standard">lxml</td>
+                    <td class="cell_standard"><a href="https://github.com/lxml/lxml">4.5.1</a></td>
+                </tr>
+                <tr>
+                    <td class="cell_standard">NLTK</td>
+                    <td class="cell_standard"><a href="https://github.com/nltk/nltk/">3.5</a></td>
+                </tr>
+                <tr>
+                    <td class="cell_standard">PostgreSQL</td>
+                    <td class="cell_standard"><a href="https://github.com/postgres/postgres/">12.3</a></td>
+                </tr>
+                <tr>
+                    <td class="cell_standard">psycopg2</td>
+                    <td class="cell_standard"><a href="https://github.com/psycopg/psycopg2/">2.8.5</a></td>
+                </tr>
+                <tr>
+                    <td class="cell_standard">Quepy</td>
+                    <td class="cell_standard">
+                        <a href="https://github.com/mathiasuhlenbrock/quepy/">0.2 (modified)</a>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="cell_standard">rdflib</td>
+                    <td class="cell_standard"><a href="https://github.com/RDFLib/rdflib/">5.0.0</a></td>
+                </tr>
+                <tr>
+                    <td class="cell_standard">REfO</td>
+                    <td class="cell_standard"><a href="https://github.com/machinalis/refo/">0.13</a></td>
+                </tr>
+                <tr>
+                    <td class="cell_standard">requests</td>
+                    <td class="cell_standard"><a href="https://github.com/psf/requests">2.24.0</a></td>
+                </tr>
+                <tr>
+                    <td class="cell_standard">SoMaJo</td>
+                    <td class="cell_standard"><a href="https://github.com/tsproisl/SoMaJo">2.1.0</a></td>
+                </tr>
+                </tbody>
+            </table>
+        </div>
+        <div id="text_right_column"></div>
+    </div>
+{% endblock %}
+{% block navigation %}
+    <!-- Button "Home" -->
+    <svg class="vspace">
+        <rect width="100%" height="100%"></rect>
+    </svg>
+    <a href="/">
+        <svg width="100%" height="100">
+            <rect class="navigation" width="100%" height="100%"></rect>
+            <text class="text" x="10" y="90">Home</text>
+        </svg>
+    </a>
+    <!-- Button "Up" -->
+    <svg class="vspace">
+        <rect width="100%" height="100%"></rect>
+    </svg>
+    <a href="../">
+        <svg width="100%" height="100">
+            <rect class="navigation" width="100%" height="100%"></rect>
+            <text class="text" x="10" y="90">Up</text>
+        </svg>
+    </a>
+    <svg class="vspace">
+        <rect width="100%" height="100%"></rect>
+    </svg>
+{% endblock %}

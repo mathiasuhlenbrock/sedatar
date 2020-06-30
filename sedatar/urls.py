@@ -29,6 +29,11 @@ urlpatterns = [
         name='about'
     ),
     path(
+        'About/List_of_dependencies/',
+        views.list_of_dependencies,
+        name='list_of_dependencies'
+    ),
+    path(
         'Admin/',
         admin.site.urls
     ),

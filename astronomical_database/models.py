@@ -1,4 +1,5 @@
 from django.db import models
+from astronomical_database.constants import M_EARTH, M_JUPITER, R_EARTH, R_JUPITER
 
 
 class Catalogue(models.Model):
@@ -240,35 +241,41 @@ class Planet(models.Model):
     @property
     def string_radius(self):
         if self.radius > 0.:
-            return str(self.radius) + ' R<sub>&#9795;</sub>'
+            if self.classification == 'Terrestrial planet':
+                return str(round(self.radius * R_JUPITER / R_EARTH, 3)) + ' R<sub>&#9793</sub>'
+            else:
+                return str(round(self.radius, 3)) + ' R<sub>&#9795;</sub>'
         else:
             return 'Not available'
 
     @property
     def string_mass(self):
         if self.mass > 0.:
-            return str(self.mass) + ' M<sub>&#9795;</sub>'
+            if self.classification == 'Terrestrial planet':
+                return str(round(self.mass * M_JUPITER / M_EARTH, 3)) + ' M<sub>&#9793</sub>'
+            else:
+                return str(round(self.mass, 3)) + ' M<sub>&#9795;</sub>'
         else:
             return 'Not available'
 
     @property
     def string_density(self):
         if self.density > 0.:
-            return str(self.density) + ' g/cm&sup3;'
+            return str(round(self.density, 3)) + ' g/cm&sup3;'
         else:
             return 'Not available'
 
     @property
     def string_semimajoraxis(self):
         if self.semimajoraxis > 0.:
-            return str(self.semimajoraxis) + ' AU'
+            return str(round(self.semimajoraxis, 3)) + ' AU'
         else:
             return 'Not available'
 
     @property
     def string_orbital_period(self):
         if self.orbital_period > 0:
-            return str(self.orbital_period) + ' days'
+            return str(round(self.orbital_period, 3)) + ' days'
         else:
             return 'Not available'
 
@@ -291,6 +298,22 @@ class Planet(models.Model):
             return 50
         else:
             return 0
+
+    @property
+    def img_alt_radius(self):
+        if 0 < self.radius * R_JUPITER / R_EARTH <= 1:
+            return round(50 * self.radius * R_JUPITER / R_EARTH)
+        elif self.radius * R_JUPITER / R_EARTH > 1.:
+            return 50
+        else:
+            return 0
+
+    @property
+    def img_earth_radius(self):
+        if self.radius * R_JUPITER / R_EARTH <= 1.:
+            return 50
+        else:
+            return round(50 / (self.radius * R_JUPITER / R_EARTH))
 
     @property
     def img_jupiter_radius(self):

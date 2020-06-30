@@ -11,6 +11,10 @@
                 taken 'as is'. This is a hobbyist project and makes no claims about being complete, correct,
                 consistent or even useful.
             </p>
+            <p>
+                A list of third-party libraries used by this project can be found
+                <a href="{% url 'list_of_dependencies' %}">here</a>.
+            </p>
             <h2>Version</h2>
             <p>
                 Sedatar Version v0.4.beta.
@@ -32,36 +36,11 @@
                 <br>
                 Email: mathias.uhlenbrock@gmail.com
             </p>
-            <h2>This website is powered by</h2>
-            <!-- Table cannot be within paragraph. -->
-            <p></p>
-            <table>
-                <tbody>
-                <tr>
-                    <td class="cell_standard"><a href="https://github.com/django/django/">Django 2.2</a></td>
-                    <td class="cell_standard"><a href="https://github.com/mathiasuhlenbrock/quepy/">Quepy 0.2</a>
-                        (modified)
-                    </td>
-                </tr>
-                <tr>
-                    <td class="cell_standard"><a href="https://github.com/lxml/lxml">lxml 4.5.1</a></td>
-                    <td class="cell_standard"><a href="https://github.com/RDFLib/rdflib/">rdflib 5.0.0</a></td>
-                </tr>
-                <tr>
-                    <td class="cell_standard"><a href="https://github.com/nltk/nltk/">NLTK 3.5</a></td>
-                    <td class="cell_standard"><a href="https://github.com/machinalis/refo/">REfO 0.13</a></td>
-                </tr>
-                <tr>
-                    <td class="cell_standard"><a href="https://github.com/postgres/postgres/">PostgreSQL 12.3</a></td>
-                    <td class="cell_standard"><a href="https://github.com/tsproisl/SoMaJo">SoMaJo 2.0.5</a></td>
-                </tr>
-                </tbody>
-            </table>
-            <p></p>
-            &copy; 2020 Mathias Uhlenbrock. All rights reserved.
+            <p>
+                &copy; 2020 Mathias Uhlenbrock. All rights reserved.
+            </p>
         </div>
-        <div id="text_right_column">
-        </div>
+        <div id="text_right_column"></div>
     </div>
 {% endblock %}
 {% block navigation %}
