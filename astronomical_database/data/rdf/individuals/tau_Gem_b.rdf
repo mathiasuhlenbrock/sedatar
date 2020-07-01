@@ -1,9 +1,0 @@
-<rdf:Description rdf:about="urn://sedatar.org/astronomical_database/individuals/tau_Gem_b">
-  <rdf:type rdf:resource="urn://sedatar.org/astronomical_database/astronomy/Exoplanet" />
-  <rdfs:label>tau Gem b</rdfs:label>
-  <ontology:distance>92.51</ontology:distance>
-  <ontology:size></ontology:size>
-  <ontology:mass></ontology:mass>
-  <ontology:density></ontology:density>
-  <ontology:semimajoraxis>1.170000</ontology:semimajoraxis>
-</rdf:Description>

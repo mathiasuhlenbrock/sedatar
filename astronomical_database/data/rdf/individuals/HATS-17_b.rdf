@@ -1,9 +1,0 @@
-<rdf:Description rdf:about="urn://sedatar.org/astronomical_database/individuals/HATS-17_b">
-  <rdf:type rdf:resource="urn://sedatar.org/astronomical_database/astronomy/Exoplanet" />
-  <rdfs:label>HATS 17 b</rdfs:label>
-  <ontology:distance>339.00</ontology:distance>
-  <ontology:size>0.777</ontology:size>
-  <ontology:mass>1.33800</ontology:mass>
-  <ontology:density>3.50000</ontology:density>
-  <ontology:semimajoraxis>0.130800</ontology:semimajoraxis>
-</rdf:Description>

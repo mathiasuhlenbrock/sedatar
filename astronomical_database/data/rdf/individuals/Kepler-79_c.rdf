@@ -1,9 +1,0 @@
-<rdf:Description rdf:about="urn://sedatar.org/astronomical_database/individuals/Kepler-79_c">
-  <rdf:type rdf:resource="urn://sedatar.org/astronomical_database/astronomy/Exoplanet" />
-  <rdfs:label>Kepler 79 c</rdfs:label>
-  <ontology:distance></ontology:distance>
-  <ontology:size>0.332</ontology:size>
-  <ontology:mass>0.01900</ontology:mass>
-  <ontology:density>0.62000</ontology:density>
-  <ontology:semimajoraxis>0.187000</ontology:semimajoraxis>
-</rdf:Description>

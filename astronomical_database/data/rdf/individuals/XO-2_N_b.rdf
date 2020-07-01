@@ -1,9 +1,0 @@
-<rdf:Description rdf:about="urn://sedatar.org/astronomical_database/individuals/XO-2_N_b">
-  <rdf:type rdf:resource="urn://sedatar.org/astronomical_database/astronomy/Exoplanet" />
-  <rdfs:label>XO 2 N b</rdfs:label>
-  <ontology:distance>145.50</ontology:distance>
-  <ontology:size>1.019</ontology:size>
-  <ontology:mass>0.59700</ontology:mass>
-  <ontology:density>0.70000</ontology:density>
-  <ontology:semimajoraxis>0.036730</ontology:semimajoraxis>
-</rdf:Description>

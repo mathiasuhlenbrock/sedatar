@@ -1,9 +1,0 @@
-<rdf:Description rdf:about="urn://sedatar.org/astronomical_database/individuals/Kepler-92_b">
-  <rdf:type rdf:resource="urn://sedatar.org/astronomical_database/astronomy/Exoplanet" />
-  <rdfs:label>Kepler 92 b</rdfs:label>
-  <ontology:distance></ontology:distance>
-  <ontology:size>0.313</ontology:size>
-  <ontology:mass>0.20200</ontology:mass>
-  <ontology:density></ontology:density>
-  <ontology:semimajoraxis></ontology:semimajoraxis>
-</rdf:Description>

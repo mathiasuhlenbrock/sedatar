@@ -1,9 +1,0 @@
-<rdf:Description rdf:about="urn://sedatar.org/astronomical_database/individuals/Kepler-149_b">
-  <rdf:type rdf:resource="urn://sedatar.org/astronomical_database/astronomy/Exoplanet" />
-  <rdfs:label>Kepler 149 b</rdfs:label>
-  <ontology:distance></ontology:distance>
-  <ontology:size>0.376</ontology:size>
-  <ontology:mass></ontology:mass>
-  <ontology:density></ontology:density>
-  <ontology:semimajoraxis>0.184000</ontology:semimajoraxis>
-</rdf:Description>

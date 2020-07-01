@@ -1,9 +1,0 @@
-<rdf:Description rdf:about="urn://sedatar.org/astronomical_database/individuals/HD_219828_b">
-  <rdf:type rdf:resource="urn://sedatar.org/astronomical_database/astronomy/Exoplanet" />
-  <rdfs:label>HD 219828 b</rdfs:label>
-  <ontology:distance>77.90</ontology:distance>
-  <ontology:size></ontology:size>
-  <ontology:mass></ontology:mass>
-  <ontology:density></ontology:density>
-  <ontology:semimajoraxis>0.045000</ontology:semimajoraxis>
-</rdf:Description>

@@ -1,9 +1,0 @@
-<rdf:Description rdf:about="urn://sedatar.org/astronomical_database/individuals/Kepler-210_b">
-  <rdf:type rdf:resource="urn://sedatar.org/astronomical_database/astronomy/Exoplanet" />
-  <rdfs:label>Kepler 210 b</rdfs:label>
-  <ontology:distance></ontology:distance>
-  <ontology:size>0.262</ontology:size>
-  <ontology:mass></ontology:mass>
-  <ontology:density></ontology:density>
-  <ontology:semimajoraxis>0.032000</ontology:semimajoraxis>
-</rdf:Description>

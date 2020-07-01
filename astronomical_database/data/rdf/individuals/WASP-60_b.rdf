@@ -1,9 +1,0 @@
-<rdf:Description rdf:about="urn://sedatar.org/astronomical_database/individuals/WASP-60_b">
-  <rdf:type rdf:resource="urn://sedatar.org/astronomical_database/astronomy/Exoplanet" />
-  <rdfs:label>WASP 60 b</rdfs:label>
-  <ontology:distance>400.00</ontology:distance>
-  <ontology:size>0.860</ontology:size>
-  <ontology:mass>0.51400</ontology:mass>
-  <ontology:density>1.10000</ontology:density>
-  <ontology:semimajoraxis>0.053100</ontology:semimajoraxis>
-</rdf:Description>

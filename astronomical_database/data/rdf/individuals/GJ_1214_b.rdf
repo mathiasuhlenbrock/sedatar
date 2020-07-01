@@ -1,9 +1,0 @@
-<rdf:Description rdf:about="urn://sedatar.org/astronomical_database/individuals/GJ_1214_b">
-  <rdf:type rdf:resource="urn://sedatar.org/astronomical_database/astronomy/Exoplanet" />
-  <rdfs:label>GJ 1214 b</rdfs:label>
-  <ontology:distance></ontology:distance>
-  <ontology:size>0.254</ontology:size>
-  <ontology:mass>0.01970</ontology:mass>
-  <ontology:density>1.49000</ontology:density>
-  <ontology:semimajoraxis>0.014110</ontology:semimajoraxis>
-</rdf:Description>

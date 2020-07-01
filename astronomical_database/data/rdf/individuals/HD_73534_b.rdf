@@ -1,9 +1,0 @@
-<rdf:Description rdf:about="urn://sedatar.org/astronomical_database/individuals/HD_73534_b">
-  <rdf:type rdf:resource="urn://sedatar.org/astronomical_database/astronomy/Exoplanet" />
-  <rdfs:label>HD 73534 b</rdfs:label>
-  <ontology:distance>81.00</ontology:distance>
-  <ontology:size></ontology:size>
-  <ontology:mass></ontology:mass>
-  <ontology:density></ontology:density>
-  <ontology:semimajoraxis>3.067000</ontology:semimajoraxis>
-</rdf:Description>

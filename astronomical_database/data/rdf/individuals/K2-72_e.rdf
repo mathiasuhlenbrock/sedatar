@@ -1,9 +1,0 @@
-<rdf:Description rdf:about="urn://sedatar.org/astronomical_database/individuals/K2-72_e">
-  <rdf:type rdf:resource="urn://sedatar.org/astronomical_database/astronomy/Exoplanet" />
-  <rdfs:label>K2 72 e</rdfs:label>
-  <ontology:distance></ontology:distance>
-  <ontology:size>0.073</ontology:size>
-  <ontology:mass></ontology:mass>
-  <ontology:density></ontology:density>
-  <ontology:semimajoraxis>0.098000</ontology:semimajoraxis>
-</rdf:Description>

@@ -1,9 +1,0 @@
-<rdf:Description rdf:about="urn://sedatar.org/astronomical_database/individuals/K2-24_c">
-  <rdf:type rdf:resource="urn://sedatar.org/astronomical_database/astronomy/Exoplanet" />
-  <rdfs:label>K2 24 c</rdfs:label>
-  <ontology:distance>181.00</ontology:distance>
-  <ontology:size>0.723</ontology:size>
-  <ontology:mass></ontology:mass>
-  <ontology:density></ontology:density>
-  <ontology:semimajoraxis>0.247100</ontology:semimajoraxis>
-</rdf:Description>

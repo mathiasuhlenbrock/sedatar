@@ -1,9 +1,0 @@
-<rdf:Description rdf:about="urn://sedatar.org/astronomical_database/individuals/OGLE-TR-10_b">
-  <rdf:type rdf:resource="urn://sedatar.org/astronomical_database/astronomy/Exoplanet" />
-  <rdfs:label>OGLE TR 10 b</rdfs:label>
-  <ontology:distance></ontology:distance>
-  <ontology:size>1.250</ontology:size>
-  <ontology:mass>0.62000</ontology:mass>
-  <ontology:density>0.40000</ontology:density>
-  <ontology:semimajoraxis>0.043400</ontology:semimajoraxis>
-</rdf:Description>

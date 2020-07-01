@@ -1,9 +1,0 @@
-<rdf:Description rdf:about="urn://sedatar.org/astronomical_database/individuals/Kepler-38_b">
-  <rdf:type rdf:resource="urn://sedatar.org/astronomical_database/astronomy/Exoplanet" />
-  <rdfs:label>Kepler 38 b</rdfs:label>
-  <ontology:distance>600.00</ontology:distance>
-  <ontology:size>0.384</ontology:size>
-  <ontology:mass>0.38400</ontology:mass>
-  <ontology:density></ontology:density>
-  <ontology:semimajoraxis>0.463200</ontology:semimajoraxis>
-</rdf:Description>

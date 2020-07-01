@@ -1,9 +1,0 @@
-<rdf:Description rdf:about="urn://sedatar.org/astronomical_database/individuals/OGLE_2013-BLG-341L_B_b">
-  <rdf:type rdf:resource="urn://sedatar.org/astronomical_database/astronomy/Exoplanet" />
-  <rdfs:label>OGLE 2013 BLG 341L B b</rdfs:label>
-  <ontology:distance>1161.00</ontology:distance>
-  <ontology:size></ontology:size>
-  <ontology:mass>0.00730</ontology:mass>
-  <ontology:density></ontology:density>
-  <ontology:semimajoraxis>0.883000</ontology:semimajoraxis>
-</rdf:Description>

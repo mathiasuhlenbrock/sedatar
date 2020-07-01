@@ -1,9 +1,0 @@
-<rdf:Description rdf:about="urn://sedatar.org/astronomical_database/individuals/HD_218566_b">
-  <rdf:type rdf:resource="urn://sedatar.org/astronomical_database/astronomy/Exoplanet" />
-  <rdfs:label>HD 218566 b</rdfs:label>
-  <ontology:distance>29.94</ontology:distance>
-  <ontology:size></ontology:size>
-  <ontology:mass></ontology:mass>
-  <ontology:density></ontology:density>
-  <ontology:semimajoraxis>0.687300</ontology:semimajoraxis>
-</rdf:Description>

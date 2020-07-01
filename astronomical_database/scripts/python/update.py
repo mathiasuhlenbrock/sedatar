@@ -1,11 +1,29 @@
 import csv
+# import math
 import re
+# from astronomical_database.constants import M_JUPITER, R_JUPITER
 from astronomical_database.models import *
+
+
+# def consistency_check(mass, radius, density):
+#     if not (mass and radius and density):
+#         if mass and radius:
+#             print('WARNING: Density is missing.')
+#             density = (mass * M_JUPITER * 1000) / (4 / 3 * math.pi * math.pow(radius * R_JUPITER * 100, 3))
+#         elif mass and density:
+#             print('WARNING: Radius is missing.')
+#             radius = math.pow((mass * M_JUPITER * 1000) /
+#                               (density * 4 / 3 * math.pi), 1 / 3) / R_JUPITER * 100
+#         elif radius and density:
+#             print('WARNING: Mass is missing.')
+#             mass = (density * 4 / 3 * math.pi * math.pow(radius * R_JUPITER * 100, 3)) / M_JUPITER * 1000
+#     return mass, radius, density
 
 
 def sort_into_catalogue(cataloguename, row, year_of_discovery, density, mass, radius, semimajoraxis, orbital_period):
     from astronomical_database.models import Catalogue, PlanetarySystem
     the_catalogue = Catalogue.objects.get(name=cataloguename)
+    # mass, radius, density = consistency_check(mass, radius, density)
     if not PlanetarySystem.objects.filter(name=row['pl_hostname']).exists():
         host_distance = 0.0
         if row['st_dist'] is not '':
@@ -59,7 +77,7 @@ with open('astronomical_database/data/csv/catalogues/catalogues.csv') as csvfile
             catalogue.delete()
     reader = csv.DictReader(csvfile, skipinitialspace=True)
     for row in reader:
-        catalogue = Catalogue(name=row['Catalogue'], acronym=row['Acronym'])
+        catalogue = Catalogue(name=row['Catalogue'], acronym=row['Acronym'], ordering_strategy=row['Ordering'])
         catalogue.save()
 
 with open('astronomical_database/data/csv/categories/categories.csv') as csvfile:

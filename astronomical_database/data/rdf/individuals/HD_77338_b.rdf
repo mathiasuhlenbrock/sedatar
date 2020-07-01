@@ -1,9 +1,0 @@
-<rdf:Description rdf:about="urn://sedatar.org/astronomical_database/individuals/HD_77338_b">
-  <rdf:type rdf:resource="urn://sedatar.org/astronomical_database/astronomy/Exoplanet" />
-  <rdfs:label>HD 77338 b</rdfs:label>
-  <ontology:distance>41.27</ontology:distance>
-  <ontology:size></ontology:size>
-  <ontology:mass>0.05000</ontology:mass>
-  <ontology:density></ontology:density>
-  <ontology:semimajoraxis>0.061400</ontology:semimajoraxis>
-</rdf:Description>

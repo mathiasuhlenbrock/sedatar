@@ -1,9 +1,0 @@
-<rdf:Description rdf:about="urn://sedatar.org/astronomical_database/individuals/HR_2562_b">
-  <rdf:type rdf:resource="urn://sedatar.org/astronomical_database/astronomy/Exoplanet" />
-  <rdfs:label>HR 2562 b</rdfs:label>
-  <ontology:distance>33.63</ontology:distance>
-  <ontology:size>1.110</ontology:size>
-  <ontology:mass>30.00000</ontology:mass>
-  <ontology:density></ontology:density>
-  <ontology:semimajoraxis>20.300000</ontology:semimajoraxis>
-</rdf:Description>

@@ -1,9 +1,0 @@
-<rdf:Description rdf:about="urn://sedatar.org/astronomical_database/individuals/Kepler-1647_b">
-  <rdf:type rdf:resource="urn://sedatar.org/astronomical_database/astronomy/Exoplanet" />
-  <rdfs:label>Kepler 1647 b</rdfs:label>
-  <ontology:distance></ontology:distance>
-  <ontology:size>1.059</ontology:size>
-  <ontology:mass>1.51968</ontology:mass>
-  <ontology:density></ontology:density>
-  <ontology:semimajoraxis>2.720500</ontology:semimajoraxis>
-</rdf:Description>

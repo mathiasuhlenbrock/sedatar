@@ -1,9 +1,0 @@
-<rdf:Description rdf:about="urn://sedatar.org/astronomical_database/individuals/Kepler-101_c">
-  <rdf:type rdf:resource="urn://sedatar.org/astronomical_database/astronomy/Exoplanet" />
-  <rdfs:label>Kepler 101 c</rdfs:label>
-  <ontology:distance></ontology:distance>
-  <ontology:size>0.112</ontology:size>
-  <ontology:mass>0.01000</ontology:mass>
-  <ontology:density>10.50000</ontology:density>
-  <ontology:semimajoraxis>0.068400</ontology:semimajoraxis>
-</rdf:Description>

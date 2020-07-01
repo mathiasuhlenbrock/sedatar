@@ -11,6 +11,7 @@
         color: #6460CC; /* blue */
         font-stretch: ultra-condensed;
         text-transform: uppercase;
+        line-height: 1.6;
     }
 
     /* Essential CSS for the grid layout */
@@ -341,7 +342,21 @@
     }
 
     .cell_standard {
+        padding: 0px;
         padding-right: 20px;
+    }
+
+    .row_subscript {
+        line-height: 17px;
+    }
+
+    .table_left {
+        display: inline-block;
+    }
+
+    .table_right {
+        display: inline-block;
+        vertical-align: top;
     }
 
     #main_text {
@@ -359,14 +374,14 @@
         float: left;
         padding-top: 20px;
         padding-left: 20px;
-        width: 46%;
+        width: 47%;
     }
 
     #text_right_column {
         float: right;
         padding-top: 20px;
-        padding-right: 30px;
-        width: 46%;
+        padding-right: 40px;
+        width: 47%;
     }
 
     #text_left_column_planetarysystem {

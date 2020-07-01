@@ -1,9 +1,0 @@
-<rdf:Description rdf:about="urn://sedatar.org/astronomical_database/individuals/HAT-P-3_b">
-  <rdf:type rdf:resource="urn://sedatar.org/astronomical_database/astronomy/Exoplanet" />
-  <rdfs:label>HAT P 3 b</rdfs:label>
-  <ontology:distance>138.00</ontology:distance>
-  <ontology:size>0.827</ontology:size>
-  <ontology:mass>0.59100</ontology:mass>
-  <ontology:density>1.29000</ontology:density>
-  <ontology:semimajoraxis>0.038660</ontology:semimajoraxis>
-</rdf:Description>

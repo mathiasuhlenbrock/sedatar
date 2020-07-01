@@ -1,9 +1,0 @@
-<rdf:Description rdf:about="urn://sedatar.org/astronomical_database/individuals/HD_37605_b">
-  <rdf:type rdf:resource="urn://sedatar.org/astronomical_database/astronomy/Exoplanet" />
-  <rdfs:label>HD 37605 b</rdfs:label>
-  <ontology:distance>42.88</ontology:distance>
-  <ontology:size></ontology:size>
-  <ontology:mass></ontology:mass>
-  <ontology:density></ontology:density>
-  <ontology:semimajoraxis>0.283100</ontology:semimajoraxis>
-</rdf:Description>

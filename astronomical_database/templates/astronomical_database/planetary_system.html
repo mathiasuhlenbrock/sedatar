@@ -22,39 +22,103 @@
                 <text id="text" x="360" y="122">Sun</text>
             </svg>
             <h2>Stellar parameters</h2>
-            <p>
-                {% if planetary_system.host_distance_ly > 0 %}
-                    Distance from earth: {{ planetary_system.host_distance_ly|floatformat }} ly
-                {% else %}
-                    Distance from earth: Not available
-                {% endif %}
-                <br>
-                Radius: {{ planetary_system.string_host_radius|safe }}
-                <br>
-                Spectral class: {{ planetary_system.host_spectral_class }}
-                <br>
-                Luminosity: {{ planetary_system.string_host_luminosity|safe }}
-                <br>
-                B-V: {{ planetary_system.string_host_bminusv|safe }}
-            </p>
-            <h2>Planets</h2>
-            <p>
-                <!-- Pluto density: 1.869 g/cm^3, Neptune radius: 0.35 R_Jup -->
-                {% for planet in list_of_planets.object_list %}
-                    {% if planet.density <= 0.0 %}
-                        <a href="/Astronomical_database/List_of_planets/{{ planet.page_name }}/">{{ planet.name }}</a>
-                        (classification not available)<br>
-                    {% elif planet.density < 1.869 or planet.radius > 0.35 %}
-                        <a href="/Astronomical_database/List_of_planets/{{ planet.page_name }}/">{{ planet.name }}</a>
-                        (gas giant)<br>
+            <p></p>
+            <table>
+                <tbody>
+                <tr>
+                    <td class="cell_standard">Distance from earth</td>
+                    {% if planetary_system.host_distance_ly > 0 %}
+                        <td class="cell_standard">{{ planetary_system.host_distance_ly|floatformat }} ly</td>
                     {% else %}
-                        <a href="/Astronomical_database/List_of_planets/{{ planet.page_name }}/">{{ planet.name }}</a>
-                        (terrestrial)<br>
+                        <td class="cell_standard">Not available</td>
+                    {% endif %}
+                </tr>
+                <tr class="row_subscript">
+                    <td class="cell_standard">Radius</td>
+                    <td class="cell_standard">{{ planetary_system.string_host_radius|safe }}</td>
+                </tr>
+                <tr>
+                    <td class="cell_standard">Spectral class</td>
+                    <td class="cell_standard">{{ planetary_system.host_spectral_class }}</td>
+                </tr>
+                <tr class="row_subscript">
+                    <td class="cell_standard">Luminosity</td>
+                    <td class="cell_standard">{{ planetary_system.string_host_luminosity|safe }}</td>
+                </tr>
+                <tr>
+                    <td class="cell_standard">B-V</td>
+                    <td class="cell_standard">{{ planetary_system.string_host_bminusv|safe }}</td>
+                </tr>
+                </tbody>
+            </table>
+            <p></p>
+            <h2>Planets</h2>
+            <p></p>
+            <!-- Pluto density: 1.869 g/cm^3, Neptune radius: 0.35 R_Jup -->
+            <table class="table_left">
+                <tbody>
+                {% for planet in list_of_planets.object_list|slice:':5' %}
+                    {% if planet.density <= 0.0 %}
+                        <tr>
+                            <td class="cell_standard">
+                                <a href="/Astronomical_database/List_of_planets/{{ planet.page_name }}/">
+                                    {{ planet.name }}
+                                </a> (no classification)
+                            </td>
+                        </tr>
+                    {% elif planet.density < 1.869 or planet.radius > 0.35 %}
+                        <tr>
+                            <td class="cell_standard">
+                                <a href="/Astronomical_database/List_of_planets/{{ planet.page_name }}/">
+                                    {{ planet.name }}
+                                </a> (gas giant)
+                            </td>
+                        </tr>
+                    {% else %}
+                        <tr>
+                            <td class="cell_standard">
+                                <a href="/Astronomical_database/List_of_planets/{{ planet.page_name }}/">
+                                    {{ planet.name }}
+                                </a> (terrestrial)
+                            </td>
+                        </tr>
                     {% endif %}
                 {% empty %}
                     No planets are yet available.
                 {% endfor %}
-            <p></p>
+                </tbody>
+            </table>
+            <table class="table_right">
+                <tbody>
+                {% for planet in list_of_planets.object_list|slice:'5:' %}
+                    {% if planet.density <= 0.0 %}
+                        <tr>
+                            <td class="cell_standard">
+                                <a href="/Astronomical_database/List_of_planets/{{ planet.page_name }}/">
+                                    {{ planet.name }}
+                                </a> (no classification)
+                            </td>
+                        </tr>
+                    {% elif planet.density < 1.869 or planet.radius > 0.35 %}
+                        <tr>
+                            <td class="cell_standard">
+                                <a href="/Astronomical_database/List_of_planets/{{ planet.page_name }}/">
+                                    {{ planet.name }}
+                                </a> (gas giant)
+                            </td>
+                        </tr>
+                    {% else %}
+                        <tr>
+                            <td class="cell_standard">
+                                <a href="/Astronomical_database/List_of_planets/{{ planet.page_name }}/">
+                                    {{ planet.name }}
+                                </a> (terrestrial)
+                            </td>
+                        </tr>
+                    {% endif %}
+                {% endfor %}
+                </tbody>
+            </table>
         </div>
         <div id="text_right_column_planetarysystem">
             <h2>Planetary system</h2>

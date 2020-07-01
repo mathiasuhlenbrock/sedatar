@@ -1,9 +1,0 @@
-<rdf:Description rdf:about="urn://sedatar.org/astronomical_database/individuals/OGLE2-TR-L9_b">
-  <rdf:type rdf:resource="urn://sedatar.org/astronomical_database/astronomy/Exoplanet" />
-  <rdfs:label>OGLE2 TR L9 b</rdfs:label>
-  <ontology:distance></ontology:distance>
-  <ontology:size>1.610</ontology:size>
-  <ontology:mass>4.50000</ontology:mass>
-  <ontology:density></ontology:density>
-  <ontology:semimajoraxis>0.030800</ontology:semimajoraxis>
-</rdf:Description>

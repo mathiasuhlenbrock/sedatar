@@ -1,9 +1,0 @@
-<rdf:Description rdf:about="urn://sedatar.org/astronomical_database/individuals/1RXS_J160929.1-210524_b">
-  <rdf:type rdf:resource="urn://sedatar.org/astronomical_database/astronomy/Exoplanet" />
-  <rdfs:label>1RXS J160929.1 210524 b</rdfs:label>
-  <ontology:distance>145.00</ontology:distance>
-  <ontology:size></ontology:size>
-  <ontology:mass>8.00000</ontology:mass>
-  <ontology:density></ontology:density>
-  <ontology:semimajoraxis>330.000000</ontology:semimajoraxis>
-</rdf:Description>

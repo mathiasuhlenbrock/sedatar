@@ -1,9 +1,0 @@
-<rdf:Description rdf:about="urn://sedatar.org/astronomical_database/individuals/Kepler-113_b">
-  <rdf:type rdf:resource="urn://sedatar.org/astronomical_database/astronomy/Exoplanet" />
-  <rdfs:label>Kepler 113 b</rdfs:label>
-  <ontology:distance></ontology:distance>
-  <ontology:size>0.162</ontology:size>
-  <ontology:mass>0.03700</ontology:mass>
-  <ontology:density>10.73000</ontology:density>
-  <ontology:semimajoraxis></ontology:semimajoraxis>
-</rdf:Description>

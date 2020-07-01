@@ -1,9 +1,0 @@
-<rdf:Description rdf:about="urn://sedatar.org/astronomical_database/individuals/HAT-P-26_b">
-  <rdf:type rdf:resource="urn://sedatar.org/astronomical_database/astronomy/Exoplanet" />
-  <rdfs:label>HAT P 26 b</rdfs:label>
-  <ontology:distance>134.00</ontology:distance>
-  <ontology:size>0.565</ontology:size>
-  <ontology:mass>0.05900</ontology:mass>
-  <ontology:density>0.40000</ontology:density>
-  <ontology:semimajoraxis>0.047900</ontology:semimajoraxis>
-</rdf:Description>

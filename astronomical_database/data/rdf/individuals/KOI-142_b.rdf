@@ -1,9 +1,0 @@
-<rdf:Description rdf:about="urn://sedatar.org/astronomical_database/individuals/KOI-142_b">
-  <rdf:type rdf:resource="urn://sedatar.org/astronomical_database/astronomy/Exoplanet" />
-  <rdfs:label>KOI 142 b</rdfs:label>
-  <ontology:distance>339.00</ontology:distance>
-  <ontology:size>0.337</ontology:size>
-  <ontology:mass>0.02700</ontology:mass>
-  <ontology:density>0.87000</ontology:density>
-  <ontology:semimajoraxis></ontology:semimajoraxis>
-</rdf:Description>

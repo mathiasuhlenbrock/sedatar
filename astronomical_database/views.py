@@ -1,11 +1,46 @@
+import re
 from django.core.paginator import Paginator, EmptyPage, InvalidPage
 from django.shortcuts import get_object_or_404, render_to_response
 from astronomical_database.models import *
 
 
+def convert_to_nth_numeric_component(s, n):
+    """
+    Converts a string containing one or multiple numeric components to the nth component.
+    Example: For n = 1, 'K2-31' is converted to 31.
+    Sorts exceptions to the front.
+    """
+    try:
+        numeric_components = re.findall(r'\d+', s)
+        return int(numeric_components[n])
+    except IndexError:
+        return 0
+    except TypeError:
+        return 0
+
+
+def sort_by(iterable, strategy):
+    """
+    Strategies:
+      0: alphabetical sorting
+      n (not 0): sorting according to the nth numerical string component
+    """
+    if strategy == 0:
+        ordered_iterable = sorted(
+            iterable, key=lambda item: item.name
+        )
+    else:
+        ordered_iterable = sorted(
+            iterable, key=lambda item: convert_to_nth_numeric_component(item.name, strategy - 1)
+        )
+    return ordered_iterable
+
+
 def catalogue(request, catalogue_page_name):
     the_catalogue = get_object_or_404(Catalogue, name=catalogue_page_name.replace('_', ' '))
-    paginator = Paginator(the_catalogue.planetarysystem_set.order_by('name'), 80)
+    # Alternatively consider using custom Manager.
+    ordered_catalogue = sort_by(the_catalogue.planetarysystem_set.all(), the_catalogue.ordering_strategy)
+    paginator = Paginator(ordered_catalogue, 80)
     # Make sure page request is an int. If not, deliver first page.
     try:
         page = int(request.GET.get('page', '1'))

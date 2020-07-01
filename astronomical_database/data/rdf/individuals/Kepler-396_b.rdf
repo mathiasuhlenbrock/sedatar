@@ -1,9 +1,0 @@
-<rdf:Description rdf:about="urn://sedatar.org/astronomical_database/individuals/Kepler-396_b">
-  <rdf:type rdf:resource="urn://sedatar.org/astronomical_database/astronomy/Exoplanet" />
-  <rdfs:label>Kepler 396 b</rdfs:label>
-  <ontology:distance></ontology:distance>
-  <ontology:size>0.312</ontology:size>
-  <ontology:mass>0.23800</ontology:mass>
-  <ontology:density></ontology:density>
-  <ontology:semimajoraxis></ontology:semimajoraxis>
-</rdf:Description>

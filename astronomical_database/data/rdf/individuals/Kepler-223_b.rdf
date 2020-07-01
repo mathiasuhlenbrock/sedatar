@@ -1,9 +1,0 @@
-<rdf:Description rdf:about="urn://sedatar.org/astronomical_database/individuals/Kepler-223_b">
-  <rdf:type rdf:resource="urn://sedatar.org/astronomical_database/astronomy/Exoplanet" />
-  <rdfs:label>Kepler 223 b</rdfs:label>
-  <ontology:distance></ontology:distance>
-  <ontology:size>0.267</ontology:size>
-  <ontology:mass>0.02328</ontology:mass>
-  <ontology:density>1.54000</ontology:density>
-  <ontology:semimajoraxis></ontology:semimajoraxis>
-</rdf:Description>

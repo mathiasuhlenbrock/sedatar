@@ -1,9 +1,0 @@
-<rdf:Description rdf:about="urn://sedatar.org/astronomical_database/individuals/Kepler-276_d">
-  <rdf:type rdf:resource="urn://sedatar.org/astronomical_database/astronomy/Exoplanet" />
-  <rdfs:label>Kepler 276 d</rdfs:label>
-  <ontology:distance></ontology:distance>
-  <ontology:size>0.250</ontology:size>
-  <ontology:mass>0.05100</ontology:mass>
-  <ontology:density></ontology:density>
-  <ontology:semimajoraxis></ontology:semimajoraxis>
-</rdf:Description>

@@ -1,9 +1,0 @@
-<rdf:Description rdf:about="urn://sedatar.org/astronomical_database/individuals/HD_131399_A_b">
-  <rdf:type rdf:resource="urn://sedatar.org/astronomical_database/astronomy/Exoplanet" />
-  <rdfs:label>HD 131399 A b</rdfs:label>
-  <ontology:distance>98.00</ontology:distance>
-  <ontology:size></ontology:size>
-  <ontology:mass>4.00000</ontology:mass>
-  <ontology:density></ontology:density>
-  <ontology:semimajoraxis>82.000000</ontology:semimajoraxis>
-</rdf:Description>

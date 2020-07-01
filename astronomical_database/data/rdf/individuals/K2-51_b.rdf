@@ -1,9 +1,0 @@
-<rdf:Description rdf:about="urn://sedatar.org/astronomical_database/individuals/K2-51_b">
-  <rdf:type rdf:resource="urn://sedatar.org/astronomical_database/astronomy/Exoplanet" />
-  <rdfs:label>K2 51 b</rdfs:label>
-  <ontology:distance></ontology:distance>
-  <ontology:size>1.151</ontology:size>
-  <ontology:mass></ontology:mass>
-  <ontology:density></ontology:density>
-  <ontology:semimajoraxis>0.108600</ontology:semimajoraxis>
-</rdf:Description>

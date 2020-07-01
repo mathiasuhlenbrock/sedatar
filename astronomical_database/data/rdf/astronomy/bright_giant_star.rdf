@@ -1,8 +1,0 @@
-<!--
-<rdf:Description rdf:about="urn://sedatar.org/astronomical_database/astronomy/Bright_Giant_Star">
-  <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class" />
-  <rdfs:label>bright giant star</rdfs:label>
-  <ontology:numberOfInstances></ontology:numberOfInstances>
-  <rdfs:subClassOf rdf:resource="urn://sedatar.org/astronomical_database/astronomy/Star" />
-</rdf:Description>
--->

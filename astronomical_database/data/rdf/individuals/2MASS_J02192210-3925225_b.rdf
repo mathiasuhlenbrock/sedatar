@@ -1,9 +1,0 @@
-<rdf:Description rdf:about="urn://sedatar.org/astronomical_database/individuals/2MASS_J02192210-3925225_b">
-  <rdf:type rdf:resource="urn://sedatar.org/astronomical_database/astronomy/Exoplanet" />
-  <rdfs:label>2MASS J02192210 3925225 b</rdfs:label>
-  <ontology:distance>39.40</ontology:distance>
-  <ontology:size>1.440</ontology:size>
-  <ontology:mass>13.90000</ontology:mass>
-  <ontology:density></ontology:density>
-  <ontology:semimajoraxis>156.000000</ontology:semimajoraxis>
-</rdf:Description>
