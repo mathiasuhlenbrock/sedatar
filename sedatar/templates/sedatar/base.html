@@ -3,40 +3,38 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8"/>
-    <link rel="stylesheet" type="text/css" href="{% static 'style.css' %}" title="Default"/>
+    <link rel="stylesheet" type="text/css" href="{% static 'style.css' %}"/>
     <link rel="icon" type="image/x-icon" href="{% static 'favicon.ico' %}"/>
     <title>Sedatar</title>
 </head>
 <body>
 <div class="grid">
-    <div class="row">
-        <div id="cell1" class="column"></div>
-        <div id="cell2" class="column"></div>
-        <div id="cell3" class="column"></div>
-        <div id="cell4" class="column"></div>
-    </div>
-    <div class="row expand">
-        <div id="cell5" class="column"></div>
-        <div id="cell6" class="column"></div>
-        <div id="cell7" class="column">
-            <!-- Begin main window -->
+    <div id="cell1"></div>
+    <div id="cell2"></div>
+    <div id="cell3"></div>
+    <div id="cell4"></div>
+    <div id="cell5"></div>
+    <div id="cell6"></div>
+    <div id="cell7">
+        <!-- Begin main section -->
+        <div id="main_section">
             {% block content %}
             {% endblock %}
-            <!-- End main window -->
         </div>
-        <div id="cell8" class="column">
-            <!-- Begin navigation bar -->
+        <!-- End main section -->
+    </div>
+    <div id="cell8">
+        <!-- Begin navigation bar -->
+        <div>
             {% block navigation %}
             {% endblock %}
-            <!-- End navigation bar -->
         </div>
+        <!-- End navigation bar -->
     </div>
-    <div class="row">
-        <div id="cell9" class="column"></div>
-        <div id="cell10" class="column"></div>
-        <div id="cell11" class="column"></div>
-        <div id="cell12" class="column"></div>
-    </div>
+    <div id="cell9"></div>
+    <div id="cell10"></div>
+    <div id="cell11"></div>
+    <div id="cell12"></div>
 </div>
 </body>
 </html>
