@@ -7,6 +7,7 @@
                 {{ question }}
             </p>
             <h3>Your answer</h3>
+            {% comment %}
             <table style="margin-top: 2em; border-spacing: 0px">
                 {% for answer in list_of_answers.object_list %}
                     <tr>
@@ -16,6 +17,14 @@
                     </tr>
                 {% endfor %}
             </table>
+            {% endcomment %}
+            <ul>
+                {% for answer in list_of_answers.object_list %}
+                    <li>
+                        {{ answer|safe }}
+                    </li>
+                {% endfor %}
+            </ul>
             <div class="pagination">
                 <p>
                 <span class="step-links">
