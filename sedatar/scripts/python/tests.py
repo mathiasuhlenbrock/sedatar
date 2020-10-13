@@ -5,11 +5,13 @@ search = Search()
 
 def test_question(question, answer):
     search.question = question
-    print(question + ': ' + answer)
+    print('Q: ' + question)
+    print('A: ' + search.answer[-1])
     assert search.answer[-1] == answer
+    print('Q: Correct!')
 
 
-print('Testing...')
+print('Begin tests...')
 try:
     test_question('What is a planet?', 'An astronomical object.')
     test_question('What is an exoplanet?', 'A planet.')
@@ -24,5 +26,5 @@ try:
     test_question('What is the number of planets?', 'Query not generated.')
     test_question('What is an animal?', 'No answer found.')
 except AssertionError:
-    print('ERROR: Test failed.')
+    print('Q: Incorrect! Test failed.')
 print('Tests complete.')
