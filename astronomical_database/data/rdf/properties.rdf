@@ -1,0 +1,20 @@
+<rdf:RDF
+  xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+  xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+  xmlns:ontology="urn://sedatar.org/astronomical_database#"
+>
+<!--
+TODO: Does this also work with namespaces?
+-->
+<rdf:Description rdf:about="urn://sedatar.org/astronomical_database#maxSemiMajorAxis">
+  <rdf:type rdf:resource="rdf:Property"/>
+  <rdfs:subPropertyOf rdf:resource="urn://sedatar.org/astronomical_database#size"/>
+</rdf:Description>
+<rdf:Description rdf:about="urn://sedatar.org/astronomical_database#radius">
+  <rdf:type rdf:resource="rdf:Property"/>
+  <rdfs:subPropertyOf rdf:resource="urn://sedatar.org/astronomical_database#size"/>
+</rdf:Description>
+<rdf:Description rdf:about="urn://sedatar.org/astronomical_database#size">
+  <rdf:type rdf:resource="rdf:Property"/>
+</rdf:Description>
+</rdf:RDF>
