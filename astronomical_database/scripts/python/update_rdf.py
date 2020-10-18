@@ -9,7 +9,7 @@ from astronomical_database.models import Planet, PlanetarySystem
 
 def insert_number_of_instances(root, entity, number_of_instances):
     target_element = root.xpath(
-        '//rdf:Description[@rdf:about="ontology:'
+        '//rdf:Description[@rdf:about="urn://sedatar.org/astronomical_database#'
         + entity + '"]/ontology:numberOfInstances',
         namespaces={
             'rdf': 'http://www.w3.org/1999/02/22-rdf-syntax-ns#',
@@ -61,16 +61,16 @@ number_of_gas_giants = 0
 for planet in Planet.objects.all():
     rdf_description = etree.SubElement(root_element, RDF + 'Description')
     rdf_description.attrib[RDF + 'about'] = \
-        ONTOLOGY_PREFIX + ':' + planet.name.replace(' ', '_')
+        ONTOLOGY_NAMESPACE + planet.name.replace(' ', '_')
     rdf_type = etree.SubElement(rdf_description, RDF + 'type')
     if planet.classification == 'Terrestrial planet':
         number_of_terrestrial_planets += 1
-        rdf_type.attrib[RDF + 'resource'] = ONTOLOGY_PREFIX + ':' + 'Terrestrial_Planet'
+        rdf_type.attrib[RDF + 'resource'] = ONTOLOGY_NAMESPACE + 'Terrestrial_Planet'
     elif planet.classification == 'Gas giant':
         number_of_gas_giants += 1
-        rdf_type.attrib[RDF + 'resource'] = ONTOLOGY_PREFIX + ':' + 'Gas_Giant'
+        rdf_type.attrib[RDF + 'resource'] = ONTOLOGY_NAMESPACE + 'Gas_Giant'
     else:
-        rdf_type.attrib[RDF + 'resource'] = ONTOLOGY_PREFIX + ':' + 'Exoplanet'
+        rdf_type.attrib[RDF + 'resource'] = ONTOLOGY_NAMESPACE + 'Exoplanet'
     rdfs_label = etree.SubElement(rdf_description, RDFS + 'label')
     rdfs_label.text = planet.name
     if planet.system.host_distance_ly:
@@ -97,9 +97,9 @@ for planet in Planet.objects.all():
 for planetarySystem in PlanetarySystem.objects.all():
     rdf_description = etree.SubElement(root_element, RDF + 'Description')
     rdf_description.attrib[RDF + 'about'] = \
-        ONTOLOGY_PREFIX + ':' + planetarySystem.name.replace(' ', '_')
+        ONTOLOGY_NAMESPACE + planetarySystem.name.replace(' ', '_')
     rdf_type = etree.SubElement(rdf_description, RDF + 'type')
-    rdf_type.attrib[RDF + 'resource'] = ONTOLOGY_PREFIX + ':' + 'Planetary_System'
+    rdf_type.attrib[RDF + 'resource'] = ONTOLOGY_NAMESPACE + 'Planetary_System'
     rdfs_label = etree.SubElement(rdf_description, RDFS + 'label')
     rdfs_label.text = planetarySystem.name
     if planetarySystem.host_distance_ly:

@@ -4,160 +4,160 @@
   xmlns:ontology="urn://sedatar.org/astronomical_database#"
 >
 <!--
-<rdf:Description rdf:about="ontology:Asteroid">
-  <rdf:type rdf:resource="rdfs:Class"/>
+<rdf:Description rdf:about="urn://sedatar.org/astronomical_database#Asteroid">
+  <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class"/>
   <rdfs:label>asteroid</rdfs:label>
   <ontology:numberOfInstances></ontology:numberOfInstances>
-  <rdfs:subClassOf rdf:resource="ontology:Astronomical_Object"/>
+  <rdfs:subClassOf rdf:resource="urn://sedatar.org/astronomical_database#Astronomical_Object"/>
 </rdf:Description>
 -->
-<rdf:Description rdf:about="ontology:Astronomical_Object">
-  <rdf:type rdf:resource="rdfs:Class"/>
+<rdf:Description rdf:about="urn://sedatar.org/astronomical_database#Astronomical_Object">
+  <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class"/>
   <rdfs:label>astronomical object</rdfs:label>
   <ontology:numberOfInstances></ontology:numberOfInstances>
-  <rdfs:subClassOf rdf:resource="ontology:Thing"/>
+  <rdfs:subClassOf rdf:resource="urn://sedatar.org/astronomical_database#Thing"/>
 </rdf:Description>
 <!--
-<rdf:Description rdf:about="ontology:Bright_Giant_Star">
-  <rdf:type rdf:resource="rdfs:Class"/>
+<rdf:Description rdf:about="urn://sedatar.org/astronomical_database#Bright_Giant_Star">
+  <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class"/>
   <rdfs:label>bright giant star</rdfs:label>
   <ontology:numberOfInstances></ontology:numberOfInstances>
-  <rdfs:subClassOf rdf:resource="ontology:Star"/>
+  <rdfs:subClassOf rdf:resource="urn://sedatar.org/astronomical_database#Star"/>
 </rdf:Description>
 -->
-<rdf:Description rdf:about="ontology:Class">
-  <rdf:type rdf:resource="rdfs:Class"/>
+<rdf:Description rdf:about="urn://sedatar.org/astronomical_database#Class">
+  <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class"/>
   <rdfs:label>class</rdfs:label>
   <ontology:numberOfInstances>7</ontology:numberOfInstances>
 </rdf:Description>
 <!--
-<rdf:Description rdf:about="ontology:Comet">
-  <rdf:type rdf:resource="rdfs:Class"/>
+<rdf:Description rdf:about="urn://sedatar.org/astronomical_database#Comet">
+  <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class"/>
   <rdfs:label>comet</rdfs:label>
   <ontology:numberOfInstances></ontology:numberOfInstances>
-  <rdfs:subClassOf rdf:resource="ontology:Astronomical_Object"/>
+  <rdfs:subClassOf rdf:resource="urn://sedatar.org/astronomical_database#Astronomical_Object"/>
 </rdf:Description>
 -->
 <!--
-<rdf:Description rdf:about="ontology:Dwarf_Planet">
-  <rdf:type rdf:resource="rdfs:Class"/>
+<rdf:Description rdf:about="urn://sedatar.org/astronomical_database#Dwarf_Planet">
+  <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class"/>
   <rdfs:label>dwarf planet</rdfs:label>
   <ontology:numberOfInstances></ontology:numberOfInstances>
-  <rdfs:subClassOf rdf:resource="ontology:Astronomical_Object"/>
+  <rdfs:subClassOf rdf:resource="urn://sedatar.org/astronomical_database#Astronomical_Object"/>
 </rdf:Description>
 -->
-<rdf:Description rdf:about="ontology:Exoplanet">
-  <rdf:type rdf:resource="rdfs:Class"/>
+<rdf:Description rdf:about="urn://sedatar.org/astronomical_database#Exoplanet">
+  <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class"/>
   <rdfs:label>exoplanet</rdfs:label>
   <ontology:numberOfInstances></ontology:numberOfInstances>
-  <rdfs:subClassOf rdf:resource="ontology:Planet"/>
+  <rdfs:subClassOf rdf:resource="urn://sedatar.org/astronomical_database#Planet"/>
 </rdf:Description>
 <!--
-<rdf:Description rdf:about="ontology:Galaxy">
-  <rdf:type rdf:resource="rdfs:Class"/>
+<rdf:Description rdf:about="urn://sedatar.org/astronomical_database#Galaxy">
+  <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class"/>
   <rdfs:label>galaxy</rdfs:label>
   <ontology:numberOfInstances></ontology:numberOfInstances>
-  <rdfs:subClassOf rdf:resource="ontology:Astronomical_Object"/>
+  <rdfs:subClassOf rdf:resource="urn://sedatar.org/astronomical_database#Astronomical_Object"/>
 </rdf:Description>
 -->
-<rdf:Description rdf:about="ontology:Gas_Giant">
-  <rdf:type rdf:resource="rdfs:Class"/>
+<rdf:Description rdf:about="urn://sedatar.org/astronomical_database#Gas_Giant">
+  <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class"/>
   <rdfs:label>gas giant</rdfs:label>
   <ontology:numberOfInstances></ontology:numberOfInstances>
-  <rdfs:subClassOf rdf:resource="ontology:Planet"/>
+  <rdfs:subClassOf rdf:resource="urn://sedatar.org/astronomical_database#Planet"/>
 </rdf:Description>
 <!--
-<rdf:Description rdf:about="ontology:Giant_Star">
-  <rdf:type rdf:resource="rdfs:Class"/>
+<rdf:Description rdf:about="urn://sedatar.org/astronomical_database#Giant_Star">
+  <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class"/>
   <rdfs:label>giant star</rdfs:label>
   <ontology:numberOfInstances></ontology:numberOfInstances>
-  <rdfs:subClassOf rdf:resource="ontology:Star"/>
+  <rdfs:subClassOf rdf:resource="urn://sedatar.org/astronomical_database#Star"/>
 </rdf:Description>
 -->
 <!--
-<rdf:Description rdf:about="ontology:Hypergiant_Star">
-  <rdf:type rdf:resource="rdfs:Class"/>
+<rdf:Description rdf:about="urn://sedatar.org/astronomical_database#Hypergiant_Star">
+  <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class"/>
   <rdfs:label>hypergiant star</rdfs:label>
   <ontology:numberOfInstances></ontology:numberOfInstances>
-  <rdfs:subClassOf rdf:resource="ontology:Star"/>
+  <rdfs:subClassOf rdf:resource="urn://sedatar.org/astronomical_database#Star"/>
 </rdf:Description>
 -->
 <!--
-<rdf:Description rdf:about="ontology:Ice_Giant">
-  <rdf:type rdf:resource="rdfs:Class"/>
+<rdf:Description rdf:about="urn://sedatar.org/astronomical_database#Ice_Giant">
+  <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class"/>
   <rdfs:label>ice giant</rdfs:label>
   <ontology:numberOfInstances></ontology:numberOfInstances>
-  <rdfs:subClassOf rdf:resource="ontology:Planet"/>
+  <rdfs:subClassOf rdf:resource="urn://sedatar.org/astronomical_database#Planet"/>
 </rdf:Description>
 -->
 <!--
-<rdf:Description rdf:about="ontology:Main_Sequence_Star">
-  <rdf:type rdf:resource="rdfs:Class"/>
+<rdf:Description rdf:about="urn://sedatar.org/astronomical_database#Main_Sequence_Star">
+  <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class"/>
   <rdfs:label>main sequence star</rdfs:label>
-  <ontology:numberOfInstances></ontology:numberOfInstances>
+  <ontology:numberOfInstances></urn://sedatar.org/astronomical_database#numberOfInstances>
   <rdfs:subClassOf rdf:resource="ontology:Star"/>
 </rdf:Description>
 -->
 <!--
-<rdf:Description rdf:about="ontology:Meteor">
-  <rdf:type rdf:resource="rdfs:Class"/>
+<rdf:Description rdf:about="urn://sedatar.org/astronomical_database#Meteoroid">
+  <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class"/>
   <rdfs:label>meteor</rdfs:label>
   <ontology:numberOfInstances></ontology:numberOfInstances>
-  <rdfs:subClassOf rdf:resource="ontology:Astronomical_Object"/>
+  <rdfs:subClassOf rdf:resource="urn://sedatar.org/astronomical_database#Astronomical_Object"/>
 </rdf:Description>
 -->
-<rdf:Description rdf:about="ontology:Planet">
-  <rdf:type rdf:resource="rdfs:Class"/>
+<rdf:Description rdf:about="urn://sedatar.org/astronomical_database#Planet">
+  <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class"/>
   <rdfs:label>planet</rdfs:label>
   <ontology:numberOfInstances></ontology:numberOfInstances>
-  <rdfs:subClassOf rdf:resource="ontology:Astronomical_Object"/>
+  <rdfs:subClassOf rdf:resource="urn://sedatar.org/astronomical_database#Astronomical_Object"/>
 </rdf:Description>
-<rdf:Description rdf:about="ontology:Planetary_System">
-  <rdf:type rdf:resource="rdfs:Class"/>
+<rdf:Description rdf:about="urn://sedatar.org/astronomical_database#Planetary_System">
+  <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class"/>
   <rdfs:label>planetary system</rdfs:label>
   <ontology:numberOfInstances></ontology:numberOfInstances>
-  <rdfs:subClassOf rdf:resource="ontology:Astronomical_Object"/>
+  <rdfs:subClassOf rdf:resource="urn://sedatar.org/astronomical_database#Astronomical_Object"/>
 </rdf:Description>
 <!--
-<rdf:Description rdf:about="ontology:Pulsar">
-  <rdf:type rdf:resource="rdfs:Class"/>
+<rdf:Description rdf:about="urn://sedatar.org/astronomical_database#Pulsar">
+  <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class"/>
   <rdfs:label>pulsar</rdfs:label>
   <ontology:numberOfInstances></ontology:numberOfInstances>
-  <rdfs:subClassOf rdf:resource="ontology:Star"/>
+  <rdfs:subClassOf rdf:resource="urn://sedatar.org/astronomical_database#Star"/>
 </rdf:Description>
 -->
 <!--
-<rdf:Description rdf:about="ontology:Star">
-  <rdf:type rdf:resource="rdfs:Class"/>
+<rdf:Description rdf:about="urn://sedatar.org/astronomical_database#Star">
+  <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class"/>
   <rdfs:label>star</rdfs:label>
   <ontology:numberOfInstances></ontology:numberOfInstances>
-  <rdfs:subClassOf rdf:resource="ontology:Astronomical_Object"/>
+  <rdfs:subClassOf rdf:resource="urn://sedatar.org/astronomical_database#Astronomical_Object"/>
 </rdf:Description>
 -->
 <!--
-<rdf:Description rdf:about="ontology:Subdwarf_Star">
-  <rdf:type rdf:resource="rdfs:Class"/>
+<rdf:Description rdf:about="urn://sedatar.org/astronomical_database#Subdwarf_Star">
+  <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class"/>
   <rdfs:label>subdwarf star</rdfs:label>
   <ontology:numberOfInstances></ontology:numberOfInstances>
-  <rdfs:subClassOf rdf:resource="ontology:Star"/>
+  <rdfs:subClassOf rdf:resource="urn://sedatar.org/astronomical_database#Star"/>
 </rdf:Description>
 -->
 <!--
-<rdf:Description rdf:about="ontology:Supergiant_Star">
-  <rdf:type rdf:resource="rdfs:Class"/>
+<rdf:Description rdf:about="urn://sedatar.org/astronomical_database#Supergiant_Star">
+  <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class"/>
   <rdfs:label>supergiant star</rdfs:label>
   <ontology:numberOfInstances></ontology:numberOfInstances>
-  <rdfs:subClassOf rdf:resource="ontology:Star"/>
+  <rdfs:subClassOf rdf:resource="urn://sedatar.org/astronomical_database#Star"/>
 </rdf:Description>
 -->
-<rdf:Description rdf:about="ontology:Terrestrial_Planet">
-  <rdf:type rdf:resource="rdfs:Class"/>
+<rdf:Description rdf:about="urn://sedatar.org/astronomical_database#Terrestrial_Planet">
+  <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class"/>
   <rdfs:label>terrestrial planet</rdfs:label>
   <ontology:numberOfInstances></ontology:numberOfInstances>
-  <rdfs:subClassOf rdf:resource="ontology:Planet"/>
+  <rdfs:subClassOf rdf:resource="urn://sedatar.org/astronomical_database#Planet"/>
 </rdf:Description>
-<rdf:Description rdf:about="ontology:Thing">
-  <rdf:type rdf:resource="rdfs:Class"/>
+<rdf:Description rdf:about="urn://sedatar.org/astronomical_database#Thing">
+  <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class"/>
   <rdfs:label>thing</rdfs:label>
   <ontology:numberOfInstances></ontology:numberOfInstances>
 </rdf:Description>
