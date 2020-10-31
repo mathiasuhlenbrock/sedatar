@@ -88,7 +88,9 @@ class PropertyOf(QuestionTemplate):
             return DistanceOf(match.thing), 'distance'
         elif match.prop == 'mass':
             return MassOf(match.thing), 'mass'
-        elif match.prop == 'size' or match.prop == 'radius':
+        elif match.prop == 'radius':
+            return RadiusOf(match.thing), 'radius'
+        elif match.prop == 'size':
             return SizeOf(match.thing), 'size'
         else:
             return UnknownOf(match.thing)
@@ -131,6 +133,11 @@ class List(QuestionTemplate):
             return LabelOf(IsSubTypeOf(Planets())), {
                 'category': 'list',
                 'instances': 'planets'
+            }
+        elif match.things == 'property':
+            return LabelOf(IsSubTypeOf(Properties())), {
+                'category': 'list',
+                'instances': 'properties'
             }
         elif match.things == 'terrestrial planet':
             return LabelOf(IsSubTypeOf(TerrestrialPlanets())), {

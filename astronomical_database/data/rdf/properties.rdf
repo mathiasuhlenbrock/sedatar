@@ -2,15 +2,32 @@
   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
   xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
 >
+<rdf:Description rdf:about="urn://sedatar.org/astronomical_database#density">
+  <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#Property"/>
+  <rdfs:label>density</rdfs:label>
+</rdf:Description>
+<rdf:Description rdf:about="urn://sedatar.org/astronomical_database#distance">
+  <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#Property"/>
+  <rdfs:label>distance</rdfs:label>
+</rdf:Description>
+<rdf:Description rdf:about="urn://sedatar.org/astronomical_database#mass">
+  <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#Property"/>
+  <rdfs:label>mass</rdfs:label>
+</rdf:Description>
 <rdf:Description rdf:about="urn://sedatar.org/astronomical_database#maxSemiMajorAxis">
   <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#Property"/>
+  <!--
+  <rdfs:label>largest semi-major axis</rdfs:label>
+  -->
   <rdfs:subPropertyOf rdf:resource="urn://sedatar.org/astronomical_database#size"/>
 </rdf:Description>
 <rdf:Description rdf:about="urn://sedatar.org/astronomical_database#radius">
   <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#Property"/>
+  <rdfs:label>radius</rdfs:label>
   <rdfs:subPropertyOf rdf:resource="urn://sedatar.org/astronomical_database#size"/>
 </rdf:Description>
 <rdf:Description rdf:about="urn://sedatar.org/astronomical_database#size">
   <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#Property"/>
+  <rdfs:label>size</rdfs:label>
 </rdf:Description>
 </rdf:RDF>

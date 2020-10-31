@@ -13,6 +13,13 @@ result = g.query("""
         ?x0 rdfs:label ?x1.
     }
 
+    # All properties.
+    # SELECT DISTINCT ?x2 WHERE {
+    #     ?x0 rdfs:subClassOf* rdf:Property.
+    #     ?x1 rdf:type ?x0.
+    #     ?x1 rdfs:label ?x2.
+    # }
+
     # All terrestrial planets.
     # SELECT DISTINCT ?x1 WHERE {
     #     # ?x0 rdfs:label 'terrestrial planet'.
@@ -37,8 +44,8 @@ result = g.query("""
     # Size of Earth.
     # SELECT DISTINCT ?x2 WHERE {
     #     ?x0 rdfs:label 'Earth'.
-    #     ?x1 rdfs:subPropertyOf* ontology:size.
     #     ?x0 ?x1 ?x2.
+    #     ?x1 rdfs:subPropertyOf* ontology:size.
     # }
 """)
 for row in sorted(result):

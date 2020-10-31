@@ -71,6 +71,9 @@ class Search(models.Model):
             planetary_system = planetary_system.replace(' ', '_')
             return '<a href="/Astronomical_database/List_of_planetary_systems/' \
                    + planetary_system + '/">' + planetary_system + '</>'
+        elif instances == 'properties':
+            item = '%s' % result
+            return item.capitalize()
         else:
             item = '%s' % result
             return item

@@ -106,10 +106,10 @@ for planetarySystem in PlanetarySystem.objects.all():
         ontology_distance = etree.SubElement(rdf_description, ONTOLOGY + 'distance')
         ontology_distance.attrib[RDF + 'datatype'] = XSD_PREFIX + ':' + 'string'
         ontology_distance.text = str(planetarySystem.host_distance_ly) + ' ' + 'ly'
-    if planetarySystem.number_of_planets:
-        ontology_numberofplanets = etree.SubElement(rdf_description, ONTOLOGY + 'distance')
-        ontology_numberofplanets.attrib[RDF + 'datatype'] = XSD_PREFIX + ':' + 'string'
-        ontology_numberofplanets.text = str(planetarySystem.number_of_planets)
+    # if planetarySystem.number_of_planets:
+    #     ontology_numberofplanets = etree.SubElement(rdf_description, ONTOLOGY + 'distance')
+    #     ontology_numberofplanets.attrib[RDF + 'datatype'] = XSD_PREFIX + ':' + 'string'
+    #     ontology_numberofplanets.text = str(planetarySystem.number_of_planets)
     if planetarySystem.max_planet_semimajoraxis and planetarySystem.max_planet_semimajoraxis != 1.:
         ontology_max_semimajoraxis = etree.SubElement(rdf_description, ONTOLOGY + 'maxSemiMajorAxis')
         ontology_max_semimajoraxis.attrib[RDF + 'datatype'] = XSD_PREFIX + ':' + 'string'
