@@ -2,8 +2,8 @@
   <rdf:Description rdf:about="urn://sedatar.org/astronomical_database#Astronomical_Object">
     <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class"/>
     <rdfs:label>astronomical object</rdfs:label>
-    <ontology:numberOfInstances>7278</ontology:numberOfInstances>
     <rdfs:subClassOf rdf:resource="urn://sedatar.org/astronomical_database#Thing"/>
+    <ontology:numberOfInstances>7278</ontology:numberOfInstances>
   </rdf:Description>
   <rdf:Description rdf:about="urn://sedatar.org/astronomical_database#Class">
     <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class"/>
@@ -13,37 +13,87 @@
   <rdf:Description rdf:about="urn://sedatar.org/astronomical_database#Exoplanet">
     <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class"/>
     <rdfs:label>exoplanet</rdfs:label>
-    <ontology:numberOfInstances>4171</ontology:numberOfInstances>
     <rdfs:subClassOf rdf:resource="urn://sedatar.org/astronomical_database#Planet"/>
+    <ontology:numberOfInstances>4171</ontology:numberOfInstances>
   </rdf:Description>
   <rdf:Description rdf:about="urn://sedatar.org/astronomical_database#Gas_Giant">
     <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class"/>
     <rdfs:label>gas giant</rdfs:label>
-    <ontology:numberOfInstances>419</ontology:numberOfInstances>
     <rdfs:subClassOf rdf:resource="urn://sedatar.org/astronomical_database#Planet"/>
+    <ontology:averageDensity>1.358 g/cm&#179;</ontology:averageDensity>
+    <ontology:averageDistance>1809.882 ly</ontology:averageDistance>
+    <ontology:averageMass>1.417 M&lt;sub&gt;&#9795;&lt;/sub&gt;</ontology:averageMass>
+    <ontology:averageRadius>1.074 R&lt;sub&gt;&#9795;&lt;/sub&gt;</ontology:averageRadius>
+    <ontology:maxRadius>2.085 R&lt;sub&gt;&#9795;&lt;/sub&gt;</ontology:maxRadius>
+    <ontology:maxRadiusInstance>HAT-P-67 b</ontology:maxRadiusInstance>
+    <ontology:minRadius>0.128 R&lt;sub&gt;&#9795;&lt;/sub&gt;</ontology:minRadius>
+    <ontology:minRadiusInstance>Kepler-128 b</ontology:minRadiusInstance>
+    <ontology:numberOfInstances>419</ontology:numberOfInstances>
   </rdf:Description>
   <rdf:Description rdf:about="urn://sedatar.org/astronomical_database#Planet">
     <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class"/>
     <rdfs:label>planet</rdfs:label>
-    <ontology:numberOfInstances>4179</ontology:numberOfInstances>
     <rdfs:subClassOf rdf:resource="urn://sedatar.org/astronomical_database#Astronomical_Object"/>
+    <ontology:averageDensity>2.592 g/cm&#179;</ontology:averageDensity>
+    <ontology:averageDistance>2082.409 ly</ontology:averageDistance>
+    <ontology:averageMass>2.109 M&lt;sub&gt;&#9795;&lt;/sub&gt;</ontology:averageMass>
+    <ontology:averageRadius>0.38 R&lt;sub&gt;&#9795;&lt;/sub&gt;</ontology:averageRadius>
+    <ontology:maxRadius>6.9 R&lt;sub&gt;&#9795;&lt;/sub&gt;</ontology:maxRadius>
+    <ontology:maxRadiusInstance></ontology:maxRadiusInstance>
+    <ontology:minRadius>0.03 R&lt;sub&gt;&#9795;&lt;/sub&gt;</ontology:minRadius>
+    <ontology:minRadiusInstance>Kepler-37 b</ontology:minRadiusInstance>
+    <ontology:numberOfInstances>4179</ontology:numberOfInstances>
   </rdf:Description>
   <rdf:Description rdf:about="urn://sedatar.org/astronomical_database#Planetary_System">
     <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class"/>
     <rdfs:label>planetary system</rdfs:label>
-    <ontology:numberOfInstances>3099</ontology:numberOfInstances>
     <rdfs:subClassOf rdf:resource="urn://sedatar.org/astronomical_database#Astronomical_Object"/>
+    <ontology:averageDistance>2193.335 ly</ontology:averageDistance>
+    <ontology:averageMaxSemiMajorAxis>13.216 AU</ontology:averageMaxSemiMajorAxis>
+    <ontology:maxMaxSemiMajorAxis>3500.0 AU</ontology:maxMaxSemiMajorAxis>
+    <ontology:maxMaxSemiMajorAxisInstance>USco1556 A</ontology:maxMaxSemiMajorAxisInstance>
+    <ontology:minMaxSemiMajorAxis>0.004 AU</ontology:minMaxSemiMajorAxis>
+    <ontology:minMaxSemiMajorAxisInstance>PSR J1719-1438</ontology:minMaxSemiMajorAxisInstance>
+    <ontology:numberOfInstances>3099</ontology:numberOfInstances>
   </rdf:Description>
   <rdf:Description rdf:about="urn://sedatar.org/astronomical_database#Terrestrial_Planet">
     <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class"/>
     <rdfs:label>terrestrial planet</rdfs:label>
-    <ontology:numberOfInstances>120</ontology:numberOfInstances>
     <rdfs:subClassOf rdf:resource="urn://sedatar.org/astronomical_database#Planet"/>
+    <ontology:averageDensity>6.901 g/cm&#179;</ontology:averageDensity>
+    <ontology:averageDistance>758.095 ly</ontology:averageDistance>
+    <ontology:averageMass>0.034 M&lt;sub&gt;&#9795;&lt;/sub&gt;</ontology:averageMass>
+    <ontology:averageRadius>0.166 R&lt;sub&gt;&#9795;&lt;/sub&gt;</ontology:averageRadius>
+    <ontology:maxRadius>0.343 R&lt;sub&gt;&#9795;&lt;/sub&gt;</ontology:maxRadius>
+    <ontology:maxRadiusInstance>K2-10 b</ontology:maxRadiusInstance>
+    <ontology:minRadius>0.034 R&lt;sub&gt;&#9795;&lt;/sub&gt;</ontology:minRadius>
+    <ontology:minRadiusInstance>Mercury</ontology:minRadiusInstance>
+    <ontology:numberOfInstances>120</ontology:numberOfInstances>
   </rdf:Description>
   <rdf:Description rdf:about="urn://sedatar.org/astronomical_database#Thing">
     <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class"/>
     <rdfs:label>thing</rdfs:label>
     <ontology:numberOfInstances>7278</ontology:numberOfInstances>
+  </rdf:Description>
+  <rdf:Description rdf:about="urn://sedatar.org/astronomical_database#averageDistance">
+    <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#Property"/>
+    <rdfs:subPropertyOf rdf:resource="urn://sedatar.org/astronomical_database#distance"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="urn://sedatar.org/astronomical_database#averageDensity">
+    <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#Property"/>
+    <rdfs:subPropertyOf rdf:resource="urn://sedatar.org/astronomical_database#density"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="urn://sedatar.org/astronomical_database#averageMass">
+    <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#Property"/>
+    <rdfs:subPropertyOf rdf:resource="urn://sedatar.org/astronomical_database#mass"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="urn://sedatar.org/astronomical_database#averageMaxSemiMajorAxis">
+    <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#Property"/>
+    <rdfs:subPropertyOf rdf:resource="urn://sedatar.org/astronomical_database#maxSemiMajorAxis"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="urn://sedatar.org/astronomical_database#averageRadius">
+    <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#Property"/>
+    <rdfs:subPropertyOf rdf:resource="urn://sedatar.org/astronomical_database#radius"/>
   </rdf:Description>
   <rdf:Description rdf:about="urn://sedatar.org/astronomical_database#density">
     <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#Property"/>
@@ -59,9 +109,6 @@
   </rdf:Description>
   <rdf:Description rdf:about="urn://sedatar.org/astronomical_database#maxSemiMajorAxis">
     <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#Property"/>
-    <!--
-  <rdfs:label>largest semi-major axis</rdfs:label>
-  -->
     <rdfs:subPropertyOf rdf:resource="urn://sedatar.org/astronomical_database#size"/>
   </rdf:Description>
   <rdf:Description rdf:about="urn://sedatar.org/astronomical_database#radius">

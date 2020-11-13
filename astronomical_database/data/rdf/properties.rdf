@@ -2,6 +2,26 @@
   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
   xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
 >
+<rdf:Description rdf:about="urn://sedatar.org/astronomical_database#averageDistance">
+  <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#Property"/>
+  <rdfs:subPropertyOf rdf:resource="urn://sedatar.org/astronomical_database#distance"/>
+</rdf:Description>
+<rdf:Description rdf:about="urn://sedatar.org/astronomical_database#averageDensity">
+  <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#Property"/>
+  <rdfs:subPropertyOf rdf:resource="urn://sedatar.org/astronomical_database#density"/>
+</rdf:Description>
+<rdf:Description rdf:about="urn://sedatar.org/astronomical_database#averageMass">
+  <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#Property"/>
+  <rdfs:subPropertyOf rdf:resource="urn://sedatar.org/astronomical_database#mass"/>
+</rdf:Description>
+<rdf:Description rdf:about="urn://sedatar.org/astronomical_database#averageMaxSemiMajorAxis">
+  <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#Property"/>
+  <rdfs:subPropertyOf rdf:resource="urn://sedatar.org/astronomical_database#maxSemiMajorAxis"/>
+</rdf:Description>
+<rdf:Description rdf:about="urn://sedatar.org/astronomical_database#averageRadius">
+  <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#Property"/>
+  <rdfs:subPropertyOf rdf:resource="urn://sedatar.org/astronomical_database#radius"/>
+</rdf:Description>
 <rdf:Description rdf:about="urn://sedatar.org/astronomical_database#density">
   <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#Property"/>
   <rdfs:label>density</rdfs:label>
@@ -16,9 +36,6 @@
 </rdf:Description>
 <rdf:Description rdf:about="urn://sedatar.org/astronomical_database#maxSemiMajorAxis">
   <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#Property"/>
-  <!--
-  <rdfs:label>largest semi-major axis</rdfs:label>
-  -->
   <rdfs:subPropertyOf rdf:resource="urn://sedatar.org/astronomical_database#size"/>
 </rdf:Description>
 <rdf:Description rdf:about="urn://sedatar.org/astronomical_database#radius">

@@ -105,6 +105,7 @@ class Search(models.Model):
                     or metadata == 'distance' \
                     or metadata == 'mass' \
                     or metadata == 'number' \
+                    or metadata == 'radius' \
                     or metadata == 'size':
                 answer.append(self.render_answer_property(result))
             elif metadata.get('category') == 'list':

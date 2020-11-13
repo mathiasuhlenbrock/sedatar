@@ -4,7 +4,7 @@
 Domain specific language for sparqlgen quepy.
 """
 
-from quepy.quepy.dsl import Expression, FixedRelation, FixedType, HasKeyword
+from quepy.quepy.dsl import Expression, FixedRelation, HasKeyword
 from quepy.quepy.encodingpolicy import encoding_flexible_conversion
 
 HasKeyword.relation = 'rdfs:label'
@@ -54,16 +54,6 @@ class FixedSubType(Expression):
         self.add_data(self.fixedsubtyperelation, self.fixedsubtype)
 
 
-class DensityOf(FixedRelation):
-    relation = 'ontology:density'
-    reverse = True
-
-
-class DistanceOf(FixedRelation):
-    relation = 'ontology:distance'
-    reverse = True
-
-
 class IsDefinedIn(FixedRelation):
     relation = 'rdfs:subClassOf'
     reverse = True
@@ -83,24 +73,30 @@ class LabelOf(FixedRelation):
     reverse = True
 
 
-class MassOf(FixedRelation):
-    relation = 'ontology:mass'
-    reverse = True
-
-
 class NumberOf(FixedRelation):
     relation = 'ontology:numberOfInstances'
-    reverse = True
-
-
-class RadiusOf(FixedRelation):
-    relation = 'ontology:radius'
     reverse = True
 
 
 class UnknownOf(FixedRelation):
     relation = 'ontology:unknown'
     reverse = True
+
+
+class DensityOf(FixedSubProperty):
+    fixedsubproperty = 'ontology:density'
+
+
+class DistanceOf(FixedSubProperty):
+    fixedsubproperty = 'ontology:distance'
+
+
+class MassOf(FixedSubProperty):
+    fixedsubproperty = 'ontology:mass'
+
+
+class RadiusOf(FixedSubProperty):
+    fixedsubproperty = 'ontology:radius'
 
 
 class SizeOf(FixedSubProperty):

@@ -21,6 +21,8 @@ try:
     test_question('What is Kepler-11 b?', 'A gas giant.')
     test_question('What is the size of Kepler-11?', '0.466 AU.')
     test_question('What is the size of Kepler-11 b?', '0.161 R<sub>♃</sub>.')
+    test_question('What is the size of a planet?', '0.38 R<sub>♃</sub>.')
+    test_question('What is the size of a planetary system?', '13.216 AU.')
     test_question('How many planets are there?', '4179.')
     test_question('How many exoplanets are there?', '4171.')
     test_question('What is the number of planets?', 'Query not generated.')
