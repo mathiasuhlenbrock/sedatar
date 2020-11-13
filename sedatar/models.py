@@ -65,12 +65,12 @@ class Search(models.Model):
             planet = '%s' % result
             planet = planet.replace(' ', '_')
             return '<a href="/Astronomical_database/List_of_planets/' \
-                   + planet + '/">' + planet + '</>'
+                   + planet + '/">' + planet + '</a>'
         elif instances == 'planetary_systems':
             planetary_system = '%s' % result
             planetary_system = planetary_system.replace(' ', '_')
             return '<a href="/Astronomical_database/List_of_planetary_systems/' \
-                   + planetary_system + '/">' + planetary_system + '</>'
+                   + planetary_system + '/">' + planetary_system + '</a>'
         elif instances == 'properties':
             item = '%s' % result
             return item.capitalize()
