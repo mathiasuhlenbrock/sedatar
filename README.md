@@ -11,4 +11,4 @@ archive](http://exoplanetarchive.ipac.caltech.edu) and is taken 'as is'. This is
 and makes no claims about being complete, correct or consistent.
 
 You are welcome to visit the website at [https://sedatar.herokuapp.com](https://sedatar.herokuapp.com).
-So far, it has been tested only with Chrome 80.
+So far, it has been tested only with Chrome 86+.
