@@ -91,6 +91,22 @@ class DistanceOf(FixedSubProperty):
     fixedsubproperty = 'ontology:distance'
 
 
+class LabelOfBiggest(FixedSubProperty):
+    fixedsubproperty = 'ontology:maxSizeInstance'
+
+
+class LabelOfClosest(FixedSubProperty):
+    fixedsubproperty = 'ontology:minDistanceInstance'
+
+
+class LabelOfFarthest(FixedSubProperty):
+    fixedsubproperty = 'ontology:maxDistanceInstance'
+
+
+class LabelOfSmallest(FixedSubProperty):
+    fixedsubproperty = 'ontology:minSizeInstance'
+
+
 class MassOf(FixedSubProperty):
     fixedsubproperty = 'ontology:mass'
 

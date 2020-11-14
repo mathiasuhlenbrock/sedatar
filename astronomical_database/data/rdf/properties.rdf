@@ -34,6 +34,28 @@
   <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#Property"/>
   <rdfs:label>mass</rdfs:label>
 </rdf:Description>
+<rdf:Description rdf:about="urn://sedatar.org/astronomical_database#maxMaxSemiMajorAxisInstance">
+  <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#Property"/>
+  <rdfs:subPropertyOf rdf:resource="urn://sedatar.org/astronomical_database#maxSizeInstance"/>
+</rdf:Description>
+<rdf:Description rdf:about="urn://sedatar.org/astronomical_database#minMaxSemiMajorAxisInstance">
+  <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#Property"/>
+  <rdfs:subPropertyOf rdf:resource="urn://sedatar.org/astronomical_database#minSizeInstance"/>
+</rdf:Description>
+<rdf:Description rdf:about="urn://sedatar.org/astronomical_database#maxRadiusInstance">
+  <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#Property"/>
+  <rdfs:subPropertyOf rdf:resource="urn://sedatar.org/astronomical_database#maxSizeInstance"/>
+</rdf:Description>
+<rdf:Description rdf:about="urn://sedatar.org/astronomical_database#minRadiusInstance">
+  <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#Property"/>
+  <rdfs:subPropertyOf rdf:resource="urn://sedatar.org/astronomical_database#minSizeInstance"/>
+</rdf:Description>
+<rdf:Description rdf:about="urn://sedatar.org/astronomical_database#maxSizeInstance">
+  <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#Property"/>
+</rdf:Description>
+<rdf:Description rdf:about="urn://sedatar.org/astronomical_database#minSizeInstance">
+  <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#Property"/>
+</rdf:Description>
 <rdf:Description rdf:about="urn://sedatar.org/astronomical_database#maxSemiMajorAxis">
   <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#Property"/>
   <rdfs:subPropertyOf rdf:resource="urn://sedatar.org/astronomical_database#size"/>

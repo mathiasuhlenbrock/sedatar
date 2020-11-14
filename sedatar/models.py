@@ -53,6 +53,10 @@ class Search(models.Model):
         return determiner + ' %s' % result
 
     @staticmethod
+    def render_answer_label(result):
+        return '%s' % result
+
+    @staticmethod
     def render_answer_list_item(result, metadata):
         instances = metadata.get('instances')
         if instances == 'classes':
@@ -108,6 +112,8 @@ class Search(models.Model):
                     or metadata == 'radius' \
                     or metadata == 'size':
                 answer.append(self.render_answer_property(result))
+            elif metadata == 'label':
+                answer.append(self.render_answer_label(result))
             elif metadata.get('category') == 'list':
                 answer.append(self.render_answer_list_item(result, metadata))
             else:

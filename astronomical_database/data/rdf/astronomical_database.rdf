@@ -24,6 +24,8 @@
     <ontology:averageDistance>1809.882 ly</ontology:averageDistance>
     <ontology:averageMass>1.417 M&lt;sub&gt;&#9795;&lt;/sub&gt;</ontology:averageMass>
     <ontology:averageRadius>1.074 R&lt;sub&gt;&#9795;&lt;/sub&gt;</ontology:averageRadius>
+    <ontology:maxDistanceInstance>WTS-1 b</ontology:maxDistanceInstance>
+    <ontology:minDistanceInstance>GJ 436 b</ontology:minDistanceInstance>
     <ontology:maxRadius>2.085 R&lt;sub&gt;&#9795;&lt;/sub&gt;</ontology:maxRadius>
     <ontology:maxRadiusInstance>HAT-P-67 b</ontology:maxRadiusInstance>
     <ontology:minRadius>0.128 R&lt;sub&gt;&#9795;&lt;/sub&gt;</ontology:minRadius>
@@ -38,8 +40,10 @@
     <ontology:averageDistance>2082.409 ly</ontology:averageDistance>
     <ontology:averageMass>2.109 M&lt;sub&gt;&#9795;&lt;/sub&gt;</ontology:averageMass>
     <ontology:averageRadius>0.38 R&lt;sub&gt;&#9795;&lt;/sub&gt;</ontology:averageRadius>
+    <ontology:maxDistanceInstance>SWEEPS-4 b</ontology:maxDistanceInstance>
+    <ontology:minDistanceInstance>Proxima Cen b</ontology:minDistanceInstance>
     <ontology:maxRadius>6.9 R&lt;sub&gt;&#9795;&lt;/sub&gt;</ontology:maxRadius>
-    <ontology:maxRadiusInstance></ontology:maxRadiusInstance>
+    <ontology:maxRadiusInstance>HD 100546 b</ontology:maxRadiusInstance>
     <ontology:minRadius>0.03 R&lt;sub&gt;&#9795;&lt;/sub&gt;</ontology:minRadius>
     <ontology:minRadiusInstance>Kepler-37 b</ontology:minRadiusInstance>
     <ontology:numberOfInstances>4179</ontology:numberOfInstances>
@@ -50,6 +54,8 @@
     <rdfs:subClassOf rdf:resource="urn://sedatar.org/astronomical_database#Astronomical_Object"/>
     <ontology:averageDistance>2193.335 ly</ontology:averageDistance>
     <ontology:averageMaxSemiMajorAxis>13.216 AU</ontology:averageMaxSemiMajorAxis>
+    <ontology:maxDistanceInstance>SWEEPS-4</ontology:maxDistanceInstance>
+    <ontology:minDistanceInstance>Proxima Cen</ontology:minDistanceInstance>
     <ontology:maxMaxSemiMajorAxis>3500.0 AU</ontology:maxMaxSemiMajorAxis>
     <ontology:maxMaxSemiMajorAxisInstance>USco1556 A</ontology:maxMaxSemiMajorAxisInstance>
     <ontology:minMaxSemiMajorAxis>0.004 AU</ontology:minMaxSemiMajorAxis>
@@ -64,6 +70,8 @@
     <ontology:averageDistance>758.095 ly</ontology:averageDistance>
     <ontology:averageMass>0.034 M&lt;sub&gt;&#9795;&lt;/sub&gt;</ontology:averageMass>
     <ontology:averageRadius>0.166 R&lt;sub&gt;&#9795;&lt;/sub&gt;</ontology:averageRadius>
+    <ontology:maxDistanceInstance>PSR J1719-1438 b</ontology:maxDistanceInstance>
+    <ontology:minDistanceInstance>HD 219134 b</ontology:minDistanceInstance>
     <ontology:maxRadius>0.343 R&lt;sub&gt;&#9795;&lt;/sub&gt;</ontology:maxRadius>
     <ontology:maxRadiusInstance>K2-10 b</ontology:maxRadiusInstance>
     <ontology:minRadius>0.034 R&lt;sub&gt;&#9795;&lt;/sub&gt;</ontology:minRadius>
@@ -106,6 +114,28 @@
   <rdf:Description rdf:about="urn://sedatar.org/astronomical_database#mass">
     <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#Property"/>
     <rdfs:label>mass</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="urn://sedatar.org/astronomical_database#maxMaxSemiMajorAxisInstance">
+    <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#Property"/>
+    <rdfs:subPropertyOf rdf:resource="urn://sedatar.org/astronomical_database#maxSizeInstance"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="urn://sedatar.org/astronomical_database#minMaxSemiMajorAxisInstance">
+    <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#Property"/>
+    <rdfs:subPropertyOf rdf:resource="urn://sedatar.org/astronomical_database#minSizeInstance"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="urn://sedatar.org/astronomical_database#maxRadiusInstance">
+    <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#Property"/>
+    <rdfs:subPropertyOf rdf:resource="urn://sedatar.org/astronomical_database#maxSizeInstance"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="urn://sedatar.org/astronomical_database#minRadiusInstance">
+    <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#Property"/>
+    <rdfs:subPropertyOf rdf:resource="urn://sedatar.org/astronomical_database#minSizeInstance"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="urn://sedatar.org/astronomical_database#maxSizeInstance">
+    <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#Property"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="urn://sedatar.org/astronomical_database#minSizeInstance">
+    <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#Property"/>
   </rdf:Description>
   <rdf:Description rdf:about="urn://sedatar.org/astronomical_database#maxSemiMajorAxis">
     <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#Property"/>

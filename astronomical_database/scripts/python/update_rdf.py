@@ -69,24 +69,36 @@ number_of_gas_giants_with_density = 0
 number_of_gas_giants_with_distance = 0
 number_of_gas_giants_with_mass = 0
 number_of_gas_giants_with_radius = 0
+max_planet_distance = 0
+max_planet_distance_instance = ''
 max_planet_radius = 0
 max_planet_radius_instance = ''
+min_planet_distance = 5000
+min_planet_distance_instance = ''
 min_planet_radius = Planet.objects.filter(radius__gt=0).first().radius
 min_planet_radius_instance = Planet.objects.filter(radius__gt=0).first().name
 sum_planet_density = 0
 sum_planet_distance = 0
 sum_planet_mass = 0
 sum_planet_radius = 0
+max_terrestrial_planet_distance = 0
+max_terrestrial_planet_distance_instance = ''
 max_terrestrial_planet_radius = 0
 max_terrestrial_planet_radius_instance = ''
+min_terrestrial_planet_distance = 5000
+min_terrestrial_planet_distance_instance = ''
 min_terrestrial_planet_radius = 1
 min_terrestrial_planet_radius_instance = ''
 sum_terrestrial_planet_density = 0
 sum_terrestrial_planet_distance = 0
 sum_terrestrial_planet_mass = 0
 sum_terrestrial_planet_radius = 0
+max_gas_giant_distance = 0
+max_gas_giant_distance_instance = ''
 max_gas_giant_radius = 0
 max_gas_giant_radius_instance = ''
+min_gas_giant_distance = 5000
+min_gas_giant_distance_instance = ''
 min_gas_giant_radius = 1
 min_gas_giant_radius_instance = ''
 sum_gas_giant_density = 0
@@ -113,6 +125,12 @@ for planet in Planet.objects.all():
         if planet.system.host_distance_ly:
             number_of_terrestrial_planets_with_distance += 1
             sum_terrestrial_planet_distance += planet.system.host_distance_ly
+            if planet.system.host_distance_ly > max_terrestrial_planet_distance:
+                max_terrestrial_planet_distance = planet.system.host_distance_ly
+                max_terrestrial_planet_distance_instance = planet.name
+            if planet.system.host_distance_ly < min_terrestrial_planet_distance:
+                min_terrestrial_planet_distance = planet.system.host_distance_ly
+                min_terrestrial_planet_distance_instance = planet.name
         if planet.density:
             number_of_terrestrial_planets_with_density += 1
             sum_terrestrial_planet_density += planet.density
@@ -134,6 +152,12 @@ for planet in Planet.objects.all():
         if planet.system.host_distance_ly:
             number_of_gas_giants_with_distance += 1
             sum_gas_giant_distance += planet.system.host_distance_ly
+            if planet.system.host_distance_ly > max_gas_giant_distance:
+                max_gas_giant_distance = planet.system.host_distance_ly
+                max_gas_giant_distance_instance = planet.name
+            if planet.system.host_distance_ly < min_gas_giant_distance:
+                min_gas_giant_distance = planet.system.host_distance_ly
+                min_gas_giant_distance_instance = planet.name
         if planet.density:
             number_of_gas_giants_with_density += 1
             sum_gas_giant_density += planet.density
@@ -151,6 +175,12 @@ for planet in Planet.objects.all():
         ontology_distance.text = str(planet.system.host_distance_ly) + ' ' + 'ly'
         number_of_planets_with_distance += 1
         sum_planet_distance += planet.system.host_distance_ly
+        if planet.system.host_distance_ly > max_planet_distance:
+            max_planet_distance = planet.system.host_distance_ly
+            max_planet_distance_instance = planet.name
+        if planet.system.host_distance_ly < min_planet_distance:
+            min_planet_distance = planet.system.host_distance_ly
+            min_planet_distance_instance = planet.name
     if planet.radius:
         ontology_radius = etree.SubElement(rdf_description, ONTOLOGY + 'radius')
         ontology_radius.attrib[RDF + 'datatype'] = XSD_PREFIX + ':' + 'string'
@@ -182,8 +212,12 @@ for planet in Planet.objects.all():
 
 number_of_planetary_systems_with_distance = 0
 number_of_planetary_systems_with_max_semi_major_axis = 0
+max_planetary_system_distance = 0
+max_planetary_system_distance_instance = ''
 max_planetary_system_max_semi_major_axis = 0
 max_planetary_system_max_semi_major_axis_instance = ''
+min_planetary_system_distance = 5000
+min_planetary_system_distance_instance = ''
 min_planetary_system_max_semi_major_axis = 30
 min_planetary_system_max_semi_major_axis_instance = ''
 sum_planetary_system_distance = 0
@@ -203,6 +237,12 @@ for planetarySystem in PlanetarySystem.objects.all():
         ontology_distance.text = str(planetarySystem.host_distance_ly) + ' ' + 'ly'
         number_of_planetary_systems_with_distance += 1
         sum_planetary_system_distance += planetarySystem.host_distance_ly
+        if planetarySystem.host_distance_ly > max_planetary_system_distance:
+            max_planetary_system_distance = planetarySystem.host_distance_ly
+            max_planetary_system_distance_instance = planetarySystem.name
+        if planetarySystem.host_distance_ly < min_planetary_system_distance:
+            min_planetary_system_distance = planetarySystem.host_distance_ly
+            min_planetary_system_distance_instance = planetarySystem.name
     # if planetarySystem.number_of_planets:
     #     ontology_numberofplanets = etree.SubElement(rdf_description, ONTOLOGY + 'distance')
     #     ontology_numberofplanets.attrib[RDF + 'datatype'] = XSD_PREFIX + ':' + 'string'
@@ -246,6 +286,18 @@ insert(
     'Planet',
     'averageRadius',
     str(round(sum_planet_radius / number_of_planets_with_radius, 3)) + ' ' + 'R<sub>♃</sub>'
+)
+insert(
+    root_element,
+    'Planet',
+    'maxDistanceInstance',
+    max_planet_distance_instance
+)
+insert(
+    root_element,
+    'Planet',
+    'minDistanceInstance',
+    min_planet_distance_instance
 )
 insert(
     root_element,
@@ -304,6 +356,18 @@ insert(
 insert(
     root_element,
     'Terrestrial_Planet',
+    'maxDistanceInstance',
+    max_terrestrial_planet_distance_instance
+)
+insert(
+    root_element,
+    'Terrestrial_Planet',
+    'minDistanceInstance',
+    min_terrestrial_planet_distance_instance
+)
+insert(
+    root_element,
+    'Terrestrial_Planet',
     'maxRadius',
     str(round(max_terrestrial_planet_radius, 3)) + ' ' + 'R<sub>♃</sub>'
 )
@@ -358,6 +422,18 @@ insert(
 insert(
     root_element,
     'Gas_Giant',
+    'maxDistanceInstance',
+    max_gas_giant_distance_instance
+)
+insert(
+    root_element,
+    'Gas_Giant',
+    'minDistanceInstance',
+    min_gas_giant_distance_instance
+)
+insert(
+    root_element,
+    'Gas_Giant',
     'maxRadius',
     str(round(max_gas_giant_radius, 3)) + ' ' + 'R<sub>♃</sub>'
 )
@@ -398,6 +474,18 @@ insert(
     str(
         round(sum_planetary_system_max_semi_major_axis / number_of_planetary_systems_with_max_semi_major_axis, 3)
     ) + ' ' + 'AU'
+)
+insert(
+    root_element,
+    'Planetary_System',
+    'maxDistanceInstance',
+    max_planetary_system_distance_instance
+)
+insert(
+    root_element,
+    'Planetary_System',
+    'minDistanceInstance',
+    min_planetary_system_distance_instance
 )
 insert(
     root_element,

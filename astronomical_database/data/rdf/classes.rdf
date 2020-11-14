@@ -68,6 +68,8 @@
   <ontology:averageDistance></ontology:averageDistance>
   <ontology:averageMass></ontology:averageMass>
   <ontology:averageRadius></ontology:averageRadius>
+  <ontology:maxDistanceInstance></ontology:maxDistanceInstance>
+  <ontology:minDistanceInstance></ontology:minDistanceInstance>
   <ontology:maxRadius></ontology:maxRadius>
   <ontology:maxRadiusInstance></ontology:maxRadiusInstance>
   <ontology:minRadius></ontology:minRadius>
@@ -122,6 +124,8 @@
   <ontology:averageDistance></ontology:averageDistance>
   <ontology:averageMass></ontology:averageMass>
   <ontology:averageRadius></ontology:averageRadius>
+  <ontology:maxDistanceInstance></ontology:maxDistanceInstance>
+  <ontology:minDistanceInstance></ontology:minDistanceInstance>
   <ontology:maxRadius></ontology:maxRadius>
   <ontology:maxRadiusInstance></ontology:maxRadiusInstance>
   <ontology:minRadius></ontology:minRadius>
@@ -134,6 +138,8 @@
   <rdfs:subClassOf rdf:resource="urn://sedatar.org/astronomical_database#Astronomical_Object"/>
   <ontology:averageDistance></ontology:averageDistance>
   <ontology:averageMaxSemiMajorAxis></ontology:averageMaxSemiMajorAxis>
+  <ontology:maxDistanceInstance></ontology:maxDistanceInstance>
+  <ontology:minDistanceInstance></ontology:minDistanceInstance>
   <ontology:maxMaxSemiMajorAxis></ontology:maxMaxSemiMajorAxis>
   <ontology:maxMaxSemiMajorAxisInstance></ontology:maxMaxSemiMajorAxisInstance>
   <ontology:minMaxSemiMajorAxis></ontology:minMaxSemiMajorAxis>
@@ -180,6 +186,8 @@
   <ontology:averageDistance></ontology:averageDistance>
   <ontology:averageMass></ontology:averageMass>
   <ontology:averageRadius></ontology:averageRadius>
+  <ontology:maxDistanceInstance></ontology:maxDistanceInstance>
+  <ontology:minDistanceInstance></ontology:minDistanceInstance>
   <ontology:maxRadius></ontology:maxRadius>
   <ontology:maxRadiusInstance></ontology:maxRadiusInstance>
   <ontology:minRadius></ontology:minRadius>
