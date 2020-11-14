@@ -26,19 +26,19 @@ def sort_into_catalogue(cataloguename, row, year_of_discovery, density, mass, ra
     # mass, radius, density = consistency_check(mass, radius, density)
     if not PlanetarySystem.objects.filter(name=row['pl_hostname']).exists():
         host_distance = 0.0
-        if row['st_dist'] is not '':
+        if row['st_dist'] != '':
             host_distance = row['st_dist']
         host_radius = 0.0
-        if row['st_rad'] is not '':
+        if row['st_rad'] != '':
             host_radius = row['st_rad']
         host_spectral_class = 'Not available'
-        if row['st_spstr'] is not '':
+        if row['st_spstr'] != '':
             host_spectral_class = row['st_spstr']
         host_luminosity = 0.0
-        if row['st_lum'] is not '':
+        if row['st_lum'] != '':
             host_luminosity = float(row['st_lum'])
         host_bminusv = 0.0
-        if row['st_bmvj'] is not '':
+        if row['st_bmvj'] != '':
             host_bminusv = float(row['st_bmvj'])
         the_catalogue.planetarysystem_set.create(
             name=row['pl_hostname'],
@@ -49,7 +49,7 @@ def sort_into_catalogue(cataloguename, row, year_of_discovery, density, mass, ra
             host_bminusv=host_bminusv
         )
     system = PlanetarySystem.objects.get(name=row['pl_hostname'])
-    if row['pl_letter'] is not '':
+    if row['pl_letter'] != '':
         system.planet_set.create(
             name=row['pl_hostname'] + ' ' + row['pl_letter'],
             year_of_discovery=year_of_discovery,
@@ -59,7 +59,7 @@ def sort_into_catalogue(cataloguename, row, year_of_discovery, density, mass, ra
             semimajoraxis=semimajoraxis,
             orbital_period=orbital_period
         )
-    elif row['pl_name'] is not '':
+    elif row['pl_name'] != '':
         system.planet_set.create(
             name=row['pl_name'],
             year_of_discovery=year_of_discovery,
@@ -99,22 +99,22 @@ with open('astronomical_database/data/csv/planets/solar_system.csv') as csvfile:
     reader = csv.DictReader(csvfile, skipinitialspace=True)
     for row in reader:
         year_of_discovery = ''
-        if row['pl_disc'] is not '':
+        if row['pl_disc'] != '':
             year_of_discovery = row['pl_disc']
         density = 0.0
-        if row['pl_dens'] is not '':
+        if row['pl_dens'] != '':
             density = float(row['pl_dens'])
         mass = 0.0
-        if row['pl_massj'] is not '':
+        if row['pl_massj'] != '':
             mass = float(row['pl_massj'])
         radius = 0.0
-        if row['pl_radj'] is not '':
+        if row['pl_radj'] != '':
             radius = float(row['pl_radj'])
         semimajoraxis = 0.0
-        if row['pl_orbsmax'] is not '':
+        if row['pl_orbsmax'] != '':
             semimajoraxis = float(row['pl_orbsmax'])
         orbital_period = 0.0
-        if row['pl_orbper'] is not '':
+        if row['pl_orbper'] != '':
             orbital_period = float(row['pl_orbper'])
         sort_into_catalogue(
             'Stars with proper names', row, year_of_discovery, density, mass, radius, semimajoraxis, orbital_period
@@ -124,22 +124,22 @@ with open('astronomical_database/data/csv/planets/planets.csv') as csvfile:
     reader = csv.DictReader(csvfile, skipinitialspace=True)
     for row in reader:
         year_of_discovery = ''
-        if row['pl_disc'] is not '':
+        if row['pl_disc'] != '':
             year_of_discovery = row['pl_disc']
         density = 0.0
-        if row['pl_dens'] is not '':
+        if row['pl_dens'] != '':
             density = float(row['pl_dens'])
         mass = 0.0
-        if row['pl_massj'] is not '':
+        if row['pl_massj'] != '':
             mass = float(row['pl_massj'])
         radius = 0.0
-        if row['pl_radj'] is not '':
+        if row['pl_radj'] != '':
             radius = float(row['pl_radj'])
         semimajoraxis = 0.0
-        if row['pl_orbsmax'] is not '':
+        if row['pl_orbsmax'] != '':
             semimajoraxis = float(row['pl_orbsmax'])
         orbital_period = 0.0
-        if row['pl_orbper'] is not '':
+        if row['pl_orbper'] != '':
             orbital_period = float(row['pl_orbper'])
         if row['pl_hostname'].startswith('1RXS'):
             sort_into_catalogue(
