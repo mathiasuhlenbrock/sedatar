@@ -159,7 +159,7 @@ for planet in Planet.objects.all():
         sum_planet_radius += planet.radius
         if planet.radius > max_planet_radius:
             max_planet_radius = planet.radius
-            max_gas_giant_radius_instance = planet.name
+            max_planet_radius_instance = planet.name
         if planet.radius < min_planet_radius:
             min_planet_radius = planet.radius
             min_planet_radius_instance = planet.name
