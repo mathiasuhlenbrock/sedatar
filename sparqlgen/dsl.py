@@ -4,10 +4,35 @@
 Domain specific language for sparqlgen quepy.
 """
 
-from quepy.quepy.dsl import Expression, FixedRelation, FixedType, HasKeyword
+from quepy.quepy.dsl import Expression, FixedRelation, HasKeyword
 from quepy.quepy.encodingpolicy import encoding_flexible_conversion
 
 HasKeyword.relation = 'rdfs:label'
+
+
+class FixedSubProperty(Expression):
+    """
+    Expression for a fixed subproperty.
+    """
+
+    fixedsubproperty = None
+    fixedsubpropertyrelation = u'rdfs:subPropertyOf*'
+
+    def __init__(self, data):
+        super(FixedSubProperty, self).__init__()
+        if self.fixedsubproperty is None:
+            raise ValueError('You *must* define the `fixedtype` '
+                             'class attribute to use this class.')
+        self.fixedsubproperty = encoding_flexible_conversion(self.fixedsubproperty)
+        self.fixedsubpropertyrelation = \
+            encoding_flexible_conversion(self.fixedsubpropertyrelation)
+        # TODO: Improve the following lines.
+        self.merge(data)
+        self.nodes.append([])
+        self.head += 1
+        self.add_data(self.fixedsubpropertyrelation, self.fixedsubproperty)
+        self.nodes[0].append(('?x1', 2))
+        self.head += 1
 
 
 class FixedSubType(Expression):
@@ -29,16 +54,6 @@ class FixedSubType(Expression):
         self.add_data(self.fixedsubtyperelation, self.fixedsubtype)
 
 
-class DensityOf(FixedRelation):
-    relation = 'ontology:density'
-    reverse = True
-
-
-class DistanceOf(FixedRelation):
-    relation = 'ontology:distance'
-    reverse = True
-
-
 class IsDefinedIn(FixedRelation):
     relation = 'rdfs:subClassOf'
     reverse = True
@@ -58,18 +73,8 @@ class LabelOf(FixedRelation):
     reverse = True
 
 
-class MassOf(FixedRelation):
-    relation = 'ontology:mass'
-    reverse = True
-
-
 class NumberOf(FixedRelation):
     relation = 'ontology:numberOfInstances'
-    reverse = True
-
-
-class SizeOf(FixedRelation):
-    relation = 'ontology:size'
     reverse = True
 
 
@@ -78,37 +83,77 @@ class UnknownOf(FixedRelation):
     reverse = True
 
 
+class DensityOf(FixedSubProperty):
+    fixedsubproperty = 'ontology:density'
+
+
+class DistanceOf(FixedSubProperty):
+    fixedsubproperty = 'ontology:distance'
+
+
+class LabelOfBiggest(FixedSubProperty):
+    fixedsubproperty = 'ontology:maxSizeInstance'
+
+
+class LabelOfClosest(FixedSubProperty):
+    fixedsubproperty = 'ontology:minDistanceInstance'
+
+
+class LabelOfFarthest(FixedSubProperty):
+    fixedsubproperty = 'ontology:maxDistanceInstance'
+
+
+class LabelOfSmallest(FixedSubProperty):
+    fixedsubproperty = 'ontology:minSizeInstance'
+
+
+class MassOf(FixedSubProperty):
+    fixedsubproperty = 'ontology:mass'
+
+
+class RadiusOf(FixedSubProperty):
+    fixedsubproperty = 'ontology:radius'
+
+
+class SizeOf(FixedSubProperty):
+    fixedsubproperty = 'ontology:size'
+
+
 class AstronomicalObjects(FixedSubType):
-    fixedsubtype = '<urn://sedatar.org/astronomical_database/astronomy/Astronomical_Object>'
+    fixedsubtype = 'ontology:Astronomical_Object'
 
 
 class Classes(FixedSubType):
-    fixedsubtype = '<http://www.w3.org/2000/01/rdf-schema#Class>'
+    fixedsubtype = 'rdfs:Class'
 
 
 class Unknowns(FixedSubType):
-    fixedsubtype = '<>'
+    fixedsubtype = 'ontology:unknown'
 
 
 class Exoplanets(FixedSubType):
-    fixedsubtype = '<urn://sedatar.org/astronomical_database/astronomy/Exoplanet>'
+    fixedsubtype = 'ontology:Exoplanet'
 
 
 class GasGiants(FixedSubType):
-    fixedsubtype = '<urn://sedatar.org/astronomical_database/astronomy/Gas_Giant>'
+    fixedsubtype = 'ontology:Gas_Giant'
 
 
 class PlanetarySystems(FixedSubType):
-    fixedsubtype = '<urn://sedatar.org/astronomical_database/astronomy/Planetary_System>'
+    fixedsubtype = 'ontology:Planetary_System'
 
 
 class Planets(FixedSubType):
-    fixedsubtype = '<urn://sedatar.org/astronomical_database/astronomy/Planet>'
+    fixedsubtype = 'ontology:Planet'
+
+
+class Properties(FixedSubType):
+    fixedsubtype = 'rdf:Property'
 
 
 class TerrestrialPlanets(FixedSubType):
-    fixedsubtype = '<urn://sedatar.org/astronomical_database/astronomy/Terrestrial_Planet>'
+    fixedsubtype = 'ontology:Terrestrial_Planet'
 
 
 class AllThings(FixedSubType):
-    fixedsubtype = '<urn://sedatar.org/astronomical_database/common/Thing>'
+    fixedsubtype = 'ontology:Thing'

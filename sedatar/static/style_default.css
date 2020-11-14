@@ -2,52 +2,59 @@ html, body {
     height: 100%;
     margin: 0;
     background-color: #F8F8F8;
-    /*overflow: hidden;*/
-    /* Font settings */
-    font-family: "helvetica";
+    font-family: 'Helvetica', sans-serif;
     font-size: 14px;
     line-height: 1.6;
 }
 
-/* Essential CSS for the grid layout */
-/* NOTE IE7 and older explorers don't know anything about CSS-tables, so we use a CSS hack to
- * exclude them. */
-body > .grid {
-    margin: 0;
-    padding: 1em;
-}
-
-* > .grid {
-    -moz-box-sizing: border-box;
-    -webkit-box-sizing: border-box;
-    box-sizing: border-box;
-    display: table;
-    width: 100%;
+.grid {
+    display: grid;
     height: 100%;
+    padding: 10px;
+    box-sizing: border-box;
+    place-content: center;
+    grid-template-rows: 25px 1fr 25px;
+    grid-template-columns: 25px 10px 1fr 10%;
 }
 
-/* NOTE This is the only block IE7- should read */
-.grid > .row, .grid > .column, .grid > .row > .column {
-    height: 0.1%; /* Forces child-margins inside the box */
-    position: relative;
+#cell1 {
+    background: #808080;
 }
 
-.grid > .row {
-    display: table-row;
-    height: 25px;
+#cell3 {
+    background: #505050;
 }
 
-.grid > .row.expand {
-    height: auto;
+#cell4 {
+    background: #505050;
 }
 
-.grid > .column, .grid > .row > .column {
-    display: table-cell;
-    height: auto; /* Just to reset the IE7 fix */
+#cell7 {
+    display: flex;
+    place-items: center;
+    text-align: center;
 }
 
-.grid > .column.expand, .grid > .row > .column.expand {
-    width: auto;
+#cell8 {
+    display: flex;
+    place-items: center;
+    background: #505050;
+}
+
+#cell9 {
+    background: #808080;
+}
+
+#cell11 {
+    background: #505050;
+}
+
+#cell12 {
+    background: #505050;
+}
+
+#main_section {
+    width: 100%;
 }
 
 #main_page_vertical_space {
@@ -56,62 +63,9 @@ body > .grid {
     height: 100px;
 }
 
-#cell1 {
-    background: #808080;
-    width: 25px;
-}
-
-#cell2 {
-    background: #F8F8F8;
-    width: 10px;
-}
-
-#cell3 {
-    background: #505050; /* dark grey */
-}
-
-#cell4 {
-    background: #505050; /* dark grey */
-    width: 10%;
-}
-
-#cell5 {
-    background: #F8F8F8;
-}
-
-#cell6 {
-    background: #F8F8F8;
-}
-
-#cell7 {
-    vertical-align: middle;
-    text-align: center;
-}
-
-#cell8 {
-    background: #505050; /* dark grey */
-    vertical-align: middle;
-}
-
-#cell9 {
-    background: #808080;
-}
-
-#cell10 {
-    background: #F8F8F8;
-}
-
-#cell11 {
-    background: #505050; /* dark grey */
-}
-
-#cell12 {
-    background: #505050; /* dark grey */
-}
-
 p {
-    margin-top: 2em;
-    margin-bottom: 2em;
+    margin-top: 2rem;
+    margin-bottom: 2rem;
 }
 
 ul {
@@ -123,7 +77,7 @@ ul {
 a {
     text-decoration: none;
     color: #808080;
-    outline: 0; /* Removes dotted border around link */
+    outline: 0;
 }
 
 a > svg {
@@ -148,7 +102,7 @@ h1, h2, h3 {
 }
 
 h1 {
-    font-size: 2em;
+    font-size: 2rem;
 }
 
 h1.logo {
@@ -158,18 +112,18 @@ h1.logo {
 }
 
 h2 {
-    font-size: 1.5em;
+    font-size: 1.5rem;
 }
 
 h3 {
-    font-size: 1em;
+    font-size: 1rem;
 }
 
 input {
     background-color: #F8F8F8;
     border-color: #808080;
     border-style: solid;
-    font-family: "helvetica";
+    font-family: 'Helvetica', sans-serif;
     width: 400px;
 }
 
@@ -178,7 +132,7 @@ button {
     border: none;
     color: #000000;
     cursor: pointer;
-    font-family: "helvetica";
+    font-family: 'Helvetica', sans-serif;
     width: 100px;
     height: 50px;
 }
@@ -332,8 +286,8 @@ text.text {
 }
 
 .cell_standard {
-    padding: 0px;
-    padding-right: 20px;
+    padding: 0 20px 0 0;
+    vertical-align: top;
 }
 
 .row_subscript {

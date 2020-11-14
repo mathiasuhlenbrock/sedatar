@@ -21,8 +21,6 @@ NLTK_DATA_PATH = ['nltk_data']  # List of paths with NLTK data
 DEFAULT_ENCODING = 'utf-8'
 
 # Sparql config
-SPARQL_PREAMBLE = u"""
-PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
-PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
-PREFIX ontology: <urn://sedatar.org/astronomical_database#>
-"""
+SPARQL_PREAMBLE = u""""""
+
+SPARQL_SERVICE = u"""wikibase:label { bd:serviceParam wikibase:language 'en'. }"""

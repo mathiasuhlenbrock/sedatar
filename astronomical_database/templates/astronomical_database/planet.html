@@ -13,7 +13,7 @@
                     </pattern>
                 </defs>
                 <!-- Planet name -->
-                <text class="text" x="160" y="122">{{ planet.name }}</text>
+                <text x="160" y="122">{{ planet.name }}</text>
                 <!-- Planet icon -->
                 {% if planet.img_radius %}
                     {% if planet.img_classification == 'terrestrial' %}
@@ -22,14 +22,14 @@
                         <!-- Earth icon -->
                         <circle class="{{ planet.img_classification }}" cx="360" cy="52"
                                 r="{{ planet.img_earth_radius }}" fill="url(#hatch)"></circle>
-                        <text id="text" x="360" y="122">Earth</text>
+                        <text x="360" y="122">Earth</text>
                     {% else %}
                         <circle class="{{ planet.img_classification }}" cx="160" cy="52" r="{{ planet.img_radius }}"
                                 fill="url(#hatch)"></circle>
                         <!-- Jupiter icon -->
                         <circle id="jupiter" cx="360" cy="52" r="{{ planet.img_jupiter_radius }}"
                                 fill="url(#hatch)"></circle>
-                        <text id="text" x="360" y="122">Jupiter</text>
+                        <text x="360" y="122">Jupiter</text>
                     {% endif %}
                 {% else %}
                     <circle class="{{ planet.img_classification }}" cx="160" cy="52" r="52.0"
@@ -38,7 +38,7 @@
                     <!-- Jupiter icon -->
                     <circle id="jupiter" cx="360" cy="52" r="{{ planet.img_jupiter_radius }}"
                             fill="url(#hatch)"></circle>
-                    <text id="text" x="360" y="122">Jupiter</text>
+                    <text x="360" y="122">Jupiter</text>
                 {% endif %}
             </svg>
             <h2>Planetary parameters</h2>

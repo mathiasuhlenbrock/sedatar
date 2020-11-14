@@ -39,6 +39,13 @@ class Prop(Particle):
         return match.words.tokens
 
 
+class Superlative(Particle):
+    regex = Pos('JJS') | Pos('RBS')
+
+    def interpret(self, match):
+        return match.words.tokens
+
+
 class WhatIsClass(QuestionTemplate):
     """
     Regex for questions like "What is a/an | are ...?"
@@ -88,8 +95,30 @@ class PropertyOf(QuestionTemplate):
             return DistanceOf(match.thing), 'distance'
         elif match.prop == 'mass':
             return MassOf(match.thing), 'mass'
-        elif match.prop == 'size' or match.prop == 'radius':
+        elif match.prop == 'radius':
+            return RadiusOf(match.thing), 'radius'
+        elif match.prop == 'size':
             return SizeOf(match.thing), 'size'
+        else:
+            return UnknownOf(match.thing)
+
+
+class ExtremePropertyOf(QuestionTemplate):
+    """
+    Regex for questions about extremal property values of a thing.
+    Ex: "What is the smallest planet?"
+    """
+    regex = Pos('WP') + Token('is') + Pos('DT') + Superlative() + Thing() + Question(Pos('.'))
+
+    def interpret(self, match):
+        if match.superlative == 'biggest' or match.superlative == 'largest':
+            return LabelOfBiggest(match.thing), 'label'
+        elif match.superlative == 'closest':
+            return LabelOfClosest(match.thing), 'label'
+        elif match.superlative == 'farthest':
+            return LabelOfFarthest(match.thing), 'label'
+        elif match.superlative == 'smallest':
+            return LabelOfSmallest(match.thing), 'label'
         else:
             return UnknownOf(match.thing)
 
@@ -131,6 +160,11 @@ class List(QuestionTemplate):
             return LabelOf(IsSubTypeOf(Planets())), {
                 'category': 'list',
                 'instances': 'planets'
+            }
+        elif match.things == 'property':
+            return LabelOf(IsSubTypeOf(Properties())), {
+                'category': 'list',
+                'instances': 'properties'
             }
         elif match.things == 'terrestrial planet':
             return LabelOf(IsSubTypeOf(TerrestrialPlanets())), {

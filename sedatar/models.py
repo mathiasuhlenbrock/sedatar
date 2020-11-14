@@ -1,6 +1,8 @@
 import rdflib
 from django.db import models
 from quepy import quepy
+# from SPARQLWrapper import SPARQLWrapper, JSON
+# from urllib.error import HTTPError
 
 
 class Database(models.Model):
@@ -51,6 +53,10 @@ class Search(models.Model):
         return determiner + ' %s' % result
 
     @staticmethod
+    def render_answer_label(result):
+        return '%s' % result
+
+    @staticmethod
     def render_answer_list_item(result, metadata):
         instances = metadata.get('instances')
         if instances == 'classes':
@@ -63,12 +69,15 @@ class Search(models.Model):
             planet = '%s' % result
             planet = planet.replace(' ', '_')
             return '<a href="/Astronomical_database/List_of_planets/' \
-                   + planet + '/">' + planet + '</>'
+                   + planet + '/">' + planet + '</a>'
         elif instances == 'planetary_systems':
             planetary_system = '%s' % result
             planetary_system = planetary_system.replace(' ', '_')
             return '<a href="/Astronomical_database/List_of_planetary_systems/' \
-                   + planetary_system + '/">' + planetary_system + '</>'
+                   + planetary_system + '/">' + planetary_system + '</a>'
+        elif instances == 'properties':
+            item = '%s' % result
+            return item.capitalize()
         else:
             item = '%s' % result
             return item
@@ -100,10 +109,73 @@ class Search(models.Model):
                     or metadata == 'distance' \
                     or metadata == 'mass' \
                     or metadata == 'number' \
+                    or metadata == 'radius' \
                     or metadata == 'size':
                 answer.append(self.render_answer_property(result))
+            elif metadata == 'label':
+                answer.append(self.render_answer_label(result))
             elif metadata.get('category') == 'list':
                 answer.append(self.render_answer_list_item(result, metadata))
             else:
                 answer.append('No method found to render the answer')
         return self.format(answer)
+
+# class Search(models.Model):
+#     question = models.CharField(max_length=200)
+#     g = SPARQLWrapper('https://query.wikidata.org/sparql')
+#
+#     @staticmethod
+#     def format(answer):
+#         answer = sorted(answer)
+#         if answer[-1][-1] != '.':
+#             answer[-1] += '.'
+#         return answer
+#
+#     @staticmethod
+#     def render_answer_definition(result):
+#         if result:
+#             result = result.get('x0Description').get('value')
+#             result = result[0].upper() + result[1:] if len(result) > 1 else result[0].upper()
+#             if result.startswith('Wikimedia disambiguation page'):
+#                 return None
+#             if result[-1] != '.':
+#                 result += '.'
+#         else:
+#             return None
+#         return '%s' % result
+#
+#     @property
+#     def question_str(self):
+#         return '%s' % self.question
+#
+#     @property
+#     def answer(self):
+#         wikidata = quepy.install('wikidata')
+#         target, query, metadata = wikidata.get_query(self.question_str)
+#         answer = list()
+#         if not query:
+#             answer.append('Query not generated')
+#             return self.format(answer)
+#         query = query.replace('".', '"@en.')
+#         print(query)
+#         self.g.setQuery(query)
+#         self.g.setReturnFormat(JSON)
+#         try:
+#             results = self.g.query().convert()
+#         except HTTPError:
+#             answer.append('Too many requests')
+#             return self.format(answer)
+#         if not results["results"]["bindings"]:
+#             answer.append('No answer found')
+#             return self.format(answer)
+#         for result in results["results"]["bindings"]:
+#             if metadata == 'definition':
+#                 partial_answer = self.render_answer_definition(result)
+#                 if partial_answer:
+#                     answer.append(partial_answer)
+#             else:
+#                 answer.append('No method found to render the answer')
+#         if not answer:
+#             answer.append('No answer found')
+#             return self.format(answer)
+#         return self.format(answer)
