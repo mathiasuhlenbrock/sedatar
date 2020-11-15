@@ -1,6 +1,6 @@
 # sedatar - semantic data access and retrieval
 This repository contains a web front-end for an astronomical database to be used together with the
-yet to be specified sedatar (semantic data access and retrival) project.
+yet to be specified sedatar (semantic data access and retrieval) project.
 
 Its main purpose is probably to provide simple schematic depictions of known planetary systems,
 alongside with the additional information about the planets and their host stars stored in the
