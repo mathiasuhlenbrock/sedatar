@@ -13,7 +13,7 @@ html, body {
     padding: 10px;
     box-sizing: border-box;
     place-content: center;
-    grid-template-rows: 25px 1fr 25px;
+    grid-template-rows: 0 1fr 0;
     grid-template-columns: 0 0 1fr 0;
 }
 
@@ -378,12 +378,13 @@ text.text {
     stroke: #808080;
 }
 
-@media only screen and (min-device-width: 376px) {
+@media only screen and (min-device-width: 376px) and (orientation: landscape) {
     .html, body {
         font-size: 14px;
     }
 
     .grid {
+        grid-template-rows: 25px 1fr 25px;
         grid-template-columns: 25px 10px 1fr 10%;
     }
 
