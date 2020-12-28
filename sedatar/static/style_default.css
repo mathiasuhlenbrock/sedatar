@@ -3,7 +3,7 @@ html, body {
     margin: 0;
     background-color: #F8F8F8;
     font-family: 'Helvetica', sans-serif;
-    font-size: 14px;
+    font-size: 40px;
     line-height: 1.6;
 }
 
@@ -14,7 +14,7 @@ html, body {
     box-sizing: border-box;
     place-content: center;
     grid-template-rows: 25px 1fr 25px;
-    grid-template-columns: 25px 10px 1fr 10%;
+    grid-template-columns: 0 0 1fr 0;
 }
 
 #cell1 {
@@ -64,8 +64,8 @@ html, body {
 }
 
 p {
-    margin-top: 2rem;
-    margin-bottom: 2rem;
+    margin-top: 2em;
+    margin-bottom: 2em;
 }
 
 ul {
@@ -102,29 +102,31 @@ h1, h2, h3 {
 }
 
 h1 {
-    font-size: 2rem;
+    font-size: 2em;
 }
 
 h1.logo {
     color: #000000;
-    font-size: 500%;
+    font-size: 300%;
     font-stretch: ultra-condensed;
 }
 
 h2 {
-    font-size: 1.5rem;
+    font-size: 1.5em;
 }
 
 h3 {
-    font-size: 1rem;
+    font-size: 1em;
 }
 
 input {
     background-color: #F8F8F8;
     border-color: #808080;
     border-style: solid;
+    border-width: 4px;
     font-family: 'Helvetica', sans-serif;
-    width: 400px;
+    font-size: 40px;
+    width: 800px;
 }
 
 button {
@@ -133,8 +135,9 @@ button {
     color: #000000;
     cursor: pointer;
     font-family: 'Helvetica', sans-serif;
-    width: 100px;
-    height: 50px;
+    font-size: 35px;
+    width: 200px;
+    height: 100px;
 }
 
 button:hover {
@@ -318,14 +321,14 @@ text.text {
     float: left;
     padding-top: 20px;
     padding-left: 20px;
-    width: 47%;
+    width: 100%;
 }
 
 #text_right_column {
     float: right;
     padding-top: 20px;
     padding-right: 40px;
-    width: 47%;
+    width: 0;
 }
 
 #text_left_column_planetarysystem {
@@ -373,4 +376,38 @@ text.text {
 #hatch > rect {
     fill: #808080;
     stroke: #808080;
+}
+
+@media only screen and (min-device-width: 376px) {
+    .html, body {
+        font-size: 14px;
+    }
+
+    .grid {
+        grid-template-columns: 25px 10px 1fr 10%;
+    }
+
+    h1.logo {
+        font-size: 500%;
+    }
+
+    input {
+        width: 400px;
+        border-width: 2px;
+        font-size: 14px;
+    }
+
+    button {
+        font-size: 14px;
+        width: 100px;
+        height: 50px;
+    }
+
+    #text_left_column {
+        width: 47%;
+    }
+
+    #text_right_column {
+        width: 47%;
+    }
 }
