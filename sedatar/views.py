@@ -4,8 +4,9 @@ Documentation goes here.
 
 from django.core.paginator import Paginator, EmptyPage, InvalidPage
 from django.http import HttpResponseRedirect
-from django.shortcuts import get_object_or_404, render_to_response
+from django.shortcuts import get_object_or_404, render
 from django.template.context_processors import csrf
+
 from sedatar.forms import SearchForm
 from sedatar.models import Database, Post, Search
 
@@ -14,7 +15,7 @@ def about(request):
     """
     Documentation goes here.
     """
-    return render_to_response('sedatar/about.html')
+    return render(request, 'sedatar/about.html')
 
 
 def answer(request):
@@ -40,7 +41,8 @@ def answer(request):
         the_list_of_answers = paginator.page(page)
     except (EmptyPage, InvalidPage):
         the_list_of_answers = paginator.page(paginator.num_pages)
-    return render_to_response(
+    return render(
+        request,
         'sedatar/answer.html',
         {
             'question': search.question,
@@ -68,7 +70,7 @@ def index(request):
         form = SearchForm()
     c = {'form': form}
     c.update(csrf(request))
-    return render_to_response('sedatar/index.html', c)
+    return render(request, 'sedatar/index.html', c)
 
 
 def list_of_databases(request):
@@ -86,14 +88,14 @@ def list_of_databases(request):
         the_list_of_databases = paginator.page(page)
     except (EmptyPage, InvalidPage):
         the_list_of_databases = paginator.page(paginator.num_pages)
-    return render_to_response('sedatar/list_of_databases.html', {'list_of_databases': the_list_of_databases})
+    return render(request, 'sedatar/list_of_databases.html', {'list_of_databases': the_list_of_databases})
 
 
 def list_of_dependencies(request):
     """
     Documentation goes here.
     """
-    return render_to_response('sedatar/list_of_dependencies.html')
+    return render(request, 'sedatar/list_of_dependencies.html')
 
 
 def list_of_posts(request):
@@ -111,7 +113,7 @@ def list_of_posts(request):
         the_list_of_posts = paginator.page(page)
     except (EmptyPage, InvalidPage):
         the_list_of_posts = paginator.page(paginator.num_pages)
-    return render_to_response('sedatar/list_of_posts.html', {'list_of_posts': the_list_of_posts})
+    return render(request, 'sedatar/list_of_posts.html', {'list_of_posts': the_list_of_posts})
 
 
 def post(request, post_date):
@@ -119,4 +121,4 @@ def post(request, post_date):
     Documentation goes here.
     """
     the_post = get_object_or_404(Post, date=post_date)
-    return render_to_response('sedatar/post.html', {'post': the_post})
+    return render(request, 'sedatar/post.html', {'post': the_post})
