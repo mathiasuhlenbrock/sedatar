@@ -61,3 +61,6 @@ target/
 
 # Static files
 staticfiles/
+
+# Ignore dynaconf secret files
+.secrets.*

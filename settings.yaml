@@ -1,0 +1,14 @@
+---
+default:
+  DEBUG: false
+
+production:
+  DEBUG: false
+
+development:
+  DATABASES:
+    default:
+      ENGINE: django.db.backends.postgresql
+      NAME: postgres
+      USER: uhlenbrock
+  DEBUG: true
