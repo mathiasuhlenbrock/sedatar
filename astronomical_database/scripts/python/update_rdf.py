@@ -240,7 +240,7 @@ for planetarySystem in PlanetarySystem.objects.all():
         if planetarySystem.host_distance_ly > max_planetary_system_distance:
             max_planetary_system_distance = planetarySystem.host_distance_ly
             max_planetary_system_distance_instance = planetarySystem.name
-        if planetarySystem.host_distance_ly < min_planetary_system_distance:
+        if 1 < planetarySystem.host_distance_ly < min_planetary_system_distance:
             min_planetary_system_distance = planetarySystem.host_distance_ly
             min_planetary_system_distance_instance = planetarySystem.name
     # if planetarySystem.number_of_planets:

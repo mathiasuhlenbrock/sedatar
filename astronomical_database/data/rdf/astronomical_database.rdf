@@ -55,7 +55,7 @@
     <ontology:averageDistance>2292.499 ly</ontology:averageDistance>
     <ontology:averageMaxSemiMajorAxis>12.598 AU</ontology:averageMaxSemiMajorAxis>
     <ontology:maxDistanceInstance>OGLE-2015-BLG-0051L</ontology:maxDistanceInstance>
-    <ontology:minDistanceInstance>Sun</ontology:minDistanceInstance>
+    <ontology:minDistanceInstance>Proxima Cen</ontology:minDistanceInstance>
     <ontology:maxMaxSemiMajorAxis>3500.0 AU</ontology:maxMaxSemiMajorAxis>
     <ontology:maxMaxSemiMajorAxisInstance>USco1556 A</ontology:maxMaxSemiMajorAxisInstance>
     <ontology:minMaxSemiMajorAxis>0.004 AU</ontology:minMaxSemiMajorAxis>

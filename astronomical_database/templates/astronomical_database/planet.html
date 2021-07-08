@@ -51,11 +51,7 @@
                 </tr>
                 <tr>
                     <td class="cell_standard">Distance from Earth</td>
-                    {% if planet.system.host_distance_ly > 0 %}
-                        <td class="cell_standard">{{ planet.system.host_distance_ly|floatformat }} ly</td>
-                    {% else %}
-                        <td class="cell_standard">Not available</td>
-                    {% endif %}
+                    <td class="cell_standard">{{ planet.system.string_host_distance_ly|safe }}</td>
                 </tr>
                 <tr class="row_subscript">
                     <td class="cell_standard">Radius</td>
