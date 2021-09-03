@@ -4,6 +4,7 @@ Documentation goes here.
 
 # import rdflib
 from lxml import etree
+
 from astronomical_database.models import Planet, PlanetarySystem
 
 
@@ -172,7 +173,10 @@ for planet in Planet.objects.all():
     if planet.system.host_distance_ly:
         ontology_distance = etree.SubElement(rdf_description, ONTOLOGY + 'distance')
         ontology_distance.attrib[RDF + 'datatype'] = XSD_PREFIX + ':' + 'string'
-        ontology_distance.text = str(planet.system.host_distance_ly) + ' ' + 'ly'
+        if planet.system.host_distance_ly > 1.e-4:
+            ontology_distance.text = str(planet.system.host_distance_ly) + ' ' + 'ly'
+        else:
+            ontology_distance.text = str(round(planet.system.host_distance_ly * 31557600)) + ' ls'
         number_of_planets_with_distance += 1
         sum_planet_distance += planet.system.host_distance_ly
         if planet.system.host_distance_ly > max_planet_distance:
@@ -234,7 +238,10 @@ for planetarySystem in PlanetarySystem.objects.all():
     if planetarySystem.host_distance_ly:
         ontology_distance = etree.SubElement(rdf_description, ONTOLOGY + 'distance')
         ontology_distance.attrib[RDF + 'datatype'] = XSD_PREFIX + ':' + 'string'
-        ontology_distance.text = str(planetarySystem.host_distance_ly) + ' ' + 'ly'
+        if planet.system.host_distance_ly > 1.e-4:
+            ontology_distance.text = str(planetarySystem.host_distance_ly) + ' ' + 'ly'
+        else:
+            ontology_distance.text = str(round(planetarySystem.host_distance_ly * 31557600)) + ' ls'
         number_of_planetary_systems_with_distance += 1
         sum_planetary_system_distance += planetarySystem.host_distance_ly
         if planetarySystem.host_distance_ly > max_planetary_system_distance:

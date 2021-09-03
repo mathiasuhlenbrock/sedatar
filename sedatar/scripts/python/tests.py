@@ -36,6 +36,8 @@ try:
     test_question('What is the farthest gas giant?', 'WTS-1 b.')
     test_question('What is the closest planet?', 'Mercury.')
     test_question('What is the farthest planet?', 'OGLE-2015-BLG-0051L b.')
+    test_question('What is the distance of Mercury?', '494 ls.')
+    test_question('What is the distance of OGLE-2015-BLG-0051L b?', '26732 ly.')
     test_question('What is the closest terrestrial planet?', 'Mercury.')
     test_question('What is the farthest terrestrial planet?', 'PSR J1719-1438 b.')
     test_question('What is the closest planetary system?', 'Proxima Cen.')
