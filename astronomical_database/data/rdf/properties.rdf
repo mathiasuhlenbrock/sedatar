@@ -66,6 +66,10 @@
   <rdfs:subPropertyOf rdf:resource="urn://sedatar.org/astronomical_database#size"/>
   <rdfs:label>size</rdfs:label>
 </rdf:Description>
+<rdf:Description rdf:about="urn://sedatar.org/astronomical_database#numberOfInstances">
+  <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#Property"/>
+  <rdfs:label>number of instances</rdfs:label>
+</rdf:Description>
 <rdf:Description rdf:about="urn://sedatar.org/astronomical_database#radius">
   <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#Property"/>
   <rdfs:label>size</rdfs:label>
