@@ -155,5 +155,18 @@ class TerrestrialPlanets(FixedSubType):
     fixedsubtype = 'ontology:Terrestrial_Planet'
 
 
+class AllProperties(Expression):
+    """
+    """
+
+    def __init__(self, data):
+        super(AllProperties, self).__init__()
+        self.merge(data)
+        self.nodes[0].append(('?x1', 2))
+        self.nodes.append([('rdfs:label', 3)])
+        self.nodes.append([])
+        self.head += 3
+
+
 class AllThings(FixedSubType):
     fixedsubtype = 'ontology:Thing'

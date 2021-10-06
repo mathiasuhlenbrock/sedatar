@@ -20,6 +20,13 @@ result = g.query("""
     #     ?x1 rdfs:label ?x2.
     # }
 
+    # All properties of planetary systems.
+    # SELECT DISTINCT ?x3 WHERE {
+    #     ?x0 rdfs:label 'planetary system'.
+    #     ?x0 ?x1 ?x2.
+    #     ?x1 rdfs:label ?x3.
+    # }
+
     # All terrestrial planets.
     # SELECT DISTINCT ?x1 WHERE {
     #     # ?x0 rdfs:label 'terrestrial planet'.

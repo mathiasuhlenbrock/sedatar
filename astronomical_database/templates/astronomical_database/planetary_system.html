@@ -27,11 +27,7 @@
                 <tbody>
                 <tr>
                     <td class="cell_standard">Distance from earth</td>
-                    {% if planetary_system.host_distance_ly > 0 %}
-                        <td class="cell_standard">{{ planetary_system.host_distance_ly|floatformat }} ly</td>
-                    {% else %}
-                        <td class="cell_standard">Not available</td>
-                    {% endif %}
+                    <td class="cell_standard">{{ planetary_system.string_host_distance_ly|safe }}</td>
                 </tr>
                 <tr class="row_subscript">
                     <td class="cell_standard">Radius</td>

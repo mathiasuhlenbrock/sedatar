@@ -6,6 +6,7 @@ Basic queries for sparqlgen quepy.
 
 from nltk.stem import WordNetLemmatizer
 from refo import Question, Plus
+
 from quepy.quepy.parsing import Lemma, Particle, Pos, QuestionTemplate, Token
 from .dsl import *
 
@@ -178,3 +179,18 @@ class List(QuestionTemplate):
             }
         else:
             return LabelOf(IsSubTypeOf(Unknowns()))
+
+
+class ListProperties(QuestionTemplate):
+    """
+    Regex for commands like "List all properties of a/an ...!"
+    Ex: "List all properties of a planet!"
+    """
+    regex = Token('List') + Token('all') + Token('properties') + Token('of') + Question(Pos('DT')) + Thing() + \
+        Question(Pos('.'))
+
+    def interpret(self, match):
+        return AllProperties(match.thing), {
+            'category': 'list',
+            'instances': 'properties'
+        }

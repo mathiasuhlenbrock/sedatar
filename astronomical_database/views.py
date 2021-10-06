@@ -1,6 +1,6 @@
 import re
 from django.core.paginator import Paginator, EmptyPage, InvalidPage
-from django.shortcuts import get_object_or_404, render_to_response
+from django.shortcuts import get_object_or_404, render
 from astronomical_database.models import *
 
 
@@ -51,7 +51,8 @@ def catalogue(request, catalogue_page_name):
         list_of_planetary_systems = paginator.page(page)
     except (EmptyPage, InvalidPage):
         list_of_planetary_systems = paginator.page(paginator.num_pages)
-    return render_to_response(
+    return render(
+        request,
         'astronomical_database/catalogue.html',
         {'catalogue': the_catalogue, 'list_of_planetary_systems': list_of_planetary_systems}
     )
@@ -69,7 +70,8 @@ def list_of_catalogues(request):
         the_list_of_catalogues = paginator.page(page)
     except (EmptyPage, InvalidPage):
         the_list_of_catalogues = paginator.page(paginator.num_pages)
-    return render_to_response(
+    return render(
+        request,
         'astronomical_database/list_of_catalogues.html',
         {'list_of_catalogues': the_list_of_catalogues}
     )
@@ -87,7 +89,8 @@ def list_of_categories(request):
         the_list_of_categories = paginator.page(page)
     except (EmptyPage, InvalidPage):
         the_list_of_categories = paginator.page(paginator.num_pages)
-    return render_to_response(
+    return render(
+        request,
         'astronomical_database/list_of_categories.html',
         {'list_of_categories': the_list_of_categories}
     )
@@ -95,7 +98,7 @@ def list_of_categories(request):
 
 def planet(request, planet_page_name):
     the_planet = get_object_or_404(Planet, name=planet_page_name.replace('_', ' '))
-    return render_to_response('astronomical_database/planet.html', {'planet': the_planet})
+    return render(request, 'astronomical_database/planet.html', {'planet': the_planet})
 
 
 def planetary_system(request, planetary_system_page_name):
@@ -111,7 +114,8 @@ def planetary_system(request, planetary_system_page_name):
         list_of_planets = paginator.page(page)
     except (EmptyPage, InvalidPage):
         list_of_planets = paginator.page(paginator.num_pages)
-    return render_to_response(
+    return render(
+        request,
         'astronomical_database/planetary_system.html',
         {'planetary_system': the_planetary_system, 'list_of_planets': list_of_planets}
     )

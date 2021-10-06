@@ -10,8 +10,11 @@ For the full list of settings and their values, see
 https://docs.djangoproject.com/en/1.8/ref/settings/
 """
 
-# Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 import os
+
+# Build paths inside the project like this: os.path.join(BASE_DIR, ...)
+import dj_database_url
+import dynaconf
 
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
@@ -70,11 +73,11 @@ TEMPLATES = [
 WSGI_APPLICATION = 'sedatar.wsgi.application'
 
 # Parse database configuration from $DATABASE_URL
-import dj_database_url
-
 DATABASES = {
     'default': dj_database_url.config()
 }
+
+DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 # Internationalization
 # https://docs.djangoproject.com/en/1.8/topics/i18n/
@@ -96,3 +99,9 @@ STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 STATIC_URL = '/static/'
 
 STATICFILES_DIRS = []
+
+settings = dynaconf.DjangoDynaconf(
+    __name__,
+    SETTINGS_FILE_FOR_DYNACONF="settings.yaml",
+    SECRETS_FOR_DYNACONF='.secrets.yaml',
+)

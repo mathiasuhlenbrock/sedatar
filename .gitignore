@@ -43,6 +43,9 @@ nosetests.xml
 coverage.xml
 *,cover
 
+# virtualenv
+virtual/
+
 # Translations
 *.mo
 *.pot
@@ -61,3 +64,6 @@ target/
 
 # Static files
 staticfiles/
+
+# Ignore dynaconf secret files
+.secrets.*

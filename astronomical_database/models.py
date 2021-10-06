@@ -78,7 +78,11 @@ class PlanetarySystem(models.Model):
 
     @property
     def host_distance_ly(self):
-        return round(self.host_distance * 3.26)
+        host_distance_ly = self.host_distance * 3.26
+        if host_distance_ly < 1:
+            return round(host_distance_ly, 8)
+        else:
+            return round(host_distance_ly)
 
     @property
     def max_planet_radius(self):
@@ -103,6 +107,15 @@ class PlanetarySystem(models.Model):
             return 1.
 
     # String representations of system parameters.
+
+    @property
+    def string_host_distance_ly(self):
+        if self.host_distance_ly > 1.e-4:
+            return str(self.host_distance_ly) + ' ly'
+        elif self.host_distance_ly > 0.:
+            return str(round(self.host_distance_ly * 31557600)) + ' ls'
+        else:
+            return 'Not available'
 
     @property
     def string_host_radius(self):
