@@ -26,6 +26,8 @@ Korea Microlensing Telescope Network,                  KMT,      0
 Kourovka Planet Search,                                KPS,      0
 Lupus,                                                 Lupus,    0
 Luyten Half-Second catalogue,                          LHS,      0
+Luyten Palomar Survey,                                 LP,       0
+Luyten Two-Tenth catalogue,                            LTT,      0
 Luyten catalogue,                                      L,        1
 Lépine-Shara Proper Motion catalog,                    LSPM,     0
 Massachusetts X-ray Burster,                           MXB,      0
@@ -44,6 +46,7 @@ Rho Oph X-ray source,                                  ROXs,     0
 Ross Catalogue of New Proper Motion Stars,             Ross,     0
 Sagittarius Window Eclipsing Extrasolar Planet Search, SWEEPS,   1
 Stars with proper names,                               ,         0
+TESS Input Catalog,                                    TIC,      0
 TESS Object of Interest,                               TOI,      0
 Taurus Auriga Perseus,                                 TAP,      0
 Trans-Atlantic Exoplanet Survey,                       TrES,     0

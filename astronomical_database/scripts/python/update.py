@@ -278,6 +278,16 @@ with open('astronomical_database/data/csv/planets/planets.csv') as csvfile:
                 'Luyten Half-Second catalogue',
                 row, year_of_discovery, density, mass, radius, semimajoraxis, orbital_period
             )
+        elif row['hostname'].startswith('LP'):
+            sort_into_catalogue(
+                'Luyten Palomar Survey',
+                row, year_of_discovery, density, mass, radius, semimajoraxis, orbital_period
+            )
+        elif row['hostname'].startswith('LTT'):
+            sort_into_catalogue(
+                'Luyten Two-Tenth catalogue',
+                row, year_of_discovery, density, mass, radius, semimajoraxis, orbital_period
+            )
         elif row['hostname'].startswith('L '):
             sort_into_catalogue(
                 'Luyten catalogue',
@@ -356,6 +366,11 @@ with open('astronomical_database/data/csv/planets/planets.csv') as csvfile:
         elif row['hostname'].startswith('SWEEPS'):
             sort_into_catalogue(
                 'Sagittarius Window Eclipsing Extrasolar Planet Search',
+                row, year_of_discovery, density, mass, radius, semimajoraxis, orbital_period
+            )
+        elif row['hostname'].startswith('TIC'):
+            sort_into_catalogue(
+                'TESS Input Catalog',
                 row, year_of_discovery, density, mass, radius, semimajoraxis, orbital_period
             )
         elif row['hostname'].startswith('TOI'):
