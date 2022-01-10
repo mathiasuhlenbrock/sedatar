@@ -67,3 +67,6 @@ staticfiles/
 
 # Ignore dynaconf secret files
 .secrets.*
+
+# NLTK
+nltk_data
