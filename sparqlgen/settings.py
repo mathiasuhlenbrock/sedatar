@@ -7,6 +7,8 @@
 # Authors: Rafael Carrascosa <rcarrascosa@machinalis.com>
 #          Gonzalo Garcia Berrotaran <ggarcia@machinalis.com>
 
+import os
+
 """
 Settings.
 """
@@ -16,6 +18,10 @@ LANGUAGE = 'sparql'
 
 # NLTK config
 NLTK_DATA_PATH = ['nltk_data']  # List of paths with NLTK data
+try:
+    NLTK_DATA_PATH.append(os.environ['NLTK_DATA'])
+except KeyError:
+    pass
 
 # Encoding config
 DEFAULT_ENCODING = 'utf-8'
