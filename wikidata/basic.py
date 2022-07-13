@@ -5,8 +5,8 @@ Basic queries for wikidata quepy.
 """
 
 from nltk.stem import WordNetLemmatizer
-from refo import Question, Plus
 from quepy.quepy.parsing import Lemma, Particle, Pos, QuestionTemplate, Token
+from refo.refo.patterns import Question, Plus
 from .dsl import *
 
 
@@ -38,7 +38,7 @@ class WhatIsClass(QuestionTemplate):
     Ex: "What is a planet?"
     """
     regex = Lemma('what') + (Token('is') + Question((Token('a') | Token('an'))) + Thing() | Token('are') + Things()) + \
-            Question(Pos('.'))
+        Question(Pos('.'))
 
     def interpret(self, match):
         if hasattr(match, 'thing'):

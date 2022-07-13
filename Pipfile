@@ -15,10 +15,9 @@ lxml = "==4.*"
 nltk = "==3.*"
 psycopg2 = "==2.*"
 rdflib = "==6.*"
-REfO = "==0.*"
 requests = "==2.*"
 SoMaJo = "==2.*"
 SPARQLWrapper = "==2.*"
 
 [requires]
-python_version = "3.8"
+python_version = "3.9"

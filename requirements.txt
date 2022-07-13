@@ -8,7 +8,6 @@ nltk==3.*
 psycopg2==2.*
 rdflib==6.*
 #rdflib-sqlalchemy==1.*
-REfO==0.*
 requests==2.*
 SoMaJo==2.*
 SPARQLWrapper==2.*
