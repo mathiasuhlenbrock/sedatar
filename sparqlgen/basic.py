@@ -5,9 +5,8 @@ Basic queries for sparqlgen quepy.
 """
 
 from nltk.stem import WordNetLemmatizer
-from refo import Question, Plus
-
 from quepy.quepy.parsing import Lemma, Particle, Pos, QuestionTemplate, Token
+from refo.refo.patterns import Question, Plus
 from .dsl import *
 
 
