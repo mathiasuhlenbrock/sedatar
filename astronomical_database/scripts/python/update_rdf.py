@@ -5,7 +5,7 @@ Documentation goes here.
 # import rdflib
 from lxml import etree
 
-from astronomical_database.models import Planet, PlanetarySystem
+from astronomical_database.models import Catalogue, Planet, PlanetarySystem
 
 
 def insert(root, entity, property, value):
@@ -46,15 +46,34 @@ root_element = etree.Element(RDF + 'RDF', nsmap=NSMAP)
 
 parser = etree.XMLParser(remove_blank_text=True)
 
+number_of_classes = 0
+
 classes = etree.parse('astronomical_database/data/rdf/classes.rdf', parser)
 for path in [".//rdf:Description"]:
     for element in classes.getroot().findall(path, namespaces={RDF_PREFIX: RDF_NAMESPACE}):
         root_element.append(element)
+        number_of_classes += 1
+
+insert(
+    root_element,
+    'Class',
+    'numberOfInstances',
+    number_of_classes
+)
 
 properties = etree.parse('astronomical_database/data/rdf/properties.rdf', parser)
 for path in [".//rdf:Description"]:
     for element in properties.getroot().findall(path, namespaces={RDF_PREFIX: RDF_NAMESPACE}):
         root_element.append(element)
+
+number_of_catalogues = Catalogue.objects.all().count()
+
+insert(
+    root_element,
+    'Catalogue',
+    'numberOfInstances',
+    number_of_catalogues
+)
 
 number_of_planets_with_density = 0
 number_of_planets_with_distance = 0
@@ -540,7 +559,7 @@ insert(
     root_element,
     'Thing',
     'numberOfInstances',
-    number_of_planets + number_of_planetary_systems
+    number_of_catalogues + number_of_planets + number_of_planetary_systems
 )
 
 etree.ElementTree(root_element).write(file_name, pretty_print=True)
