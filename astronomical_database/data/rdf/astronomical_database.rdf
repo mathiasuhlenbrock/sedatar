@@ -5,10 +5,16 @@
     <rdfs:subClassOf rdf:resource="urn://sedatar.org/astronomical_database#Thing"/>
     <ontology:numberOfInstances>7891</ontology:numberOfInstances>
   </rdf:Description>
+  <rdf:Description rdf:about="urn://sedatar.org/astronomical_database#Catalogue">
+    <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class"/>
+    <rdfs:label>catalogue</rdfs:label>
+    <rdfs:subClassOf rdf:resource="urn://sedatar.org/astronomical_database#Thing"/>
+    <ontology:numberOfInstances>62</ontology:numberOfInstances>
+  </rdf:Description>
   <rdf:Description rdf:about="urn://sedatar.org/astronomical_database#Class">
     <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class"/>
     <rdfs:label>class</rdfs:label>
-    <ontology:numberOfInstances>7</ontology:numberOfInstances>
+    <ontology:numberOfInstances>9</ontology:numberOfInstances>
   </rdf:Description>
   <rdf:Description rdf:about="urn://sedatar.org/astronomical_database#Exoplanet">
     <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class"/>
@@ -81,7 +87,7 @@
   <rdf:Description rdf:about="urn://sedatar.org/astronomical_database#Thing">
     <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class"/>
     <rdfs:label>thing</rdfs:label>
-    <ontology:numberOfInstances>7891</ontology:numberOfInstances>
+    <ontology:numberOfInstances>7953</ontology:numberOfInstances>
   </rdf:Description>
   <rdf:Description rdf:about="urn://sedatar.org/astronomical_database#averageDistance">
     <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#Property"/>
