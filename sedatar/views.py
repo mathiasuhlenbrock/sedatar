@@ -8,7 +8,7 @@ from django.shortcuts import get_object_or_404, render
 from django.template.context_processors import csrf
 
 from sedatar.forms import SearchForm
-from sedatar.models import Database, Post, Search
+from sedatar.models import Database, Post, Search, SearchWikidata
 
 
 def about(request):
@@ -26,27 +26,35 @@ def answer(request):
         form = SearchForm(request.POST)
         if form.is_valid():
             search = Search(question=form.cleaned_data['question'])
+            search_wikidata = SearchWikidata(question=form.cleaned_data['question'])
         else:
             return
     else:
         search = Search(question=request.GET.get('question'))
-    paginator = Paginator(search.answer, 20)
+        search_wikidata = SearchWikidata(question=request.GET.get('question'))
+    paginator = Paginator(search.answers, 1)
+    paginator_wikidata = Paginator(search_wikidata.answers, 1)
     # Make sure page request is an int. If not, deliver first page.
     try:
         page = int(request.GET.get('page', '1'))
+        page_wikidata = int(request.GET.get('page_wikidata', '1'))
     except ValueError:
         page = 1
+        page_wikidata = 1
     # If page request (9999) is out of range, deliver last page of results.
     try:
         the_list_of_answers = paginator.page(page)
+        the_list_of_wikidata_answers = paginator_wikidata.page(page_wikidata)
     except (EmptyPage, InvalidPage):
         the_list_of_answers = paginator.page(paginator.num_pages)
+        the_list_of_wikidata_answers = paginator_wikidata.page(paginator_wikidata.num_pages)
     return render(
         request,
         'sedatar/answer.html',
         {
             'question': search.question,
-            'list_of_answers': the_list_of_answers
+            'list_of_answers': the_list_of_answers,
+            'list_of_wikidata_answers': the_list_of_wikidata_answers
         }
     )
 

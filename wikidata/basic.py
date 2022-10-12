@@ -11,7 +11,8 @@ from .dsl import *
 
 
 class Thing(Particle):
-    regex = Plus(Pos('JJ') | Pos('DT') | Pos('NN') | Pos('NNP') | Pos('CD') | Pos('PRP') | Pos(':'))
+    regex = Plus(
+        Pos('JJ') | Pos('DT') | Pos('NN') | Pos('NNP') | Pos('CD') | Pos('PRP') | Pos(':') | Pos('VBG') | Pos('VBN'))
 
     def interpret(self, match):
         return HasKeyword(match.words.tokens)
@@ -38,7 +39,7 @@ class WhatIsClass(QuestionTemplate):
     Ex: "What is a planet?"
     """
     regex = Lemma('what') + (Token('is') + Question((Token('a') | Token('an'))) + Thing() | Token('are') + Things()) + \
-        Question(Pos('.'))
+            Question(Pos('.'))
 
     def interpret(self, match):
         if hasattr(match, 'thing'):

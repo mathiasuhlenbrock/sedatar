@@ -1,8 +1,10 @@
+from urllib.error import HTTPError
+
 import rdflib
+from SPARQLWrapper import SPARQLWrapper, JSON
 from django.db import models
+
 from quepy import quepy
-# from SPARQLWrapper import SPARQLWrapper, JSON
-# from urllib.error import HTTPError
 
 
 class Database(models.Model):
@@ -40,10 +42,9 @@ class Search(models.Model):
     # g.open(rdflib.Literal('postgresql+psycopg2://uhlenbrock:@localhost:5432/postgres'))
 
     @staticmethod
-    def format(answer):
-        answer = sorted(answer)
-        answer[-1] += '.'
-        return answer
+    def format(answers):
+        answers = sorted(answers)
+        return answers
 
     @staticmethod
     def render_answer_definition(result):
@@ -91,91 +92,96 @@ class Search(models.Model):
         return '%s' % self.question
 
     @property
-    def answer(self):
+    def answers(self):
         sparqlgen = quepy.install('sparqlgen')
         target, query, metadata = sparqlgen.get_query(self.question_str)
-        answer = list()
+        answers = list()
         if not query:
-            answer.append('Query not generated')
-            return self.format(answer)
+            answers.append('Query not generated')
+            return self.format(answers)
         results = self.g.query(query)
         if not results:
-            answer.append('No answer found')
-            return self.format(answer)
+            answers.append('No answers found')
+            return self.format(answers)
         for result in results:
             if metadata == 'definition':
-                answer.append(self.render_answer_definition(result))
+                answers.append(self.render_answer_definition(result))
             elif metadata == 'density' \
                     or metadata == 'distance' \
                     or metadata == 'mass' \
                     or metadata == 'number' \
                     or metadata == 'radius' \
                     or metadata == 'size':
-                answer.append(self.render_answer_property(result))
+                answers.append(self.render_answer_property(result))
             elif metadata == 'label':
-                answer.append(self.render_answer_label(result))
+                answers.append(self.render_answer_label(result))
             elif metadata.get('category') == 'list':
-                answer.append(self.render_answer_list_item(result, metadata))
+                answers.append(self.render_answer_list_item(result, metadata))
             else:
-                answer.append('No method found to render the answer')
-        return self.format(answer)
+                answers.append('No method found to render the answers')
+        return self.format(answers)
 
-# class Search(models.Model):
-#     question = models.CharField(max_length=200)
-#     g = SPARQLWrapper('https://query.wikidata.org/sparql')
-#
-#     @staticmethod
-#     def format(answer):
-#         answer = sorted(answer)
-#         if answer[-1][-1] != '.':
-#             answer[-1] += '.'
-#         return answer
-#
-#     @staticmethod
-#     def render_answer_definition(result):
-#         if result:
-#             result = result.get('x0Description').get('value')
-#             result = result[0].upper() + result[1:] if len(result) > 1 else result[0].upper()
-#             if result.startswith('Wikimedia disambiguation page'):
-#                 return None
-#             if result[-1] != '.':
-#                 result += '.'
-#         else:
-#             return None
-#         return '%s' % result
-#
-#     @property
-#     def question_str(self):
-#         return '%s' % self.question
-#
-#     @property
-#     def answer(self):
-#         wikidata = quepy.install('wikidata')
-#         target, query, metadata = wikidata.get_query(self.question_str)
-#         answer = list()
-#         if not query:
-#             answer.append('Query not generated')
-#             return self.format(answer)
-#         query = query.replace('".', '"@en.')
-#         print(query)
-#         self.g.setQuery(query)
-#         self.g.setReturnFormat(JSON)
-#         try:
-#             results = self.g.query().convert()
-#         except HTTPError:
-#             answer.append('Too many requests')
-#             return self.format(answer)
-#         if not results["results"]["bindings"]:
-#             answer.append('No answer found')
-#             return self.format(answer)
-#         for result in results["results"]["bindings"]:
-#             if metadata == 'definition':
-#                 partial_answer = self.render_answer_definition(result)
-#                 if partial_answer:
-#                     answer.append(partial_answer)
-#             else:
-#                 answer.append('No method found to render the answer')
-#         if not answer:
-#             answer.append('No answer found')
-#             return self.format(answer)
-#         return self.format(answer)
+
+class SearchWikidata(models.Model):
+    question = models.CharField(max_length=200)
+    g = SPARQLWrapper('https://query.wikidata.org/sparql')
+
+    @staticmethod
+    def format(answers):
+        if len(answers) == 1 and isinstance(answers[0], str):
+            return answers
+        answers.sort(key=lambda x: x['relevance'])
+        answers = [answer['text'] for answer in answers]
+        return answers
+
+    @staticmethod
+    def render_answer_definition(result):
+        if result and result.get('x0Description'):
+            answer = result.get('x0Description').get('value')
+            answer = answer[0].upper() + answer[1:] if len(answer) > 1 else answer[0].upper()
+            if answer[-1] == '.':
+                answer = answer[:-1]
+            relevance = int(result.get('x0').get('value').replace('http://www.wikidata.org/entity/Q', ''))
+            rendered_answer = {'text': answer, 'relevance': relevance}
+            if answer.startswith('Encyclopedia article'):
+                return None
+            if answer.startswith('Wikimedia disambiguation page'):
+                return None
+        else:
+            return None
+        return rendered_answer
+
+    @property
+    def question_str(self):
+        return '%s' % self.question
+
+    @property
+    def answers(self):
+        wikidata = quepy.install('wikidata')
+        target, query, metadata = wikidata.get_query(self.question_str)
+        answers = list()
+        if not query:
+            answers.append('Query not generated')
+            return self.format(answers)
+        query = query.replace('".', '"@en.')
+        self.g.setQuery(query)
+        self.g.setReturnFormat(JSON)
+        try:
+            results = self.g.query().convert()
+        except HTTPError as http_error:
+            answers.append('Wikidata says: HTTP Error {}: {}.'.format(http_error.code, http_error.reason))
+            return self.format(answers)
+        if not results['results']['bindings']:
+            answers.append('No answers found')
+            return self.format(answers)
+        for result in results['results']['bindings']:
+            if metadata == 'definition':
+                answer = self.render_answer_definition(result)
+                if answer:
+                    answers.append(answer)
+            else:
+                answers.append('No method found to render the answers')
+        if not answers:
+            answers.append('No answers found')
+            return self.format(answers)
+        return self.format(answers)

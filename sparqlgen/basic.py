@@ -11,7 +11,8 @@ from .dsl import *
 
 
 class Thing(Particle):
-    regex = Plus(Pos('JJ') | Pos('DT') | Pos('NN') | Pos('NNP') | Pos('CD') | Pos('PRP') | Pos(':'))
+    regex = Plus(
+        Pos('JJ') | Pos('DT') | Pos('NN') | Pos('NNP') | Pos('CD') | Pos('PRP') | Pos(':') | Pos('VBG') | Pos('VBN'))
 
     def interpret(self, match):
         return HasKeyword(match.words.tokens)
@@ -186,7 +187,7 @@ class ListProperties(QuestionTemplate):
     Ex: "List all properties of a planet!"
     """
     regex = Token('List') + Token('all') + Token('properties') + Token('of') + Question(Pos('DT')) + Thing() + \
-        Question(Pos('.'))
+            Question(Pos('.'))
 
     def interpret(self, match):
         return AllProperties(match.thing), {

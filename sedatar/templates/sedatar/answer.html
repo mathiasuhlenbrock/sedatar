@@ -6,7 +6,7 @@
             <p>
                 {{ question }}
             </p>
-            <h3>Your answer</h3>
+            <h3>Your answers from Astronomical Database</h3>
             {% comment %}
             <table style="margin-top: 2em; border-spacing: 0px">
                 {% for answer in list_of_answers.object_list %}
@@ -33,11 +33,37 @@
                            accesskey="h">Previous</a> |
                     {% endif %}
                     <span class="current">
-                        Page {{ list_of_answers.number }} of {{ list_of_answers.paginator.num_pages }}
+                        Answer {{ list_of_answers.number }} of {{ list_of_answers.paginator.num_pages }}
                     </span>
                     {% if list_of_answers.has_next %}
                         | <a href="?page={{ list_of_answers.next_page_number }}&question={{ question }}"
                              accesskey="l">Next</a>
+                    {% endif %}
+                </span>
+                </p>
+            </div>
+            <h3>Your answers from Wikidata</h3>
+            <ul>
+                {% for answer in list_of_wikidata_answers.object_list %}
+                    <li>
+                        {{ answer|safe }}
+                    </li>
+                {% endfor %}
+            </ul>
+            <div class="pagination">
+                <p>
+                <span class="step-links">
+                    {% if list_of_wikidata_answers.has_previous %}
+                        <a href="?page_wikidata={{ list_of_wikidata_answers.previous_page_number }}&question={{ question }}"
+                           accesskey="h">Previous</a> |
+                    {% endif %}
+                    <span class="current">
+                        Answer {{ list_of_wikidata_answers.number }} of {{ list_of_wikidata_answers.paginator.num_pages }}
+                    </span>
+                    {% if list_of_wikidata_answers.has_next %}
+                        |
+                        <a href="?page_wikidata={{ list_of_wikidata_answers.next_page_number }}&question={{ question }}"
+                           accesskey="l">Next</a>
                     {% endif %}
                 </span>
                 </p>
