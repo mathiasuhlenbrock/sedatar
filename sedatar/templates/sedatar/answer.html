@@ -29,6 +29,7 @@
                 <p>
                 <span class="step-links">
                     {% if list_of_answers.has_previous %}
+                        <a href="?page=1&question={{ question }}" accesskey="h">First</a> |
                         <a href="?page={{ list_of_answers.previous_page_number }}&question={{ question }}"
                            accesskey="h">Previous</a> |
                     {% endif %}
@@ -36,8 +37,11 @@
                         Answer {{ list_of_answers.number }} of {{ list_of_answers.paginator.num_pages }}
                     </span>
                     {% if list_of_answers.has_next %}
-                        | <a href="?page={{ list_of_answers.next_page_number }}&question={{ question }}"
-                             accesskey="l">Next</a>
+                        |
+                        <a href="?page={{ list_of_answers.next_page_number }}&question={{ question }}"
+                           accesskey="l">Next</a> |
+                        <a href="?page={{ list_of_answers.paginator.num_pages }}&question={{ question }}"
+                           accesskey="h">Last</a>
                     {% endif %}
                 </span>
                 </p>
@@ -54,6 +58,7 @@
                 <p>
                 <span class="step-links">
                     {% if list_of_wikidata_answers.has_previous %}
+                        <a href="?page=1&question={{ question }}" accesskey="h">First</a> |
                         <a href="?page_wikidata={{ list_of_wikidata_answers.previous_page_number }}&question={{ question }}"
                            accesskey="h">Previous</a> |
                     {% endif %}
@@ -63,7 +68,9 @@
                     {% if list_of_wikidata_answers.has_next %}
                         |
                         <a href="?page_wikidata={{ list_of_wikidata_answers.next_page_number }}&question={{ question }}"
-                           accesskey="l">Next</a>
+                           accesskey="l">Next</a> |
+                        <a href="?page={{ list_of_wikidata_answers.paginator.num_pages }}&question={{ question }}"
+                           accesskey="h">Last</a>
                     {% endif %}
                 </span>
                 </p>
