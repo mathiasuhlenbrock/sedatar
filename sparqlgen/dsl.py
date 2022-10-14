@@ -123,6 +123,10 @@ class AstronomicalObjects(FixedSubType):
     fixedsubtype = 'ontology:Astronomical_Object'
 
 
+class Catalogues(FixedSubType):
+    fixedsubtype = 'ontology:Catalogue'
+
+
 class Classes(FixedSubType):
     fixedsubtype = 'rdfs:Class'
 

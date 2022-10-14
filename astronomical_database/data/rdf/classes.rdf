@@ -25,10 +25,21 @@
   <ontology:numberOfInstances></ontology:numberOfInstances>
 </rdf:Description>
 -->
+<rdf:Description rdf:about="urn://sedatar.org/astronomical_database#Catalogue">
+  <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class"/>
+  <rdfs:label>catalogue</rdfs:label>
+  <rdfs:subClassOf rdf:resource="urn://sedatar.org/astronomical_database#Thing"/>
+  <ontology:averageSize></ontology:averageSize>
+  <ontology:maxSize></ontology:maxSize>
+  <ontology:maxSizeInstance></ontology:maxSizeInstance>
+  <ontology:minSize></ontology:minSize>
+  <ontology:minSizeInstance></ontology:minSizeInstance>
+  <ontology:numberOfInstances></ontology:numberOfInstances>
+</rdf:Description>
 <rdf:Description rdf:about="urn://sedatar.org/astronomical_database#Class">
   <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class"/>
   <rdfs:label>class</rdfs:label>
-  <ontology:numberOfInstances>7</ontology:numberOfInstances>
+  <ontology:numberOfInstances></ontology:numberOfInstances>
 </rdf:Description>
 <!--
 <rdf:Description rdf:about="urn://sedatar.org/astronomical_database#Comet">
@@ -85,6 +96,14 @@
 </rdf:Description>
 -->
 <!--
+<rdf:Description rdf:about="urn://sedatar.org/astronomical_database#Hot_Jupiter">
+  <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class"/>
+  <rdfs:label>Hot Jupiter</rdfs:label>
+  <rdfs:subClassOf rdf:resource="urn://sedatar.org/astronomical_database#Gas_Giant"/>
+  <ontology:numberOfInstances></ontology:numberOfInstances>
+</rdf:Description>
+-->
+<!--
 <rdf:Description rdf:about="urn://sedatar.org/astronomical_database#Hypergiant_Star">
   <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class"/>
   <rdfs:label>hypergiant star</rdfs:label>
@@ -96,7 +115,7 @@
 <rdf:Description rdf:about="urn://sedatar.org/astronomical_database#Ice_Giant">
   <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class"/>
   <rdfs:label>ice giant</rdfs:label>
-  <rdfs:subClassOf rdf:resource="urn://sedatar.org/astronomical_database#Planet"/>
+  <rdfs:subClassOf rdf:resource="urn://sedatar.org/astronomical_database#Gas_Giant"/>
   <ontology:numberOfInstances></ontology:numberOfInstances>
 </rdf:Description>
 -->

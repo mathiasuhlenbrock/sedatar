@@ -60,7 +60,12 @@ class Search(models.Model):
     @staticmethod
     def render_answer_list_item(result, metadata):
         instances = metadata.get('instances')
-        if instances == 'classes':
+        if instances == 'catalogues':
+            catalogue = '%s' % result
+            # return '<a href="/Astronomical_database/List_of_star_catalogues/' \
+            #        + catalogue.replace(' ', '_') + '/">' + catalogue + '</a>'
+            return catalogue
+        elif instances == 'classes':
             item = '%s' % result
             return item.capitalize()
         elif instances == 'exoplanets' \
@@ -68,14 +73,14 @@ class Search(models.Model):
                 or instances == 'terrestrial_planets' \
                 or instances == 'planets':
             planet = '%s' % result
-            planet = planet.replace(' ', '_')
-            return '<a href="/Astronomical_database/List_of_planets/' \
-                   + planet + '/">' + planet + '</a>'
+            # return '<a href="/Astronomical_database/List_of_planets/' \
+            #        + planet.replace(' ', '_') + '/">' + planet + '</a>'
+            return planet
         elif instances == 'planetary_systems':
             planetary_system = '%s' % result
-            planetary_system = planetary_system.replace(' ', '_')
-            return '<a href="/Astronomical_database/List_of_planetary_systems/' \
-                   + planetary_system + '/">' + planetary_system + '</a>'
+            # return '<a href="/Astronomical_database/List_of_planetary_systems/' \
+            #        + planetary_system.replace(' ', '_') + '/">' + planetary_system + '</a>'
+            return planetary_system
         elif instances == 'properties':
             item = '%s' % result
             return item.capitalize()
@@ -142,7 +147,10 @@ class SearchWikidata(models.Model):
             if answer[-1] == '.':
                 answer = answer[:-1]
             relevance = int(result.get('x0').get('value').replace('http://www.wikidata.org/entity/Q', ''))
-            rendered_answer = {'text': answer, 'relevance': relevance}
+            rendered_answer = {
+                'text': '<a href="' + result.get('x0').get('value') + '">' + answer + '</a>',
+                'relevance': relevance
+            }
             if answer.startswith('Encyclopedia article'):
                 return None
             if answer.startswith('Wikimedia disambiguation page'):

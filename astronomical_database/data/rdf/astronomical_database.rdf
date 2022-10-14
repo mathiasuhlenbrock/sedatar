@@ -9,6 +9,11 @@
     <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class"/>
     <rdfs:label>catalogue</rdfs:label>
     <rdfs:subClassOf rdf:resource="urn://sedatar.org/astronomical_database#Thing"/>
+    <ontology:averageSize>54 entries</ontology:averageSize>
+    <ontology:maxSize>1673 entries</ontology:maxSize>
+    <ontology:maxSizeInstance>Kepler catalog</ontology:maxSizeInstance>
+    <ontology:minSize>1 entries</ontology:minSize>
+    <ontology:minSizeInstance>Transient Confirmation Page</ontology:minSizeInstance>
     <ontology:numberOfInstances>62</ontology:numberOfInstances>
   </rdf:Description>
   <rdf:Description rdf:about="urn://sedatar.org/astronomical_database#Class">
@@ -114,6 +119,11 @@
     <rdfs:subPropertyOf rdf:resource="urn://sedatar.org/astronomical_database#radius"/>
     <rdfs:label>size</rdfs:label>
   </rdf:Description>
+  <rdf:Description rdf:about="urn://sedatar.org/astronomical_database#averageSize">
+    <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#Property"/>
+    <rdfs:subPropertyOf rdf:resource="urn://sedatar.org/astronomical_database#size"/>
+    <rdfs:label>size</rdfs:label>
+  </rdf:Description>
   <rdf:Description rdf:about="urn://sedatar.org/astronomical_database#density">
     <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#Property"/>
     <rdfs:label>density</rdfs:label>
@@ -165,6 +175,316 @@
   <rdf:Description rdf:about="urn://sedatar.org/astronomical_database#size">
     <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#Property"/>
     <rdfs:label>size</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="urn://sedatar.org/astronomical_database#Trans-Atlantic_Exoplanet_Survey">
+    <rdf:type rdf:resource="urn://sedatar.org/astronomical_database#Catalogue"/>
+    <rdfs:label>Trans-Atlantic Exoplanet Survey</rdfs:label>
+    <ontology:size rdf:datatype="xsd:string">5 entries</ontology:size>
+  </rdf:Description>
+  <rdf:Description rdf:about="urn://sedatar.org/astronomical_database#Transient_Confirmation_Page">
+    <rdf:type rdf:resource="urn://sedatar.org/astronomical_database#Catalogue"/>
+    <rdfs:label>Transient Confirmation Page</rdfs:label>
+    <ontology:size rdf:datatype="xsd:string">1 entries</ontology:size>
+  </rdf:Description>
+  <rdf:Description rdf:about="urn://sedatar.org/astronomical_database#Transiting_Planets_and_Planetesimals_Small_Telescope">
+    <rdf:type rdf:resource="urn://sedatar.org/astronomical_database#Catalogue"/>
+    <rdfs:label>Transiting Planets and Planetesimals Small Telescope</rdfs:label>
+    <ontology:size rdf:datatype="xsd:string">1 entries</ontology:size>
+  </rdf:Description>
+  <rdf:Description rdf:about="urn://sedatar.org/astronomical_database#Two_Micron_All_Sky_Survey">
+    <rdf:type rdf:resource="urn://sedatar.org/astronomical_database#Catalogue"/>
+    <rdfs:label>Two Micron All Sky Survey</rdfs:label>
+    <ontology:size rdf:datatype="xsd:string">8 entries</ontology:size>
+  </rdf:Description>
+  <rdf:Description rdf:about="urn://sedatar.org/astronomical_database#Tycho_Catalogue">
+    <rdf:type rdf:resource="urn://sedatar.org/astronomical_database#Catalogue"/>
+    <rdfs:label>Tycho Catalogue</rdfs:label>
+    <ontology:size rdf:datatype="xsd:string">6 entries</ontology:size>
+  </rdf:Description>
+  <rdf:Description rdf:about="urn://sedatar.org/astronomical_database#United_Kingdom_Infrared_Telescope">
+    <rdf:type rdf:resource="urn://sedatar.org/astronomical_database#Catalogue"/>
+    <rdfs:label>United Kingdom Infrared Telescope</rdfs:label>
+    <ontology:size rdf:datatype="xsd:string">1 entries</ontology:size>
+  </rdf:Description>
+  <rdf:Description rdf:about="urn://sedatar.org/astronomical_database#Upper_Sco_Cerro_Tololo_Inter-american_Obs">
+    <rdf:type rdf:resource="urn://sedatar.org/astronomical_database#Catalogue"/>
+    <rdfs:label>Upper Sco Cerro Tololo Inter-american Obs</rdfs:label>
+    <ontology:size rdf:datatype="xsd:string">3 entries</ontology:size>
+  </rdf:Description>
+  <rdf:Description rdf:about="urn://sedatar.org/astronomical_database#VISTA_Hemisphere_Survey">
+    <rdf:type rdf:resource="urn://sedatar.org/astronomical_database#Catalogue"/>
+    <rdfs:label>VISTA Hemisphere Survey</rdfs:label>
+    <ontology:size rdf:datatype="xsd:string">1 entries</ontology:size>
+  </rdf:Description>
+  <rdf:Description rdf:about="urn://sedatar.org/astronomical_database#WFCAM_Transit_Survey">
+    <rdf:type rdf:resource="urn://sedatar.org/astronomical_database#Catalogue"/>
+    <rdfs:label>WFCAM Transit Survey</rdfs:label>
+    <ontology:size rdf:datatype="xsd:string">2 entries</ontology:size>
+  </rdf:Description>
+  <rdf:Description rdf:about="urn://sedatar.org/astronomical_database#Wide_Angle_Search_for_Planets">
+    <rdf:type rdf:resource="urn://sedatar.org/astronomical_database#Catalogue"/>
+    <rdfs:label>Wide Angle Search for Planets</rdfs:label>
+    <ontology:size rdf:datatype="xsd:string">165 entries</ontology:size>
+  </rdf:Description>
+  <rdf:Description rdf:about="urn://sedatar.org/astronomical_database#Wide-field_Infrared_Survey_Explorer">
+    <rdf:type rdf:resource="urn://sedatar.org/astronomical_database#Catalogue"/>
+    <rdfs:label>Wide-field Infrared Survey Explorer</rdfs:label>
+    <ontology:size rdf:datatype="xsd:string">1 entries</ontology:size>
+  </rdf:Description>
+  <rdf:Description rdf:about="urn://sedatar.org/astronomical_database#XO_project">
+    <rdf:type rdf:resource="urn://sedatar.org/astronomical_database#Catalogue"/>
+    <rdfs:label>XO project</rdfs:label>
+    <ontology:size rdf:datatype="xsd:string">8 entries</ontology:size>
+  </rdf:Description>
+  <rdf:Description rdf:about="urn://sedatar.org/astronomical_database#1st_ROSAT_X-ray_Survey">
+    <rdf:type rdf:resource="urn://sedatar.org/astronomical_database#Catalogue"/>
+    <rdfs:label>1st ROSAT X-ray Survey</rdfs:label>
+    <ontology:size rdf:datatype="xsd:string">1 entries</ontology:size>
+  </rdf:Description>
+  <rdf:Description rdf:about="urn://sedatar.org/astronomical_database#Bayer_designation">
+    <rdf:type rdf:resource="urn://sedatar.org/astronomical_database#Catalogue"/>
+    <rdfs:label>Bayer designation</rdfs:label>
+    <ontology:size rdf:datatype="xsd:string">27 entries</ontology:size>
+  </rdf:Description>
+  <rdf:Description rdf:about="urn://sedatar.org/astronomical_database#Bonner_Durchmusterung">
+    <rdf:type rdf:resource="urn://sedatar.org/astronomical_database#Catalogue"/>
+    <rdfs:label>Bonner Durchmusterung</rdfs:label>
+    <ontology:size rdf:datatype="xsd:string">20 entries</ontology:size>
+  </rdf:Description>
+  <rdf:Description rdf:about="urn://sedatar.org/astronomical_database#Canada-France_Brown_Dwarf_Survey">
+    <rdf:type rdf:resource="urn://sedatar.org/astronomical_database#Catalogue"/>
+    <rdfs:label>Canada-France Brown Dwarf Survey</rdfs:label>
+    <ontology:size rdf:datatype="xsd:string">1 entries</ontology:size>
+  </rdf:Description>
+  <rdf:Description rdf:about="urn://sedatar.org/astronomical_database#Catalogue_of_High_Proper_Motion_Stars">
+    <rdf:type rdf:resource="urn://sedatar.org/astronomical_database#Catalogue"/>
+    <rdfs:label>Catalogue of High Proper Motion Stars</rdfs:label>
+    <ontology:size rdf:datatype="xsd:string">2 entries</ontology:size>
+  </rdf:Description>
+  <rdf:Description rdf:about="urn://sedatar.org/astronomical_database#Chamaeleon_X-ray_source_ROSAT_satellite">
+    <rdf:type rdf:resource="urn://sedatar.org/astronomical_database#Catalogue"/>
+    <rdfs:label>Chamaeleon X-ray source ROSAT satellite</rdfs:label>
+    <ontology:size rdf:datatype="xsd:string">1 entries</ontology:size>
+  </rdf:Description>
+  <rdf:Description rdf:about="urn://sedatar.org/astronomical_database#CoRoT_Catalogue">
+    <rdf:type rdf:resource="urn://sedatar.org/astronomical_database#Catalogue"/>
+    <rdfs:label>CoRoT Catalogue</rdfs:label>
+    <ontology:size rdf:datatype="xsd:string">31 entries</ontology:size>
+  </rdf:Description>
+  <rdf:Description rdf:about="urn://sedatar.org/astronomical_database#Deep_Near_Infrared_Survey_Provisory_designation">
+    <rdf:type rdf:resource="urn://sedatar.org/astronomical_database#Catalogue"/>
+    <rdfs:label>Deep Near Infrared Survey Provisory designation</rdfs:label>
+    <ontology:size rdf:datatype="xsd:string">1 entries</ontology:size>
+  </rdf:Description>
+  <rdf:Description rdf:about="urn://sedatar.org/astronomical_database#Ecliptic_Plane_Input_Catalog">
+    <rdf:type rdf:resource="urn://sedatar.org/astronomical_database#Catalogue"/>
+    <rdfs:label>Ecliptic Plane Input Catalog</rdfs:label>
+    <ontology:size rdf:datatype="xsd:string">21 entries</ontology:size>
+  </rdf:Description>
+  <rdf:Description rdf:about="urn://sedatar.org/astronomical_database#Flamsteed_designation">
+    <rdf:type rdf:resource="urn://sedatar.org/astronomical_database#Catalogue"/>
+    <rdfs:label>Flamsteed designation</rdfs:label>
+    <ontology:size rdf:datatype="xsd:string">23 entries</ontology:size>
+  </rdf:Description>
+  <rdf:Description rdf:about="urn://sedatar.org/astronomical_database#General_Catalog_of_Variable_Stars">
+    <rdf:type rdf:resource="urn://sedatar.org/astronomical_database#Catalogue"/>
+    <rdfs:label>General Catalog of Variable Stars</rdfs:label>
+    <ontology:size rdf:datatype="xsd:string">22 entries</ontology:size>
+  </rdf:Description>
+  <rdf:Description rdf:about="urn://sedatar.org/astronomical_database#Gliese-Jahreiss_catalogue">
+    <rdf:type rdf:resource="urn://sedatar.org/astronomical_database#Catalogue"/>
+    <rdfs:label>Gliese-Jahreiss catalogue</rdfs:label>
+    <ontology:size rdf:datatype="xsd:string">68 entries</ontology:size>
+  </rdf:Description>
+  <rdf:Description rdf:about="urn://sedatar.org/astronomical_database#Guide_Star_Catalog">
+    <rdf:type rdf:resource="urn://sedatar.org/astronomical_database#Catalogue"/>
+    <rdfs:label>Guide Star Catalog</rdfs:label>
+    <ontology:size rdf:datatype="xsd:string">1 entries</ontology:size>
+  </rdf:Description>
+  <rdf:Description rdf:about="urn://sedatar.org/astronomical_database#Harvard_Revised_Catalogue">
+    <rdf:type rdf:resource="urn://sedatar.org/astronomical_database#Catalogue"/>
+    <rdfs:label>Harvard Revised Catalogue</rdfs:label>
+    <ontology:size rdf:datatype="xsd:string">5 entries</ontology:size>
+  </rdf:Description>
+  <rdf:Description rdf:about="urn://sedatar.org/astronomical_database#Henry_Draper_Catalogue">
+    <rdf:type rdf:resource="urn://sedatar.org/astronomical_database#Catalogue"/>
+    <rdfs:label>Henry Draper Catalogue</rdfs:label>
+    <ontology:size rdf:datatype="xsd:string">460 entries</ontology:size>
+  </rdf:Description>
+  <rdf:Description rdf:about="urn://sedatar.org/astronomical_database#Hipparcos_Catalogue">
+    <rdf:type rdf:resource="urn://sedatar.org/astronomical_database#Catalogue"/>
+    <rdfs:label>Hipparcos Catalogue</rdfs:label>
+    <ontology:size rdf:datatype="xsd:string">37 entries</ontology:size>
+  </rdf:Description>
+  <rdf:Description rdf:about="urn://sedatar.org/astronomical_database#Hungarian_Automated_Telescope">
+    <rdf:type rdf:resource="urn://sedatar.org/astronomical_database#Catalogue"/>
+    <rdfs:label>Hungarian Automated Telescope</rdfs:label>
+    <ontology:size rdf:datatype="xsd:string">136 entries</ontology:size>
+  </rdf:Description>
+  <rdf:Description rdf:about="urn://sedatar.org/astronomical_database#Index_Catalogue">
+    <rdf:type rdf:resource="urn://sedatar.org/astronomical_database#Catalogue"/>
+    <rdfs:label>Index Catalogue</rdfs:label>
+    <ontology:size rdf:datatype="xsd:string">1 entries</ontology:size>
+  </rdf:Description>
+  <rdf:Description rdf:about="urn://sedatar.org/astronomical_database#K2_Variable_Star_Catalogue">
+    <rdf:type rdf:resource="urn://sedatar.org/astronomical_database#Catalogue"/>
+    <rdfs:label>K2 Variable Star Catalogue</rdfs:label>
+    <ontology:size rdf:datatype="xsd:string">307 entries</ontology:size>
+  </rdf:Description>
+  <rdf:Description rdf:about="urn://sedatar.org/astronomical_database#Kepler_Input_Catalog">
+    <rdf:type rdf:resource="urn://sedatar.org/astronomical_database#Catalogue"/>
+    <rdfs:label>Kepler Input Catalog</rdfs:label>
+    <ontology:size rdf:datatype="xsd:string">11 entries</ontology:size>
+  </rdf:Description>
+  <rdf:Description rdf:about="urn://sedatar.org/astronomical_database#Kepler_Object_of_Interest">
+    <rdf:type rdf:resource="urn://sedatar.org/astronomical_database#Catalogue"/>
+    <rdfs:label>Kepler Object of Interest</rdfs:label>
+    <ontology:size rdf:datatype="xsd:string">13 entries</ontology:size>
+  </rdf:Description>
+  <rdf:Description rdf:about="urn://sedatar.org/astronomical_database#Kepler_catalog">
+    <rdf:type rdf:resource="urn://sedatar.org/astronomical_database#Catalogue"/>
+    <rdfs:label>Kepler catalog</rdfs:label>
+    <ontology:size rdf:datatype="xsd:string">1673 entries</ontology:size>
+  </rdf:Description>
+  <rdf:Description rdf:about="urn://sedatar.org/astronomical_database#Kilodegree_Extremely_Little_Telescope">
+    <rdf:type rdf:resource="urn://sedatar.org/astronomical_database#Catalogue"/>
+    <rdfs:label>Kilodegree Extremely Little Telescope</rdfs:label>
+    <ontology:size rdf:datatype="xsd:string">21 entries</ontology:size>
+  </rdf:Description>
+  <rdf:Description rdf:about="urn://sedatar.org/astronomical_database#Korea_Microlensing_Telescope_Network">
+    <rdf:type rdf:resource="urn://sedatar.org/astronomical_database#Catalogue"/>
+    <rdfs:label>Korea Microlensing Telescope Network</rdfs:label>
+    <ontology:size rdf:datatype="xsd:string">23 entries</ontology:size>
+  </rdf:Description>
+  <rdf:Description rdf:about="urn://sedatar.org/astronomical_database#Kourovka_Planet_Search">
+    <rdf:type rdf:resource="urn://sedatar.org/astronomical_database#Catalogue"/>
+    <rdfs:label>Kourovka Planet Search</rdfs:label>
+    <ontology:size rdf:datatype="xsd:string">1 entries</ontology:size>
+  </rdf:Description>
+  <rdf:Description rdf:about="urn://sedatar.org/astronomical_database#Lupus">
+    <rdf:type rdf:resource="urn://sedatar.org/astronomical_database#Catalogue"/>
+    <rdfs:label>Lupus</rdfs:label>
+    <ontology:size rdf:datatype="xsd:string">1 entries</ontology:size>
+  </rdf:Description>
+  <rdf:Description rdf:about="urn://sedatar.org/astronomical_database#Luyten_Half-Second_catalogue">
+    <rdf:type rdf:resource="urn://sedatar.org/astronomical_database#Catalogue"/>
+    <rdfs:label>Luyten Half-Second catalogue</rdfs:label>
+    <ontology:size rdf:datatype="xsd:string">4 entries</ontology:size>
+  </rdf:Description>
+  <rdf:Description rdf:about="urn://sedatar.org/astronomical_database#Luyten_Palomar_Survey">
+    <rdf:type rdf:resource="urn://sedatar.org/astronomical_database#Catalogue"/>
+    <rdfs:label>Luyten Palomar Survey</rdfs:label>
+    <ontology:size rdf:datatype="xsd:string">2 entries</ontology:size>
+  </rdf:Description>
+  <rdf:Description rdf:about="urn://sedatar.org/astronomical_database#Luyten_Two-Tenth_catalogue">
+    <rdf:type rdf:resource="urn://sedatar.org/astronomical_database#Catalogue"/>
+    <rdfs:label>Luyten Two-Tenth catalogue</rdfs:label>
+    <ontology:size rdf:datatype="xsd:string">3 entries</ontology:size>
+  </rdf:Description>
+  <rdf:Description rdf:about="urn://sedatar.org/astronomical_database#Luyten_catalogue">
+    <rdf:type rdf:resource="urn://sedatar.org/astronomical_database#Catalogue"/>
+    <rdfs:label>Luyten catalogue</rdfs:label>
+    <ontology:size rdf:datatype="xsd:string">2 entries</ontology:size>
+  </rdf:Description>
+  <rdf:Description rdf:about="urn://sedatar.org/astronomical_database#L&#233;pine-Shara_Proper_Motion_catalog">
+    <rdf:type rdf:resource="urn://sedatar.org/astronomical_database#Catalogue"/>
+    <rdfs:label>L&#233;pine-Shara Proper Motion catalog</rdfs:label>
+    <ontology:size rdf:datatype="xsd:string">1 entries</ontology:size>
+  </rdf:Description>
+  <rdf:Description rdf:about="urn://sedatar.org/astronomical_database#Massachusetts_X-ray_Burster">
+    <rdf:type rdf:resource="urn://sedatar.org/astronomical_database#Catalogue"/>
+    <rdfs:label>Massachusetts X-ray Burster</rdfs:label>
+    <ontology:size rdf:datatype="xsd:string">1 entries</ontology:size>
+  </rdf:Description>
+  <rdf:Description rdf:about="urn://sedatar.org/astronomical_database#Microlensing_Observations_in_Astrophysics">
+    <rdf:type rdf:resource="urn://sedatar.org/astronomical_database#Catalogue"/>
+    <rdfs:label>Microlensing Observations in Astrophysics</rdfs:label>
+    <ontology:size rdf:datatype="xsd:string">26 entries</ontology:size>
+  </rdf:Description>
+  <rdf:Description rdf:about="urn://sedatar.org/astronomical_database#New_General_Catalogue">
+    <rdf:type rdf:resource="urn://sedatar.org/astronomical_database#Catalogue"/>
+    <rdfs:label>New General Catalogue</rdfs:label>
+    <ontology:size rdf:datatype="xsd:string">5 entries</ontology:size>
+  </rdf:Description>
+  <rdf:Description rdf:about="urn://sedatar.org/astronomical_database#Next_Generation_Transit_Survey">
+    <rdf:type rdf:resource="urn://sedatar.org/astronomical_database#Catalogue"/>
+    <rdfs:label>Next Generation Transit Survey</rdfs:label>
+    <ontology:size rdf:datatype="xsd:string">17 entries</ontology:size>
+  </rdf:Description>
+  <rdf:Description rdf:about="urn://sedatar.org/astronomical_database#Northern_Sky_Variability_Survey">
+    <rdf:type rdf:resource="urn://sedatar.org/astronomical_database#Catalogue"/>
+    <rdfs:label>Northern Sky Variability Survey</rdfs:label>
+    <ontology:size rdf:datatype="xsd:string">1 entries</ontology:size>
+  </rdf:Description>
+  <rdf:Description rdf:about="urn://sedatar.org/astronomical_database#Optical_Gravitational_Lensing_Experiment">
+    <rdf:type rdf:resource="urn://sedatar.org/astronomical_database#Catalogue"/>
+    <rdfs:label>Optical Gravitational Lensing Experiment</rdfs:label>
+    <ontology:size rdf:datatype="xsd:string">69 entries</ontology:size>
+  </rdf:Description>
+  <rdf:Description rdf:about="urn://sedatar.org/astronomical_database#Other_stars">
+    <rdf:type rdf:resource="urn://sedatar.org/astronomical_database#Catalogue"/>
+    <rdfs:label>Other stars</rdfs:label>
+    <ontology:size rdf:datatype="xsd:string">20 entries</ontology:size>
+  </rdf:Description>
+  <rdf:Description rdf:about="urn://sedatar.org/astronomical_database#Parkes_Selected_Region">
+    <rdf:type rdf:resource="urn://sedatar.org/astronomical_database#Catalogue"/>
+    <rdfs:label>Parkes Selected Region</rdfs:label>
+    <ontology:size rdf:datatype="xsd:string">5 entries</ontology:size>
+  </rdf:Description>
+  <rdf:Description rdf:about="urn://sedatar.org/astronomical_database#Pico_dos_Dias_survey">
+    <rdf:type rdf:resource="urn://sedatar.org/astronomical_database#Catalogue"/>
+    <rdfs:label>Pico dos Dias survey</rdfs:label>
+    <ontology:size rdf:datatype="xsd:string">1 entries</ontology:size>
+  </rdf:Description>
+  <rdf:Description rdf:about="urn://sedatar.org/astronomical_database#Planet_Hunters">
+    <rdf:type rdf:resource="urn://sedatar.org/astronomical_database#Catalogue"/>
+    <rdfs:label>Planet Hunters</rdfs:label>
+    <ontology:size rdf:datatype="xsd:string">2 entries</ontology:size>
+  </rdf:Description>
+  <rdf:Description rdf:about="urn://sedatar.org/astronomical_database#Pre-OmegaTranS_project">
+    <rdf:type rdf:resource="urn://sedatar.org/astronomical_database#Catalogue"/>
+    <rdfs:label>Pre-OmegaTranS project</rdfs:label>
+    <ontology:size rdf:datatype="xsd:string">1 entries</ontology:size>
+  </rdf:Description>
+  <rdf:Description rdf:about="urn://sedatar.org/astronomical_database#Qatar_Exoplanet_Survey">
+    <rdf:type rdf:resource="urn://sedatar.org/astronomical_database#Catalogue"/>
+    <rdfs:label>Qatar Exoplanet Survey</rdfs:label>
+    <ontology:size rdf:datatype="xsd:string">10 entries</ontology:size>
+  </rdf:Description>
+  <rdf:Description rdf:about="urn://sedatar.org/astronomical_database#Rho_Oph_X-ray_source">
+    <rdf:type rdf:resource="urn://sedatar.org/astronomical_database#Catalogue"/>
+    <rdfs:label>Rho Oph X-ray source</rdfs:label>
+    <ontology:size rdf:datatype="xsd:string">2 entries</ontology:size>
+  </rdf:Description>
+  <rdf:Description rdf:about="urn://sedatar.org/astronomical_database#Ross_Catalogue_of_New_Proper_Motion_Stars">
+    <rdf:type rdf:resource="urn://sedatar.org/astronomical_database#Catalogue"/>
+    <rdfs:label>Ross Catalogue of New Proper Motion Stars</rdfs:label>
+    <ontology:size rdf:datatype="xsd:string">2 entries</ontology:size>
+  </rdf:Description>
+  <rdf:Description rdf:about="urn://sedatar.org/astronomical_database#Sagittarius_Window_Eclipsing_Extrasolar_Planet_Search">
+    <rdf:type rdf:resource="urn://sedatar.org/astronomical_database#Catalogue"/>
+    <rdfs:label>Sagittarius Window Eclipsing Extrasolar Planet Search</rdfs:label>
+    <ontology:size rdf:datatype="xsd:string">2 entries</ontology:size>
+  </rdf:Description>
+  <rdf:Description rdf:about="urn://sedatar.org/astronomical_database#Stars_with_proper_names">
+    <rdf:type rdf:resource="urn://sedatar.org/astronomical_database#Catalogue"/>
+    <rdfs:label>Stars with proper names</rdfs:label>
+    <ontology:size rdf:datatype="xsd:string">4 entries</ontology:size>
+  </rdf:Description>
+  <rdf:Description rdf:about="urn://sedatar.org/astronomical_database#TESS_Input_Catalog">
+    <rdf:type rdf:resource="urn://sedatar.org/astronomical_database#Catalogue"/>
+    <rdfs:label>TESS Input Catalog</rdfs:label>
+    <ontology:size rdf:datatype="xsd:string">2 entries</ontology:size>
+  </rdf:Description>
+  <rdf:Description rdf:about="urn://sedatar.org/astronomical_database#TESS_Object_of_Interest">
+    <rdf:type rdf:resource="urn://sedatar.org/astronomical_database#Catalogue"/>
+    <rdfs:label>TESS Object of Interest</rdfs:label>
+    <ontology:size rdf:datatype="xsd:string">65 entries</ontology:size>
+  </rdf:Description>
+  <rdf:Description rdf:about="urn://sedatar.org/astronomical_database#Taurus_Auriga_Perseus">
+    <rdf:type rdf:resource="urn://sedatar.org/astronomical_database#Catalogue"/>
+    <rdfs:label>Taurus Auriga Perseus</rdfs:label>
+    <ontology:size rdf:datatype="xsd:string">1 entries</ontology:size>
   </rdf:Description>
   <rdf:Description rdf:about="urn://sedatar.org/astronomical_database#HD_97048_b">
     <rdf:type rdf:resource="urn://sedatar.org/astronomical_database#Exoplanet"/>

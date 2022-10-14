@@ -66,7 +66,67 @@ for path in [".//rdf:Description"]:
     for element in properties.getroot().findall(path, namespaces={RDF_PREFIX: RDF_NAMESPACE}):
         root_element.append(element)
 
+max_catalogue_size = 0
+max_catalogue_size_instance = ''
+# todo: this is not ideal...
+min_catalogue_size = 10000
+min_catalogue_size_instance = ''
 number_of_catalogues = Catalogue.objects.all().count()
+sum_catalogue_size = 0.
+
+for catalogue in Catalogue.objects.all():
+    rdf_description = etree.SubElement(root_element, RDF + 'Description')
+    rdf_description.attrib[RDF + 'about'] = \
+        ONTOLOGY_NAMESPACE + catalogue.name.replace(' ', '_')
+    rdf_type = etree.SubElement(rdf_description, RDF + 'type')
+    rdf_type.attrib[RDF + 'resource'] = ONTOLOGY_NAMESPACE + 'Catalogue'
+    rdfs_label = etree.SubElement(rdf_description, RDFS + 'label')
+    rdfs_label.text = catalogue.name
+    if catalogue.number_of_planetary_systems > max_catalogue_size:
+        max_catalogue_size = catalogue.number_of_planetary_systems
+        max_catalogue_size_instance = catalogue.name
+    if catalogue.number_of_planetary_systems < min_catalogue_size:
+        min_catalogue_size = catalogue.number_of_planetary_systems
+        min_catalogue_size_instance = catalogue.name
+    sum_catalogue_size += catalogue.number_of_planetary_systems
+    ontology_size = etree.SubElement(rdf_description, ONTOLOGY + 'size')
+    ontology_size.attrib[RDF + 'datatype'] = XSD_PREFIX + ':' + 'string'
+    ontology_size.text = str(catalogue.number_of_planetary_systems) + ' ' + 'entries'
+
+insert(
+    root_element,
+    'Catalogue',
+    'averageSize',
+    str(round(sum_catalogue_size / number_of_catalogues)) + ' ' + 'entries'
+)
+
+insert(
+    root_element,
+    'Catalogue',
+    'maxSize',
+    str(max_catalogue_size) + ' ' + 'entries'
+)
+
+insert(
+    root_element,
+    'Catalogue',
+    'maxSizeInstance',
+    max_catalogue_size_instance
+)
+
+insert(
+    root_element,
+    'Catalogue',
+    'minSize',
+    str(min_catalogue_size) + ' ' + 'entries'
+)
+
+insert(
+    root_element,
+    'Catalogue',
+    'minSizeInstance',
+    min_catalogue_size_instance
+)
 
 insert(
     root_element,
@@ -93,6 +153,7 @@ max_planet_distance = 0
 max_planet_distance_instance = ''
 max_planet_radius = 0
 max_planet_radius_instance = ''
+# todo: this is not ideal...
 min_planet_distance = 5000
 min_planet_distance_instance = ''
 min_planet_radius = Planet.objects.filter(radius__gt=0).first().radius
@@ -105,6 +166,7 @@ max_terrestrial_planet_distance = 0
 max_terrestrial_planet_distance_instance = ''
 max_terrestrial_planet_radius = 0
 max_terrestrial_planet_radius_instance = ''
+# todo: this is not ideal...
 min_terrestrial_planet_distance = 5000
 min_terrestrial_planet_distance_instance = ''
 min_terrestrial_planet_radius = 1
@@ -117,6 +179,7 @@ max_gas_giant_distance = 0
 max_gas_giant_distance_instance = ''
 max_gas_giant_radius = 0
 max_gas_giant_radius_instance = ''
+# todo: this is not ideal...
 min_gas_giant_distance = 5000
 min_gas_giant_distance_instance = ''
 min_gas_giant_radius = 1

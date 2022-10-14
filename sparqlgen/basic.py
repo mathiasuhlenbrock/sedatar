@@ -142,6 +142,11 @@ class List(QuestionTemplate):
                 'category': 'list',
                 'instances': 'classes'
             }
+        elif match.things == 'catalogue':
+            return LabelOf(IsSubTypeOf(Catalogues())), {
+                'category': 'list',
+                'instances': 'catalogues'
+            }
         elif match.things == 'exoplanet':
             return LabelOf(IsSubTypeOf(Exoplanets())), {
                 'category': 'list',
