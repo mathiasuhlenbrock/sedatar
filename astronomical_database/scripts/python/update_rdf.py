@@ -68,7 +68,7 @@ for path in [".//rdf:Description"]:
 
 max_catalogue_size = 0
 max_catalogue_size_instance = ''
-# todo: this is not ideal...
+# TODO: this is not ideal...
 min_catalogue_size = 10000
 min_catalogue_size_instance = ''
 number_of_catalogues = Catalogue.objects.all().count()
@@ -153,7 +153,7 @@ max_planet_distance = 0
 max_planet_distance_instance = ''
 max_planet_radius = 0
 max_planet_radius_instance = ''
-# todo: this is not ideal...
+# TODO: this is not ideal...
 min_planet_distance = 5000
 min_planet_distance_instance = ''
 min_planet_radius = Planet.objects.filter(radius__gt=0).first().radius
@@ -166,7 +166,7 @@ max_terrestrial_planet_distance = 0
 max_terrestrial_planet_distance_instance = ''
 max_terrestrial_planet_radius = 0
 max_terrestrial_planet_radius_instance = ''
-# todo: this is not ideal...
+# TODO: this is not ideal...
 min_terrestrial_planet_distance = 5000
 min_terrestrial_planet_distance_instance = ''
 min_terrestrial_planet_radius = 1
@@ -179,7 +179,7 @@ max_gas_giant_distance = 0
 max_gas_giant_distance_instance = ''
 max_gas_giant_radius = 0
 max_gas_giant_radius_instance = ''
-# todo: this is not ideal...
+# TODO: this is not ideal...
 min_gas_giant_distance = 5000
 min_gas_giant_distance_instance = ''
 min_gas_giant_radius = 1
