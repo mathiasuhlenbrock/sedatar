@@ -30,7 +30,7 @@ class Things(Particle):
             lemma = self.custom_lemmas[lemma] if self.custom_lemmas[lemma] else lemma
         token_list[-1] = lemma
         tokens = ' '.join(token_list)
-        return HasKeyword(tokens)
+        return tokens
 
 
 class WhatIsClass(QuestionTemplate):
@@ -43,6 +43,6 @@ class WhatIsClass(QuestionTemplate):
 
     def interpret(self, match):
         if hasattr(match, 'thing'):
-            return match.thing, 'definition'
+            return match.thing, {'category': 'definition'}
         elif hasattr(match, 'things'):
-            return match.things, 'definition'
+            return match.things, {'category': 'definition'}

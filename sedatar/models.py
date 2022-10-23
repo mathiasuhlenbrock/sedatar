@@ -59,29 +59,29 @@ class Search(models.Model):
 
     @staticmethod
     def render_answer_list_item(result, metadata):
-        instances = metadata.get('instances')
-        if instances == 'catalogues':
+        instance_type = metadata.get('instance_type')
+        if instance_type == 'catalogue':
             catalogue = '%s' % result
             # return '<a href="/Astronomical_database/List_of_star_catalogues/' \
             #        + catalogue.replace(' ', '_') + '/">' + catalogue + '</a>'
             return catalogue
-        elif instances == 'classes':
+        elif instance_type == 'class':
             item = '%s' % result
             return item.capitalize()
-        elif instances == 'exoplanets' \
-                or instances == 'gas_giants' \
-                or instances == 'terrestrial_planets' \
-                or instances == 'planets':
+        elif instance_type == 'exoplanet' \
+                or instance_type == 'gas_giant' \
+                or instance_type == 'terrestrial_planet' \
+                or instance_type == 'planet':
             planet = '%s' % result
             # return '<a href="/Astronomical_database/List_of_planets/' \
             #        + planet.replace(' ', '_') + '/">' + planet + '</a>'
             return planet
-        elif instances == 'planetary_systems':
+        elif instance_type == 'planetary_system':
             planetary_system = '%s' % result
             # return '<a href="/Astronomical_database/List_of_planetary_systems/' \
             #        + planetary_system.replace(' ', '_') + '/">' + planetary_system + '</a>'
             return planetary_system
-        elif instances == 'properties':
+        elif instance_type == 'property':
             item = '%s' % result
             return item.capitalize()
         else:
@@ -109,18 +109,19 @@ class Search(models.Model):
             answers.append('No answers found')
             return self.format(answers)
         for result in results:
-            if metadata == 'definition':
+            category = metadata.get('category')
+            if category == 'definition':
                 answers.append(self.render_answer_definition(result))
-            elif metadata == 'density' \
-                    or metadata == 'distance' \
-                    or metadata == 'mass' \
-                    or metadata == 'number' \
-                    or metadata == 'radius' \
-                    or metadata == 'size':
+            elif category == 'density' \
+                    or category == 'distance' \
+                    or category == 'mass' \
+                    or category == 'number' \
+                    or category == 'radius' \
+                    or category == 'size':
                 answers.append(self.render_answer_property(result))
-            elif metadata == 'label':
+            elif category == 'label':
                 answers.append(self.render_answer_label(result))
-            elif metadata.get('category') == 'list':
+            elif category == 'list':
                 answers.append(self.render_answer_list_item(result, metadata))
             else:
                 answers.append('No method found to render the answers')
@@ -183,7 +184,8 @@ class SearchWikidata(models.Model):
             answers.append('No answers found')
             return self.format(answers)
         for result in results['results']['bindings']:
-            if metadata == 'definition':
+            category = metadata.get('category')
+            if category == 'definition':
                 answer = self.render_answer_definition(result)
                 if answer:
                     answers.append(answer)

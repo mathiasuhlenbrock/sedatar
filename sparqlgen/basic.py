@@ -11,6 +11,7 @@ from .dsl import *
 
 
 class Thing(Particle):
+    # TODO: Add also tags for plurals? Add all tag types?
     regex = Plus(
         Pos('JJ') | Pos('DT') | Pos('NN') | Pos('NNP') | Pos('CD') | Pos('PRP') | Pos(':') | Pos('VBG') | Pos('VBN'))
 
@@ -55,7 +56,7 @@ class WhatIsClass(QuestionTemplate):
     regex = Lemma('what') + (Token('is') + (Token('a') | Token('an')) | Token('are')) + Thing() + Question(Pos('.'))
 
     def interpret(self, match):
-        return LabelOf(IsDefinedIn(match.thing)), 'definition'
+        return LabelOf(IsDefinedIn(match.thing)), {'category': 'definition'}
 
 
 class WhatIsInstance(QuestionTemplate):
@@ -67,7 +68,7 @@ class WhatIsInstance(QuestionTemplate):
             (Token('is') + Question(Token('the'))) | (Token('are') + Token('the'))) + Thing() + Question(Pos('.'))
 
     def interpret(self, match):
-        return LabelOf(IsInstanceOf(match.thing)), 'definition'
+        return LabelOf(IsInstanceOf(match.thing)), {'category': 'definition'}
 
 
 class HowMany(QuestionTemplate):
@@ -78,7 +79,7 @@ class HowMany(QuestionTemplate):
     regex = Lemma('how') + Token('many') + Things() + Token('are') + Token('there') + Question(Pos('.'))
 
     def interpret(self, match):
-        return NumberOf(HasKeyword(match.things)), 'number'
+        return NumberOf(HasKeyword(match.things)), {'category': 'number'}
 
 
 class PropertyOf(QuestionTemplate):
@@ -91,15 +92,15 @@ class PropertyOf(QuestionTemplate):
 
     def interpret(self, match):
         if match.prop == 'density':
-            return DensityOf(match.thing), 'density'
+            return DensityOf(match.thing), {'category': 'density'}
         elif match.prop == 'distance':
-            return DistanceOf(match.thing), 'distance'
+            return DistanceOf(match.thing), {'category': 'distance'}
         elif match.prop == 'mass':
-            return MassOf(match.thing), 'mass'
+            return MassOf(match.thing), {'category': 'mass'}
         elif match.prop == 'radius':
-            return RadiusOf(match.thing), 'radius'
+            return RadiusOf(match.thing), {'category': 'radius'}
         elif match.prop == 'size':
-            return SizeOf(match.thing), 'size'
+            return SizeOf(match.thing), {'category': 'size'}
         else:
             return UnknownOf(match.thing)
 
@@ -113,13 +114,13 @@ class ExtremePropertyOf(QuestionTemplate):
 
     def interpret(self, match):
         if match.superlative == 'biggest' or match.superlative == 'largest':
-            return LabelOfBiggest(match.thing), 'label'
+            return LabelOfBiggest(match.thing), {'category': 'label'}
         elif match.superlative == 'closest':
-            return LabelOfClosest(match.thing), 'label'
+            return LabelOfClosest(match.thing), {'category': 'label'}
         elif match.superlative == 'farthest':
-            return LabelOfFarthest(match.thing), 'label'
+            return LabelOfFarthest(match.thing), {'category': 'label'}
         elif match.superlative == 'smallest':
-            return LabelOfSmallest(match.thing), 'label'
+            return LabelOfSmallest(match.thing), {'category': 'label'}
         else:
             return UnknownOf(match.thing)
 
@@ -135,52 +136,52 @@ class List(QuestionTemplate):
         if match.things == 'astronomical object':
             return LabelOf(IsSubTypeOf(AstronomicalObjects())), {
                 'category': 'list',
-                'instances': 'astronomical_objects'
+                'instance_type': 'astronomical_object'
             }
         elif match.things == 'class':
             return LabelOf(IsSubTypeOf(Classes())), {
                 'category': 'list',
-                'instances': 'classes'
+                'instance_type': 'class'
             }
         elif match.things == 'catalogue':
             return LabelOf(IsSubTypeOf(Catalogues())), {
                 'category': 'list',
-                'instances': 'catalogues'
+                'instance_type': 'catalogue'
             }
         elif match.things == 'exoplanet':
             return LabelOf(IsSubTypeOf(Exoplanets())), {
                 'category': 'list',
-                'instances': 'exoplanets'
+                'instance_type': 'exoplanet'
             }
         elif match.things == 'gas giant':
             return LabelOf(IsSubTypeOf(GasGiants())), {
                 'category': 'list',
-                'instances': 'gas_giants'
+                'instance_type': 'gas_giant'
             }
         elif match.things == 'planetary system':
             return LabelOf(IsSubTypeOf(PlanetarySystems())), {
                 'category': 'list',
-                'instances': 'planetary_systems'
+                'instance_type': 'planetary_system'
             }
         elif match.things == 'planet':
             return LabelOf(IsSubTypeOf(Planets())), {
                 'category': 'list',
-                'instances': 'planets'
+                'instance_type': 'planet'
             }
         elif match.things == 'property':
             return LabelOf(IsSubTypeOf(Properties())), {
                 'category': 'list',
-                'instances': 'properties'
+                'instance_type': 'property'
             }
         elif match.things == 'terrestrial planet':
             return LabelOf(IsSubTypeOf(TerrestrialPlanets())), {
                 'category': 'list',
-                'instances': 'terrestrial_planets'
+                'instance_type': 'terrestrial_planet'
             }
         elif match.things == 'thing':
             return LabelOf(IsSubTypeOf(AllThings())), {
                 'category': 'list',
-                'instances': 'things'
+                'instance_type': 'thing'
             }
         else:
             return LabelOf(IsSubTypeOf(Unknowns()))
@@ -197,5 +198,5 @@ class ListProperties(QuestionTemplate):
     def interpret(self, match):
         return AllProperties(match.thing), {
             'category': 'list',
-            'instances': 'properties'
+            'instance_type': 'property'
         }
