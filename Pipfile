@@ -6,7 +6,7 @@ verify_ssl = true
 [dev-packages]
 
 [packages]
-dj-database-url = "==0.*"
+dj-database-url = "==1.*"
 dj-static = "==0.*"
 Django = "==3.*"
 dynaconf = "==3.*"
