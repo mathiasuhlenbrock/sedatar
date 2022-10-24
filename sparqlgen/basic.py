@@ -16,7 +16,7 @@ class Thing(Particle):
         Pos('JJ') | Pos('DT') | Pos('NN') | Pos('NNP') | Pos('CD') | Pos('PRP') | Pos(':') | Pos('VBG') | Pos('VBN'))
 
     def interpret(self, match):
-        return HasKeyword(match.words.tokens)
+        return match.words.tokens
 
 
 class Things(Particle):
@@ -50,25 +50,24 @@ class Superlative(Particle):
 
 class WhatIsClass(QuestionTemplate):
     """
-    Regex for questions like "What is a/an | are ...?"
+    Regex for questions like "What is a/an ...?"
     Ex: "What is a planet?"
     """
-    regex = Lemma('what') + (Token('is') + (Token('a') | Token('an')) | Token('are')) + Thing() + Question(Pos('.'))
+    regex = Lemma('what') + Token('is') + (Token('a') | Token('an')) + Thing() + Question(Pos('.'))
 
     def interpret(self, match):
-        return LabelOf(IsDefinedIn(match.thing)), {'category': 'definition'}
+        return LabelOf(IsDefinedIn(HasKeyword(match.thing))), {'category': 'definition'}
 
 
 class WhatIsInstance(QuestionTemplate):
     """
-    Regex for questions like "What is (the) | are the ...?"
+    Regex for questions like "What is (the) ...?"
     Ex: "What is Kepler 11 b?"
     """
-    regex = Lemma('what') + (
-            (Token('is') + Question(Token('the'))) | (Token('are') + Token('the'))) + Thing() + Question(Pos('.'))
+    regex = Lemma('what') + Token('is') + Question(Token('the')) + Thing() + Question(Pos('.'))
 
     def interpret(self, match):
-        return LabelOf(IsInstanceOf(match.thing)), {'category': 'definition'}
+        return LabelOf(IsInstanceOf(HasKeyword(match.thing))), {'category': 'definition'}
 
 
 class HowMany(QuestionTemplate):
@@ -92,17 +91,17 @@ class PropertyOf(QuestionTemplate):
 
     def interpret(self, match):
         if match.prop == 'density':
-            return DensityOf(match.thing), {'category': 'density'}
+            return DensityOf(HasKeyword(match.thing)), {'category': 'density'}
         elif match.prop == 'distance':
-            return DistanceOf(match.thing), {'category': 'distance'}
+            return DistanceOf(HasKeyword(match.thing)), {'category': 'distance'}
         elif match.prop == 'mass':
-            return MassOf(match.thing), {'category': 'mass'}
+            return MassOf(HasKeyword(match.thing)), {'category': 'mass'}
         elif match.prop == 'radius':
-            return RadiusOf(match.thing), {'category': 'radius'}
+            return RadiusOf(HasKeyword(match.thing)), {'category': 'radius'}
         elif match.prop == 'size':
-            return SizeOf(match.thing), {'category': 'size'}
+            return SizeOf(HasKeyword(match.thing)), {'category': 'size'}
         else:
-            return UnknownOf(match.thing)
+            return UnknownOf(HasKeyword(match.thing))
 
 
 class ExtremePropertyOf(QuestionTemplate):
@@ -114,15 +113,15 @@ class ExtremePropertyOf(QuestionTemplate):
 
     def interpret(self, match):
         if match.superlative == 'biggest' or match.superlative == 'largest':
-            return LabelOfBiggest(match.thing), {'category': 'label'}
+            return LabelOfBiggest(HasKeyword(match.thing)), {'category': 'label'}
         elif match.superlative == 'closest':
-            return LabelOfClosest(match.thing), {'category': 'label'}
+            return LabelOfClosest(HasKeyword(match.thing)), {'category': 'label'}
         elif match.superlative == 'farthest':
-            return LabelOfFarthest(match.thing), {'category': 'label'}
+            return LabelOfFarthest(HasKeyword(match.thing)), {'category': 'label'}
         elif match.superlative == 'smallest':
-            return LabelOfSmallest(match.thing), {'category': 'label'}
+            return LabelOfSmallest(HasKeyword(match.thing)), {'category': 'label'}
         else:
-            return UnknownOf(match.thing)
+            return UnknownOf(HasKeyword(match.thing))
 
 
 class List(QuestionTemplate):
@@ -192,11 +191,11 @@ class ListProperties(QuestionTemplate):
     Regex for commands like "List all properties of a/an ...!"
     Ex: "List all properties of a planet!"
     """
-    regex = Token('List') + Token('all') + Token('properties') + Token('of') + Question(Pos('DT')) + Thing() + \
-            Question(Pos('.'))
+    regex = Token('List') + Token('all') + Token('properties') + Token('of') + Question(Pos('DT')) + Thing() + Question(
+        Pos('.'))
 
     def interpret(self, match):
-        return AllProperties(match.thing), {
+        return AllProperties(HasKeyword(match.thing)), {
             'category': 'list',
             'instance_type': 'property'
         }
