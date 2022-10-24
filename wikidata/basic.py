@@ -15,7 +15,7 @@ class Thing(Particle):
         Pos('JJ') | Pos('DT') | Pos('NN') | Pos('NNP') | Pos('CD') | Pos('PRP') | Pos(':') | Pos('VBG') | Pos('VBN'))
 
     def interpret(self, match):
-        return HasKeyword(match.words.tokens)
+        return match.words.tokens
 
 
 class Things(Particle):
@@ -38,11 +38,12 @@ class WhatIsClass(QuestionTemplate):
     Regex for questions like "What is a/an | are ...?"
     Ex: "What is a planet?"
     """
-    regex = Lemma('what') + (Token('is') + Question((Token('a') | Token('an'))) + Thing() | Token('are') + Things()) + \
-            Question(Pos('.'))
+    regex = Lemma('what') + (
+            (Token('is') + Question((Token('a') | Token('an'))) + Thing()) | (Token('are') + Things())) + Question(
+        Pos('.'))
 
     def interpret(self, match):
         if hasattr(match, 'thing'):
-            return match.thing, {'category': 'definition'}
+            return HasKeyword(match.thing), {'category': 'definition'}
         elif hasattr(match, 'things'):
-            return match.things, {'category': 'definition'}
+            return HasKeyword(match.things), {'category': 'definition'}
