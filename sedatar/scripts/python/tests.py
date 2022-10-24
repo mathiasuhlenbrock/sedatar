@@ -15,11 +15,13 @@ def test_question(question, answer):
 print('Begin tests...')
 try:
     test_question('What is a planet?', 'An astronomical object')
+    test_question('What are planets?', 'Query not generated')
     test_question('What is an exoplanet?', 'A planet')
     test_question('What is a terrestrial planet?', 'A planet')
     test_question('What is Jupiter?', 'A gas giant')
     test_question('What is Kepler-11?', 'A planetary system')
     test_question('What is Kepler-11 b?', 'A gas giant')
+    test_question('What is the Bayer designation?', 'A catalogue')
     test_question('What is the size of Kepler-11?', '0.466 AU')
     test_question('What is the size of Kepler-11 b?', '0.161 R<sub>♃</sub>')
     test_question('What is the size of a planet?', '0.384 R<sub>♃</sub>')
