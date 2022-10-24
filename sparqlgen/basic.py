@@ -27,8 +27,8 @@ class Things(Particle):
         token_list = match.words.tokens.split()
         wnl = WordNetLemmatizer()
         lemma = wnl.lemmatize(token_list[-1])
-        if token_list[-1] == lemma:
-            lemma = self.custom_lemmas[lemma] if self.custom_lemmas[lemma] else lemma
+        if token_list[-1] == lemma and lemma in self.custom_lemmas:
+            lemma = self.custom_lemmas[lemma]
         token_list[-1] = lemma
         tokens = ' '.join(token_list)
         return tokens
