@@ -90,18 +90,8 @@ class PropertyOf(QuestionTemplate):
         Pos('.'))
 
     def interpret(self, match):
-        if match.prop == 'density':
-            return DensityOf(HasKeyword(match.thing)), {'category': 'density'}
-        elif match.prop == 'distance':
-            return DistanceOf(HasKeyword(match.thing)), {'category': 'distance'}
-        elif match.prop == 'mass':
-            return MassOf(HasKeyword(match.thing)), {'category': 'mass'}
-        elif match.prop == 'radius':
-            return RadiusOf(HasKeyword(match.thing)), {'category': 'radius'}
-        elif match.prop == 'size':
-            return SizeOf(HasKeyword(match.thing)), {'category': 'size'}
-        else:
-            return UnknownOf(HasKeyword(match.thing))
+        fixedsubproperty = match.prop
+        return FixedSubProperty('ontology', fixedsubproperty, HasKeyword(match.thing)), {'category': match.prop}
 
 
 class ExtremePropertyOf(QuestionTemplate):
@@ -113,13 +103,13 @@ class ExtremePropertyOf(QuestionTemplate):
 
     def interpret(self, match):
         if match.superlative == 'biggest' or match.superlative == 'largest':
-            return LabelOfBiggest(HasKeyword(match.thing)), {'category': 'label'}
+            return FixedSubProperty('ontology', 'maxSizeInstance', HasKeyword(match.thing)), {'category': 'label'}
         elif match.superlative == 'closest':
-            return LabelOfClosest(HasKeyword(match.thing)), {'category': 'label'}
+            return FixedSubProperty('ontology', 'minDistanceInstance', HasKeyword(match.thing)), {'category': 'label'}
         elif match.superlative == 'farthest':
-            return LabelOfFarthest(HasKeyword(match.thing)), {'category': 'label'}
+            return FixedSubProperty('ontology', 'maxDistanceInstance', HasKeyword(match.thing)), {'category': 'label'}
         elif match.superlative == 'smallest':
-            return LabelOfSmallest(HasKeyword(match.thing)), {'category': 'label'}
+            return FixedSubProperty('ontology', 'minSizeInstance', HasKeyword(match.thing)), {'category': 'label'}
         else:
             return UnknownOf(HasKeyword(match.thing))
 
@@ -132,58 +122,25 @@ class List(QuestionTemplate):
     regex = Token('List') + Token('all') + Things() + Question(Pos('.'))
 
     def interpret(self, match):
-        if match.things == 'astronomical object':
-            return LabelOf(IsSubTypeOf(AstronomicalObjects())), {
-                'category': 'list',
-                'instance_type': 'astronomical_object'
-            }
-        elif match.things == 'class':
-            return LabelOf(IsSubTypeOf(Classes())), {
+        if match.things == 'class':
+            fixedsubtype = match.things.capitalize()
+            return LabelOf(IsSubTypeOf(FixedSubType('rdfs', fixedsubtype))), {
                 'category': 'list',
                 'instance_type': 'class'
             }
-        elif match.things == 'catalogue':
-            return LabelOf(IsSubTypeOf(Catalogues())), {
-                'category': 'list',
-                'instance_type': 'catalogue'
-            }
-        elif match.things == 'exoplanet':
-            return LabelOf(IsSubTypeOf(Exoplanets())), {
-                'category': 'list',
-                'instance_type': 'exoplanet'
-            }
-        elif match.things == 'gas giant':
-            return LabelOf(IsSubTypeOf(GasGiants())), {
-                'category': 'list',
-                'instance_type': 'gas_giant'
-            }
-        elif match.things == 'planetary system':
-            return LabelOf(IsSubTypeOf(PlanetarySystems())), {
-                'category': 'list',
-                'instance_type': 'planetary_system'
-            }
-        elif match.things == 'planet':
-            return LabelOf(IsSubTypeOf(Planets())), {
-                'category': 'list',
-                'instance_type': 'planet'
-            }
         elif match.things == 'property':
-            return LabelOf(IsSubTypeOf(Properties())), {
+            fixedsubtype = match.things.capitalize()
+            return LabelOf(IsSubTypeOf(FixedSubType('rdf', fixedsubtype))), {
                 'category': 'list',
                 'instance_type': 'property'
             }
-        elif match.things == 'terrestrial planet':
-            return LabelOf(IsSubTypeOf(TerrestrialPlanets())), {
-                'category': 'list',
-                'instance_type': 'terrestrial_planet'
-            }
-        elif match.things == 'thing':
-            return LabelOf(IsSubTypeOf(AllThings())), {
-                'category': 'list',
-                'instance_type': 'thing'
-            }
         else:
-            return LabelOf(IsSubTypeOf(Unknowns()))
+            fixedsubtype_components = [component.capitalize() for component in match.things.split()]
+            fixedsubtype = '_'.join(fixedsubtype_components)
+            return LabelOf(IsSubTypeOf(FixedSubType('ontology', fixedsubtype))), {
+                'category': 'list',
+                'instance_type': match.things.replace(' ', '_')
+            }
 
 
 class ListProperties(QuestionTemplate):

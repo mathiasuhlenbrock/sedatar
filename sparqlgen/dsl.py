@@ -15,14 +15,11 @@ class FixedSubProperty(Expression):
     Expression for a fixed subproperty.
     """
 
-    fixedsubproperty = None
     fixedsubpropertyrelation = u'rdfs:subPropertyOf*'
 
-    def __init__(self, data):
+    def __init__(self, prefix, fixedsubproperty, data):
         super(FixedSubProperty, self).__init__()
-        if self.fixedsubproperty is None:
-            raise ValueError('You *must* define the `fixedtype` '
-                             'class attribute to use this class.')
+        self.fixedsubproperty = prefix + ':' + fixedsubproperty
         self.fixedsubproperty = encoding_flexible_conversion(self.fixedsubproperty)
         self.fixedsubpropertyrelation = \
             encoding_flexible_conversion(self.fixedsubpropertyrelation)
@@ -40,14 +37,11 @@ class FixedSubType(Expression):
     Expression for a fixed subtype.
     """
 
-    fixedsubtype = None
     fixedsubtyperelation = u'rdfs:subClassOf*'
 
-    def __init__(self):
+    def __init__(self, prefix, fixedsubtype):
         super(FixedSubType, self).__init__()
-        if self.fixedsubtype is None:
-            raise ValueError('You *must* define the `fixedtype` '
-                             'class attribute to use this class.')
+        self.fixedsubtype = prefix + ':' + fixedsubtype
         self.fixedsubtype = encoding_flexible_conversion(self.fixedsubtype)
         self.fixedsubtyperelation = \
             encoding_flexible_conversion(self.fixedsubtyperelation)
@@ -83,82 +77,6 @@ class UnknownOf(FixedRelation):
     reverse = True
 
 
-class DensityOf(FixedSubProperty):
-    fixedsubproperty = 'ontology:density'
-
-
-class DistanceOf(FixedSubProperty):
-    fixedsubproperty = 'ontology:distance'
-
-
-class LabelOfBiggest(FixedSubProperty):
-    fixedsubproperty = 'ontology:maxSizeInstance'
-
-
-class LabelOfClosest(FixedSubProperty):
-    fixedsubproperty = 'ontology:minDistanceInstance'
-
-
-class LabelOfFarthest(FixedSubProperty):
-    fixedsubproperty = 'ontology:maxDistanceInstance'
-
-
-class LabelOfSmallest(FixedSubProperty):
-    fixedsubproperty = 'ontology:minSizeInstance'
-
-
-class MassOf(FixedSubProperty):
-    fixedsubproperty = 'ontology:mass'
-
-
-class RadiusOf(FixedSubProperty):
-    fixedsubproperty = 'ontology:radius'
-
-
-class SizeOf(FixedSubProperty):
-    fixedsubproperty = 'ontology:size'
-
-
-class AstronomicalObjects(FixedSubType):
-    fixedsubtype = 'ontology:Astronomical_Object'
-
-
-class Catalogues(FixedSubType):
-    fixedsubtype = 'ontology:Catalogue'
-
-
-class Classes(FixedSubType):
-    fixedsubtype = 'rdfs:Class'
-
-
-class Unknowns(FixedSubType):
-    fixedsubtype = 'ontology:unknown'
-
-
-class Exoplanets(FixedSubType):
-    fixedsubtype = 'ontology:Exoplanet'
-
-
-class GasGiants(FixedSubType):
-    fixedsubtype = 'ontology:Gas_Giant'
-
-
-class PlanetarySystems(FixedSubType):
-    fixedsubtype = 'ontology:Planetary_System'
-
-
-class Planets(FixedSubType):
-    fixedsubtype = 'ontology:Planet'
-
-
-class Properties(FixedSubType):
-    fixedsubtype = 'rdf:Property'
-
-
-class TerrestrialPlanets(FixedSubType):
-    fixedsubtype = 'ontology:Terrestrial_Planet'
-
-
 class AllProperties(Expression):
     """
     """
@@ -170,7 +88,3 @@ class AllProperties(Expression):
         self.nodes.append([('rdfs:label', 3)])
         self.nodes.append([])
         self.head += 3
-
-
-class AllThings(FixedSubType):
-    fixedsubtype = 'ontology:Thing'
