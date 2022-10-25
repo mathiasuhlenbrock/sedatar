@@ -112,17 +112,12 @@ class Search(models.Model):
             category = metadata.get('category')
             if category == 'definition':
                 answers.append(self.render_answer_definition(result))
-            elif category == 'density' \
-                    or category == 'distance' \
-                    or category == 'mass' \
-                    or category == 'number' \
-                    or category == 'radius' \
-                    or category == 'size':
-                answers.append(self.render_answer_property(result))
             elif category == 'label':
                 answers.append(self.render_answer_label(result))
             elif category == 'list':
                 answers.append(self.render_answer_list_item(result, metadata))
+            elif category == 'property':
+                answers.append(self.render_answer_property(result))
             else:
                 answers.append('No method found to render the answers')
         return self.format(answers)
@@ -178,7 +173,7 @@ class SearchWikidata(models.Model):
         try:
             results = self.g.query().convert()
         except HTTPError as http_error:
-            answers.append('Wikidata says: HTTP Error {}: {}.'.format(http_error.code, http_error.reason))
+            answers.append(f'Wikidata says: HTTP Error {http_error.code}: {http_error.reason}')
             return self.format(answers)
         if not results['results']['bindings']:
             answers.append('No answers found')

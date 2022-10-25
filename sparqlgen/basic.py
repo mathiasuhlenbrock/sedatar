@@ -78,7 +78,7 @@ class HowMany(QuestionTemplate):
     regex = Lemma('how') + Token('many') + Things() + Token('are') + Token('there') + Question(Pos('.'))
 
     def interpret(self, match):
-        return NumberOf(HasKeyword(match.things)), {'category': 'number'}
+        return NumberOf(HasKeyword(match.things)), {'category': 'property'}
 
 
 class PropertyOf(QuestionTemplate):
@@ -91,7 +91,7 @@ class PropertyOf(QuestionTemplate):
 
     def interpret(self, match):
         fixedsubproperty = match.prop
-        return FixedSubProperty('ontology', fixedsubproperty, HasKeyword(match.thing)), {'category': match.prop}
+        return FixedSubProperty('ontology', fixedsubproperty, HasKeyword(match.thing)), {'category': 'property'}
 
 
 class ExtremePropertyOf(QuestionTemplate):
