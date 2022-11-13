@@ -11,7 +11,7 @@ class Database(models.Model):
     name = models.CharField(max_length=200)
     image = models.CharField(max_length=200)
 
-    def __unicode__(self):
+    def __str__(self):
         return self.name
 
     @property
@@ -27,7 +27,7 @@ class Post(models.Model):
     content_left = models.TextField(default='')
     content_right = models.TextField(default='', blank=True)
 
-    def __unicode__(self):
+    def __str__(self):
         return self.name
 
 

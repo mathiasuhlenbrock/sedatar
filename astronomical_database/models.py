@@ -7,7 +7,7 @@ class Catalogue(models.Model):
     acronym = models.CharField(max_length=200)
     ordering_strategy = models.PositiveSmallIntegerField(default=0)
 
-    def __unicode__(self):
+    def __str__(self):
         return self.name
 
     @property
@@ -23,7 +23,7 @@ class Category(models.Model):
     name = models.CharField(max_length=200)
     link = models.CharField(max_length=200)
 
-    def __unicode__(self):
+    def __str__(self):
         return self.name
 
 
@@ -36,7 +36,7 @@ class PlanetarySystem(models.Model):
     host_luminosity = models.FloatField(default=0.0)
     host_bminusv = models.FloatField(default=0.0)
 
-    def __unicode__(self):
+    def __str__(self):
         return self.name
 
     @property
@@ -218,7 +218,7 @@ class Planet(models.Model):
     semimajoraxis = models.FloatField(default=0.0)
     orbital_period = models.FloatField(default=0.0)
 
-    def __unicode__(self):
+    def __str__(self):
         return self.name
 
     @property
