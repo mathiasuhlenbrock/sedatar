@@ -54,31 +54,13 @@
             <table class="table_left">
                 <tbody>
                 {% for planet in list_of_planets.object_list|slice:':5' %}
-                    {% if planet.density <= 0.0 %}
-                        <tr>
-                            <td class="cell_standard">
-                                <a href="/Astronomical_database/List_of_planets/{{ planet.page_name }}/">
-                                    {{ planet.name }}
-                                </a> (no classification)
-                            </td>
-                        </tr>
-                    {% elif planet.density < 1.869 or planet.radius > 0.35 %}
-                        <tr>
-                            <td class="cell_standard">
-                                <a href="/Astronomical_database/List_of_planets/{{ planet.page_name }}/">
-                                    {{ planet.name }}
-                                </a> (gas giant)
-                            </td>
-                        </tr>
-                    {% else %}
-                        <tr>
-                            <td class="cell_standard">
-                                <a href="/Astronomical_database/List_of_planets/{{ planet.page_name }}/">
-                                    {{ planet.name }}
-                                </a> (terrestrial)
-                            </td>
-                        </tr>
-                    {% endif %}
+                    <tr>
+                        <td class="cell_standard">
+                            <a href="/Astronomical_database/List_of_planets/{{ planet.page_name }}/">
+                                {{ planet.name }}
+                            </a> ({{ planet.table_classification }})
+                        </td>
+                    </tr>
                 {% empty %}
                     No planets are yet available.
                 {% endfor %}

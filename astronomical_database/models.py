@@ -237,11 +237,35 @@ class Planet(models.Model):
     @property
     def classification(self):
         if self.density <= 0.0:
-            return 'No classification available'
+            return 'no_classification'
         elif self.density < 1.869 or self.radius > 0.35:
-            return 'Gas giant'
+            if 0.36 <= self.mass <= 11.8 and 0. < self.orbital_period <= 111.:
+                return 'hot_jupiter'
+            else:
+                return 'gas_giant'
         else:
+            return 'terrestrial_planet'
+
+    @property
+    def title_classification(self):
+        if self.classification == 'gas_giant':
+            return 'Gas giant'
+        elif self.classification == 'hot_jupiter':
+            return 'Hot Jupiter'
+        elif self.classification == 'terrestrial_planet':
             return 'Terrestrial planet'
+        else:
+            return 'No classification available'
+
+    def table_classification(self):
+        if self.classification == 'gas_giant':
+            return 'gas giant'
+        elif self.classification == 'hot_jupiter':
+            return 'hot Jupiter'
+        elif self.classification == 'terrestrial_planet':
+            return 'terrestrial'
+        else:
+            return 'no classification'
 
     # Auxiliary parameters.
 
@@ -296,12 +320,12 @@ class Planet(models.Model):
 
     @property
     def img_classification(self):
-        if self.density <= 0.0:
-            return 'default'
-        elif self.density < 1.869 or self.radius > 0.35:
+        if self.classification == 'gas_giant':
             return 'gas_giant'
-        else:
+        elif self.classification == 'terrestrial_planet':
             return 'terrestrial'
+        else:
+            return 'default'
 
     @property
     def img_radius(self):
