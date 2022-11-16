@@ -8,10 +8,10 @@ from lxml import etree
 from astronomical_database.models import Catalogue, Planet, PlanetarySystem
 
 
-def insert(root, entity, property, value):
+def insert(root, entity, prop, value):
     target_element = root.xpath(
         '//rdf:Description[@rdf:about="urn://sedatar.org/astronomical_database#'
-        + entity + '"]/ontology:' + property,
+        + entity + '"]/ontology:' + prop,
         namespaces={
             'rdf': 'http://www.w3.org/1999/02/22-rdf-syntax-ns#',
             'ontology': 'urn://sedatar.org/astronomical_database#'
@@ -194,7 +194,7 @@ for planet in Planet.objects.all():
     rdf_description.attrib[RDF + 'about'] = \
         ONTOLOGY_NAMESPACE + planet.name.replace(' ', '_')
     rdf_type = etree.SubElement(rdf_description, RDF + 'type')
-    if planet.classification == 'Terrestrial planet':
+    if planet.classification == 'terrestrial_planet':
         number_of_terrestrial_planets += 1
         if planet.radius:
             number_of_terrestrial_planets_with_radius += 1
@@ -221,7 +221,7 @@ for planet in Planet.objects.all():
             number_of_terrestrial_planets_with_mass += 1
             sum_terrestrial_planet_mass += planet.mass
         rdf_type.attrib[RDF + 'resource'] = ONTOLOGY_NAMESPACE + 'Terrestrial_Planet'
-    elif planet.classification == 'Gas giant':
+    elif planet.classification == 'gas_giant' or planet.classification == 'hot_jupiter':
         number_of_gas_giants += 1
         if planet.radius:
             number_of_gas_giants_with_radius += 1
@@ -320,7 +320,7 @@ for planetarySystem in PlanetarySystem.objects.all():
     if planetarySystem.host_distance_ly:
         ontology_distance = etree.SubElement(rdf_description, ONTOLOGY + 'distance')
         ontology_distance.attrib[RDF + 'datatype'] = XSD_PREFIX + ':' + 'string'
-        if planet.system.host_distance_ly > 1.e-4:
+        if planetarySystem.host_distance_ly > 1.e-4:
             ontology_distance.text = str(planetarySystem.host_distance_ly) + ' ' + 'ly'
         else:
             ontology_distance.text = str(round(planetarySystem.host_distance_ly * 31557600)) + ' ls'

@@ -31014,7 +31014,7 @@
   <rdf:Description rdf:about="urn://sedatar.org/astronomical_database#Sun">
     <rdf:type rdf:resource="urn://sedatar.org/astronomical_database#Planetary_System"/>
     <rdfs:label>Sun</rdfs:label>
-    <ontology:distance rdf:datatype="xsd:string">1.565e-05 ly</ontology:distance>
+    <ontology:distance rdf:datatype="xsd:string">494 ls</ontology:distance>
     <ontology:maxSemiMajorAxis rdf:datatype="xsd:string">30.385 AU</ontology:maxSemiMajorAxis>
   </rdf:Description>
   <rdf:Description rdf:about="urn://sedatar.org/astronomical_database#OGLE-TR-10">
@@ -38038,11 +38038,6 @@
     <ontology:distance rdf:datatype="xsd:string">20408 ly</ontology:distance>
     <ontology:maxSemiMajorAxis rdf:datatype="xsd:string">1.08 AU</ontology:maxSemiMajorAxis>
   </rdf:Description>
-  <rdf:Description rdf:about="urn://sedatar.org/astronomical_database#Kepler-1280">
-    <rdf:type rdf:resource="urn://sedatar.org/astronomical_database#Planetary_System"/>
-    <rdfs:label>Kepler-1280</rdfs:label>
-    <ontology:distance rdf:datatype="xsd:string">4847 ly</ontology:distance>
-  </rdf:Description>
   <rdf:Description rdf:about="urn://sedatar.org/astronomical_database#MOA-2011-BLG-028L">
     <rdf:type rdf:resource="urn://sedatar.org/astronomical_database#Planetary_System"/>
     <rdfs:label>MOA-2011-BLG-028L</rdfs:label>
@@ -38927,6 +38922,11 @@
     <rdf:type rdf:resource="urn://sedatar.org/astronomical_database#Planetary_System"/>
     <rdfs:label>Kepler-578</rdfs:label>
     <ontology:distance rdf:datatype="xsd:string">1765 ly</ontology:distance>
+  </rdf:Description>
+  <rdf:Description rdf:about="urn://sedatar.org/astronomical_database#Kepler-1280">
+    <rdf:type rdf:resource="urn://sedatar.org/astronomical_database#Planetary_System"/>
+    <rdfs:label>Kepler-1280</rdfs:label>
+    <ontology:distance rdf:datatype="xsd:string">4847 ly</ontology:distance>
   </rdf:Description>
   <rdf:Description rdf:about="urn://sedatar.org/astronomical_database#Kepler-653">
     <rdf:type rdf:resource="urn://sedatar.org/astronomical_database#Planetary_System"/>
