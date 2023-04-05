@@ -73,9 +73,10 @@ TEMPLATES = [
 WSGI_APPLICATION = 'sedatar.wsgi.application'
 
 # Parse database configuration from $DATABASE_URL
-DATABASES = {
-    'default': dj_database_url.config()
-}
+if 'DATABASE_URL' in os.environ:
+    DATABASES = {
+        'default': dj_database_url.config()
+    }
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
