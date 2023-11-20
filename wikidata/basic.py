@@ -47,3 +47,30 @@ class WhatIsClass(QuestionTemplate):
             return HasKeyword(match.thing), {'category': 'definition'}
         elif hasattr(match, 'things'):
             return HasKeyword(match.things), {'category': 'definition'}
+
+
+class WhatIsInstance(QuestionTemplate):
+    """
+    Regex for questions like "What is | are (the) ...?"
+    Ex: "What is Kepler 11 b?"
+    """
+    regex = Lemma('what') + (Token('is') | Token('are')) + Question(Token('the')) + Thing() + Question(Pos('.'))
+
+    def interpret(self, match):
+        return HasKeyword(match.thing), {'category': 'definition'}
+
+
+class List(QuestionTemplate):
+    """
+    Regex for commands like "List all ...s!"
+    Ex: "List all terrestrial planets!"
+    """
+    regex = Token('List') + Token('all') + Things() + Question(Pos('.'))
+
+    def interpret(self, match):
+        fixedsubtype_components = [component for component in match.things.split()]
+        fixedsubtype = ' '.join(fixedsubtype_components)
+        return IsInstanceOf(HasKeyword(fixedsubtype)), {
+            'category': 'list',
+            'instance_type': match.things.replace(' ', '_')
+        }

@@ -4,7 +4,9 @@ Documentation goes here.
 
 # import rdflib
 from lxml import etree
-
+from operator import attrgetter
+from pprint import pprint
+from statistics import mean
 from astronomical_database.models import Catalogue, Planet, PlanetarySystem
 
 
@@ -72,7 +74,7 @@ max_catalogue_size_instance = ''
 min_catalogue_size = 10000
 min_catalogue_size_instance = ''
 number_of_catalogues = Catalogue.objects.all().count()
-sum_catalogue_size = 0.
+sum_catalogue_size = 0
 
 for catalogue in Catalogue.objects.all():
     rdf_description = etree.SubElement(root_element, RDF + 'Description')
@@ -82,6 +84,9 @@ for catalogue in Catalogue.objects.all():
     rdf_type.attrib[RDF + 'resource'] = ONTOLOGY_NAMESPACE + 'Catalogue'
     rdfs_label = etree.SubElement(rdf_description, RDFS + 'label')
     rdfs_label.text = catalogue.name
+    ontology_size = etree.SubElement(rdf_description, ONTOLOGY + 'size')
+    ontology_size.attrib[RDF + 'datatype'] = XSD_PREFIX + ':' + 'string'
+    ontology_size.text = str(catalogue.number_of_planetary_systems) + ' ' + 'entries'
     if catalogue.number_of_planetary_systems > max_catalogue_size:
         max_catalogue_size = catalogue.number_of_planetary_systems
         max_catalogue_size_instance = catalogue.name
@@ -89,9 +94,82 @@ for catalogue in Catalogue.objects.all():
         min_catalogue_size = catalogue.number_of_planetary_systems
         min_catalogue_size_instance = catalogue.name
     sum_catalogue_size += catalogue.number_of_planetary_systems
-    ontology_size = etree.SubElement(rdf_description, ONTOLOGY + 'size')
-    ontology_size.attrib[RDF + 'datatype'] = XSD_PREFIX + ':' + 'string'
-    ontology_size.text = str(catalogue.number_of_planetary_systems) + ' ' + 'entries'
+
+items = [
+    {
+        'attributes': ['number_of_planetary_systems'],
+        'class': Catalogue,
+        'key': 'catalogue',
+        'precisions': [0],
+        'subclass': [''],
+        'units': ['entries']
+    },
+    {
+        'attributes': ['density', 'mass', 'radius'],
+        'class': Planet,
+        'key': 'gas_giant',
+        'precisions': [3, 3, 3],
+        'subclass': ['gas_giant'],
+        'units': ['g/cm³', 'M<sub>♃</sub>', 'R<sub>♃</sub>']
+    },
+    {
+        'attributes': ['density', 'mass', 'radius'],
+        'class': Planet,
+        'key': 'planet',
+        'precisions': [3, 3, 3],
+        'subclass': [''],
+        'units': ['g/cm³', 'M<sub>♃</sub>', 'R<sub>♃</sub>']
+    },
+    {
+        'attributes': ['host_distance_ly', 'max_planet_semimajoraxis'],
+        'class': PlanetarySystem,
+        'key': 'planetary_system',
+        'precisions': [3, 3],
+        'subclass': [''],
+        'units': ['ly', 'AU']
+    },
+    {
+        'attributes': ['density', 'mass', 'radius'],
+        'class': Planet,
+        'key': 'terrestrial_planet',
+        'precisions': [3, 3, 3],
+        'subclass': ['terrestrial_planet'],
+        'units': ['g/cm³', 'M<sub>♃</sub>', 'R<sub>♃</sub>']
+    },
+]
+
+data = dict()
+
+for item in items:
+    data[item.get('key')] = dict()
+    for attr, prec, unit in zip(item.get('attributes'), item.get('precisions'), item.get('units')):
+        try:
+            data[item.get('key')]['average_' + attr] = \
+                f"{round(mean([getattr(o, attr) for o in item.get('class').objects.all()]))} {unit}"
+            data[item.get('key')]['min_' + attr] = \
+                f"{min([getattr(o, attr) for o in item.get('class').objects.all()])} {unit}"
+            data[item.get('key')]['max_' + attr] = \
+                f"{max([getattr(o, attr) for o in item.get('class').objects.all()])} {unit}"
+            data[item.get('key')]['min_' + attr + '_instance'] = \
+                f"{(min(item.get('class').objects.all(), key=attrgetter(attr)))}"
+            data[item.get('key')]['max_' + attr + '_instance'] = \
+                f"{(max(item.get('class').objects.all(), key=attrgetter(attr)))}"
+            # max(item.get('class').objects.all(), key=lambda o: getattr(o, attr))
+        except AttributeError:
+            continue
+
+pprint(data)
+
+# print(min_catalogue_size)
+# print(min_catalogue_size_alt)
+# print(min_catalogue_size_instance)
+# print(min_catalogue_size_instance_alt)
+# print(max_catalogue_size)
+# print(max_catalogue_size_alt)
+# print(max_catalogue_size_instance)
+# print(max_catalogue_size_instance_alt)
+# print(round(sum_catalogue_size / number_of_catalogues))
+# print(average_catalogue_size)
 
 insert(
     root_element,

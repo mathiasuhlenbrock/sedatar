@@ -95,14 +95,22 @@
   <ontology:numberOfInstances></ontology:numberOfInstances>
 </rdf:Description>
 -->
-<!--
 <rdf:Description rdf:about="urn://sedatar.org/astronomical_database#Hot_Jupiter">
   <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class"/>
   <rdfs:label>Hot Jupiter</rdfs:label>
   <rdfs:subClassOf rdf:resource="urn://sedatar.org/astronomical_database#Gas_Giant"/>
+  <ontology:averageDensity></ontology:averageDensity>
+  <ontology:averageDistance></ontology:averageDistance>
+  <ontology:averageMass></ontology:averageMass>
+  <ontology:averageRadius></ontology:averageRadius>
+  <ontology:maxDistanceInstance></ontology:maxDistanceInstance>
+  <ontology:minDistanceInstance></ontology:minDistanceInstance>
+  <ontology:maxRadius></ontology:maxRadius>
+  <ontology:maxRadiusInstance></ontology:maxRadiusInstance>
+  <ontology:minRadius></ontology:minRadius>
+  <ontology:minRadiusInstance></ontology:minRadiusInstance>
   <ontology:numberOfInstances></ontology:numberOfInstances>
 </rdf:Description>
--->
 <!--
 <rdf:Description rdf:about="urn://sedatar.org/astronomical_database#Hypergiant_Star">
   <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class"/>

@@ -142,9 +142,35 @@ class SearchWikidata(models.Model):
             answer = answer[0].upper() + answer[1:] if len(answer) > 1 else answer[0].upper()
             if answer[-1] == '.':
                 answer = answer[:-1]
-            relevance = int(result.get('x0').get('value').replace('http://www.wikidata.org/entity/Q', ''))
+            url_fragment = 'http://www.wikidata.org/entity/Q'
+            if url_fragment not in result.get('x0').get('value'):
+                return None
+            relevance = int(result.get('x0').get('value').replace(url_fragment, ''))
             rendered_answer = {
                 'text': '<a href="' + result.get('x0').get('value') + '">' + answer + '</a>',
+                'relevance': relevance
+            }
+            if answer.startswith('Encyclopedia article'):
+                return None
+            if answer.startswith('Wikimedia disambiguation page'):
+                return None
+        else:
+            return None
+        return rendered_answer
+
+    @staticmethod
+    def render_answer_list_item(result):
+        if result and result.get('x1Label'):
+            answer = result.get('x1Label').get('value')
+            answer = answer[0].upper() + answer[1:] if len(answer) > 1 else answer[0].upper()
+            if answer[-1] == '.':
+                answer = answer[:-1]
+            url_fragment = 'http://www.wikidata.org/entity/Q'
+            if url_fragment not in result.get('x1').get('value'):
+                return None
+            relevance = int(result.get('x1').get('value').replace(url_fragment, ''))
+            rendered_answer = {
+                'text': '<a href="' + result.get('x1').get('value') + '">' + answer + '</a>',
                 'relevance': relevance
             }
             if answer.startswith('Encyclopedia article'):
@@ -182,6 +208,10 @@ class SearchWikidata(models.Model):
             category = metadata.get('category')
             if category == 'definition':
                 answer = self.render_answer_definition(result)
+                if answer:
+                    answers.append(answer)
+            elif category == 'list':
+                answer = self.render_answer_list_item(result)
                 if answer:
                     answers.append(answer)
             else:

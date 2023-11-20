@@ -19,7 +19,7 @@
   <rdf:Description rdf:about="urn://sedatar.org/astronomical_database#Class">
     <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class"/>
     <rdfs:label>class</rdfs:label>
-    <ontology:numberOfInstances>9</ontology:numberOfInstances>
+    <ontology:numberOfInstances>10</ontology:numberOfInstances>
   </rdf:Description>
   <rdf:Description rdf:about="urn://sedatar.org/astronomical_database#Exoplanet">
     <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class"/>
@@ -42,6 +42,22 @@
     <ontology:minRadius>0.128 R&lt;sub&gt;&#9795;&lt;/sub&gt;</ontology:minRadius>
     <ontology:minRadiusInstance>Kepler-128 b</ontology:minRadiusInstance>
     <ontology:numberOfInstances>485</ontology:numberOfInstances>
+  </rdf:Description>
+  <rdf:Description rdf:about="urn://sedatar.org/astronomical_database#Hot_Jupiter">
+    <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class"/>
+    <rdfs:label>Hot Jupiter</rdfs:label>
+    <rdfs:subClassOf rdf:resource="urn://sedatar.org/astronomical_database#Gas_Giant"/>
+    <ontology:averageDensity/>
+    <ontology:averageDistance/>
+    <ontology:averageMass/>
+    <ontology:averageRadius/>
+    <ontology:maxDistanceInstance/>
+    <ontology:minDistanceInstance/>
+    <ontology:maxRadius/>
+    <ontology:maxRadiusInstance/>
+    <ontology:minRadius/>
+    <ontology:minRadiusInstance/>
+    <ontology:numberOfInstances/>
   </rdf:Description>
   <rdf:Description rdf:about="urn://sedatar.org/astronomical_database#Planet">
     <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class"/>
