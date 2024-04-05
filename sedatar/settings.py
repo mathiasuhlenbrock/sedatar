@@ -103,6 +103,6 @@ STATICFILES_DIRS = []
 
 settings = dynaconf.DjangoDynaconf(
     __name__,
-    SETTINGS_FILE_FOR_DYNACONF="settings.yaml",
+    SETTINGS_FILE_FOR_DYNACONF='settings.yaml',
     SECRETS_FOR_DYNACONF='.secrets.yaml',
 )
