@@ -3,9 +3,9 @@ dj-static==0.*
 Django==4.*
 dynaconf==3.*
 gunicorn==21.*
-lxml==4.*
+lxml==5.*
 nltk==3.*
-psycopg2==2.*
+psycopg[binary]==3.*
 rdflib==7.*
 #rdflib-sqlalchemy==1.*
 requests==2.*
