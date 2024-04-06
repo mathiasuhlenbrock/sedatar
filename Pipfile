@@ -20,4 +20,4 @@ SoMaJo = "==2.*"
 SPARQLWrapper = "==2.*"
 
 [requires]
-python_version = "3.9"
+python_version = "3.12"
