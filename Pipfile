@@ -6,18 +6,18 @@ verify_ssl = true
 [dev-packages]
 
 [packages]
-dj-database-url = "==0.*"
+dj-database-url = "==2.*"
 dj-static = "==0.*"
-Django = ">=3.2.25"
+Django = "==4.*"
 dynaconf = "==3.*"
-gunicorn = "==20.*"
-lxml = "==4.*"
+gunicorn = "==21.*"
+lxml = "==5.*"
 nltk = "==3.*"
-psycopg2 = "==2.*"
-rdflib = "==6.*"
+psycopg = "==3.*"
+rdflib = "==7.*"
 requests = "==2.*"
 SoMaJo = "==2.*"
 SPARQLWrapper = "==2.*"
 
 [requires]
-python_version = "3.9"
+python_version = "3.12"
